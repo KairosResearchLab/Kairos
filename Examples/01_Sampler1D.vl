@@ -15,7 +15,7 @@
         <Patch Id="L9qY0ITwYNYMLP9NgDb9LU">
           <Canvas Id="CaAFaWQsyCjQcS3Rse19EK" CanvasType="Group">
             <Node Bounds="399,243,44,19" Id="QMHOQxYAB5OLCdZBuftxdn">
-              <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="Gea.Messages.vl">
+              <p:NodeReference LastCategoryFullName="Kairos.Messages" LastSymbolSource="Kairos.Messages.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="Server" />
               </p:NodeReference>
@@ -24,7 +24,8 @@
               <Pin Id="NyDt5hK3wc6N11P64YNLqB" Name="Messages" Kind="OutputPin" />
             </Node>
             <Node Bounds="170,651,62,19" Id="LhrSuVm8MC2PwxTiKB0UNh">
-              <p:NodeReference LastCategoryFullName="Kairos" LastSymbolSource="Kairos.vl">
+              <p:NodeReference LastCategoryFullName="Kairos.UI.Skia" LastSymbolSource="Kairos.UI.Skia.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessNode" Name="UI" />
               </p:NodeReference>
               <Pin Id="BsoT9se92qEO04QjoSuEl4" Name="Kairos" Kind="InputPin" />
@@ -34,9 +35,12 @@
             <Overlay Id="KRgBwFYODuuPmZiD6HyUXe" Name="Server" Bounds="377,186,98,108" />
             <Overlay Id="T4qP189ZTLOPqwKQQhEJGV" Name="UI" Bounds="139,585,134,129" />
             <Node Bounds="569,676,85,19" Id="SYn01PyDGcCMsF4ojd2h6t">
-              <p:NodeReference LastCategoryFullName="Main.Server" LastSymbolSource="Gea.Messages.vl">
+              <p:NodeReference LastCategoryFullName="Kairos.Messages.Server" LastSymbolSource="Kairos.Messages.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="PostMessage" />
+                <CategoryReference Kind="ClassType" Name="Server" NeedsToBeDirectParent="true">
+                  <p:OuterCategoryReference Kind="Category" Name="Messages" NeedsToBeDirectParent="true" />
+                </CategoryReference>
               </p:NodeReference>
               <Pin Id="UgQHZKeiZOvM12MzjJq7sc" Name="Input" Kind="StateInputPin" />
               <Pin Id="VQMUenVGfxsPB7FTL07jKG" Name="Message" Kind="InputPin" />
@@ -48,10 +52,13 @@
               <Pin Id="GPcn0JjDdzANHDdM3tXoXe" Name="Output" Kind="StateOutputPin" />
             </Node>
             <Node Bounds="611,556,105,19" Id="QLmYxIm2IRfNAgib4l1uBI">
-              <p:NodeReference LastCategoryFullName="Main.Message" LastSymbolSource="Gea.Messages.vl">
+              <p:NodeReference LastCategoryFullName="Kairos.Messages.Message" LastSymbolSource="Kairos.Messages.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="RecordType" Name="Message" />
                 <Choice Kind="OperationCallFlag" Name="Join" />
+                <CategoryReference Kind="RecordType" Name="Message" NeedsToBeDirectParent="true">
+                  <p:OuterCategoryReference Kind="Category" Name="Messages" NeedsToBeDirectParent="true" />
+                </CategoryReference>
               </p:NodeReference>
               <Pin Id="QWdg9z49tpzNCo8hNBQTz9" Name="Input" Kind="StateInputPin" />
               <Pin Id="MU6i3sloOkLLv3eV5oJwtb" Name="Sender" Kind="InputPin" />
@@ -60,6 +67,7 @@
                   <Choice Kind="TypeFlag" Name="String" />
                 </p:TypeAnnotation>
               </Pin>
+              <Pin Id="ArHmsqNwpfKN20Mq1iDNkk" Name="Target" Kind="InputPin" />
               <Pin Id="VNPYDiJXjaaP7KdbCbNlhd" Name="Command" Kind="InputPin" DefaultValue="Undo">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                   <Choice Kind="TypeFlag" Name="String" />
@@ -67,7 +75,6 @@
               </Pin>
               <Pin Id="PzKoTTF64SmNzSDxr30r3D" Name="Argument" Kind="InputPin" />
               <Pin Id="Ufwr2tYYRDkLFhKUsqYb2B" Name="Output" Kind="StateOutputPin" />
-              <Pin Id="ArHmsqNwpfKN20Mq1iDNkk" Name="Target" Kind="InputPin" />
             </Node>
             <Pad Id="IyaZKnKNYnZMNRjERCUjjm" Comment="Undo" Bounds="650,626,70,72" ShowValueBox="true" isIOBox="true" Value="False">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
@@ -100,7 +107,7 @@
               <p:ValueBoxSettings />
             </Pad>
             <Node Bounds="170,393,45,19" Id="EIQA9kLiUKyNq9iINLkA3m">
-              <p:NodeReference LastCategoryFullName="Kairos.Core" LastSymbolSource="Kairos.vl">
+              <p:NodeReference LastCategoryFullName="Kairos.Application" LastSymbolSource="Kairos.Application.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessNode" Name="Kairos" />
               </p:NodeReference>
@@ -109,7 +116,7 @@
             </Node>
             <Overlay Id="JQLFQvv4IFaLk5WiadHWY4" Name="Kairos" Bounds="130,316,144,150" />
             <Node Bounds="378,568,85,19" Id="K5iwJLzKpkpLBFlOauf6IG">
-              <p:NodeReference LastCategoryFullName="Kairos.Core.Kairos_R" LastSymbolSource="Kairos.vl">
+              <p:NodeReference LastCategoryFullName="Kairos.Runtime.Kairos_R" LastSymbolSource="Kairos.Runtime.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="GetTimeliner_R" />
               </p:NodeReference>
@@ -118,7 +125,7 @@
               <Pin Id="Uo8p1WUUltsNEkG1B0tNJc" Name="Timeliner_R" Kind="OutputPin" />
             </Node>
             <Node Bounds="381,517,71,19" Id="T8CA2hsvi2DOL0GU4d9ZKg">
-              <p:NodeReference LastCategoryFullName="Kairos.Core.Kairos" LastSymbolSource="Kairos.vl">
+              <p:NodeReference LastCategoryFullName="Kairos.Application.Kairos" LastSymbolSource="Kairos.Application.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="GetKairos_R" />
               </p:NodeReference>
@@ -127,7 +134,7 @@
               <Pin Id="JblaQDjvW8SMRYi9N2JRpK" Name="Kairos_R" Kind="OutputPin" />
             </Node>
             <Node Bounds="381,623,72,19" Id="KSPQPfLdWufOx2drZu16Fp">
-              <p:NodeReference LastCategoryFullName="Kairos.Core.Timeliner.Timeliner_R" LastSymbolSource="Kairos.vl">
+              <p:NodeReference LastCategoryFullName="Kairos.Runtime.Timeliner.Timeline_R" LastSymbolSource="Kairos.Runtime.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="GetTracks_R" />
               </p:NodeReference>
@@ -147,7 +154,7 @@
               <Pin Id="U50reSrZQmtO17KfECFbhL" Name="Result" Kind="OutputPin" />
             </Node>
             <Node Bounds="385,715,79,19" Id="Lw0xYS7gRxuOljwiT5lFhu">
-              <p:NodeReference LastCategoryFullName="Kairos.Core.Timeliner.Track_R" LastSymbolSource="Kairos.vl">
+              <p:NodeReference LastCategoryFullName="Kairos.Runtime.Timeliner.Track_R" LastSymbolSource="Kairos.Runtime.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="GetSampler_R" />
               </p:NodeReference>
@@ -156,7 +163,7 @@
               <Pin Id="D47dqbyN1ElLLXUHEbuloI" Name="Sampler_R" Kind="OutputPin" />
             </Node>
             <Node Bounds="386,767,57,19" Id="FGO2kig7fggOipI9utIrw9">
-              <p:NodeReference LastCategoryFullName="Kairos.Core.Container.Sampler.1D.Sampler_R" LastSymbolSource="Kairos.vl">
+              <p:NodeReference LastCategoryFullName="Kairos.Runtime.Container.Sampler.Sampler_R" LastSymbolSource="Kairos.Runtime.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="GetValue" />
                 <CategoryReference Kind="ClassType" Name="Sampler_R" NeedsToBeDirectParent="true" />
@@ -204,7 +211,7 @@
             </Node>
             <Pad Id="K6lrW0Zuep8QBzj6iNy00N" Comment="" Bounds="412,945,33,19" ShowValueBox="true" isIOBox="true" />
             <Node Bounds="873,167,73,19" Id="AcsLjho7QqSNc9xAOfZUzc">
-              <p:NodeReference LastCategoryFullName="Kairos.Core.Kairos" LastSymbolSource="Kairos.vl">
+              <p:NodeReference LastCategoryFullName="Kairos.Application.Kairos" LastSymbolSource="Kairos.Application.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="GetKairos_M" />
               </p:NodeReference>
@@ -213,9 +220,12 @@
               <Pin Id="HAKEfRf1KVnNVLH36889Gv" Name="Kairos_M" Kind="OutputPin" />
             </Node>
             <Node Bounds="924,877,85,19" Id="Jv0uuHIUzUeMrtVuEsNRdN">
-              <p:NodeReference LastCategoryFullName="Main.Server" LastSymbolSource="Gea.Messages.vl">
+              <p:NodeReference LastCategoryFullName="Kairos.Messages.Server" LastSymbolSource="Kairos.Messages.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="PostMessage" />
+                <CategoryReference Kind="ClassType" Name="Server" NeedsToBeDirectParent="true">
+                  <p:OuterCategoryReference Kind="Category" Name="Messages" NeedsToBeDirectParent="true" />
+                </CategoryReference>
               </p:NodeReference>
               <Pin Id="QKt5UZHRlFzOLK2gNClZFO" Name="Input" Kind="StateInputPin" />
               <Pin Id="BwyIlmpqyoPN2xa4TCmswu" Name="Message" Kind="InputPin" />
@@ -227,10 +237,13 @@
               <Pin Id="IT1XW7CX5uyO1PAlPFTZdy" Name="Output" Kind="StateOutputPin" />
             </Node>
             <Node Bounds="966,757,105,19" Id="IH6Mqy0CsRQOf4ZmJUF63h">
-              <p:NodeReference LastCategoryFullName="Main.Message" LastSymbolSource="Gea.Messages.vl">
+              <p:NodeReference LastCategoryFullName="Kairos.Messages.Message" LastSymbolSource="Kairos.Messages.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="RecordType" Name="Message" />
                 <Choice Kind="OperationCallFlag" Name="Join" />
+                <CategoryReference Kind="RecordType" Name="Message" NeedsToBeDirectParent="true">
+                  <p:OuterCategoryReference Kind="Category" Name="Messages" NeedsToBeDirectParent="true" />
+                </CategoryReference>
               </p:NodeReference>
               <Pin Id="TAcSBch9e5ZNM80AJLsT9y" Name="Input" Kind="StateInputPin" />
               <Pin Id="MQXAsxHRy8rMVaeGiZ7Qye" Name="Sender" Kind="InputPin" />
@@ -239,6 +252,7 @@
                   <Choice Kind="TypeFlag" Name="String" />
                 </p:TypeAnnotation>
               </Pin>
+              <Pin Id="QDsDI07rZGQPavaBxFW0jc" Name="Target" Kind="InputPin" />
               <Pin Id="BEi9mml34SwNPCjZ4ujNrY" Name="Command" Kind="InputPin" DefaultValue="Undo">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                   <Choice Kind="TypeFlag" Name="String" />
@@ -246,7 +260,6 @@
               </Pin>
               <Pin Id="THhO42sFWdVLOXoSkAfd51" Name="Argument" Kind="InputPin" />
               <Pin Id="LsMAClqdUu2OvqiePqslG0" Name="Output" Kind="StateOutputPin" />
-              <Pin Id="QDsDI07rZGQPavaBxFW0jc" Name="Target" Kind="InputPin" />
             </Node>
             <Pad Id="TP6KX8TUYIhMuqhwd5K8K9" Comment="" Bounds="1005,827,70,72" ShowValueBox="true" isIOBox="true" Value="False">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
@@ -296,7 +309,7 @@
             <ControlPoint Id="Uh4DKaxbQ59Nf8hibNAsDE" Bounds="1393,754" />
             <Pad Id="Da4A8kd2UmmO2XTzQJC1GE" Comment="Phase" Bounds="1393,754,33,19" ShowValueBox="true" isIOBox="true" />
             <Node Bounds="1301,787,53,19" Id="JXwbbNyRCAMNXtk7MrGhTk">
-              <p:NodeReference LastCategoryFullName="Main.ValueHolder" LastSymbolSource="Gea.Messages.vl">
+              <p:NodeReference LastCategoryFullName="Main.ValueHolder" LastSymbolSource="Kairos.Messages.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="RecordType" Name="ValueHolder" />
                 <Choice Kind="OperationCallFlag" Name="Create" />
@@ -361,4 +374,6 @@
       </Node>
     </Canvas>
   </Patch>
+  <DocumentDependency Id="FxgOOPJBfbeN0IAmlHtAEo" Location="../vl/Kairos.vl" />
+  <NugetDependency Id="LE5delHFddsLZlbJauTAG3" Location="Gea" Version="0.0.0.0" />
 </Document>
