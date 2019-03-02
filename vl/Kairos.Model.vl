@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="QaFEz8nplaBQVATKTS2rKL" Version="0.96">
+<Document xmlns:p="property" Id="QaFEz8nplaBQVATKTS2rKL" Version="0.98">
   <NugetDependency Id="FXn9n7R37p5O3WsDzrtUFM" Location="VL.CoreLib" Version="0.96.6" />
   <Patch Id="Psv0au7NCNRNhP5X940Z5d">
     <Canvas Id="RPrWlmod17SPS9Gfp3kroA" DefaultCategory="Kairos.Model" CanvasType="FullCategory">
@@ -3547,9 +3547,15 @@
               </Pad>
               <ControlPoint Id="HI7RQKcBiDPMqSSP288bua" Bounds="61,463" />
               <ControlPoint Id="GbuH5WB25QnPEOcS5ASL2K" Bounds="60,588" />
+              <ControlPoint Id="ILD9NQIdtykP22XoMjolAD" Bounds="340,506" />
             </Canvas>
             <Patch Id="CYTHIbX9V64Obobxg43pHz" Name="Create" ParticipatingElements="Pkcntzrayd6P17wLD88LR3">
               <Pin Id="TJquVDI39n0MGreyShXScT" Name="ChannelKey" Kind="InputPin" />
+              <Pin Id="JRMuAZxeFycL23TYrDFdd4" Name="FallbackOption" Kind="InputPin" DefaultValue="0">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="Integer32" />
+                </p:TypeAnnotation>
+              </Pin>
               <Pin Id="TrVNCf3aWdiOS1U9QP1JyA" Name="Scenes" Kind="InputPin">
                 <p:TypeAnnotation>
                   <Choice Kind="TypeFlag" Name="Spread" />
@@ -3706,6 +3712,8 @@
             <Patch Id="GLJ7pFwDljyOJfd69S7JQN" Name="GetKey">
               <Pin Id="OkEbqVhZZNbPGjeKAHwh7I" Name="ChannelKey" Kind="OutputPin" />
             </Patch>
+            <Link Id="DwvozQxtRKwNiQKusfbnpZ" Ids="ILD9NQIdtykP22XoMjolAD,Sh0Ajdjx8fHP7m53MxPQD3" />
+            <Link Id="RFq2Yiv0dsjNdBcBaN3jOW" Ids="JRMuAZxeFycL23TYrDFdd4,ILD9NQIdtykP22XoMjolAD" IsHidden="true" />
           </Patch>
         </Node>
         <!--
@@ -4033,6 +4041,7 @@
                   <Choice Kind="OperationCallFlag" Name="Create" />
                 </p:NodeReference>
                 <Pin Id="Odaemm4zdRLMcc1j9PX3TX" Name="ChannelKey" Kind="InputPin" />
+                <Pin Id="FFf7aFtSqxoLFacdTHoodU" Name="FallbackOption" Kind="InputPin" />
                 <Pin Id="BeFFRfj2kqnQWuQi9liqK1" Name="Scenes" Kind="InputPin" />
                 <Pin Id="HQwIZVuW8OgPzoNKEXi6HJ" Name="Output" Kind="StateOutputPin" />
               </Node>
@@ -5323,6 +5332,31 @@
         </Node>
       </Canvas>
     </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="DLVYxYFTAV9NQcp0e4qQdN">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="TLAqAZ4an6MOhUMiHSzGok">
+        <Canvas Id="CWaQNHPihvgOFBxbHxcJIJ" CanvasType="Group" />
+        <Patch Id="UXfP3cdjzMcLfFDkOQHOru" Name="Create" />
+        <Patch Id="QgfxhvRsvUkLqRBQjmJOdF" Name="Update" />
+        <!--
+
+    ************************  ************************
+
+-->
+        <ProcessDefinition Id="M5zAARhKbVhLox1rJLTxG8">
+          <Fragment Id="LpGFyDyFInaOPAGCniRBfq" Patch="UXfP3cdjzMcLfFDkOQHOru" Enabled="true" />
+          <Fragment Id="LEGb3RDSKq7MZMVEENQG7X" Patch="QgfxhvRsvUkLqRBQjmJOdF" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
   </Patch>
   <NugetDependency Id="NeYeysjB7uONj5awiuyEsi" Location="VL.Core" Version="0.96.6-g1e76781b6b" />
   <PlatformDependency Id="O1A2Vfmjt1PLndMTI6Z9nJ" Location="mscorlib" />
