@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="K98bgocY4xDLPi71Rlw0X5" Version="0.96">
+<Document xmlns:p="property" Id="K98bgocY4xDLPi71Rlw0X5" LanguageVersion="2019.1.0-0252-g8cce69ed60" Version="0.128">
   <NugetDependency Id="D2Y7A5YSdKVNmSZtgWZamo" Location="VL.CoreLib" Version="0.96.6" />
   <Patch Id="PElvJwIWD8gOVlDM89fvWl">
     <Canvas Id="GKSfH2ZO6kON91zqmRtx4i" DefaultCategory="Kairos.Application" CanvasType="FullCategory">
@@ -24,7 +24,7 @@
               <Pin Id="ErGC8DVThirPJ6jcrQ84Il" Name="Output" Kind="OutputPin" />
             </Node>
             <Node Bounds="473,115,73,13" Id="GB4LPCyqhMGPuOLYJj6ZP6">
-              <p:NodeReference LastCategoryFullName="Kairos.Model" LastSymbolSource="Kairos.Model.vl">
+              <p:NodeReference LastCategoryFullName="Kairos.Model.Old" LastSymbolSource="Kairos.Model.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessNode" Name="DummyModel" />
               </p:NodeReference>
@@ -42,7 +42,7 @@
               <Pin Id="EhkpmO1efRVNl6okUlVFzn" Name="Server" Kind="InputPin" />
               <Pin Id="JO6aq0xGnPmNduDGgxUJWR" Name="Model" Kind="OutputPin" />
             </Node>
-            <Pad Id="UbI4UCYRWJOMK4GYIP5EIB" Comment="SetModel" Bounds="493,156,40,19" ShowValueBox="true" isIOBox="true" Value="False">
+            <Pad Id="UbI4UCYRWJOMK4GYIP5EIB" Comment="SetModel" Bounds="493,154,40,19" ShowValueBox="true" isIOBox="true" Value="False">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="Boolean" />
               </p:TypeAnnotation>
@@ -103,6 +103,31 @@
         </Patch>
       </Node>
     </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="C38FcqC4GW9N1Y5QKz0Wyz">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="UNKhmtoj8vxOkWL7upJgt1">
+        <Canvas Id="M4Sg51y5uO0PygdTtulm2m" BordersChecked="false" CanvasType="Group" />
+        <Patch Id="ROEPciQfD9zLrphRSHI22M" Name="Create" />
+        <Patch Id="ETDSENi6wgWPkNeC1zsDVA" Name="Update" />
+        <!--
+
+    ************************  ************************
+
+-->
+        <ProcessDefinition Id="HqAvatreDRBNyPQbeRcMBc">
+          <Fragment Id="SFdmGrm6jEZMQrtgwRxZZh" Patch="ROEPciQfD9zLrphRSHI22M" Enabled="true" />
+          <Fragment Id="PrlwhTIoR1HQb0qMIpz0uF" Patch="ETDSENi6wgWPkNeC1zsDVA" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
   </Patch>
   <NugetDependency Id="THd4D8MrpYzPPkjqBWcAO9" Location="VL.Core" Version="0.96.6-g1e76781b6b" />
   <DocumentDependency Id="AX3t0D1XixsQatq5AhfMbp" Location="./Kairos.Model.vl" />
