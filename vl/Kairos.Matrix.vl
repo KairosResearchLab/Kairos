@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="B4pfO6o8VS3PgCKLFy3Ck2" LanguageVersion="2019.1.0-0252-g8cce69ed60" Version="0.128">
+<Document xmlns:p="property" Id="B4pfO6o8VS3PgCKLFy3Ck2" LanguageVersion="2019.1.0-0287-g67d678e5a2" Version="0.128">
   <NugetDependency Id="EXXOR3g5ZJaMxfnUR6CYnd" Location="VL.CoreLib" Version="0.96.24" />
   <Patch Id="ARPeoCCGsHyNS3cuhY5T0O">
     <Canvas Id="SnVDCdyur8LNCcCSconpYk" DefaultCategory="Kairos.Matrix" CanvasType="FullCategory">
@@ -1881,6 +1881,7 @@
                           </p:NodeReference>
                           <Pin Id="TxSov9E9t2FO4HQli2X4KE" Name="Model Reference" Kind="InputPin" />
                           <Pin Id="Bzopqrxt9AFNZxgd7Lovu2" Name="Descendant" Kind="InputPin" />
+                          <Pin Id="PdueJ4vYKPKP9yZSsMNkEP" Name="Result" Kind="OutputPin" />
                         </Node>
                         <Node Bounds="822,501,48,19" Id="SjIlsN4UbItNuisBpVccfe">
                           <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="CoreLibBasics.vl">
@@ -2697,7 +2698,7 @@
                       <Pin Id="DbYXZsHDInXNVs2k4VqLKA" Name="Enabled" Kind="InputPin" />
                       <Pin Id="PiTPuJr1atWLZKngWUWahl" Name="Output" Kind="OutputPin" />
                     </Node>
-                    <Pad Id="Cc2EX2ZnDDuONSTWF78JNq" Comment="Force" Bounds="414,304,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+                    <Pad Id="Cc2EX2ZnDDuONSTWF78JNq" Comment="Force" Bounds="414,304,35,35" ShowValueBox="true" isIOBox="true" Value="False">
                       <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                         <Choice Kind="TypeFlag" Name="Boolean" />
                       </p:TypeAnnotation>
@@ -2782,7 +2783,7 @@
                       <Pin Id="Bp1E8ryZ2OYMFQJvxNNsWi" Name="True" Kind="InputPin" />
                       <Pin Id="BxkXo5vTRBSQJ7d4hQZ4Mm" Name="Output" Kind="OutputPin" />
                     </Node>
-                    <ControlPoint Id="FVAzPWaMrDfNLRqv4B0NJo" Bounds="222,-28" />
+                    <ControlPoint Id="FVAzPWaMrDfNLRqv4B0NJo" Bounds="415,154" />
                     <ControlPoint Id="HcGKa1b11bFOp3vzJwncYY" Bounds="-5,406" />
                     <Node Bounds="50,249,132,115" Id="DsvvqfqKNjrPLal21vozK1">
                       <p:NodeReference>
@@ -2832,23 +2833,30 @@
                         </Node>
                       </Patch>
                     </Node>
+                    <Node Bounds="514,771,65,19" Id="EJJowWjL4BROzVox3qCpjk">
+                      <p:NodeReference LastCategoryFullName="Graphics.Skia.Layers" LastSymbolSource="VL.Skia.vl">
+                        <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                        <Choice Kind="ProcessAppFlag" Name="ClipRect" />
+                      </p:NodeReference>
+                      <Pin Id="CQQtZOafWeGMhKkOwLqIqW" Name="Input" Kind="InputPin" />
+                      <Pin Id="UoQmLtcUsqzLumV5NHv12L" Name="Bounds" Kind="InputPin" />
+                      <Pin Id="DQAOqUwKDKkN2drIh1TN3M" Name="Antialias" Kind="InputPin" />
+                      <Pin Id="HZz53WAoh3wOjM3EQD3Dxm" Name="Apply" Kind="InputPin" />
+                      <Pin Id="O28rw4CdcpzNYQKzA3LDFL" Name="Output" Kind="OutputPin" />
+                    </Node>
+                    <ControlPoint Id="CTVknNyrSM2MCKIfbF4pTq" Bounds="537,749" />
                   </Canvas>
                   <Patch Id="DgsnEbzXG4LQKz1LlrFEHe" Name="Create" />
                   <Patch Id="UV4qWtFOhhEL1tiCqRvgVc" Name="Update">
+                    <Pin Id="C11wrEnhVqdNUwyvbovqL1" Name="Bounds" Kind="InputPin" />
+                    <Pin Id="Jg0gpK887jIPfhKga8z4XC" Name="Output" Kind="OutputPin" Bounds="375,563" />
                     <Pin Id="VuzMwzclYCwLT1oWngxkuv" Name="Horizontal / Vertical" Kind="InputPin">
                       <p:TypeAnnotation>
                         <Choice Kind="TypeFlag" Name="Boolean" />
                       </p:TypeAnnotation>
                     </Pin>
-                    <Pin Id="C11wrEnhVqdNUwyvbovqL1" Name="Bounds" Kind="InputPin" />
-                    <Pin Id="Jg0gpK887jIPfhKga8z4XC" Name="Output" Kind="OutputPin" Bounds="375,563" />
                     <Pin Id="MKkvdCPandEPNHZ822kSkc" Name="Switcher_R" Kind="InputPin" Bounds="995,653" />
                   </Patch>
-                  <!--
-
-    ************************  ************************
-
--->
                   <ProcessDefinition Id="LBjb07rTZ4UMpdezBEysxg">
                     <Fragment Id="D206QFvUD77O3SmNPI0x54" Patch="DgsnEbzXG4LQKz1LlrFEHe" Enabled="true" />
                     <Fragment Id="S6nB5iE824HO5p0IWqSrVz" Patch="UV4qWtFOhhEL1tiCqRvgVc" Enabled="true" />
@@ -2873,7 +2881,6 @@
                   <Link Id="U1e7PBPbPwyNhFdUUwRCiY" Ids="ECEMDCdV4PhNjvBlBea0TS,SaMCJ9LClnGPmliz72XAjv" />
                   <Link Id="TsBs0ly6i13OCMWbi3bhdL" Ids="I541eX5HR78OpCNICmMrND,NLUGUS8gvUvPi88pORzZb7" />
                   <Link Id="GHE0csBqCUpNXyZmvrJdZP" Ids="NLUGUS8gvUvPi88pORzZb7,QFTSfQFFT6ALwuEZoAml9T" />
-                  <Link Id="EVeGTkw2SGCQDZEH8SBLOJ" Ids="PiTPuJr1atWLZKngWUWahl,HVt8ujlNJQ4OXNCeBjCAGP" />
                   <Link Id="EsMQkItIwMWO4JWljbo8dl" Ids="SSFy7XW2QrUPnMyk5zicir,AXD1AbR9Rb5MFYsFN6tjn2" />
                   <Link Id="HpxXM20xNOwL9S8HV9sKf7" Ids="DsTD6wLNlm3O8Y3Be6y9SC,LP4sf7PpLZGMxm1jtLPgw5" />
                   <Link Id="Cwrkbf9D2HhM5XvVYgyHx0" Ids="Cc2EX2ZnDDuONSTWF78JNq,K8G66rBJlseMtn9XpBIG90" />
@@ -2920,6 +2927,10 @@
                   <Link Id="VxofgUkODFyL7zavPbhbd0" Ids="ISW4INFmidzLUb7s52GOrB,ULiJg8Yie3MNcRW4cIpmGt" />
                   <Link Id="FVCMyFxDp0vQFyUEKwiGVq" Ids="DNI37DxJu5VLesFkeyQxfb,I8JY4ymQndGPLyS5Vpqj9h" />
                   <Link Id="RwqHofnJQZ4Noi0PCltaHq" Ids="KCQUUizObzALYDGtFnPFj7,HcDAFYLkAeuLW0TcB9oeMa" />
+                  <Link Id="VjSydOJ8DlbPry4QrouFHR" Ids="PiTPuJr1atWLZKngWUWahl,CQQtZOafWeGMhKkOwLqIqW" />
+                  <Link Id="L453kKqVQX6LjIRCk1gZTG" Ids="C11wrEnhVqdNUwyvbovqL1,CTVknNyrSM2MCKIfbF4pTq" IsHidden="true" />
+                  <Link Id="I5ipkPATJRDMncCWpVts7N" Ids="CTVknNyrSM2MCKIfbF4pTq,UoQmLtcUsqzLumV5NHv12L" />
+                  <Link Id="ScOlO7UFkQfMTO2fRgSTRx" Ids="O28rw4CdcpzNYQKzA3LDFL,HVt8ujlNJQ4OXNCeBjCAGP" />
                 </Patch>
               </Node>
               <Node Bounds="890,829,124,19" Id="IpXIwxx2DhAMh7XjxKqpWl">
@@ -2927,8 +2938,8 @@
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessNode" Name="ChannelOutput" />
                 </p:NodeReference>
-                <Pin Id="HAyba6OPV9LLExM6tTYWxq" Name="Horizontal / Vertical" Kind="InputPin" />
                 <Pin Id="IK7u5qZVM6mLLq4g2XEkiF" Name="Bounds" Kind="InputPin" />
+                <Pin Id="HAyba6OPV9LLExM6tTYWxq" Name="Horizontal / Vertical" Kind="InputPin" />
                 <Pin Id="FjazuSMYsssMyx8xh3DosX" Name="Switcher_R" Kind="InputPin" />
                 <Pin Id="L1X0d2R4Hu6OX6WFVH6Y5b" Name="Output" Kind="OutputPin" />
               </Node>
@@ -7297,7 +7308,7 @@
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="Renderer" />
                 </p:NodeReference>
-                <Pin Id="Pxp7MdYQ8alQDFnO1Jw7Xc" Name="Bounds" Kind="InputPin" DefaultValue="1220, 12, 697, 693">
+                <Pin Id="Pxp7MdYQ8alQDFnO1Jw7Xc" Name="Bounds" Kind="InputPin" DefaultValue="1513, 12, 403, 698">
                   <p:TypeAnnotation LastCategoryFullName="System.Drawing" LastSymbolSource="System.Drawing.dll">
                     <Choice Kind="TypeFlag" Name="Rectangle" />
                   </p:TypeAnnotation>
@@ -8140,7 +8151,7 @@
                 <Pin Id="LeO7BtuVxAkLaCFL87Gxhf" Name="Data" Kind="OutputPin" />
               </Node>
               <ControlPoint Id="HDOs0wyeBZCQcQqJK70gK4" Bounds="-541,432" />
-              <Pad Id="KTCDBMOwEnnMJ1lV6Y5RN5" Comment="Data" Bounds="-1446,1243,1356,487" ShowValueBox="true" isIOBox="true" />
+              <Pad Id="KTCDBMOwEnnMJ1lV6Y5RN5" Comment="Data" Bounds="-1446,1243,1084,1035" ShowValueBox="true" isIOBox="true" />
               <Pad Id="RBHngS008KIMdG1gAf0k14" Comment="" Bounds="799,570,35,35" ShowValueBox="true" isIOBox="true" />
               <Node Bounds="762,536" Id="R31cVftK8KRN2nnbvaSlpJ">
                 <p:NodeReference LastCategoryFullName="Control" LastSymbolSource="CoreLibBasics.vl">
@@ -9059,7 +9070,7 @@
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
             </Pad>
-            <Node Bounds="357,96,161,218" Id="O6ryLIw4ABJQZwO8vBs7vt">
+            <Node Bounds="357,95,191,220" Id="O6ryLIw4ABJQZwO8vBs7vt">
               <p:NodeReference>
                 <Choice Kind="ApplicationRegion" Name="Delegate" />
                 <FullNameCategoryReference ID="Primitive" />
@@ -9070,9 +9081,9 @@
                 <Pin Id="JlWii36iKpIPdBblE2rr1S" Name="Arg 2" Kind="InputPin" />
                 <Pin Id="QgnOv9aobaMOLYoLrviuhd" Name="Result" Kind="OutputPin" />
                 <ControlPoint Id="BlXu4BXV19LLjpplQVkQIT" Bounds="371,113" />
-                <ControlPoint Id="RPE4Ync7W9aPrkIFfywfDG" Bounds="431,113" />
+                <ControlPoint Id="RPE4Ync7W9aPrkIFfywfDG" Bounds="461,113" />
                 <ControlPoint Id="DLExl3lkcX7NStSCaP16CA" Bounds="371,298" />
-                <Node Bounds="429,127,77,26" Id="Puw0blhKpHYLZHTJnVvl25">
+                <Node Bounds="459,127,77,26" Id="Puw0blhKpHYLZHTJnVvl25">
                   <p:NodeReference LastCategoryFullName="Main.Message" LastSymbolSource="Gea.Messages.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="GetArgument" />
@@ -9088,10 +9099,11 @@
                     <CategoryReference Kind="RecordType" Name="Matrix_M" NeedsToBeDirectParent="true" />
                   </p:NodeReference>
                   <Pin Id="NqLOnLtTnhQOw9ydnD10By" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="OF4mE6o9Za4Qdn6AmTwlEo" Name="Default Value" Kind="InputPin" />
                   <Pin Id="IKYlS1teIH0O82nTwI0P6R" Name="New Channel Index" Kind="InputPin" />
                   <Pin Id="R1BGqfgd8ryLNFm2lgOLsF" Name="Output" Kind="StateOutputPin" />
                 </Node>
-                <Node Bounds="436,174,55,19" Id="VzsYGo6lBJcOGgG2VRZ8uE">
+                <Node Bounds="466,174,55,19" Id="VzsYGo6lBJcOGgG2VRZ8uE">
                   <p:NodeReference LastCategoryFullName="System.Conversion" LastSymbolSource="CoreLibBasics.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="TryParse" />
@@ -9108,6 +9120,26 @@
                   <Pin Id="QRjesnuwCPkLNvyVZssAez" Name="Input" Kind="StateInputPin" />
                   <Pin Id="Q33C2noGlHUMvxNk2Pwajh" Name="Output" Kind="StateOutputPin" />
                 </Node>
+                <Node Bounds="383,167,65,19" Id="KYHKLiRwf0jM0s6HrFFMNa">
+                  <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="FromValue" />
+                    <CategoryReference Kind="RecordType" Name="Spread" NeedsToBeDirectParent="true">
+                      <p:OuterCategoryReference Kind="Category" Name="Collections" NeedsToBeDirectParent="true">
+                        <p:OuterCategoryReference Kind="Category" NeedsToBeDirectParent="true" />
+                      </p:OuterCategoryReference>
+                    </CategoryReference>
+                  </p:NodeReference>
+                  <Pin Id="BTJv0iTthHRMUfgUUXCCys" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="FhVZfWWPL8zOADlGMbOyav" Name="Result" Kind="OutputPin" />
+                </Node>
+                <Pad Id="BP5wXCOv8B1MLgWtuTBv7R" Bounds="385,148,35,15" ShowValueBox="true" isIOBox="true" Value="0">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="Float32" />
+                    <FullNameCategoryReference ID="Primitive" />
+                  </p:TypeAnnotation>
+                  <p:ValueBoxSettings />
+                </Pad>
               </Patch>
             </Node>
             <Node Bounds="534,353,53,26" Id="JSwgReMODB0L4QyNDARSFj">
@@ -9586,6 +9618,8 @@
           <Link Id="OEpP113ekdYMUsrSH7saNj" Ids="J2uKFYHmg63QYXHcvoEcOG,L38LcAlgIqqLU3exkIC4o4" />
           <Link Id="Eqphxaqc6VOPJ4VHaP2mQX" Ids="GZ5S1UdbgxvPsksOQLgRwA,V8Rduvh5CogMe9pyg2Kfbq" />
           <Link Id="TZwClUmiN1tNM8gkzMNuIg" Ids="APJQ5XbuK3xL8PXnU9T40B,KaIwuhRusvvPUGFo7JpgZa" />
+          <Link Id="SIa2DfQDMaCNfDJJ6BcZlQ" Ids="FhVZfWWPL8zOADlGMbOyav,OF4mE6o9Za4Qdn6AmTwlEo" />
+          <Link Id="Vq3UolWE388N3mn5s0zhsl" Ids="BP5wXCOv8B1MLgWtuTBv7R,BTJv0iTthHRMUfgUUXCCys" />
         </Patch>
       </Node>
       <!--
@@ -10305,7 +10339,7 @@
       </p:NodeReference>
       <Patch Id="HlCwl4tY5AWMS13hYaeFu5">
         <Canvas Id="PF5LVSYh9R5OZi2GRyRMkW" CanvasType="Group">
-          <Node Bounds="113,346,147,19" Id="InGxd8ZaTtbNjAtbwThF3E">
+          <Node Bounds="113,346,415,19" Id="InGxd8ZaTtbNjAtbwThF3E">
             <p:NodeReference LastCategoryFullName="Kairos.Matrix" LastSymbolSource="Kairos.Matrix.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessNode" Name="Matrix" />
@@ -10316,170 +10350,76 @@
               </p:TypeAnnotation>
               <p:DefaultValue Name="Matrix 1">
                 <Scenes>
-                  <Item Name="Scene 0" Key="af113984-d1e0-4afe-9160-784bf85e37bc" />
-                  <Item Name="Scene 1" Key="1e960684-ebf0-42d8-aa61-acd2ff69da58" />
-                  <Item Name="Scene 2" Key="035ddb0c-af64-4f34-84ab-58ebaba3ddf6" />
-                  <Item Name="Scene 3" Key="cbdc6555-0df5-49b5-bda2-da66c1a1918d" />
-                  <Item Name="Scene 4" Key="82567819-0c4e-4fd3-97c1-c5ee8e31e3d1" />
-                  <Item Name="Scene 5" Key="b3fefad2-0dcc-4c9c-a522-2250951bd0cb" />
-                  <Item Name="Scene 6" Key="011a006d-2b46-4188-8125-d1fe1d9607eb" />
-                  <Item Name="Scene 7" Key="74f4f613-f7b5-4791-9025-d6654101cfb9" />
-                  <Item Name="Scene 8" Key="f29cfcab-e500-4675-ab08-8dc2371dff69" />
-                  <Item Name="Scene 9" Key="564340a1-d69e-42f2-a9ec-ef8f62345bb1" />
-                  <Item Name="Scene 10" Key="f068afe0-f67f-47b1-8329-da1285ec7c88" />
+                  <Item Name="Scene 2" Key="a8d56862-65da-4cc3-a8d4-69f9b4696774" />
+                  <Item Name="Scene 1" Key="f0499371-9f93-473e-99f5-0f94b15c6f41" />
+                  <Item Name="Scene 3" Key="42a0444b-d5b5-489a-9b0c-35b21ec846c0" />
+                  <Item Name="Scene 0" Key="ddcc3735-ea1c-4b88-a465-0cbc61e379eb" />
                 </Scenes>
                 <Channels>
-                  <Item Name="Channel 1" Enabled="True" AddToCollection="True" AddToPinGroup="True" Type="Float32">
-                    <__slot_SVH2EDo06cUQPknUajdTRR p12:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p12="reflection" />
+                  <Item Name="Channel 2" Enabled="True" AddToPinGroup="True" Type="Float32">
                     <Container_M>
-                      <Value p13:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p13="reflection">
-                        <Slots>
-                          <Item Model_Key="af113984-d1e0-4afe-9160-784bf85e37bc">
-                            <Block Source_ID="keyframe 2" Color="0.5, 0.2249706, 0.458625, 1">
-                              <Default_Value>
-                                <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">0.7262433, 0.8173254, 0.7680227, 0.5581612, 0.2060331, 0.5588848, 0.9060271, 0.4421779</Value>
-                              </Default_Value>
-                            </Block>
-                          </Item>
-                          <Item Model_Key="1e960684-ebf0-42d8-aa61-acd2ff69da58">
-                            <Block Source_ID="keyframe 3" Color="0.3521066, 0.5, 0.3082489, 1" Source_Enable="True">
-                              <Default_Value>
-                                <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">0.7262433, 0.8173254, 0.7680227, 0.5581612, 0.2060331, 0.5588848, 0.9060271, 0.4421779</Value>
-                              </Default_Value>
-                            </Block>
-                          </Item>
-                          <Item Model_Key="035ddb0c-af64-4f34-84ab-58ebaba3ddf6" />
-                          <Item Model_Key="cbdc6555-0df5-49b5-bda2-da66c1a1918d" />
-                          <Item Model_Key="82567819-0c4e-4fd3-97c1-c5ee8e31e3d1" />
-                          <Item Model_Key="b3fefad2-0dcc-4c9c-a522-2250951bd0cb" />
-                          <Item Model_Key="011a006d-2b46-4188-8125-d1fe1d9607eb" />
-                          <Item Model_Key="74f4f613-f7b5-4791-9025-d6654101cfb9" />
-                          <Item Model_Key="f29cfcab-e500-4675-ab08-8dc2371dff69" />
-                          <Item Model_Key="564340a1-d69e-42f2-a9ec-ef8f62345bb1" />
-                          <Item Model_Key="f068afe0-f67f-47b1-8329-da1285ec7c88" />
-                        </Slots>
-                      </Value>
+                      <Slots>
+                        <Item Model_Key="a8d56862-65da-4cc3-a8d4-69f9b4696774">
+                          <Block Source_ID="yo" Color="0.2370592, 0.5, 0.4614703, 1" Source_Enable="True">
+                            <Default_Value p16:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p16="reflection">0</Default_Value>
+                          </Block>
+                        </Item>
+                        <Item Model_Key="f0499371-9f93-473e-99f5-0f94b15c6f41">
+                          <Block Color="0.2575773, 0.3964315, 0.5, 1">
+                            <Default_Value p16:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p16="reflection">0.04838705</Default_Value>
+                          </Block>
+                        </Item>
+                        <Item Model_Key="42a0444b-d5b5-489a-9b0c-35b21ec846c0">
+                          <Block Source_ID="yo2" Color="0.4490011, 0.266887, 0.5, 1" Source_Enable="True">
+                            <Default_Value p16:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p16="reflection">0.05645166</Default_Value>
+                          </Block>
+                        </Item>
+                        <Item Model_Key="ddcc3735-ea1c-4b88-a465-0cbc61e379eb">
+                          <Block Source_ID="foo" Color="0.5, 0.3412149, 0.475798, 1" Source_Enable="True">
+                            <Default_Value p16:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p16="reflection">0</Default_Value>
+                          </Block>
+                        </Item>
+                      </Slots>
+                      <Default_Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection">0</Default_Value>
                     </Container_M>
-                    <Default_Value>
-                      <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection"></Value>
-                    </Default_Value>
+                    <Default_Value p12:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p12="reflection"></Default_Value>
                   </Item>
-                  <Item Name="Channel 0" Enabled="True" AddToCollection="True" Type="Float32">
-                    <__slot_SVH2EDo06cUQPknUajdTRR p12:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p12="reflection">
-                      <Slots>
-                        <Item Model_Key="af113984-d1e0-4afe-9160-784bf85e37bc" />
-                        <Item Model_Key="1e960684-ebf0-42d8-aa61-acd2ff69da58" />
-                      </Slots>
-                    </__slot_SVH2EDo06cUQPknUajdTRR>
-                    <__slot_Q67PbC1vUIyQd3kZxRKJiP>
-                      <Slots>
-                        <Item Model_Key="af113984-d1e0-4afe-9160-784bf85e37bc" />
-                        <Item Model_Key="1e960684-ebf0-42d8-aa61-acd2ff69da58" />
-                      </Slots>
-                    </__slot_Q67PbC1vUIyQd3kZxRKJiP>
+                  <Item Name="Channel 1" Enabled="True" AddToPinGroup="True" Type="Float32">
                     <Container_M>
-                      <Value p13:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p13="reflection">
-                        <Slots>
-                          <Item Model_Key="af113984-d1e0-4afe-9160-784bf85e37bc" />
-                          <Item Model_Key="1e960684-ebf0-42d8-aa61-acd2ff69da58">
-                            <Block Source_ID="keyframe 4" Color="0.5, 0.2809682, 0.4026144, 1" Source_Enable="True">
-                              <Default_Value>
-                                <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">0.7262433, 0.8173254, 0.7680227, 0.5581612, 0.2060331, 0.5588848, 0.9060271, 0.4421779</Value>
-                              </Default_Value>
-                            </Block>
-                          </Item>
-                          <Item Model_Key="035ddb0c-af64-4f34-84ab-58ebaba3ddf6" />
-                          <Item Model_Key="cbdc6555-0df5-49b5-bda2-da66c1a1918d" />
-                          <Item Model_Key="82567819-0c4e-4fd3-97c1-c5ee8e31e3d1" />
-                          <Item Model_Key="b3fefad2-0dcc-4c9c-a522-2250951bd0cb" />
-                          <Item Model_Key="011a006d-2b46-4188-8125-d1fe1d9607eb" />
-                          <Item Model_Key="74f4f613-f7b5-4791-9025-d6654101cfb9" />
-                          <Item Model_Key="f29cfcab-e500-4675-ab08-8dc2371dff69" />
-                          <Item Model_Key="564340a1-d69e-42f2-a9ec-ef8f62345bb1" />
-                          <Item Model_Key="f068afe0-f67f-47b1-8329-da1285ec7c88" />
-                        </Slots>
-                      </Value>
+                      <Slots>
+                        <Item Model_Key="a8d56862-65da-4cc3-a8d4-69f9b4696774">
+                          <Block Source_ID="ro" Color="0.3885893, 0.5, 0.2655268, 1" Source_Enable="True">
+                            <Default_Value p16:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p16="reflection">0</Default_Value>
+                          </Block>
+                        </Item>
+                        <Item Model_Key="f0499371-9f93-473e-99f5-0f94b15c6f41" />
+                        <Item Model_Key="42a0444b-d5b5-489a-9b0c-35b21ec846c0">
+                          <Block Source_ID="we" Color="0.5, 0.3418934, 0.2878592, 1" Source_Enable="True">
+                            <Default_Value p16:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p16="reflection">0</Default_Value>
+                          </Block>
+                        </Item>
+                        <Item Model_Key="ddcc3735-ea1c-4b88-a465-0cbc61e379eb" />
+                      </Slots>
+                      <Default_Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection">0</Default_Value>
                     </Container_M>
-                    <Default_Value>
-                      <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection"></Value>
-                    </Default_Value>
+                    <Default_Value p12:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p12="reflection"></Default_Value>
                   </Item>
-                  <Item Name="Channel 2" Enabled="True" Type="Float32">
-                    <__slot_SVH2EDo06cUQPknUajdTRR p12:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p12="reflection">
-                      <Slots>
-                        <Item Model_Key="af113984-d1e0-4afe-9160-784bf85e37bc" />
-                        <Item Model_Key="1e960684-ebf0-42d8-aa61-acd2ff69da58" />
-                        <Item Model_Key="035ddb0c-af64-4f34-84ab-58ebaba3ddf6" />
-                      </Slots>
-                    </__slot_SVH2EDo06cUQPknUajdTRR>
-                    <__slot_Q67PbC1vUIyQd3kZxRKJiP>
-                      <Slots>
-                        <Item Model_Key="af113984-d1e0-4afe-9160-784bf85e37bc" />
-                        <Item Model_Key="1e960684-ebf0-42d8-aa61-acd2ff69da58" />
-                        <Item Model_Key="035ddb0c-af64-4f34-84ab-58ebaba3ddf6" />
-                      </Slots>
-                    </__slot_Q67PbC1vUIyQd3kZxRKJiP>
+                  <Item Name="Channel 0" Enabled="True" Type="Float32">
                     <Container_M>
-                      <Value p13:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p13="reflection">
-                        <Slots>
-                          <Item Model_Key="af113984-d1e0-4afe-9160-784bf85e37bc" />
-                          <Item Model_Key="1e960684-ebf0-42d8-aa61-acd2ff69da58" />
-                          <Item Model_Key="035ddb0c-af64-4f34-84ab-58ebaba3ddf6" />
-                          <Item Model_Key="cbdc6555-0df5-49b5-bda2-da66c1a1918d" />
-                          <Item Model_Key="82567819-0c4e-4fd3-97c1-c5ee8e31e3d1" />
-                          <Item Model_Key="b3fefad2-0dcc-4c9c-a522-2250951bd0cb" />
-                          <Item Model_Key="011a006d-2b46-4188-8125-d1fe1d9607eb" />
-                          <Item Model_Key="74f4f613-f7b5-4791-9025-d6654101cfb9" />
-                          <Item Model_Key="f29cfcab-e500-4675-ab08-8dc2371dff69" />
-                          <Item Model_Key="564340a1-d69e-42f2-a9ec-ef8f62345bb1" />
-                          <Item Model_Key="f068afe0-f67f-47b1-8329-da1285ec7c88" />
-                        </Slots>
-                      </Value>
-                    </Container_M>
-                    <Default_Value>
-                      <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection"></Value>
-                    </Default_Value>
-                  </Item>
-                  <Item Name="Channel 3" Enabled="True" Type="Float32">
-                    <__slot_SVH2EDo06cUQPknUajdTRR p12:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p12="reflection">
                       <Slots>
-                        <Item Model_Key="af113984-d1e0-4afe-9160-784bf85e37bc" />
-                        <Item Model_Key="1e960684-ebf0-42d8-aa61-acd2ff69da58" />
-                        <Item Model_Key="035ddb0c-af64-4f34-84ab-58ebaba3ddf6" />
+                        <Item Model_Key="a8d56862-65da-4cc3-a8d4-69f9b4696774" />
+                        <Item Model_Key="f0499371-9f93-473e-99f5-0f94b15c6f41" />
+                        <Item Model_Key="42a0444b-d5b5-489a-9b0c-35b21ec846c0" />
+                        <Item Model_Key="ddcc3735-ea1c-4b88-a465-0cbc61e379eb" />
                       </Slots>
-                    </__slot_SVH2EDo06cUQPknUajdTRR>
-                    <__slot_Q67PbC1vUIyQd3kZxRKJiP>
-                      <Slots>
-                        <Item Model_Key="af113984-d1e0-4afe-9160-784bf85e37bc" />
-                        <Item Model_Key="1e960684-ebf0-42d8-aa61-acd2ff69da58" />
-                        <Item Model_Key="035ddb0c-af64-4f34-84ab-58ebaba3ddf6" />
-                      </Slots>
-                    </__slot_Q67PbC1vUIyQd3kZxRKJiP>
-                    <Container_M>
-                      <Value p13:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p13="reflection">
-                        <Slots>
-                          <Item Model_Key="af113984-d1e0-4afe-9160-784bf85e37bc" />
-                          <Item Model_Key="1e960684-ebf0-42d8-aa61-acd2ff69da58" />
-                          <Item Model_Key="035ddb0c-af64-4f34-84ab-58ebaba3ddf6" />
-                          <Item Model_Key="cbdc6555-0df5-49b5-bda2-da66c1a1918d" />
-                          <Item Model_Key="82567819-0c4e-4fd3-97c1-c5ee8e31e3d1" />
-                          <Item Model_Key="b3fefad2-0dcc-4c9c-a522-2250951bd0cb" />
-                          <Item Model_Key="011a006d-2b46-4188-8125-d1fe1d9607eb" />
-                          <Item Model_Key="74f4f613-f7b5-4791-9025-d6654101cfb9" />
-                          <Item Model_Key="f29cfcab-e500-4675-ab08-8dc2371dff69" />
-                          <Item Model_Key="564340a1-d69e-42f2-a9ec-ef8f62345bb1" />
-                          <Item Model_Key="f068afe0-f67f-47b1-8329-da1285ec7c88" />
-                        </Slots>
-                      </Value>
+                      <Default_Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection">0</Default_Value>
                     </Container_M>
-                    <Default_Value>
-                      <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection"></Value>
-                    </Default_Value>
+                    <Default_Value p12:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p12="reflection"></Default_Value>
                   </Item>
                 </Channels>
               </p:DefaultValue>
             </Pin>
-            <Pin Id="KAQlKmi8zIRPMUaQ61uiLv" Name="keyframe 2" Kind="InputPin" PinGroupName="Sources">
+            <Pin Id="BWmUeO3rQduLJ94HDSlbLL" Name="yo" Kind="InputPin" PinGroupName="Sources">
               <p:TypeAnnotation>
                 <Choice Kind="TypeFlag" Name="Spread" />
                 <p:TypeArguments>
@@ -10489,7 +10429,7 @@
                 </p:TypeArguments>
               </p:TypeAnnotation>
             </Pin>
-            <Pin Id="TNoHST6XViuQKVMB2Ot8nJ" Name="keyframe 3" Kind="InputPin" PinGroupName="Sources">
+            <Pin Id="Mvdv4XS93jbMX9gekhhEbE" Name="yo2" Kind="InputPin" PinGroupName="Sources">
               <p:TypeAnnotation>
                 <Choice Kind="TypeFlag" Name="Spread" />
                 <p:TypeArguments>
@@ -10499,7 +10439,27 @@
                 </p:TypeArguments>
               </p:TypeAnnotation>
             </Pin>
-            <Pin Id="HRrllRU7FyJNZoWBouqBlU" Name="keyframe 4" Kind="InputPin" PinGroupName="Sources">
+            <Pin Id="KNp6Wze6w3BPg6zIHoB6Pp" Name="foo" Kind="InputPin" PinGroupName="Sources">
+              <p:TypeAnnotation>
+                <Choice Kind="TypeFlag" Name="Spread" />
+                <p:TypeArguments>
+                  <TypeReference>
+                    <Choice Kind="TypeFlag" Name="Float32" />
+                  </TypeReference>
+                </p:TypeArguments>
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="U0rPrXhWvDZNab0Xyu6c7W" Name="ro" Kind="InputPin" PinGroupName="Sources">
+              <p:TypeAnnotation>
+                <Choice Kind="TypeFlag" Name="Spread" />
+                <p:TypeArguments>
+                  <TypeReference>
+                    <Choice Kind="TypeFlag" Name="Float32" />
+                  </TypeReference>
+                </p:TypeArguments>
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="LcNrP1oxzDsPIfvK7pziBs" Name="we" Kind="InputPin" PinGroupName="Sources">
               <p:TypeAnnotation>
                 <Choice Kind="TypeFlag" Name="Spread" />
                 <p:TypeArguments>
@@ -10510,7 +10470,17 @@
               </p:TypeAnnotation>
             </Pin>
             <Pin Id="HWPNqMtlonSOB9oDiHK7PT" Name="Output Collection" Kind="OutputPin" />
-            <Pin Id="Qmw4OXrZHjwMBYmEMJ2Cb1" Name="Channel 1" Kind="OutputPin" PinGroupName="Channels">
+            <Pin Id="BizyYWiM97PLnKcDVVNnli" Name="Channel 2" Kind="OutputPin" PinGroupName="Channels">
+              <p:TypeAnnotation>
+                <Choice Kind="TypeFlag" Name="Spread" />
+                <p:TypeArguments>
+                  <TypeReference>
+                    <Choice Kind="TypeFlag" Name="Float32" />
+                  </TypeReference>
+                </p:TypeArguments>
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="IHD4JHAQC7aM7X2XqP2fKT" Name="Channel 1" Kind="OutputPin" PinGroupName="Channels">
               <p:TypeAnnotation>
                 <Choice Kind="TypeFlag" Name="Spread" />
                 <p:TypeArguments>
@@ -10526,9 +10496,13 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="LinearSpread" />
             </p:NodeReference>
-            <Pin Id="P8GQHxAq3EcLIRSbGihjBL" Name="Center" Kind="InputPin" />
+            <Pin Id="P8GQHxAq3EcLIRSbGihjBL" Name="Center" Kind="InputPin" DefaultValue="0.5">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float32" />
+              </p:TypeAnnotation>
+            </Pin>
             <Pin Id="Rxb5WQ5WKBANRjVK6gfQN1" Name="Width" Kind="InputPin" />
-            <Pin Id="BmThDcoHhkCPDmdwPAiXkN" Name="Count" Kind="InputPin" DefaultValue="9">
+            <Pin Id="BmThDcoHhkCPDmdwPAiXkN" Name="Count" Kind="InputPin" DefaultValue="21">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="Integer32" />
               </p:TypeAnnotation>
@@ -10627,7 +10601,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="586,296,130,19" Id="TVA0r4ZFLpLQZGeSuAcp3T">
+          <Node Bounds="811,277,130,19" Id="TVA0r4ZFLpLQZGeSuAcp3T">
             <p:NodeReference LastCategoryFullName="Kairos.Matrix" LastSymbolSource="Kairos.Matrix.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Matrix" />
@@ -10639,223 +10613,8 @@
               <p:TypeAnnotation LastCategoryFullName="Kairos.Model.Matrix" LastSymbolSource="Kairos.Model.vl">
                 <Choice Kind="TypeFlag" Name="Matrix_M" />
               </p:TypeAnnotation>
-              <p:DefaultValue Name="Matrix 1">
-                <Scenes>
-                  <Item Name="Scene 0" Key="83a07513-8e59-4b3e-8938-2908cb4ee9ac" />
-                  <Item Name="Scene 1" Key="1c9414db-5530-44e9-9a68-256d7fc2cd8f" />
-                  <Item Name="Scene 2" Key="20c7a68d-cbc9-4728-9924-36a0f8f281ea" />
-                  <Item Name="Scene 3" Key="ebf6b402-2a88-4dc7-8ee1-0c21d953ec00" />
-                  <Item Name="Scene 4" Key="e8feee80-feda-4ccc-95c8-8c24919e5cb2" />
-                  <Item Name="Scene 5" Key="41fc6e38-1629-4cd1-abf0-e335e28afd0e" />
-                  <Item Name="Scene 6" Key="5c6fca50-b17a-4d71-9c51-92dc03a3fda2" />
-                  <Item Name="Scene 7" Key="35bc78d0-6cbb-402f-a283-a50ebc1db4ac" />
-                  <Item Name="Scene 8" Key="92eeab39-2c24-4cb3-ac60-6b039ee909ef" />
-                </Scenes>
-                <Channels>
-                  <Item Name="Channel 0" Enabled="True" AddToCollection="True" Type="Float32">
-                    <__slot_SVH2EDo06cUQPknUajdTRR p12:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p12="reflection" />
-                    <Container_M>
-                      <Value p13:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p13="reflection">
-                        <Slots>
-                          <Item Model_Key="83a07513-8e59-4b3e-8938-2908cb4ee9ac" />
-                          <Item Model_Key="1c9414db-5530-44e9-9a68-256d7fc2cd8f" />
-                          <Item Model_Key="20c7a68d-cbc9-4728-9924-36a0f8f281ea" />
-                          <Item Model_Key="ebf6b402-2a88-4dc7-8ee1-0c21d953ec00" />
-                          <Item Model_Key="e8feee80-feda-4ccc-95c8-8c24919e5cb2" />
-                          <Item Model_Key="41fc6e38-1629-4cd1-abf0-e335e28afd0e" />
-                          <Item Model_Key="5c6fca50-b17a-4d71-9c51-92dc03a3fda2" />
-                          <Item Model_Key="35bc78d0-6cbb-402f-a283-a50ebc1db4ac" />
-                          <Item Model_Key="92eeab39-2c24-4cb3-ac60-6b039ee909ef" />
-                        </Slots>
-                      </Value>
-                    </Container_M>
-                    <Default_Value>
-                      <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection"></Value>
-                    </Default_Value>
-                  </Item>
-                  <Item Name="Channel 1" Enabled="True" AddToCollection="True" AddToPinGroup="True" Type="Float32">
-                    <__slot_SVH2EDo06cUQPknUajdTRR p12:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p12="reflection" />
-                    <Container_M>
-                      <Value p13:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p13="reflection">
-                        <Slots>
-                          <Item Model_Key="83a07513-8e59-4b3e-8938-2908cb4ee9ac" />
-                          <Item Model_Key="1c9414db-5530-44e9-9a68-256d7fc2cd8f" />
-                          <Item Model_Key="20c7a68d-cbc9-4728-9924-36a0f8f281ea" />
-                          <Item Model_Key="ebf6b402-2a88-4dc7-8ee1-0c21d953ec00" />
-                          <Item Model_Key="e8feee80-feda-4ccc-95c8-8c24919e5cb2" />
-                          <Item Model_Key="41fc6e38-1629-4cd1-abf0-e335e28afd0e" />
-                          <Item Model_Key="5c6fca50-b17a-4d71-9c51-92dc03a3fda2" />
-                          <Item Model_Key="35bc78d0-6cbb-402f-a283-a50ebc1db4ac" />
-                          <Item Model_Key="92eeab39-2c24-4cb3-ac60-6b039ee909ef" />
-                        </Slots>
-                      </Value>
-                    </Container_M>
-                    <Default_Value>
-                      <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection"></Value>
-                    </Default_Value>
-                  </Item>
-                  <Item Name="Channel 47" Enabled="True" AddToCollection="True" AddToPinGroup="True" Type="Float32">
-                    <__slot_SVH2EDo06cUQPknUajdTRR p12:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p12="reflection">
-                      <Slots>
-                        <Item Model_Key="83a07513-8e59-4b3e-8938-2908cb4ee9ac" />
-                        <Item Model_Key="1c9414db-5530-44e9-9a68-256d7fc2cd8f" />
-                        <Item Model_Key="20c7a68d-cbc9-4728-9924-36a0f8f281ea" />
-                        <Item Model_Key="ebf6b402-2a88-4dc7-8ee1-0c21d953ec00" />
-                        <Item Model_Key="e8feee80-feda-4ccc-95c8-8c24919e5cb2" />
-                        <Item Model_Key="41fc6e38-1629-4cd1-abf0-e335e28afd0e" />
-                        <Item Model_Key="5c6fca50-b17a-4d71-9c51-92dc03a3fda2" />
-                        <Item Model_Key="35bc78d0-6cbb-402f-a283-a50ebc1db4ac" />
-                        <Item Model_Key="92eeab39-2c24-4cb3-ac60-6b039ee909ef" />
-                      </Slots>
-                    </__slot_SVH2EDo06cUQPknUajdTRR>
-                    <__slot_Q67PbC1vUIyQd3kZxRKJiP>
-                      <Slots>
-                        <Item Model_Key="83a07513-8e59-4b3e-8938-2908cb4ee9ac" />
-                        <Item Model_Key="1c9414db-5530-44e9-9a68-256d7fc2cd8f" />
-                        <Item Model_Key="20c7a68d-cbc9-4728-9924-36a0f8f281ea" />
-                        <Item Model_Key="ebf6b402-2a88-4dc7-8ee1-0c21d953ec00" />
-                        <Item Model_Key="e8feee80-feda-4ccc-95c8-8c24919e5cb2" />
-                        <Item Model_Key="41fc6e38-1629-4cd1-abf0-e335e28afd0e" />
-                        <Item Model_Key="5c6fca50-b17a-4d71-9c51-92dc03a3fda2" />
-                        <Item Model_Key="35bc78d0-6cbb-402f-a283-a50ebc1db4ac" />
-                        <Item Model_Key="92eeab39-2c24-4cb3-ac60-6b039ee909ef" />
-                      </Slots>
-                    </__slot_Q67PbC1vUIyQd3kZxRKJiP>
-                    <Container_M>
-                      <Value p13:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p13="reflection">
-                        <Slots>
-                          <Item Model_Key="83a07513-8e59-4b3e-8938-2908cb4ee9ac" />
-                          <Item Model_Key="1c9414db-5530-44e9-9a68-256d7fc2cd8f" />
-                          <Item Model_Key="20c7a68d-cbc9-4728-9924-36a0f8f281ea" />
-                          <Item Model_Key="ebf6b402-2a88-4dc7-8ee1-0c21d953ec00" />
-                          <Item Model_Key="e8feee80-feda-4ccc-95c8-8c24919e5cb2" />
-                          <Item Model_Key="41fc6e38-1629-4cd1-abf0-e335e28afd0e" />
-                          <Item Model_Key="5c6fca50-b17a-4d71-9c51-92dc03a3fda2" />
-                          <Item Model_Key="35bc78d0-6cbb-402f-a283-a50ebc1db4ac" />
-                          <Item Model_Key="92eeab39-2c24-4cb3-ac60-6b039ee909ef" />
-                        </Slots>
-                      </Value>
-                    </Container_M>
-                    <Default_Value>
-                      <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection"></Value>
-                    </Default_Value>
-                  </Item>
-                  <Item Name="Channel 46" Enabled="True" AddToCollection="True" Type="Float32">
-                    <__slot_SVH2EDo06cUQPknUajdTRR p12:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p12="reflection">
-                      <Slots>
-                        <Item Model_Key="83a07513-8e59-4b3e-8938-2908cb4ee9ac" />
-                        <Item Model_Key="1c9414db-5530-44e9-9a68-256d7fc2cd8f" />
-                        <Item Model_Key="20c7a68d-cbc9-4728-9924-36a0f8f281ea" />
-                        <Item Model_Key="ebf6b402-2a88-4dc7-8ee1-0c21d953ec00" />
-                        <Item Model_Key="e8feee80-feda-4ccc-95c8-8c24919e5cb2" />
-                        <Item Model_Key="41fc6e38-1629-4cd1-abf0-e335e28afd0e" />
-                        <Item Model_Key="5c6fca50-b17a-4d71-9c51-92dc03a3fda2" />
-                        <Item Model_Key="35bc78d0-6cbb-402f-a283-a50ebc1db4ac" />
-                        <Item Model_Key="92eeab39-2c24-4cb3-ac60-6b039ee909ef" />
-                      </Slots>
-                    </__slot_SVH2EDo06cUQPknUajdTRR>
-                    <__slot_Q67PbC1vUIyQd3kZxRKJiP>
-                      <Slots>
-                        <Item Model_Key="83a07513-8e59-4b3e-8938-2908cb4ee9ac" />
-                        <Item Model_Key="1c9414db-5530-44e9-9a68-256d7fc2cd8f" />
-                        <Item Model_Key="20c7a68d-cbc9-4728-9924-36a0f8f281ea" />
-                        <Item Model_Key="ebf6b402-2a88-4dc7-8ee1-0c21d953ec00" />
-                        <Item Model_Key="e8feee80-feda-4ccc-95c8-8c24919e5cb2" />
-                        <Item Model_Key="41fc6e38-1629-4cd1-abf0-e335e28afd0e" />
-                        <Item Model_Key="5c6fca50-b17a-4d71-9c51-92dc03a3fda2" />
-                        <Item Model_Key="35bc78d0-6cbb-402f-a283-a50ebc1db4ac" />
-                        <Item Model_Key="92eeab39-2c24-4cb3-ac60-6b039ee909ef" />
-                      </Slots>
-                    </__slot_Q67PbC1vUIyQd3kZxRKJiP>
-                    <Container_M>
-                      <Value p13:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p13="reflection">
-                        <Slots>
-                          <Item Model_Key="83a07513-8e59-4b3e-8938-2908cb4ee9ac" />
-                          <Item Model_Key="1c9414db-5530-44e9-9a68-256d7fc2cd8f" />
-                          <Item Model_Key="20c7a68d-cbc9-4728-9924-36a0f8f281ea" />
-                          <Item Model_Key="ebf6b402-2a88-4dc7-8ee1-0c21d953ec00" />
-                          <Item Model_Key="e8feee80-feda-4ccc-95c8-8c24919e5cb2" />
-                          <Item Model_Key="41fc6e38-1629-4cd1-abf0-e335e28afd0e" />
-                          <Item Model_Key="5c6fca50-b17a-4d71-9c51-92dc03a3fda2" />
-                          <Item Model_Key="35bc78d0-6cbb-402f-a283-a50ebc1db4ac" />
-                          <Item Model_Key="92eeab39-2c24-4cb3-ac60-6b039ee909ef" />
-                        </Slots>
-                      </Value>
-                    </Container_M>
-                    <Default_Value>
-                      <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection"></Value>
-                    </Default_Value>
-                  </Item>
-                  <Item Name="Channel 45" Enabled="True" AddToCollection="True" Type="Float32">
-                    <__slot_SVH2EDo06cUQPknUajdTRR p12:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p12="reflection">
-                      <Slots>
-                        <Item Model_Key="83a07513-8e59-4b3e-8938-2908cb4ee9ac" />
-                        <Item Model_Key="1c9414db-5530-44e9-9a68-256d7fc2cd8f" />
-                        <Item Model_Key="20c7a68d-cbc9-4728-9924-36a0f8f281ea" />
-                        <Item Model_Key="ebf6b402-2a88-4dc7-8ee1-0c21d953ec00" />
-                        <Item Model_Key="e8feee80-feda-4ccc-95c8-8c24919e5cb2" />
-                        <Item Model_Key="41fc6e38-1629-4cd1-abf0-e335e28afd0e" />
-                        <Item Model_Key="5c6fca50-b17a-4d71-9c51-92dc03a3fda2" />
-                        <Item Model_Key="35bc78d0-6cbb-402f-a283-a50ebc1db4ac" />
-                        <Item Model_Key="92eeab39-2c24-4cb3-ac60-6b039ee909ef" />
-                      </Slots>
-                    </__slot_SVH2EDo06cUQPknUajdTRR>
-                    <__slot_Q67PbC1vUIyQd3kZxRKJiP>
-                      <Slots>
-                        <Item Model_Key="83a07513-8e59-4b3e-8938-2908cb4ee9ac" />
-                        <Item Model_Key="1c9414db-5530-44e9-9a68-256d7fc2cd8f" />
-                        <Item Model_Key="20c7a68d-cbc9-4728-9924-36a0f8f281ea" />
-                        <Item Model_Key="ebf6b402-2a88-4dc7-8ee1-0c21d953ec00" />
-                        <Item Model_Key="e8feee80-feda-4ccc-95c8-8c24919e5cb2" />
-                        <Item Model_Key="41fc6e38-1629-4cd1-abf0-e335e28afd0e" />
-                        <Item Model_Key="5c6fca50-b17a-4d71-9c51-92dc03a3fda2" />
-                        <Item Model_Key="35bc78d0-6cbb-402f-a283-a50ebc1db4ac" />
-                        <Item Model_Key="92eeab39-2c24-4cb3-ac60-6b039ee909ef" />
-                      </Slots>
-                    </__slot_Q67PbC1vUIyQd3kZxRKJiP>
-                    <Container_M>
-                      <Value p13:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p13="reflection">
-                        <Slots>
-                          <Item Model_Key="83a07513-8e59-4b3e-8938-2908cb4ee9ac" />
-                          <Item Model_Key="1c9414db-5530-44e9-9a68-256d7fc2cd8f" />
-                          <Item Model_Key="20c7a68d-cbc9-4728-9924-36a0f8f281ea" />
-                          <Item Model_Key="ebf6b402-2a88-4dc7-8ee1-0c21d953ec00" />
-                          <Item Model_Key="e8feee80-feda-4ccc-95c8-8c24919e5cb2" />
-                          <Item Model_Key="41fc6e38-1629-4cd1-abf0-e335e28afd0e" />
-                          <Item Model_Key="5c6fca50-b17a-4d71-9c51-92dc03a3fda2" />
-                          <Item Model_Key="35bc78d0-6cbb-402f-a283-a50ebc1db4ac" />
-                          <Item Model_Key="92eeab39-2c24-4cb3-ac60-6b039ee909ef" />
-                        </Slots>
-                      </Value>
-                    </Container_M>
-                    <Default_Value>
-                      <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection"></Value>
-                    </Default_Value>
-                  </Item>
-                </Channels>
-              </p:DefaultValue>
             </Pin>
             <Pin Id="MUZb9Ocfz8oPbonBMmzx7w" Name="Output Collection" Kind="OutputPin" />
-            <Pin Id="TPcrQkhOYqWLeQhYCmULbr" Name="Channel 1" Kind="OutputPin" PinGroupName="Channels">
-              <p:TypeAnnotation>
-                <Choice Kind="TypeFlag" Name="Spread" />
-                <p:TypeArguments>
-                  <TypeReference>
-                    <Choice Kind="TypeFlag" Name="Float32" />
-                  </TypeReference>
-                </p:TypeArguments>
-              </p:TypeAnnotation>
-            </Pin>
-            <Pin Id="PnmQ8rAPtOCOMufMvkedbQ" Name="Channel 47" Kind="OutputPin" PinGroupName="Channels">
-              <p:TypeAnnotation>
-                <Choice Kind="TypeFlag" Name="Spread" />
-                <p:TypeArguments>
-                  <TypeReference>
-                    <Choice Kind="TypeFlag" Name="Float32" />
-                  </TypeReference>
-                </p:TypeArguments>
-              </p:TypeAnnotation>
-            </Pin>
           </Node>
           <Pad Id="Gn7hzOsXEPJMjRif4ny3uY" Comment="EmptyCells" Bounds="634,871,35,35" ShowValueBox="true" isIOBox="true" Value="False">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
@@ -10891,7 +10650,7 @@
               <Choice Kind="TypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="395,338,147,19" Id="BCL7G0nXljBOm6sxZZJDHK">
+          <Node Bounds="593,249,147,19" Id="BCL7G0nXljBOm6sxZZJDHK">
             <p:NodeReference LastCategoryFullName="Kairos.Matrix" LastSymbolSource="Kairos.Matrix.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessNode" Name="Matrix" />
@@ -10900,176 +10659,55 @@
               <p:TypeAnnotation LastCategoryFullName="Kairos.Model.Matrix" LastSymbolSource="Kairos.Model.vl">
                 <Choice Kind="TypeFlag" Name="Matrix_M" />
               </p:TypeAnnotation>
-              <p:DefaultValue Name="Matrix 1">
+              <p:DefaultValue>
                 <Scenes>
-                  <Item Name="Scene 0" Key="cdbf0936-f4ad-4b45-8203-63dbbcf5caf4" />
-                  <Item Name="Scene 1" Key="5870ab39-4713-4bdf-8f78-0b395807aed4" />
-                  <Item Name="Scene 2" Key="9152c8b1-8cab-487b-822d-283f2f1b13f0" />
-                  <Item Name="Scene 3" Key="36097d31-bea0-4b21-938d-c924dc96552c" />
-                  <Item Name="Scene 4" Key="e9716dc0-311e-466a-9338-8d17a82ffe62" />
+                  <Item Name="Scene 1" Key="c1d94f67-daf4-4b7d-a617-3dd08bfa241e" />
+                  <Item Name="Scene 0" Key="bd2bf82c-55a8-4ef8-9671-46a2afcb5d5a" />
                 </Scenes>
                 <Channels>
-                  <Item Name="Channel 0" Enabled="True" AddToCollection="True" AddToPinGroup="True" Type="Float32">
-                    <__slot_SVH2EDo06cUQPknUajdTRR p12:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p12="reflection" />
+                  <Item Name="Channel 0" Enabled="True" AddToPinGroup="True" Type="Float32">
                     <Container_M>
-                      <Value p13:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p13="reflection">
-                        <Slots>
-                          <Item Model_Key="cdbf0936-f4ad-4b45-8203-63dbbcf5caf4" />
-                          <Item Model_Key="5870ab39-4713-4bdf-8f78-0b395807aed4" />
-                          <Item Model_Key="9152c8b1-8cab-487b-822d-283f2f1b13f0" />
-                          <Item Model_Key="36097d31-bea0-4b21-938d-c924dc96552c" />
-                          <Item Model_Key="e9716dc0-311e-466a-9338-8d17a82ffe62" />
-                        </Slots>
-                      </Value>
+                      <Slots>
+                        <Item Model_Key="c1d94f67-daf4-4b7d-a617-3dd08bfa241e">
+                          <Block Source_ID="yo" Color="0.3483333, 0.5, 0.2195244, 1" Source_Enable="True">
+                            <Default_Value p16:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p16="reflection">0</Default_Value>
+                          </Block>
+                        </Item>
+                        <Item Model_Key="bd2bf82c-55a8-4ef8-9671-46a2afcb5d5a">
+                          <Block Source_ID="foo" Color="0.5, 0.3868956, 0.2957181, 1" Source_Enable="True">
+                            <Default_Value p16:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p16="reflection">0</Default_Value>
+                          </Block>
+                        </Item>
+                      </Slots>
+                      <Default_Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection">0</Default_Value>
                     </Container_M>
-                    <Default_Value>
-                      <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection"></Value>
-                    </Default_Value>
-                  </Item>
-                  <Item Name="Channel 1" Enabled="True" AddToPinGroup="True" Type="Float32">
-                    <__slot_SVH2EDo06cUQPknUajdTRR p12:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p12="reflection" />
-                    <Container_M>
-                      <Value p13:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p13="reflection">
-                        <Slots>
-                          <Item Model_Key="cdbf0936-f4ad-4b45-8203-63dbbcf5caf4" />
-                          <Item Model_Key="5870ab39-4713-4bdf-8f78-0b395807aed4" />
-                          <Item Model_Key="9152c8b1-8cab-487b-822d-283f2f1b13f0" />
-                          <Item Model_Key="36097d31-bea0-4b21-938d-c924dc96552c" />
-                          <Item Model_Key="e9716dc0-311e-466a-9338-8d17a82ffe62" />
-                        </Slots>
-                      </Value>
-                    </Container_M>
-                    <Default_Value>
-                      <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection"></Value>
-                    </Default_Value>
-                  </Item>
-                  <Item Name="Channel 2" Enabled="True" AddToPinGroup="True" Type="Float32">
-                    <__slot_SVH2EDo06cUQPknUajdTRR p12:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p12="reflection">
-                      <Slots>
-                        <Item Model_Key="cdbf0936-f4ad-4b45-8203-63dbbcf5caf4" />
-                        <Item Model_Key="5870ab39-4713-4bdf-8f78-0b395807aed4" />
-                        <Item Model_Key="9152c8b1-8cab-487b-822d-283f2f1b13f0" />
-                      </Slots>
-                    </__slot_SVH2EDo06cUQPknUajdTRR>
-                    <__slot_Q67PbC1vUIyQd3kZxRKJiP>
-                      <Slots>
-                        <Item Model_Key="cdbf0936-f4ad-4b45-8203-63dbbcf5caf4" />
-                        <Item Model_Key="5870ab39-4713-4bdf-8f78-0b395807aed4" />
-                        <Item Model_Key="9152c8b1-8cab-487b-822d-283f2f1b13f0" />
-                      </Slots>
-                    </__slot_Q67PbC1vUIyQd3kZxRKJiP>
-                    <Container_M>
-                      <Value p13:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p13="reflection">
-                        <Slots>
-                          <Item Model_Key="cdbf0936-f4ad-4b45-8203-63dbbcf5caf4" />
-                          <Item Model_Key="5870ab39-4713-4bdf-8f78-0b395807aed4" />
-                          <Item Model_Key="9152c8b1-8cab-487b-822d-283f2f1b13f0" />
-                          <Item Model_Key="36097d31-bea0-4b21-938d-c924dc96552c" />
-                          <Item Model_Key="e9716dc0-311e-466a-9338-8d17a82ffe62" />
-                        </Slots>
-                      </Value>
-                    </Container_M>
-                    <Default_Value>
-                      <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection"></Value>
-                    </Default_Value>
-                  </Item>
-                  <Item Name="Channel 3" Enabled="True" AddToPinGroup="True" Type="Float32">
-                    <__slot_SVH2EDo06cUQPknUajdTRR p12:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p12="reflection">
-                      <Slots>
-                        <Item Model_Key="cdbf0936-f4ad-4b45-8203-63dbbcf5caf4" />
-                        <Item Model_Key="5870ab39-4713-4bdf-8f78-0b395807aed4" />
-                        <Item Model_Key="9152c8b1-8cab-487b-822d-283f2f1b13f0" />
-                      </Slots>
-                    </__slot_SVH2EDo06cUQPknUajdTRR>
-                    <__slot_Q67PbC1vUIyQd3kZxRKJiP>
-                      <Slots>
-                        <Item Model_Key="cdbf0936-f4ad-4b45-8203-63dbbcf5caf4" />
-                        <Item Model_Key="5870ab39-4713-4bdf-8f78-0b395807aed4" />
-                        <Item Model_Key="9152c8b1-8cab-487b-822d-283f2f1b13f0" />
-                      </Slots>
-                    </__slot_Q67PbC1vUIyQd3kZxRKJiP>
-                    <Container_M>
-                      <Value p13:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p13="reflection">
-                        <Slots>
-                          <Item Model_Key="cdbf0936-f4ad-4b45-8203-63dbbcf5caf4" />
-                          <Item Model_Key="5870ab39-4713-4bdf-8f78-0b395807aed4" />
-                          <Item Model_Key="9152c8b1-8cab-487b-822d-283f2f1b13f0" />
-                          <Item Model_Key="36097d31-bea0-4b21-938d-c924dc96552c" />
-                          <Item Model_Key="e9716dc0-311e-466a-9338-8d17a82ffe62" />
-                        </Slots>
-                      </Value>
-                    </Container_M>
-                    <Default_Value>
-                      <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection"></Value>
-                    </Default_Value>
-                  </Item>
-                  <Item Name="Channel 4" Enabled="True" AddToCollection="True" Type="Float32">
-                    <__slot_SVH2EDo06cUQPknUajdTRR p12:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p12="reflection">
-                      <Slots>
-                        <Item Model_Key="cdbf0936-f4ad-4b45-8203-63dbbcf5caf4" />
-                        <Item Model_Key="5870ab39-4713-4bdf-8f78-0b395807aed4" />
-                        <Item Model_Key="9152c8b1-8cab-487b-822d-283f2f1b13f0" />
-                        <Item Model_Key="36097d31-bea0-4b21-938d-c924dc96552c" />
-                      </Slots>
-                    </__slot_SVH2EDo06cUQPknUajdTRR>
-                    <__slot_Q67PbC1vUIyQd3kZxRKJiP>
-                      <Slots>
-                        <Item Model_Key="cdbf0936-f4ad-4b45-8203-63dbbcf5caf4" />
-                        <Item Model_Key="5870ab39-4713-4bdf-8f78-0b395807aed4" />
-                        <Item Model_Key="9152c8b1-8cab-487b-822d-283f2f1b13f0" />
-                        <Item Model_Key="36097d31-bea0-4b21-938d-c924dc96552c" />
-                      </Slots>
-                    </__slot_Q67PbC1vUIyQd3kZxRKJiP>
-                    <Container_M>
-                      <Value p13:Type="Kairos.Model.Core.Container.Switcher.Switcher_M" xmlns:p13="reflection">
-                        <Slots>
-                          <Item Model_Key="cdbf0936-f4ad-4b45-8203-63dbbcf5caf4" />
-                          <Item Model_Key="5870ab39-4713-4bdf-8f78-0b395807aed4" />
-                          <Item Model_Key="9152c8b1-8cab-487b-822d-283f2f1b13f0" />
-                          <Item Model_Key="36097d31-bea0-4b21-938d-c924dc96552c" />
-                          <Item Model_Key="e9716dc0-311e-466a-9338-8d17a82ffe62" />
-                        </Slots>
-                      </Value>
-                    </Container_M>
-                    <Default_Value>
-                      <Value p13:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p13="reflection"></Value>
-                    </Default_Value>
+                    <Default_Value p12:Type="VL.Lib.Collections.Spread`1[[System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" xmlns:p12="reflection"></Default_Value>
                   </Item>
                 </Channels>
               </p:DefaultValue>
             </Pin>
+            <Pin Id="Rum8exbaKDpOuusTrBEeaj" Name="yo" Kind="InputPin" PinGroupName="Sources">
+              <p:TypeAnnotation>
+                <Choice Kind="TypeFlag" Name="Spread" />
+                <p:TypeArguments>
+                  <TypeReference>
+                    <Choice Kind="TypeFlag" Name="Float32" />
+                  </TypeReference>
+                </p:TypeArguments>
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="H2cIAmSJwOQPNZyJvSuNI5" Name="foo" Kind="InputPin" PinGroupName="Sources">
+              <p:TypeAnnotation>
+                <Choice Kind="TypeFlag" Name="Spread" />
+                <p:TypeArguments>
+                  <TypeReference>
+                    <Choice Kind="TypeFlag" Name="Float32" />
+                  </TypeReference>
+                </p:TypeArguments>
+              </p:TypeAnnotation>
+            </Pin>
             <Pin Id="Uuq0VzaO6V1OH5CHK2lzZz" Name="Output Collection" Kind="OutputPin" />
-            <Pin Id="EZdIDqIv29eN6GwB2VKGkL" Name="Channel 0" Kind="OutputPin" PinGroupName="Channels">
-              <p:TypeAnnotation>
-                <Choice Kind="TypeFlag" Name="Spread" />
-                <p:TypeArguments>
-                  <TypeReference>
-                    <Choice Kind="TypeFlag" Name="Float32" />
-                  </TypeReference>
-                </p:TypeArguments>
-              </p:TypeAnnotation>
-            </Pin>
-            <Pin Id="Ks5vfYnRna3PAe2FAzCJDl" Name="Channel 1" Kind="OutputPin" PinGroupName="Channels">
-              <p:TypeAnnotation>
-                <Choice Kind="TypeFlag" Name="Spread" />
-                <p:TypeArguments>
-                  <TypeReference>
-                    <Choice Kind="TypeFlag" Name="Float32" />
-                  </TypeReference>
-                </p:TypeArguments>
-              </p:TypeAnnotation>
-            </Pin>
-            <Pin Id="RgXi80014JnO6RwC56A7Wg" Name="Channel 2" Kind="OutputPin" PinGroupName="Channels">
-              <p:TypeAnnotation>
-                <Choice Kind="TypeFlag" Name="Spread" />
-                <p:TypeArguments>
-                  <TypeReference>
-                    <Choice Kind="TypeFlag" Name="Float32" />
-                  </TypeReference>
-                </p:TypeArguments>
-              </p:TypeAnnotation>
-            </Pin>
-            <Pin Id="IOoNnvZ23VTOCnIwrcdOeN" Name="Channel 3" Kind="OutputPin" PinGroupName="Channels">
+            <Pin Id="PAe5zZ4VxKdNlHftQYLR7a" Name="Channel 0" Kind="OutputPin" PinGroupName="Channels">
               <p:TypeAnnotation>
                 <Choice Kind="TypeFlag" Name="Spread" />
                 <p:TypeArguments>
@@ -11080,7 +10718,7 @@
               </p:TypeAnnotation>
             </Pin>
           </Node>
-          <Node Bounds="701,149,85,19" Id="TaQraqE8cwdMM8YkKj1sDh">
+          <Node Bounds="690,103,85,19" Id="TaQraqE8cwdMM8YkKj1sDh">
             <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="RandomSpread" />
@@ -11103,7 +10741,7 @@
             </Pin>
             <Pin Id="IkcsqGluCTLLssxBDfOyYl" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="185,173,85,19" Id="KGB9lF2duc2Oqqu8FuzWNJ">
+          <Node Bounds="62,78,85,19" Id="KGB9lF2duc2Oqqu8FuzWNJ">
             <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="RandomSpread" />
@@ -11122,7 +10760,7 @@
             </Pin>
             <Pin Id="E3VFN0AxUZvL4oKAOhExG0" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="246,137,54,19" Id="ST1jdeC2MwCPVX3y5ySpic">
+          <Node Bounds="123,42,54,19" Id="ST1jdeC2MwCPVX3y5ySpic">
             <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="OperationCallFlag" Name="Random" />
@@ -11136,9 +10774,9 @@
             <Pin Id="MuCl7LImrKANbKwJq40n90" Name="Output" Kind="OutputPin" />
           </Node>
           <Pad Id="I2DAou7uGTRPrFRsVKL8hT" Comment="" Bounds="592,997,35,35" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="QiZMDaa8raKN1cClxqYtzE" Comment="Output Collection" Bounds="-35,559,590,72" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="HuSY9CHCdm9OGNcH7jjBnb" Comment="Channel 1" Bounds="182,453,20,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="Cb4xvJFWYROMfHRFVQz9QB" Comment="Channel 0" Bounds="183,409,35,17" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="QiZMDaa8raKN1cClxqYtzE" Comment="Output Collection" Bounds="-71,570,1136,111" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="HuSY9CHCdm9OGNcH7jjBnb" Comment="Channel 1" Bounds="-129,426,20,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="Cb4xvJFWYROMfHRFVQz9QB" Comment="Channel 0" Bounds="-128,382,20,15" ShowValueBox="true" isIOBox="true" />
           <Pad Id="K8eNfeTCZuaMIPKLJJ9ID2" Comment="" Bounds="151,1105,35,35" ShowValueBox="true" isIOBox="true" />
           <Node Bounds="203,1037,65,19" Id="HAEbHVoWgzFQCS9WXbt1kS">
             <p:NodeReference LastCategoryFullName="Control" LastSymbolSource="CoreLibBasics.vl">
@@ -11152,7 +10790,7 @@
             <Pin Id="DEAVXxhK3raPno4LvPAfnO" Name="Value" Kind="OutputPin" />
             <Pin Id="FalLZIiLCHHPs17nOzLYEF" Name="Inverse Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="170,211,81,86" Id="BH4N3qSRS7gQIDF8OglAnG">
+          <Node Bounds="47,116,81,88" Id="BH4N3qSRS7gQIDF8OglAnG">
             <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
               <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
@@ -11163,7 +10801,7 @@
               <Patch Id="HvzGUTJcpR1N7TZ07LwcjH" Name="Create" ManuallySortedPins="true" />
               <Patch Id="O2cPABCWORhOlIKmjbxGjV" Name="Update" ManuallySortedPins="true" />
               <Patch Id="CNf5k1X6KXNMd6MLXGXBqf" Name="Dispose" ManuallySortedPins="true" />
-              <Node Bounds="182,249,52,19" Id="QokWdUYpQ6JMC1jRJoR6wZ">
+              <Node Bounds="59,154,52,19" Id="QokWdUYpQ6JMC1jRJoR6wZ">
                 <p:NodeReference LastCategoryFullName="Animation" LastSymbolSource="CoreLibBasics.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="Damper" />
@@ -11178,10 +10816,64 @@
                 <Pin Id="F2DSULrkTshMAm9SBgARFq" Name="Velocity" Kind="OutputPin" />
               </Node>
             </Patch>
-            <ControlPoint Id="V6pl9Cq0h67PThVzlAN85c" Bounds="184,218" Alignment="Top" />
-            <ControlPoint Id="Cyi4LlQt1gBPEvKerFoltp" Bounds="185,293" Alignment="Bottom" />
+            <ControlPoint Id="V6pl9Cq0h67PThVzlAN85c" Bounds="61,123" Alignment="Top" />
+            <ControlPoint Id="Cyi4LlQt1gBPEvKerFoltp" Bounds="62,198" Alignment="Bottom" />
           </Node>
-          <Pad Id="OldqBrIH4qMOif3dCMN8Mb" Comment="Channel 1" Bounds="317,410,37,95" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="OldqBrIH4qMOif3dCMN8Mb" Comment="Channel 1" Bounds="158,440,175,94" ShowValueBox="true" isIOBox="true">
+            <p:ValueBoxSettings>
+              <p:horizontal p:Type="Boolean">true</p:horizontal>
+              <p:maximum p:Type="Single">1</p:maximum>
+              <p:maxvisibleentries p:Type="Int32">16</p:maxvisibleentries>
+              <p:minimum p:Type="Single">0</p:minimum>
+              <p:showslider p:Type="Boolean">true</p:showslider>
+              <p:showvalue p:Type="Boolean">false</p:showvalue>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="Sw1qVTy95qfLlJMmA82NaO" Comment="Channel 1" Bounds="561,440,349,94" ShowValueBox="true" isIOBox="true">
+            <p:ValueBoxSettings>
+              <p:horizontal p:Type="Boolean">true</p:horizontal>
+              <p:maximum p:Type="Single">1</p:maximum>
+              <p:maxvisibleentries p:Type="Int32">28</p:maxvisibleentries>
+              <p:minimum p:Type="Single">0</p:minimum>
+              <p:showslider p:Type="Boolean">true</p:showslider>
+              <p:showvalue p:Type="Boolean">false</p:showvalue>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Node Bounds="700,178,75,19" Id="PiNVVIOF5o4OUqqZ2uoAAX">
+            <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="LinearSpread" />
+            </p:NodeReference>
+            <Pin Id="G2LR4wE5FBDQaureDTX0P0" Name="Center" Kind="InputPin" DefaultValue="0.5">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float32" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="F7xPcPjJcNjMKvoTPj5TFI" Name="Width" Kind="InputPin" />
+            <Pin Id="BNEq3QwUNUgN9YWXpWjoP9" Name="Count" Kind="InputPin" DefaultValue="21">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Integer32" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="O6CuUBQmhQ1LigGL8rBg4S" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="705,147,65,19" Id="UQ7ZsTj21wvLEdfdZWRer9">
+            <p:NodeReference LastCategoryFullName="Animation" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="LFO" />
+            </p:NodeReference>
+            <Pin Id="JBs7pdlCtdmLJalH0htWvi" Name="Clock" Kind="InputPin" />
+            <Pin Id="DYF8mv8qFRGNKnqgsBoeSS" Name="Period" Kind="InputPin" DefaultValue="4">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float32" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="EiGMly1mqziQPYF5fEr1PJ" Name="Pause" Kind="InputPin" />
+            <Pin Id="SLAf7avny49MMZkt11XgXP" Name="Reset" Kind="ApplyPin" />
+            <Pin Id="DHUi3Ugn6eOQV0w9ksKAmE" Name="Phase" Kind="OutputPin" />
+            <Pin Id="PDdKb6mPFkYPqRtjzaUlT1" Name="On New Cycle" Kind="OutputPin" />
+            <Pin Id="DalmkkxUtTEMFyKtw6ZjtV" Name="Cycles" Kind="OutputPin" />
+          </Node>
         </Canvas>
         <Patch Id="BBuNKkacm7jPoWqD0MpgBE" Name="Create" />
         <Patch Id="NkEi9AYDhEdOIZht8tko40" Name="Update" />
@@ -11209,10 +10901,14 @@
         <Link Id="Krergz2S0OlOCsdkiOI7at" Ids="E3VFN0AxUZvL4oKAOhExG0,V6pl9Cq0h67PThVzlAN85c" />
         <Link Id="OUmI2MrlytZQMkjgO9FBqh" Ids="V6pl9Cq0h67PThVzlAN85c,Q5cAelttyqFPZiwwCYwYb0" />
         <Link Id="Ss7qKTIxc4xPRlAtr7wfDx" Ids="K8yUBGTmZ7WLltDAREoddi,Cyi4LlQt1gBPEvKerFoltp" />
-        <Link Id="JufELc2a38OMYmL7xCCT1I" Ids="Cyi4LlQt1gBPEvKerFoltp,KAQlKmi8zIRPMUaQ61uiLv" />
-        <Link Id="BMD0coPlAjINgzduJ7pWpf" Ids="A0txfAblnHvLwhLFJzDkW5,TNoHST6XViuQKVMB2Ot8nJ" />
-        <Link Id="VRpEoAHJiS7MzQOdJfdE7U" Ids="IkcsqGluCTLLssxBDfOyYl,HRrllRU7FyJNZoWBouqBlU" />
-        <Link Id="KXVaaJl0U1LOQRHHws5Y0k" Ids="Qmw4OXrZHjwMBYmEMJ2Cb1,OldqBrIH4qMOif3dCMN8Mb" />
+        <Link Id="Q3Es52fL4NxPhPGFMl2Fbz" Ids="Cyi4LlQt1gBPEvKerFoltp,BWmUeO3rQduLJ94HDSlbLL" />
+        <Link Id="SpUiIjGBFqKQNSFuaXU50k" Ids="A0txfAblnHvLwhLFJzDkW5,Mvdv4XS93jbMX9gekhhEbE" />
+        <Link Id="KsGENUJeC5XMyam44W99Yd" Ids="BizyYWiM97PLnKcDVVNnli,OldqBrIH4qMOif3dCMN8Mb" />
+        <Link Id="RJNaA3z0hptOpPgVrayMYu" Ids="IHD4JHAQC7aM7X2XqP2fKT,Sw1qVTy95qfLlJMmA82NaO" />
+        <Link Id="EbUOZSK1g02OKONQ1LgsJe" Ids="GvvMeBSFyVONBLOQnHJf52,U0rPrXhWvDZNab0Xyu6c7W" />
+        <Link Id="DR8cc2G0B21O7TWO5jJeCa" Ids="PAe5zZ4VxKdNlHftQYLR7a,LcNrP1oxzDsPIfvK7pziBs" />
+        <Link Id="FLROGeqqWw4OZn3dUZ0zpd" Ids="O6CuUBQmhQ1LigGL8rBg4S,H2cIAmSJwOQPNZyJvSuNI5" />
+        <Link Id="Hiqv8qrDZhPLI3ZQhTzhBF" Ids="DHUi3Ugn6eOQV0w9ksKAmE,G2LR4wE5FBDQaureDTX0P0" />
       </Patch>
     </Node>
   </Patch>
