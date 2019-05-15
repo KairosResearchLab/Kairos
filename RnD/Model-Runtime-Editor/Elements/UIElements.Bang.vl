@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="CY2o7l2UYY9NypAVMIRmAE" LanguageVersion="2019.1.0-0318-g91ff9a39a4" Version="0.128">
+<Document xmlns:p="property" Id="CY2o7l2UYY9NypAVMIRmAE" LanguageVersion="2019.1.0-0346-g4790e883e3" Version="0.128">
   <NugetDependency Id="HzRCJJwUSOgNW9AXnSbhkA" Location="VL.CoreLib" Version="2019.1.0-332" />
   <Patch Id="QZDHOeK4pvoPUQN3J2eweC">
     <Canvas Id="QRX48Kus6psQEVsIwOjduY" DefaultCategory="UIElements.Bang" CanvasType="FullCategory">
@@ -198,6 +198,7 @@
                     </p:NodeReference>
                     <Pin Id="HkvbpWRlo0uQTVkf20JYr0" Name="Input" Kind="StateInputPin" />
                     <Pin Id="U8rhZ6X9wvYMkN6AjeTeyP" Name="IsHovered" Kind="InputPin" />
+                    <Pin Id="RXHIuZ2TGhIP7H0NOs20VX" Name="Hovered Index" Kind="InputPin" />
                     <Pin Id="GCuhYlANGXeMQOVsu5TjCA" Name="Is Pressed" Kind="InputPin" />
                     <Pin Id="AwbO2usw2vSQcN5xvKqmGw" Name="Is in Focus" Kind="InputPin" />
                     <Pin Id="FpBuWMdTAIfNJ4e1Q07FSO" Name="Is Text Preview" Kind="InputPin" />
@@ -326,6 +327,7 @@
               <Pin Id="VPlelVOSdUMQSZGL08Vow7" Name="Input" Kind="StateInputPin" />
               <Pin Id="Cx50DiELOTUP4pgBxEal9N" Name="Output" Kind="StateOutputPin" />
               <Pin Id="JmnlRASLFn0PkEBFFcLZDf" Name="IsHovered" Kind="OutputPin" />
+              <Pin Id="PCL0n2AzUOkN6Z17FZUrOe" Name="Hovered Index" Kind="OutputPin" />
               <Pin Id="GD776lpzC9pLPueyGmiZ4U" Name="Is Pressed" Kind="OutputPin" />
               <Pin Id="BO0mlePiQbeOfhAo7IkKDs" Name="Is in Focus" Kind="OutputPin" />
               <Pin Id="VUgjkmYBUwcPSwpnMCwgoc" Name="Is Text Preview" Kind="OutputPin" />
@@ -347,6 +349,7 @@
               </p:NodeReference>
               <Pin Id="NQMQNPUFcWIO4GgrYDwSDv" Name="Input" Kind="StateInputPin" />
               <Pin Id="QvWLcL3DPKgMaOE41U3sXQ" Name="Output" Kind="StateOutputPin" />
+              <Pin Id="KZVymkneE8tOePNunnsovQ" Name="Value Text" Kind="OutputPin" />
               <Pin Id="TutJXu11eG5MnsTp9seAKt" Name="Bounds" Kind="OutputPin" />
               <Pin Id="Jj0GJTmOeAANMdlEfj5EZ9" Name="Value" Kind="OutputPin" />
             </Node>
@@ -761,8 +764,8 @@
             <ControlPoint Id="NstO4L3Np1mLjTB65ZplMi" Bounds="257,669" />
             <ControlPoint Id="UPk83YFExnoLAQZt3irGmt" Bounds="541,531" />
             <ControlPoint Id="UREMtDme2p0QSaMXHHkuZ3" Bounds="446,531" />
-            <ControlPoint Id="GiMzIE4JkWuLbEAaAor9z8" Bounds="257,257" />
-            <ControlPoint Id="DNtKMfJTy3aMiRfs27Cvt2" Bounds="346,311" />
+            <ControlPoint Id="GiMzIE4JkWuLbEAaAor9z8" Bounds="258,219" />
+            <ControlPoint Id="DNtKMfJTy3aMiRfs27Cvt2" Bounds="324,289" />
             <Node Bounds="255,332,73,19" Id="DDig39tEDrDNYHYeeLzxH8">
               <p:NodeReference LastCategoryFullName="UIElement.Core.TypeProperties" LastSymbolSource="UIElements.Core.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -776,9 +779,13 @@
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="DDBwKB56ibXP27jSKCqNvM" Name="SetValue" Kind="InputPin" />
+              <Pin Id="Bo5ckSjUtRqMQ6Clyq6p45" Name="Value Range" Kind="InputPin" />
+              <Pin Id="PHEEfeeVinTLlTMv0b6LNv" Name="Do Clamp" Kind="InputPin" />
+              <Pin Id="BW20WlxqA4ZP9TkGgEDhmM" Name="Is Cyclic" Kind="InputPin" />
+              <Pin Id="QDqujkTLqSwNEQY8NwtgYv" Name="Default Value" Kind="InputPin" />
               <Pin Id="TSuM54icG8oNhnjSOZAZxj" Name="Output" Kind="OutputPin" />
             </Node>
-            <ControlPoint Id="Lo8F1SW4lXCNUloqhyCLfC" Bounds="286,284" />
+            <ControlPoint Id="Lo8F1SW4lXCNUloqhyCLfC" Bounds="287,246" />
             <ControlPoint Id="KThXV8eZlN5PiToD3CheQw" Bounds="541,374" />
             <Node Bounds="539,479,57,19" Id="MmNRM4Yls83NNvEW4q7N6d">
               <p:NodeReference LastCategoryFullName="Control" LastSymbolSource="CoreLibBasics.vl">
@@ -818,6 +825,7 @@
                 <Choice Kind="TypeFlag" Name="Boolean" />
               </p:TypeAnnotation>
             </Pad>
+            <ControlPoint Id="PrnWNE1RrEdPeVQLi9YiPt" Bounds="303,266" />
           </Canvas>
           <Patch Id="LW2hcmQ4y7xPvU2Hh7omj6" Name="Create" />
           <ProcessDefinition Id="MRcoCX7Kib6MJwFMGxL7CC">
@@ -832,12 +840,13 @@
               </p:TypeAnnotation>
             </Pin>
             <Pin Id="ORFGiijY2TrPZXy1KJkpYX" Name="Push Input Value To Observable" Kind="InputPin" Bounds="860,426" Visibility="Optional" />
-            <Pin Id="EzDtkaeeTHdLmfW6KT21nq" Name="Value" Kind="InputPin" DefaultValue="False">
+            <Pin Id="EzDtkaeeTHdLmfW6KT21nq" Name="Set Value" Kind="InputPin" DefaultValue="False">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="Boolean" />
               </p:TypeAnnotation>
             </Pin>
             <Pin Id="QWxZbxzfKTmLIXZ1UC8NUK" Name="Reset Interaction" Kind="InputPin" Bounds="500,301" Visibility="Optional" />
+            <Pin Id="NTucEKYU90jOrFuFjzQKuD" Name="Value" Kind="InputPin" Bounds="302,304" />
             <Pin Id="P0nlzpGZ4bnMfhYAsDNcBH" Name="Layer" Kind="OutputPin" Bounds="578,616" />
             <Pin Id="RSMFHeRmqqMQXXQN8Q2RSb" Name="On Interaction" Kind="OutputPin" Bounds="770,497" />
             <Pin Id="BQehTWPaykuMbYG2jDYWp4" Name="Value" Kind="OutputPin" Bounds="849,388" />
@@ -866,6 +875,8 @@
           <Link Id="Ncbu9CgIFm6Pjr6F5x0PRf" Ids="QhhQ0c95Pa4Lb2nBVQMRK7,LMIJ4wQ8b6wMmXL99fsgMh" />
           <Link Id="DtkdKEslbDRQAkE9Py2bNq" Ids="DAQnHT4gM4uLQX6uiND9Me,OH7yMvXnSG6PSB95lkjTwz" />
           <Link Id="OkWj9FHEi27NU08s65lgRU" Ids="DNtKMfJTy3aMiRfs27Cvt2,DDBwKB56ibXP27jSKCqNvM" />
+          <Link Id="IVLLp2DYyx0MNw7X1hdTYV" Ids="PrnWNE1RrEdPeVQLi9YiPt,Mw2iNpzgDYbQIKmT8B557z" />
+          <Link Id="SWUVqbvr4doOWQeo4DO8A7" Ids="NTucEKYU90jOrFuFjzQKuD,PrnWNE1RrEdPeVQLi9YiPt" IsHidden="true" />
         </Patch>
       </Node>
     </Canvas>
