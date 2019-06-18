@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kairos.Model
+namespace Kairos.Core
 {
     public enum FallbackOption
     {
-        DefaultValue, KeepLastValue, KeepLastSource 
+        Default_Value, Keep_Last_Value, Keep_Alive_Last_Source
     }
 }
