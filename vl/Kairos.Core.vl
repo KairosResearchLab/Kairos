@@ -309,7 +309,7 @@
                     </Node>
                   </Patch>
                 </Node>
-                <ControlPoint Id="Oi2xQkwZnScLcmrHry3c5Q" Bounds="1135,394" />
+                <ControlPoint Id="Oi2xQkwZnScLcmrHry3c5Q" Bounds="1143,382" />
                 <Pad Id="LY0eYzZ1l2dOC0QEG7MKvp" SlotId="G74prko4oVLL7gKnfH1I1j" Bounds="849,824" />
                 <ControlPoint Id="KmvKfz7CGNHNprS6rIisnk" Bounds="849,679" />
                 <Node Bounds="835,706,70,86" Id="O1He5SZeXaDLPDnVf1WRar">
@@ -416,6 +416,10 @@
                   <Pin Id="OX7LJlAFyvgQDTLwahE9x4" Name="Output" Kind="StateOutputPin" />
                 </Node>
                 <ControlPoint Id="OHt4Gsos8uYMpZde3ZE4zz" Bounds="544,998" />
+                <Pad Id="Di3jTCpFdzROgC1N88rRYB" SlotId="FYj9AQMr9rGP1mkHBUKHjO" Bounds="1243,419">
+                  <p:ValueBoxSettings />
+                </Pad>
+                <ControlPoint Id="F6mnwnKJrXNM2O26Bft6jB" Bounds="939,675" />
               </Canvas>
               <Patch Id="KqSMcsA93PwPqa94WTXlEL" Name="Create" ParticipatingElements="FFszcho8bs6PrevYoTtkCb">
                 <Pin Id="OeTR6MK2XKWPKQreRo1xNw" Name="Default Value" Kind="InputPin" />
@@ -569,6 +573,9 @@
               <Link Id="FoNd06CeUvnNO4Z4HcPEps" Ids="UYt30kQ3grRN8hDzoINPjn,AL4EkO9RgVpMXyEv1DNSrI" />
               <Link Id="R3q7eDFpT3FMteqWpUCtkU" Ids="N6nvj9ORLp9M30YNXX9HVP,OHt4Gsos8uYMpZde3ZE4zz" IsHidden="true" />
               <Link Id="Cb1QbrOt1wCP420Z8Hx7Rh" Ids="OHt4Gsos8uYMpZde3ZE4zz,F4REo2EKonIOpKrM9UCtMY" />
+              <Link Id="TeYOPrqcDhfMVdvi6FePIy" Ids="Di3jTCpFdzROgC1N88rRYB,HMwN5d7m6PXLbjIpMEITvT" />
+              <Link Id="Fcais0ZmpDLNrMvb1UdgCB" Ids="OeTR6MK2XKWPKQreRo1xNw,F6mnwnKJrXNM2O26Bft6jB" IsHidden="true" />
+              <Link Id="R8bqvJ4BjGtNU7TNLZtAUj" Ids="F6mnwnKJrXNM2O26Bft6jB,QV5DNnWWtIWMNTB3K8k2gZ" />
             </Patch>
           </Node>
           <!--
@@ -1834,12 +1841,7 @@
               </ProcessDefinition>
               <Slot Id="DX7lMKDnZHBM4sQIjlFbPs" Name="Value">
                 <p:TypeAnnotation>
-                  <Choice Kind="TypeFlag" Name="Spread" />
-                  <p:TypeArguments>
-                    <TypeReference>
-                      <Choice Kind="TypeFlag" Name="Float32" />
-                    </TypeReference>
-                  </p:TypeArguments>
+                  <Choice Kind="TypeFlag" Name="Object" />
                 </p:TypeAnnotation>
               </Slot>
               <Patch Id="Ssmf6gLc9zoM72J5Ad7iOu" Name="GetValue">
@@ -1854,12 +1856,7 @@
                         <Choice Kind="TypeFlag" Name="String" />
                       </TypeReference>
                       <TypeReference>
-                        <Choice Kind="TypeFlag" Name="Spread" />
-                        <p:TypeArguments>
-                          <TypeReference>
-                            <Choice Kind="TypeFlag" Name="Float32" />
-                          </TypeReference>
-                        </p:TypeArguments>
+                        <Choice Kind="TypeFlag" Name="Object" />
                       </TypeReference>
                     </p:TypeArguments>
                   </p:TypeAnnotation>
@@ -3325,7 +3322,7 @@
                   <Choice Kind="TypeFlag" Name="Boolean" />
                 </p:TypeAnnotation>
               </Pad>
-              <ControlPoint Id="GGB0nm08AcgOtRahD4noj2" Bounds="539,260" />
+              <ControlPoint Id="GGB0nm08AcgOtRahD4noj2" Bounds="471,273" />
               <!--
 
     ************************ GetItemByName ************************
@@ -4419,7 +4416,11 @@
             </Canvas>
             <Patch Id="MhT1mU5daHDNBrY0H8IAOh" Name="Create" ParticipatingElements="KHfYswkTpQcOFsh4Jar3tZ,Pq0xWX0DgGGO0yXBKSh0dt,EoXTLZXOKlELNvAmNNI2yU,U3hH2R6lW8MQXHL10QUcQ0,Q6VwPkVbTJQMdLSiAgS1jI">
               <Pin Id="TfdFl9ny3itMlzB3Nj6vww" Name="Name" Kind="InputPin" Bounds="290,229" />
-              <Pin Id="N2qyubsZjXWQb3hUZa4rbp" Name="Default Value" Kind="InputPin" />
+              <Pin Id="N2qyubsZjXWQb3hUZa4rbp" Name="Default Value" Kind="InputPin">
+                <p:TypeAnnotation>
+                  <Choice Kind="TypeFlag" Name="Object" />
+                </p:TypeAnnotation>
+              </Pin>
               <Pin Id="FJ2BobiplHINOvZ2MEJZgY" Name="Type" Kind="InputPin" Bounds="150,219" DefaultValue="Spread&lt;Float32&gt;">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                   <Choice Kind="TypeFlag" Name="String" />
@@ -4635,8 +4636,8 @@
             <Link Id="SPZ3ITV4Qy4NZB4MXgLcV4" Ids="QXkCEEzfr9hMcczSTTmcpe,IZnYO3ErZaMPrDsz0Itrt4" />
             <Link Id="DEhGcWejhLTLWetTFWGDsJ" Ids="LHv49xMqETOPAUghIxEtlN,CUHVDaWUGB3L1CR6nlUEIM" />
             <Link Id="LCuuQbo45lQO7FtdV9efdX" Ids="QXkCEEzfr9hMcczSTTmcpe,Qap6ZLynxLKMHrLgebsVC9" />
-            <Link Id="UFCzJNFaVR2OCy6kkLrTeR" Ids="CiOXF6MkvaiM2ME3WX2dez,RhUYvdW0cpJNjzPIKkNtFg" />
             <Link Id="SjwlOmqozP9OUlGWr9PPsw" Ids="N2qyubsZjXWQb3hUZa4rbp,CiOXF6MkvaiM2ME3WX2dez" IsHidden="true" />
+            <Link Id="GxtIqrak0YHNjon8Z3lw3r" Ids="CiOXF6MkvaiM2ME3WX2dez,RhUYvdW0cpJNjzPIKkNtFg" />
           </Patch>
         </Node>
       </Canvas>
@@ -6656,6 +6657,41 @@
           </Patch>
         </Node>
       </Canvas>
+      <!--
+
+    ************************ KairosType ************************
+
+-->
+      <Node Name="KairosType" Bounds="212,83" Id="BYqvw0icrvAL4fJ3Sf3slD">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
+          <Choice Kind="RecordDefinition" Name="Record" />
+        </p:NodeReference>
+        <Patch Id="MSYkZow7aapM1ommXW3fD9">
+          <Canvas Id="ChKwLM0eIfQO6dJhHF1ivU" CanvasType="Group">
+            <Pad Id="JvAEY8tpj0aL8ZXprVXr5K" SlotId="HEIazYMncW5QOeGkEIhZxV" Bounds="314,298">
+              <p:ValueBoxSettings />
+            </Pad>
+            <Pad Id="CLSKJtR0XHsPSTwpkeySCU" SlotId="MGnFVibZQbPQBWuDT5XS65" Bounds="444,299">
+              <p:ValueBoxSettings />
+            </Pad>
+          </Canvas>
+          <Patch Id="VBMSI8qAXHbOHelXncY6mB" Name="Create" />
+          <!--
+
+    ************************  ************************
+
+-->
+          <ProcessDefinition Id="KPYv5tgNZApMCegKGOOtwe" IsHidden="true">
+            <Fragment Id="QdzkEj4kZ9eO3Jtg26vasR" Patch="VBMSI8qAXHbOHelXncY6mB" Enabled="true" />
+          </ProcessDefinition>
+          <Slot Id="HEIazYMncW5QOeGkEIhZxV" Name="Type" />
+          <Slot Id="MGnFVibZQbPQBWuDT5XS65" Name="Is Spread">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+          </Slot>
+        </Patch>
+      </Node>
     </Canvas>
     <!--
 
