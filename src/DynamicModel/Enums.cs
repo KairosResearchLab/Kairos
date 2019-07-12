@@ -62,3 +62,13 @@ namespace Kairos.Core
     }
 
 }
+
+namespace Kairos.Generators
+{
+    public enum ClockMapperKind
+    {
+        Wrap, Mirror, Clamp, Step
+    }
+
+
+}
