@@ -70,5 +70,14 @@ namespace Kairos.Generators
         Wrap, Mirror, Clamp, Step
     }
 
+}
+
+namespace Kairos.Utils
+{
+    public enum MapType
+    {
+        Float, Wrap, Clamp, Mirror
+    }
 
 }
+
