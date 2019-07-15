@@ -60,7 +60,6 @@ namespace Kairos.Core
     {
         Matrix
     }
-
 }
 
 namespace Kairos.Generators
@@ -79,5 +78,9 @@ namespace Kairos.Utils
         Float, Wrap, Clamp, Mirror
     }
 
+    public enum MixerType
+    {
+        Add, Subtract, Multiply, Divide, Min, Max
+    }
 }
 
