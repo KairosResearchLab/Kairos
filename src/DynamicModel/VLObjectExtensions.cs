@@ -150,6 +150,91 @@ namespace Kairos
             return ((IVLObject)instance).WithValueByPath(path, value) as TInstance;
         }
 
+        /// <summary>
+        /// Traverses into the object graph of <paramref name="instance"/> and if it can find a descendant with the same <see cref="IVLObject.Identity"/>
+        /// as the given <paramref name="descendant"/> replaces it and outputs a new <paramref name="updatedInstance"/>.
+        /// </summary>
+        /// <remarks>
+        /// Only user defined properties will be traversed. If a property holds many children it must be of type <see cref="ISpread"/> or <see cref="IDictionary"/>. Other collection types will not be looked at.
+        /// </remarks>
+        /// <typeparam name="TInstance">The type of the instance.</typeparam>
+        /// <typeparam name="TDescendant">The type of the descendant.</typeparam>
+        /// <param name="instance">The instance to traverse into.</param>
+        /// <param name="descendant">The new descendant.</param>
+        /// <param name="updatedInstance">The updated instance with the descendant replaced.</param>
+        /// <returns>Returns true if a descendant with the same <see cref="IVLObject.Identity"/> as the given one was found and replaced.</returns>
+        public static bool TryReplaceDescendant<TInstance, TDescendant>(this TInstance instance, TDescendant descendant, out TInstance updatedInstance)
+            where TInstance : class, IVLObject
+            where TDescendant : class, IVLObject
+        {
+            if (instance.Identity == descendant.Identity)
+            {
+                updatedInstance = descendant as TInstance;
+                return true;
+            }
+            foreach (var property in instance.Type.Properties)
+            {
+                var value = property.GetValue(instance);
+                if (value is IVLObject child)
+                {
+                    if (child.TryReplaceDescendant(descendant, out var newChild))
+                    {
+                        if (newChild != child)
+                            updatedInstance = property.WithValue(instance, newChild) as TInstance;
+                        else
+                            updatedInstance = instance;
+                        return true;
+                    }
+                }
+                else if (value is ISpread children)
+                {
+                    var count = children.Count;
+                    for (int i = 0; i < count; i++)
+                    {
+                        if (children.GetItem(i) is IVLObject obj)
+                        {
+                            if (obj.TryReplaceDescendant(descendant, out var newObj))
+                            {
+                                if (newObj != obj)
+                                {
+                                    var updatedChildren = children.SetItem(i, newObj);
+                                    updatedInstance = property.WithValue(instance, updatedChildren) as TInstance;
+                                }
+                                else
+                                    updatedInstance = instance;
+                                return true;
+                            }
+                        }
+                    }
+                }
+                else if (value is IDictionary dict)
+                {
+                    var enumerator = dict.GetEnumerator();
+                    while (enumerator.MoveNext())
+                    {
+                        var entry = enumerator.Entry;
+                        if (entry.Value is IVLObject obj)
+                        {
+                            if (obj.TryReplaceDescendant(descendant, out var newObj))
+                            {
+                                if (newObj != obj)
+                                {
+                                    var updatedDict = SetItem(dict, entry.Key, newObj);
+                                    updatedInstance = property.WithValue(instance, updatedDict) as TInstance;
+                                }
+                                else
+                                    updatedInstance = instance;
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+            updatedInstance = instance;
+            return false;
+        }
+
+
         static IVLObject WithValueByPath<T>(this IVLObject instance, string path, T value)
         {
             var spine = instance.GetSpine(path);
@@ -256,7 +341,7 @@ namespace Kairos
             return instance.WithValue(propertyName, value);
         }
 
-        static IDictionary SetItem(IDictionary dict, string key, object value)
+        static IDictionary SetItem(IDictionary dict, object key, object value)
         {
             var dictType = dict.GetType();
             var toBuilderMethod = dictType.GetMethod(nameof(ImmutableDictionary<string, object>.ToBuilder));
