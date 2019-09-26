@@ -21,11 +21,12 @@
               <Choice Kind="ProcessAppFlag" Name="Timer_R" />
             </p:NodeReference>
             <Pin Id="CIj1rP1tuNjLVVzlxWBmSz" Name="Model" Kind="InputPin" />
-            <Pin Id="MU5SbCjihl0QWzcX9VobrX" Name="SetStatus" Kind="InputPin" />
             <Pin Id="JWZJXQ1eYVyNYMMcwBGsVX" Name="Update" Kind="InputPin" />
             <Pin Id="NgOAwGR2o1yLsmDdPUxPzO" Name="ApplyTMarkers" Kind="InputPin" />
+            <Pin Id="JoaFBxPjtyHMJ3DYA4AhVp" Name="ClearFlags" Kind="InputPin" />
             <Pin Id="Tqeu3Ggaa0cL52FGiINnfc" Name="Output" Kind="OutputPin" />
             <Pin Id="SQUunJzi3bbLpGaOKQqLQf" Name="Time" Kind="OutputPin" />
+            <Pin Id="T9DVMan2J6dNE3zry6QZWP" Name="Time Seeked" Kind="OutputPin" />
           </Node>
           <Pad Id="IH8SLaZYp3APSN9Pt3UivU" Comment="Time" Bounds="596,619,91,21" ShowValueBox="true" isIOBox="true" />
           <Node Bounds="63,1,47,26" Id="QKYQMH7gHeVM8rJIVOE3OK">
@@ -57,7 +58,11 @@
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
             </Pin>
-            <Pin Id="Ds5NsIFE6wOPecupVMqB45" Name="Passages Count" Kind="InputPin" />
+            <Pin Id="Ds5NsIFE6wOPecupVMqB45" Name="Passages Count" Kind="InputPin" DefaultValue="1">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Integer32" />
+              </p:TypeAnnotation>
+            </Pin>
             <Pin Id="NJ3qMKokDEpPFTz7CqfeSi" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Pad Id="LTcJI1jg6V3Nkg0b2AgJBa" Bounds="97,438" />
@@ -87,7 +92,7 @@
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
             </Pin>
-            <Pin Id="PCN6v749fPrK9iOWinXOh0" Name="Passages Count" Kind="InputPin" DefaultValue="2">
+            <Pin Id="PCN6v749fPrK9iOWinXOh0" Name="Passages Count" Kind="InputPin">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="Integer32" />
               </p:TypeAnnotation>
@@ -115,7 +120,7 @@
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
             </Pin>
-            <Pin Id="DcEbDDGi9RNLpUnkHo2HEp" Name="Passages Count" Kind="InputPin">
+            <Pin Id="DcEbDDGi9RNLpUnkHo2HEp" Name="Passages Count" Kind="InputPin" DefaultValue="1">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="Integer32" />
               </p:TypeAnnotation>
@@ -243,7 +248,7 @@
             <Pin Id="Qm4sElxC0lmP1Z4I9u1SCF" Name="Data" Kind="InputPin" />
             <Pin Id="GSe1r0X5ZvhPNGpfgmoWNk" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Node Bounds="253,485,51,26" Id="Pa8otQzkBH8Mc4TPasTzYK">
+          <Node Bounds="252,469,51,26" Id="Pa8otQzkBH8Mc4TPasTzYK">
             <p:NodeReference LastCategoryFullName="Primitive.Reference" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="OperationCallFlag" Name="Data" />
@@ -253,7 +258,7 @@
             <Pin Id="REj3s1WUqpRPlWVLd6v987" Name="Output" Kind="StateOutputPin" />
             <Pin Id="DdKC8w8h1kAMcJbNYpxux2" Name="Data" Kind="OutputPin" />
           </Node>
-          <Node Bounds="257,525,69,26" Id="VlSuTHWBiKeOOhdVtcGq3g">
+          <Node Bounds="256,509,69,26" Id="VlSuTHWBiKeOOhdVtcGq3g">
             <p:NodeReference LastCategoryFullName="Kairos.Core.Utils" LastSymbolSource="Kairos.Core.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="OperationCallFlag" Name="CastAsNICE" />
@@ -266,7 +271,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Renderer" />
             </p:NodeReference>
-            <Pin Id="KybSIR3qLdbQbDIIHBjyOj" Name="Bounds" Kind="InputPin" DefaultValue="1010, 882, 1492, 488">
+            <Pin Id="KybSIR3qLdbQbDIIHBjyOj" Name="Bounds" Kind="InputPin" DefaultValue="1558, 864, 980, 488">
               <p:TypeAnnotation LastCategoryFullName="System.Drawing" LastSymbolSource="System.Drawing.dll">
                 <Choice Kind="TypeFlag" Name="Rectangle" />
               </p:TypeAnnotation>
@@ -327,10 +332,15 @@
             </p:NodeReference>
             <Pin Id="RXYoq7DoBuVPAZoBcvsPZd" Name="Input" Kind="StateInputPin" />
             <Pin Id="G1IkCehJe20MznP1ozsmer" Name="Seek Time" Kind="InputPin" />
+            <Pin Id="Pcq4fnCVjvDPhNGidjWCig" Name="Seeked Flag" Kind="InputPin" DefaultValue="True">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Boolean" />
+              </p:TypeAnnotation>
+            </Pin>
             <Pin Id="SMtzrs4GioFNfr8M0a2wH4" Name="Apply" Kind="InputPin" />
             <Pin Id="URTaukEDJ1oN5AkSUbyO2l" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Pad Id="VEJ8WovdWaaLLS4xClVJtT" Comment="Apply" Bounds="698,688,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+          <Pad Id="VEJ8WovdWaaLLS4xClVJtT" Comment="Apply" Bounds="733,681,35,35" ShowValueBox="true" isIOBox="true" Value="False">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -338,7 +348,26 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="HPy4dbzAzF1Lj5Wx3oo6fL" Comment="SetStatus" Bounds="382,468,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+          <Node Bounds="474,815,45,26" Id="Vtx7P3GuS4kNLkGbKDjCNf">
+            <p:NodeReference LastCategoryFullName="Kairos.Core.Timer.Timer_R" LastSymbolSource="Kairos.Core.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="ClassType" Name="Timer_R" />
+              <Choice Kind="OperationCallFlag" Name="Time" />
+            </p:NodeReference>
+            <Pin Id="Vce6Onh2DdyQXumUGvFBfZ" Name="Input" Kind="StateInputPin" />
+            <Pin Id="GNLkvJ3XEkgMtho5pV61F8" Name="Output" Kind="StateOutputPin" />
+            <Pin Id="VOsAaEDr7nQNq3f9lPDekD" Name="Time" Kind="OutputPin" />
+            <Pin Id="JFMhhO39zMKMDEiFSu2uQx" Name="Time Seeked" Kind="OutputPin" />
+          </Node>
+          <Pad Id="T8p3OkXWdz1L8M8har851C" Comment="Time" Bounds="493,925,41,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="Ouj46WFr1XqNw8YEHokGWH" Comment="Time Seeked" Bounds="521,875,35,35" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="UjZKW3jr0UhOrZtLrbN8QD" Comment="Apply" Bounds="787,735,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="K9JUw3o1mwWMDmth9Nhjiw" Comment="Time Seeked" Bounds="747,606,35,35" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="SMOtd0NwZy7NODQJf5Nsun" Comment="ClearFlags" Bounds="617,534,35,35" ShowValueBox="true" isIOBox="true" Value="True">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Boolean" />
             </p:TypeAnnotation>
@@ -375,11 +404,15 @@
         <Link Id="HQhQjeqp5dCQVeqHFjmdrW" Ids="Hg8KVBTomfhOZYRvJb0SZO,Q4DwTR3p1bpMFXNUFl6xA4" />
         <Link Id="QyZrhFpr5U1LQAVeOwpFm9" Ids="MRnkDRuQ2i2Lmu2FfIWwKf,BS8E5eN5EjwNjcyjqLeRLH" />
         <Link Id="TzR8iuDvVjCLtiGZSGJkqi" Ids="Tqeu3Ggaa0cL52FGiINnfc,QHPPppnZ8EYNju5mWHJ7IK" />
-        <Link Id="C4FfLwxkPw6MeXS3uktKqW" Ids="VEJ8WovdWaaLLS4xClVJtT,SMtzrs4GioFNfr8M0a2wH4" />
         <Link Id="K0l209mBGrGQEcdcTds3DQ" Ids="Tqeu3Ggaa0cL52FGiINnfc,RXYoq7DoBuVPAZoBcvsPZd" />
-        <Link Id="SZeFFIAsTr0LJSfapPIJtV" Ids="HPy4dbzAzF1Lj5Wx3oo6fL,MU5SbCjihl0QWzcX9VobrX" />
         <Link Id="H6hmQilQrUzNcBXUjtQTSW" Ids="Tqeu3Ggaa0cL52FGiINnfc,UTaqRlTOnNgMGO5ItS7k2v" />
         <Link Id="LBZ3UILg8M9P25mTeiSIag" Ids="AZabggG2KQPLYicSbBz7Ru,VnjR5wkRGXqMWiRfmDsryw" />
+        <Link Id="PalrEjGx2SbMXbg4z5Ny4g" Ids="VOsAaEDr7nQNq3f9lPDekD,T8p3OkXWdz1L8M8har851C" />
+        <Link Id="FpDQ7g7j4U4MT3RkyZCgU5" Ids="JFMhhO39zMKMDEiFSu2uQx,Ouj46WFr1XqNw8YEHokGWH" />
+        <Link Id="Ueg5Z2eGsQAL6Mf1ka0wfo" Ids="URTaukEDJ1oN5AkSUbyO2l,Vce6Onh2DdyQXumUGvFBfZ" />
+        <Link Id="RoQKysg9ENAOucxnW2jIuZ" Ids="VEJ8WovdWaaLLS4xClVJtT,SMtzrs4GioFNfr8M0a2wH4" />
+        <Link Id="O5SY28o0l07PCnU8ZxiYnL" Ids="T9DVMan2J6dNE3zry6QZWP,K9JUw3o1mwWMDmth9Nhjiw" />
+        <Link Id="GZMMR3YuydOMRGOP9923J9" Ids="SMOtd0NwZy7NODQJf5Nsun,JoaFBxPjtyHMJ3DYA4AhVp" />
       </Patch>
     </Node>
   </Patch>
