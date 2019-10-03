@@ -34233,6 +34233,7 @@
                 <Pin Id="BRbFxvUAuSTOi3F3PNDjps" Name="Timer_R" Kind="InputPin" />
                 <Pin Id="Q3risfUD5EoMpVgg82OvEH" Name="Component" Kind="InputPin" />
                 <Pin Id="AnGQDOE5nh3MddN6K2U3Ws" Name="Component 2" Kind="InputPin" />
+                <Pin Id="MY7PeoXWNqtLmMQ7xtWSdX" Name="Component 3" Kind="InputPin" />
                 <Pin Id="Jqvj4EC0cJkLN4x88eazM4" Name="Background Paint" Kind="InputPin" />
                 <Pin Id="GuF3sxeqp0XLcQ7lhjIhPT" Name="Background Enabled" Kind="InputPin" />
                 <Pin Id="G8bi4lAjtiRL5AT4zdXg54" Name="TimerBarStatus" Kind="InputPin" />
@@ -35262,18 +35263,41 @@
                   <Choice Kind="ProcessAppFlag" Name="Selectable" />
                 </p:NodeReference>
                 <Pin Id="LrsJlSS4cxUNZl9fU4lnWm" Name="Is Selectable" Kind="InputPin" />
-                <Pin Id="T9S7d6Hy4lRPc5wuyrInNp" Name="Allow Selection Start" Kind="InputPin" />
+                <Pin Id="TLujfjqcb2gPJqAjA2c7H2" Name="Selection Tags" Kind="InputPin" />
                 <Pin Id="U9ZpsCkoEMMNvWERLsnG2O" Name="Output" Kind="StateOutputPin" />
                 <Pin Id="Eq8y0tc8vutMk2BRJQUL2l" Name="Selected" Kind="OutputPin" />
               </Node>
-              <Pad Id="Mc2MqTDEFtiMKHyll2NZTv" Comment="Allow Selection Start" Bounds="1067,-10,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+              <Pad Id="KDkZUkWVWqQLVAuEsCVsKV" Comment="Is Selectable" Bounds="1010,-45,35,35" ShowValueBox="true" isIOBox="true" Value="False">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                   <Choice Kind="TypeFlag" Name="Boolean" />
                 </p:TypeAnnotation>
               </Pad>
-              <Pad Id="KDkZUkWVWqQLVAuEsCVsKV" Comment="Is Selectable" Bounds="1010,-45,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+              <Node Bounds="1133,47" Id="Sd7i3B5dRXvOV98I4RmBRT">
+                <p:NodeReference LastCategoryFullName="Elementa.Core.Component" LastSymbolSource="Elementa.Core.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="ProcessAppFlag" Name="Interactive" />
+                </p:NodeReference>
+                <Pin Id="A9JbuWHMTwGNBNjJHtoaOr" Name="Allow Selection Start" Kind="InputPin" />
+                <Pin Id="F0TSn7s9RsnOHQCAoBk5sh" Name="Selection Filter Tags" Kind="InputPin" />
+                <Pin Id="QU32HP0cziDPtyfdmVTf0s" Name="Output" Kind="StateOutputPin" />
+              </Node>
+              <Pad Id="P5AyElEgUSAPZF76fqp1rt" Comment="Allow Selection Start" Bounds="1133,-44,35,35" ShowValueBox="true" isIOBox="true" Value="True">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                   <Choice Kind="TypeFlag" Name="Boolean" />
+                </p:TypeAnnotation>
+              </Pad>
+              <Node Bounds="1194,8,65,26" Id="ODWn4V5RcQWLXaU95jxS7R">
+                <p:NodeReference LastCategoryFullName="Collections.HashSet" LastSymbolSource="VL.Collections.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="FromValue" />
+                  <CategoryReference Kind="RecordType" Name="HashSet" NeedsToBeDirectParent="true" />
+                </p:NodeReference>
+                <Pin Id="UroGvRHfKlWLUvOKMcEmqY" Name="Input" Kind="StateInputPin" />
+                <Pin Id="D6gkkHpebVFOATbjAEHKWp" Name="Result" Kind="OutputPin" />
+              </Node>
+              <Pad Id="HVfVpQWHr8zOpYRjeZib5I" Comment="" Bounds="1196,-12,35,15" ShowValueBox="true" isIOBox="true" Value="Clip">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
                 </p:TypeAnnotation>
               </Pad>
             </Canvas>
@@ -35426,8 +35450,11 @@
             <Link Id="EFgg6C7bB6fL5FXVfK9LfT" Ids="HzC97JJhU3BPQvI3EAeZGX,P9gkFSOyjBuPceUNIsCFv0" />
             <Link Id="Liwjs5SwZgdNFkzGWqzfqU" Ids="FlzLTXzmbzeL7iO5mtWLkg,CyykHAAjI3uQGcZNlW3lDH" />
             <Link Id="Q3EaTPHfsmHM9Qy4FIDLd0" Ids="U9ZpsCkoEMMNvWERLsnG2O,AnGQDOE5nh3MddN6K2U3Ws" />
-            <Link Id="M6Xcf92GN86MBSMR0MRIdC" Ids="Mc2MqTDEFtiMKHyll2NZTv,T9S7d6Hy4lRPc5wuyrInNp" />
             <Link Id="FFDtX4MqlUkO5yMlzCsino" Ids="KDkZUkWVWqQLVAuEsCVsKV,LrsJlSS4cxUNZl9fU4lnWm" />
+            <Link Id="FSDi5mco27gLwKRGcuBpEk" Ids="QU32HP0cziDPtyfdmVTf0s,MY7PeoXWNqtLmMQ7xtWSdX" />
+            <Link Id="DZDbWxXO83pMoPcG2qCLKK" Ids="P5AyElEgUSAPZF76fqp1rt,A9JbuWHMTwGNBNjJHtoaOr" />
+            <Link Id="BH5jag1h2hqOCX5I0s4rLI" Ids="D6gkkHpebVFOATbjAEHKWp,F0TSn7s9RsnOHQCAoBk5sh" />
+            <Link Id="RSaqo6DQeeYPY4vnF0QPCq" Ids="HVfVpQWHr8zOpYRjeZib5I,UroGvRHfKlWLUvOKMcEmqY" />
           </Patch>
         </Node>
         <!--
@@ -47716,7 +47743,7 @@
                   <Choice Kind="ProcessAppFlag" Name="Selectable" />
                 </p:NodeReference>
                 <Pin Id="CIndN99PdecMHfaJ2O46qJ" Name="Is Selectable" Kind="InputPin" />
-                <Pin Id="InczHjSyxZINmT7XFLqord" Name="Allow Selection Start" Kind="InputPin" />
+                <Pin Id="VCqqy6s4wqhNuBHdGd4CPh" Name="Selection Tags" Kind="InputPin" />
                 <Pin Id="HS3eTeAx8YLQS6rzgO9PwH" Name="Output" Kind="StateOutputPin" />
                 <Pin Id="VWAMzVYhAbgPhkf8rvZKDm" Name="Selected" Kind="OutputPin" />
               </Node>
@@ -47889,16 +47916,6 @@
                     </Pin>
                     <Pin Id="E4Gg2TQkVQMOrHURsQ8OdX" Name="Output" Kind="OutputPin" />
                   </Node>
-                  <Node Bounds="656,539,46,19" Id="UjmSsRqgdmZL2r1DOpxuDS">
-                    <p:NodeReference LastCategoryFullName="2D.Vector2" LastSymbolSource="CoreLibBasics.vl">
-                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="OperationCallFlag" Name="Vector (Join)" />
-                      <CategoryReference Kind="Vector2Type" Name="Vector2" NeedsToBeDirectParent="true" />
-                    </p:NodeReference>
-                    <Pin Id="IzGAJV8nBAiQa0YvNLF1Te" Name="X" Kind="InputPin" />
-                    <Pin Id="DDw70IUjAbYPiDl0fh2uEY" Name="Y" Kind="InputPin" />
-                    <Pin Id="D6JMFYcSPbUNmtDE1Ei4Vi" Name="Output" Kind="StateOutputPin" />
-                  </Node>
                 </Patch>
                 <ControlPoint Id="HeeNTbNXGRcLvegAln5QNv" Bounds="539,324" Alignment="Top" />
                 <ControlPoint Id="L4w5WZDPKOnL7HsIh3Uhg0" Bounds="559,324" Alignment="Top" />
@@ -47908,7 +47925,6 @@
                 <ControlPoint Id="DgENyZu15eNPlYYMCqqVJf" Bounds="687,324" Alignment="Top" />
                 <ControlPoint Id="J1o6TCvMisAMrgoRMcp2al" Bounds="521,588" Alignment="Bottom" />
                 <ControlPoint Id="Ec9R24cEZRoOsDYP4PJArV" Bounds="541,588" Alignment="Bottom" />
-                <ControlPoint Id="VLbWpv7HlggLzRTm5HCJK3" Bounds="657,588" Alignment="Bottom" />
               </Node>
               <Pad Id="AHHbIwvCnV2NXbkaXhXRPm" Comment="" Bounds="720,431,35,15" ShowValueBox="true" isIOBox="true" Value="0.5">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
@@ -48268,6 +48284,20 @@
                 </Patch>
               </Node>
               <ControlPoint Id="KdicTdZJ8QONJLgmJlKQ5G" Bounds="927,114" />
+              <Node Bounds="740,581,65,26" Id="V3mkXfnEoOaMlmegUBrj8k">
+                <p:NodeReference LastCategoryFullName="Collections.HashSet" LastSymbolSource="VL.Collections.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="FromValue" />
+                  <CategoryReference Kind="RecordType" Name="HashSet" NeedsToBeDirectParent="true" />
+                </p:NodeReference>
+                <Pin Id="Aj0zOYnUGaXNTiKNuH3S37" Name="Input" Kind="StateInputPin" />
+                <Pin Id="UanIRt2xJPDMMBjuGsRniR" Name="Result" Kind="OutputPin" />
+              </Node>
+              <Pad Id="BAeBr50FaCqMV9NavCsxsZ" Comment="" Bounds="742,561,35,15" ShowValueBox="true" isIOBox="true" Value="Clip">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+              </Pad>
             </Canvas>
             <Patch Id="At25qh7NLMRLhDOzro5K2n" Name="Create" />
             <ProcessDefinition Id="Uc2ZLLtD5oXPHI0vHjwThx" IsHidden="true">
@@ -48343,9 +48373,6 @@
             <Link Id="GFmn1Umc04jM4r6Cj7McBp" Ids="DXbtxdYG4UfM56jJkQ0ZkR,OIxtBtFTMFEOKRxosTSgju" />
             <Link Id="R9MmYfAtcZXMybnAkV2xA2" Ids="MUd2KyfCSYQL0z0Q9q9Jct,PesRwDl0JeMMxRqlBYuykn" />
             <Link Id="OAWVb6HGjjBMmnPsUGUuty" Ids="HtD6EPM1G1nNLYOqrqchuk,IzR6UQIyyngP5coSjfmVHo" />
-            <Link Id="BeqX93K2Vp8NVEMnd0QqbU" Ids="VpUseNbdAnoPbEyOjrRWAy,IzGAJV8nBAiQa0YvNLF1Te" />
-            <Link Id="S3bU0JYuR2COLmqB5IeOzM" Ids="VpUseNbdAnoPbEyOjrRWAy,DDw70IUjAbYPiDl0fh2uEY" />
-            <Link Id="JYoMqaMzAowNOtdTGjF33n" Ids="D6JMFYcSPbUNmtDE1Ei4Vi,VLbWpv7HlggLzRTm5HCJK3" />
             <Link Id="Lz3yJhkljrbMKFd6mULEzR" Ids="J1o6TCvMisAMrgoRMcp2al,OnG07oiZLMZMsY6wh9d6Uo" />
             <Link Id="TqcdCDV6xJ7MhaqXLYLh5G" Ids="QyGqXHarI54MaLEGSSeiu3,GXXuZ3XU7luLuI6ZSJqGlG" />
             <Link Id="DJMpXt6UxxGN5peMAufCnq" Ids="UnWDkUwZYftLwI4gC1egSi,FD89mxftlqdMlh6Zr2DHZp" />
@@ -48382,6 +48409,8 @@
             <Link Id="D7JowOoyfXQPl78eZwp8ll" Ids="UwzQhJ37ocmNy4xeqwSMRS,LacFI0ZADsIQMcrwIUbype" />
             <Link Id="IN70nbyqWb0OC75PVem1s5" Ids="VonKGJtRgt1PQlb1VHYnkl,E9hNCD0PZB2MLRZX5QnJOF" />
             <Link Id="RcouU2zYr5YOG5r9ii5ATu" Ids="AGjIrujK5a7OQ75oZfEy6i,H6KmNSiJcUiN8pmR1ni3Rs" />
+            <Link Id="SQAQM1572y2O5QqVrQOiXX" Ids="BAeBr50FaCqMV9NavCsxsZ,Aj0zOYnUGaXNTiKNuH3S37" />
+            <Link Id="IVrgMqYjvWMMZbkHuftUcM" Ids="UanIRt2xJPDMMBjuGsRniR,VCqqy6s4wqhNuBHdGd4CPh" />
           </Patch>
         </Node>
         <!--
@@ -48435,7 +48464,7 @@
                   <Choice Kind="ProcessAppFlag" Name="Selectable" />
                 </p:NodeReference>
                 <Pin Id="In2BOVEpa3yPKoq5OBc8ke" Name="Is Selectable" Kind="InputPin" />
-                <Pin Id="NmNNanqwKP9NCYcSCC9Cc2" Name="Allow Selection Start" Kind="InputPin" />
+                <Pin Id="LkkFf9GP608PYJfbSLtSBZ" Name="Selection Tags" Kind="InputPin" />
                 <Pin Id="GdjoJFHvamYLpBE58NQXC8" Name="Output" Kind="StateOutputPin" />
                 <Pin Id="FENAwnUnGEUMnTy6RY1UDJ" Name="Selected" Kind="OutputPin" />
               </Node>
@@ -48735,6 +48764,20 @@
                 </Patch>
               </Node>
               <ControlPoint Id="LxSeT0Cy3XMOjc0qnlu3wF" Bounds="1020,-26" />
+              <Node Bounds="819,441,65,26" Id="KO1kEuh7DDMP7cSbHNnJRk">
+                <p:NodeReference LastCategoryFullName="Collections.HashSet" LastSymbolSource="VL.Collections.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="FromValue" />
+                  <CategoryReference Kind="RecordType" Name="HashSet" NeedsToBeDirectParent="true" />
+                </p:NodeReference>
+                <Pin Id="Gm7p3T8kUWcMPGGZTtGVdG" Name="Input" Kind="StateInputPin" />
+                <Pin Id="OrPvix1g8I4LEpyB7omJ9W" Name="Result" Kind="OutputPin" />
+              </Node>
+              <Pad Id="R3QRe5psj0TOPbd1QDbAa3" Comment="" Bounds="821,421,35,15" ShowValueBox="true" isIOBox="true" Value="Clip">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+              </Pad>
             </Canvas>
             <Patch Id="OvJTT1EzOoYOGtze103ly9" Name="Create" />
             <ProcessDefinition Id="QsGy4D6TeI1MbiEDkFOnfz" IsHidden="true">
@@ -48807,6 +48850,8 @@
             <Link Id="IN9Q5pzBkzcPqtMY9voKAd" Ids="V8ConJzh7W9NYFel01bvWK,Ih08iLYKnmtLRh7Y40BNEQ" />
             <Link Id="F5dlUCStD61MNrHxhqlXx2" Ids="TU1p7KNJgZvNRhAcU8SCEt,LMij4SEqgGeLMk5nV3bpUb" />
             <Link Id="IRwv4WyR8pKOKfppJlK5Vk" Ids="TU1p7KNJgZvNRhAcU8SCEt,LPVjPh9BxbQLfLDv0qWIBQ" />
+            <Link Id="DCqBjmd7aWMLxgkPmu48Lf" Ids="R3QRe5psj0TOPbd1QDbAa3,Gm7p3T8kUWcMPGGZTtGVdG" />
+            <Link Id="EUbUsCMlGsqNNSlmRQy0C5" Ids="OrPvix1g8I4LEpyB7omJ9W,LkkFf9GP608PYJfbSLtSBZ" />
           </Patch>
         </Node>
         <!--
@@ -48858,7 +48903,7 @@
                   <Choice Kind="ProcessAppFlag" Name="Selectable" />
                 </p:NodeReference>
                 <Pin Id="SXvQpMvvGEBNfxkQWmH0oT" Name="Is Selectable" Kind="InputPin" />
-                <Pin Id="G7m0rFSa89eMVXk8RHZDlD" Name="Allow Selection Start" Kind="InputPin" />
+                <Pin Id="CAoaBCbvKQBLXSKUBemRKm" Name="Selection Tags" Kind="InputPin" />
                 <Pin Id="GmYGj40KOFtPjSsftIvLA7" Name="Output" Kind="StateOutputPin" />
                 <Pin Id="UoXlT5kt0vaLwExlWdVgYj" Name="Selected" Kind="OutputPin" />
               </Node>
@@ -49159,6 +49204,20 @@
                 </Patch>
               </Node>
               <ControlPoint Id="A8q2gztrVs4ONgP1Gfymo6" Bounds="855,-347" />
+              <Node Bounds="593,111,65,26" Id="KoAksdSVeMQObmhfbjcmoO">
+                <p:NodeReference LastCategoryFullName="Collections.HashSet" LastSymbolSource="VL.Collections.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="FromValue" />
+                  <CategoryReference Kind="RecordType" Name="HashSet" NeedsToBeDirectParent="true" />
+                </p:NodeReference>
+                <Pin Id="Mdkthmx0J4rPjrSsgE7yVD" Name="Input" Kind="StateInputPin" />
+                <Pin Id="Ufw7MFcXybQMVXNqVXoX2U" Name="Result" Kind="OutputPin" />
+              </Node>
+              <Pad Id="D6qZxkIAct5PpOFzSt0J7U" Comment="" Bounds="595,91,35,15" ShowValueBox="true" isIOBox="true" Value="Clip">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+              </Pad>
             </Canvas>
             <Patch Id="EmBrQ4nw0AOM17ES5qEChH" Name="Create" />
             <ProcessDefinition Id="FhIagChd9eiLMlpUsZW75H" IsHidden="true">
@@ -49232,6 +49291,8 @@
             <Link Id="DFbwqWKu7nAMjtg72C9BN2" Ids="PjcWMym3U4ALKOx4pmjWLK,UKd85NarfovOmmlIsRbiCr" />
             <Link Id="M69nQRAd69eOgdnNicrZEs" Ids="LGzXdzhTv8uN3IlSnxi2iL,UplP21tHrCtP6hlZmrWbQ9" />
             <Link Id="AqWpZ80tzOHPa2zaULUkFQ" Ids="LGzXdzhTv8uN3IlSnxi2iL,GFL6xB6fk9oPhz7XcufHMU" />
+            <Link Id="EWgaAnJ9XZZMgCDoHcSbTk" Ids="D6qZxkIAct5PpOFzSt0J7U,Mdkthmx0J4rPjrSsgE7yVD" />
+            <Link Id="VZpsqP5UGfZNLLKP51PAvM" Ids="Ufw7MFcXybQMVXNqVXoX2U,CAoaBCbvKQBLXSKUBemRKm" />
           </Patch>
         </Node>
       </Canvas>
