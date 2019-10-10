@@ -21,26 +21,9 @@
               <Choice Kind="ProcessAppFlag" Name="Timeline" />
             </p:NodeReference>
             <Pin Id="Ibwybg6OUY8K9Ym7nKKTmq" Name="Model" Kind="InputPin" />
-            <Pin Id="GKvRKlzMGpSQc3GSQeXFQ1" Name="my live posX" Kind="InputPin" PinGroupName="Sources">
-              <p:TypeAnnotation>
-                <Choice Kind="TypeFlag" Name="Float32" />
-              </p:TypeAnnotation>
-            </Pin>
-            <Pin Id="U0fF2AjgxqiMm0DODDlKZY" Name="CollectionMarker" Kind="InputPin" PinGroupName="Sources">
-              <p:TypeAnnotation>
-                <Choice Kind="TypeFlag" Name="Dictionary" />
-                <p:TypeArguments>
-                  <TypeReference>
-                    <Choice Kind="TypeFlag" Name="String" />
-                  </TypeReference>
-                  <TypeReference>
-                    <Choice Kind="TypeFlag" Name="IUngenericTL_Channel_R" />
-                  </TypeReference>
-                </p:TypeArguments>
-              </p:TypeAnnotation>
-            </Pin>
             <Pin Id="QsHq6HMcE8qPJ9LViwFZjo" Name="Output" Kind="OutputPin" />
             <Pin Id="EpKIAloON4RQcZN6hpKoJs" Name="Output Collection" Kind="OutputPin" />
+            <Pin Id="NfmULCBV0OpPQOtTl2C1or" Name="Channel List" Kind="OutputPin" />
           </Node>
           <Node Bounds="-45,1448,57,26" Id="JfvGkxWkZb6MZC4gYaiFCq">
             <p:NodeReference LastCategoryFullName="Kairos.Core.Canvas.Timeline_M" LastSymbolSource="Kairos.Core.vl">
@@ -301,7 +284,7 @@
             <p:NodeReference LastCategoryFullName="Kairos.Core.Clip.LiveDataClip_M" LastSymbolSource="Kairos.Core.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="OperationCallFlag" Name="Create" />
-              <CategoryReference Kind="RecordType" Name="LiveDataClip_M" NeedsToBeDirectParent="true" />
+              <CategoryReference Kind="Category" Name="LiveDataClip_M_old" NeedsToBeDirectParent="true" />
             </p:NodeReference>
             <Pin Id="AfylXmV99anLEjSk1j0xTe" Name="Position" Kind="InputPin" />
             <Pin Id="TQsIqZlU3aRNr1nYSse59Z" Name="Duration" Kind="InputPin" />
@@ -417,8 +400,8 @@
           <Node Bounds="539,1060,85,26" Id="GBvcvxyIpZOM5bHWIJyQVO">
             <p:NodeReference LastCategoryFullName="Kairos.Core.Clip.LiveDataClip_M" LastSymbolSource="Kairos.Core.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <CategoryReference Kind="RecordType" Name="LiveDataClip_M" />
               <Choice Kind="OperationCallFlag" Name="Create" />
+              <CategoryReference Kind="Category" Name="LiveDataClip_M_old" />
             </p:NodeReference>
             <Pin Id="F6EDo3aia8gMXi9xmsbPEc" Name="Position" Kind="InputPin" />
             <Pin Id="NoXKiypo9PdLnyrEtmzMsi" Name="Duration" Kind="InputPin" />
@@ -584,7 +567,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Renderer" />
             </p:NodeReference>
-            <Pin Id="S6yWcCbwagqLNWKZV8A41u" Name="Bounds" Kind="InputPin" DefaultValue="1488, 938, 928, 400">
+            <Pin Id="S6yWcCbwagqLNWKZV8A41u" Name="Bounds" Kind="InputPin" DefaultValue="1488, 938, 1042, 400">
               <p:TypeAnnotation LastCategoryFullName="System.Drawing" LastSymbolSource="System.Drawing.dll">
                 <Choice Kind="TypeFlag" Name="Rectangle" />
               </p:TypeAnnotation>
@@ -719,6 +702,7 @@
             <Pin Id="U2Q7Xz3JcsoNxPtQOAFUSY" Name="Model" Kind="InputPin" />
             <Pin Id="CW5dc1ykpkIOMEBlCdh5xD" Name="Output" Kind="OutputPin" />
             <Pin Id="F9KD0Tg9WLKNJyayzqVuH7" Name="Output Collection" Kind="OutputPin" />
+            <Pin Id="CWGb1Y1mGRqQN6nj3NTsLl" Name="Channel List" Kind="OutputPin" />
           </Node>
           <Node Bounds="46,1104,57,26" Id="K1EzAn8de7ULk47BSyfFSz">
             <p:NodeReference LastCategoryFullName="Kairos.Core.Canvas.Timeline_M" LastSymbolSource="Kairos.Core.vl">
@@ -876,6 +860,9 @@
             <Pin Id="Ce3RWgVBAxePeFp6FPMzoO" Name="Output" Kind="OutputPin" />
             <Pin Id="Q3VKJ3AyPyhQTBxQ86l0LE" Name="Model Reference" Kind="OutputPin" />
           </Node>
+          <Pad Id="KqIzqHEluuuPjx5Vh0amYo" Comment="My Color" Bounds="1166,2355,136,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="FmacyCfyjIyLfMXz1i6tWN" Comment="PosX" Bounds="1030,2355,35,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="V63F3NQw92kNieHdVk4hXa" Comment="Foo2" Bounds="1074,1638,35,28" ShowValueBox="true" isIOBox="true" />
         </Canvas>
         <Patch Id="Fu2jL7w5vKMMDy7WlQQfpG" Name="Create" />
         <Patch Id="KIY1za4NGAZLTWBoQZjx6K" Name="Update" />
@@ -975,9 +962,11 @@
         <Link Id="R7A0ysmxONRP4X5HpGaStD" Ids="CW5dc1ykpkIOMEBlCdh5xD,J4LscyUgpCpQWKY184Q8LP" />
         <Link Id="MsI2SE2DWflOWirtOvUUFr" Ids="Ce3RWgVBAxePeFp6FPMzoO,VDi6T971Mk4LcjrolLL36o" />
         <Link Id="VJ6y9e6aMgOMH7d2egDBgp" Ids="R4qboRv8m2lLhFKzHNI1Xo,LQCWbSRtjfXN0HiKCIchke" />
-        <Link Id="T9IC7fLzWk6Ldcj0QPiqHO" Ids="HuBK9rM8f6EOa812OawsK8,GKvRKlzMGpSQc3GSQeXFQ1" />
         <Link Id="GcxNKkPeOOtMSuqPL8RH8D" Ids="PvhepiDctFQOAaynDK7Ybo,Gp9C751qqEBQUiVs7tWpoH" />
         <Link Id="OW18FSo7xYROopjnRbDMDR" Ids="P1aBgEH3I7mOoK1bTHCnWG,NZu0EyBksYYNiwI7LbHl23" />
+        <Link Id="StvuuwSQG6JNLuy7qy8QoX" Ids="OvsJmro0J4WLG6tY2pwkuF,KqIzqHEluuuPjx5Vh0amYo" />
+        <Link Id="APBZWMqTjuWLo4Qpg2DMDM" Ids="SzcEYf5QOxBQb7BkPXtxD0,FmacyCfyjIyLfMXz1i6tWN" />
+        <Link Id="BSfUpF50pQtL5GTLSUt1Bm" Ids="FELNkruhYxZPgqMmTBOhww,V63F3NQw92kNieHdVk4hXa" />
       </Patch>
     </Node>
   </Patch>
