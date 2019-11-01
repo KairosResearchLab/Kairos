@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="KzCRfykOBWcNrH2atLO1Ri" LanguageVersion="2019.1.0-0827-g397c3356f1" Version="0.128">
+<Document xmlns:p="property" Id="KzCRfykOBWcNrH2atLO1Ri" LanguageVersion="2019.1.0-0889-g2c8c66dd08" Version="0.128">
   <NugetDependency Id="Lk9OEhBRaObNYA0u6UMPvm" Location="VL.CoreLib" Version="2019.1.0-577" />
   <Patch Id="BZC5gm0jLVkLt1DY15N7RZ">
     <Canvas Id="HKsspzGsXlWL9wqBCL4AAK" DefaultCategory="Main" CanvasType="FullCategory">
@@ -1267,7 +1267,7 @@
       <Patch Id="FQxUtUarV1UOYtwcZ7kFIr">
         <Canvas Id="BEXVLlaOnomQL7PW6Vrz0t" CanvasType="Group">
           <Node Bounds="352,268,235,19" Id="UODWgQ30k9pNNU0RxCGjk8">
-            <p:NodeReference LastCategoryFullName="Kairos.Core.Canvas" LastSymbolSource="Kairos.Core.vl">
+            <p:NodeReference LastCategoryFullName="Kairos.Core.Timeline" LastSymbolSource="Kairos.Core.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Timeline" />
             </p:NodeReference>
@@ -1412,11 +1412,11 @@
           <Node Bounds="184,367,185,19" Id="Lg2PQlrQE6XORD8RbiVyNY">
             <p:NodeReference LastCategoryFullName="Kairos.Core.Canvas" LastSymbolSource="Kairos.Core.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="OperationCallFlag" Name="WriteTLChannelCollectionToDatatype" />
+              <Choice Kind="OperationCallFlag" Name="WriteKSourceToDatatype" />
             </p:NodeReference>
             <Pin Id="U0k8vU8JKaaOVLyZbI2YjI" Name="Model Reference" Kind="InputPin" />
             <Pin Id="CFJ9OjAcwLjOmHEqDAGubY" Name="Write to Reference" Kind="InputPin" />
-            <Pin Id="Aa869rB4kKULNOdsEYeccB" Name="TL Channel Collection" Kind="InputPin" />
+            <Pin Id="MebEzlmWvkGNE507Y1ioXr" Name="KChannel Collection" Kind="InputPin" />
             <Pin Id="Mq0RYmvBaVjMtS1QtfUmJe" Name="Model Reference" Kind="OutputPin" />
             <Pin Id="IPWIBSsLydXOmKU1iv7E8J" Name="Model" Kind="OutputPin" />
             <Pin Id="TY055255zPONN8aAXh05zz" Name="Path" Kind="OutputPin" />
@@ -1470,9 +1470,12 @@
             <Pin Id="BbSOmCIhex2L0qxMNo21oX" Name="Kairos Notification" Kind="OutputPin" />
           </Node>
           <Node Bounds="710,365" Id="SqWnqQ5BC8pPQNpeMPXGAZ">
-            <p:NodeReference LastCategoryFullName="Kairos.Core.Canvas.Timeline" LastSymbolSource="Kairos.Core.vl">
+            <p:NodeReference LastCategoryFullName="Kairos.Core.Timeline.Timeline" LastSymbolSource="Kairos.Core.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="OperationCallFlag" Name="GetRuntime" />
+              <CategoryReference Kind="ClassType" Name="Timeline" NeedsToBeDirectParent="true">
+                <p:OuterCategoryReference Kind="Category" Name="Timeline" NeedsToBeDirectParent="true" />
+              </CategoryReference>
             </p:NodeReference>
             <Pin Id="MzEod5z5T3nPmjylijKykQ" Name="Input" Kind="StateInputPin" />
             <Pin Id="SUyLHIa3ZTjNejASgy9VEp" Name="Output" Kind="StateOutputPin" />
@@ -1639,7 +1642,6 @@
         <Link Id="IcxBFlwbF1SOBkENoTVliq" Ids="JeEg1E766TlMS4koM0HfyB,K4pU9cZruCiLWSoBPxOkVJ" />
         <Link Id="MTmSEWFNhbTQVatkkIXkhL" Ids="KWGlY23lcHZPGBWboyhUI5,JWc0HNuYivYPGG8MQ2qtbc" />
         <Link Id="DhQQndNyEPxMIvodEqk6BA" Ids="Hbh5burVlNEMlPfGIXXpEC,MeDeBpVKmKlMo1hFRA17dW" />
-        <Link Id="EfozYR1TSL4QBsei6zxYOt" Ids="EpKIAloON4RQcZN6hpKoJs,Aa869rB4kKULNOdsEYeccB" />
         <Link Id="Jr1xD8ZWNKOO68n3MicCyN" Ids="Kki31ZgPxquN9A0xsJUduo,U0k8vU8JKaaOVLyZbI2YjI" />
         <Link Id="SYxb3WqNrMAM0jRASEWE90" Ids="JRFLqxQ7PthP3dbXbTeb8J,B3JF8QkdvG6PyhWddxKzh5" />
         <Link Id="UmWz66bioqUNunpOGL20bg" Ids="PpyqISkHVI1MbPOT59UIfe,L1re5nHwQ0gML8Dkwrxc11" />
@@ -1663,7 +1665,7 @@
         <Link Id="P8G9PvQJOQQONGS92irGHq" Ids="TcJpo9dtffGNfhRjFkwcge,A8msxd7GSUMLh0mOARz5ff" />
         <Link Id="CGigQxHt9vMMHxnN74h78K" Ids="VE3OtsA5atEOvhiiG3JcHA,E9CqyT2cSR9P8g3JZ8Mhyw" />
         <Link Id="IULMoz57EtBPYtWLIjJ2Gh" Ids="MxHWlzToP6rMb07fTtl4Rv,QwLuLbnic6KOf7SYdXTupo" />
-        <Link Id="A2oZdjLDHA1POzuuyAF6wY" Ids="DhIxbNuDceoOxF1sCqLQHQ,L5DyPeHwFRgLuGZkGBfLFU" />
+        <Link Id="RMRGcpIhuZoOihzXWayAIr" Ids="QsHq6HMcE8qPJ9LViwFZjo,MebEzlmWvkGNE507Y1ioXr" />
       </Patch>
     </Node>
   </Patch>
