@@ -20,6 +20,12 @@ namespace Kairos.Core
     {
         Boolean, Integer, Float, Color, String, Vector2, Vector3, Vector4, Matrix
     }
+
+    public enum BlendingMode
+    {
+        Normal, Multiply, Add, Subtract, Divide, Difference, Darken, Lighten, Screen, Overlay
+    }
+
 }
 
 namespace Kairos.Generators
