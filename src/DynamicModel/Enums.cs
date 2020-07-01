@@ -26,6 +26,16 @@ namespace Kairos.Core
         Normal, Multiply, Add, Subtract, Divide, Difference, Darken, Lighten, Screen, Overlay
     }
 
+    public enum ValueInterpolationFunction
+    {
+        Step, Linear, Tween, Oscillator, Bezier
+    }
+
+    public enum CountInterpolationFunction
+    {
+        Step, Linear, Tween, Oscillator, Bezier, Branching
+    }
+
 }
 
 namespace Kairos.Generators
