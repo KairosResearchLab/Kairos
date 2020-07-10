@@ -36,6 +36,11 @@ namespace Kairos.Core
         Step, Linear, Tween, Oscillator, Bezier, Branching
     }
 
+    public enum ValueProviderActivationPhase
+    {
+        Active, Prepare, Dispose
+    }
+
 }
 
 namespace Kairos.Generators
