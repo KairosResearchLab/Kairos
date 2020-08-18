@@ -41,6 +41,11 @@ namespace Kairos.Core
         Off, Prepare, Active, ReadyToDispose
     }
 
+    public enum NeighbourSelection
+    {
+        Previous, Next
+    }
+
 }
 
 namespace Kairos.Generators
