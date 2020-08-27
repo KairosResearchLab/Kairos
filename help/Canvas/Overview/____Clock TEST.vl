@@ -402,6 +402,8 @@
             <Pin Id="ThVjluSIdYrQF7pD9kfn62" Name="Clear Unused Channels from KCanvas" Kind="InputPin" />
             <Pin Id="RHtXTQbTJkYNTygffPRi0T" Name="Background Function" Kind="InputPin" />
             <Pin Id="Ujv5IsQzHoZLEfedO9N2Kj" Name="Clock" Kind="InputPin" />
+            <Pin Id="Nudot2tBYXVNQ5VqvywNmY" Name="Custom StructureContext" Kind="InputPin" />
+            <Pin Id="LhBzRZshcSkOLJ7JrGjIsv" Name="Custom StructureContext Enabled" Kind="InputPin" />
             <Pin Id="Uv47cE2eDwkNnrp3a7X4GK" Name="Unused Kanvas Channels" Kind="OutputPin" />
             <Pin Id="O5e50XjbYYbM6KldaC1bFm" Name="Output" Kind="OutputPin" />
           </Node>
@@ -648,6 +650,82 @@
                   </p:TypeAnnotation>
                 </Pad>
                 <ControlPoint Id="LCANFIM6F3xNZGDPkZbyNA" Bounds="1288,281" />
+                <Node Bounds="687,619,65,19" Id="V4SWDRHj67fQaiQ1KKfojV">
+                  <p:NodeReference LastCategoryFullName="Kairos.Core.Timeline" LastSymbolSource="Kairos.Core.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="Timeline" />
+                  </p:NodeReference>
+                  <Pin Id="L8WlrrVZW3wMUFjVq4KGRN" Name="Model" Kind="InputPin">
+                    <p:TypeAnnotation LastCategoryFullName="Kairos.Core.Timeline" LastSymbolSource="Kairos.Core.vl">
+                      <Choice Kind="TypeFlag" Name="Timeline_M" />
+                    </p:TypeAnnotation>
+                    <p:DefaultValue xmlns:r="reflection" r:Version="2">
+                      <Bounds Max="1" Valid="True" Width="1" />
+                      <Channels>
+                        <Item Key="yo">
+                          <Value Parameter_Path="Param_19:50:52">
+                            <Author_IDs>
+                              <Item>Default</Item>
+                            </Author_IDs>
+                            <Bounds Max="1" Valid="True" Width="1" />
+                            <Parameter Name="Param_19:50:52" Path="yo">
+                              <Default_Value r:Type="Float32 [Primitive]">0</Default_Value>
+                            </Parameter>
+                            <Sampler1D_M>
+                              <Bounds Max="1" Valid="True" Width="1" />
+                              <Clips>
+                                <Item Author_ID="Default" Duration="1" Key="2e8d1dd0-9f35-43ee-b4a4-15a7a61db24d" r:Type="Clip1D_ConstantValue_M [Kairos.Core.Clip]">
+                                  <Blending_Model Global_Alpha="1">
+                                    <Alpha_Function r:Type="AlphaFunction_Flat [Kairos.Core.Blending]" />
+                                  </Blending_Model>
+                                  <Value r:Type="Float32 [Primitive]">0.36</Value>
+                                </Item>
+                              </Clips>
+                              <Initial_Value r:Type="Float32 [Primitive]">0</Initial_Value>
+                            </Sampler1D_M>
+                            <Settings Enabled="True" />
+                          </Value>
+                        </Item>
+                      </Channels>
+                      <Parameter_List>
+                        <Item>yo</Item>
+                      </Parameter_List>
+                    </p:DefaultValue>
+                  </Pin>
+                  <Pin Id="GXCMQdu47QAOrTtwWQzYcp" Name="Reload" Kind="InputPin" />
+                  <Pin Id="RfA0fYBFsxKLmVFD3xgPGU" Name="Initialize" Kind="InputPin" />
+                  <Pin Id="FEUcGScuo6HNko4SCzueci" Name="Timeline Name" Kind="InputPin" />
+                  <Pin Id="UYgNj3ooFCWOrj4NPun7WP" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <Node Bounds="705,697,125,19" Id="IUikSt4XWZ6NivxI41osZ9">
+                  <p:NodeReference LastCategoryFullName="Kairos.Utils" LastSymbolSource="Kairos.Utils.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="GetChannelValue (KCanvas)" />
+                  </p:NodeReference>
+                  <Pin Id="C6RXL0WgrOSMTP4RviNxU4" Name="Input" Kind="InputPin" />
+                  <Pin Id="L0ehL3AX3ToQOX9TxlffBY" Name="Channel Name" Kind="InputPin" />
+                  <Pin Id="A3QKAtaQb3MNLjJE0d1HiP" Name="Clock" Kind="InputPin" />
+                  <Pin Id="JlQZHEoAwVsPbdWbeGOp5k" Name="Sampling Position" Kind="InputPin" />
+                  <Pin Id="UilSNXNUG4RN45qPTSPzs4" Name="Default" Kind="InputPin" />
+                  <Pin Id="N9xBieQJS1qPqSMwoiVU8A" Name="Custom StructureContext" Kind="InputPin" />
+                  <Pin Id="UmTw81NEEyLLuNpoBlFuS1" Name="Custom StructureContext Enabled" Kind="InputPin" DefaultValue="True">
+                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                      <Choice Kind="TypeFlag" Name="Boolean" />
+                    </p:TypeAnnotation>
+                  </Pin>
+                  <Pin Id="USqxagtlh2OP5iltfj8yL5" Name="Found" Kind="OutputPin" />
+                  <Pin Id="FrcfoOtu8duPl1LEzisv08" Name="Output" Kind="OutputPin" />
+                </Node>
+                <Pad Id="JKo2yd4u6WjOzdW1DvZESQ" Comment="" Bounds="826,748,35,15" ShowValueBox="true" isIOBox="true">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="Float32" />
+                  </p:TypeAnnotation>
+                </Pad>
+                <Pad Id="AxOYvnbREE2LCrpIBTV1R6" Comment="Channel Name" Bounds="720,670,35,15" ShowValueBox="true" isIOBox="true" Value="yo">
+                  <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                    <Choice Kind="TypeFlag" Name="String" />
+                  </p:TypeAnnotation>
+                </Pad>
               </Canvas>
               <ProcessDefinition Id="HP9R1OzXJPJPBAsgLm4voJ" HasStateOut="true">
                 <Fragment Id="NiHSvVvs8nvOGiQBvIhOUU" Patch="HvqLUPSxNcONONw96pEqvr" Enabled="true" />
@@ -756,7 +834,7 @@
               <Link Id="Dry7Ffk55ESNZgmhkPyA96" Ids="F3kinkm5cxeMTiAOH3D8NR,P5jZEcZqf34M6Mem5oGMdD" IsHidden="true" />
               <Link Id="NQ1FETJ53fCPkhoinXKVaj" Ids="FZqYQOsCunqP95kts25LvD,CfWrrXytJEWQLoyirASk13" />
               <Patch Id="HvqLUPSxNcONONw96pEqvr" Name="Create" />
-              <Patch Id="HWG3EAnz2IqNrBJgXJrGLW" Name="SampleT" ParticipatingElements="A73R10deSYMQPJWdzTJoQp">
+              <Patch Id="HWG3EAnz2IqNrBJgXJrGLW" Name="SampleT" ParticipatingElements="A73R10deSYMQPJWdzTJoQp,E1NVEsigd8vP9K4Ot7s970,AYGNhQoT9wOLQJYScSO7O7">
                 <Pin Id="P8PFf9XX2pqMi56VL7UOYW" MergeId="346295" Name="Background Function" Kind="InputPin">
                   <p:TypeAnnotation>
                     <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
@@ -828,6 +906,10 @@
               <Link Id="QVLf5wmnDRyPcLpDtKinIA" Ids="IgrKnbJbUUKPwJA9YOQctu,Of0B1FvviAtMM0tHcHR73I" />
               <Link Id="KbJN8QGLzUhLUIyNWNMJT5" Ids="NNJrvqbFGGvLxGVLAS0B2p,LCANFIM6F3xNZGDPkZbyNA" />
               <Link Id="PZt5UD1aep9Ox3myFJ4AJi" Ids="LCANFIM6F3xNZGDPkZbyNA,HhLOJ6pNm39QXz8GEBJ0IV" IsHidden="true" />
+              <Link Id="E1NVEsigd8vP9K4Ot7s970" Ids="UYgNj3ooFCWOrj4NPun7WP,C6RXL0WgrOSMTP4RviNxU4" />
+              <Link Id="AYGNhQoT9wOLQJYScSO7O7" Ids="Tdv6fZR1hHOMrxEwzSQz70,N9xBieQJS1qPqSMwoiVU8A" />
+              <Link Id="J5P7dMzrDhrOnFfOqwN4lw" Ids="FrcfoOtu8duPl1LEzisv08,JKo2yd4u6WjOzdW1DvZESQ" />
+              <Link Id="OrRe5KlvMiIPasQcYXMIk2" Ids="AxOYvnbREE2LCrpIBTV1R6,L0ehL3AX3ToQOX9TxlffBY" />
             </Patch>
           </Node>
           <Pad Id="BaQZGYqPr3bNGxuuZ5zxRm" Comment="Clear Unused Channels from KCanvas" Bounds="163,858,35,35" ShowValueBox="true" isIOBox="true" Value="False">
@@ -902,15 +984,15 @@
                 <Choice Kind="TypeFlag" Name="Compositor_M" />
               </p:TypeAnnotation>
               <p:DefaultValue xmlns:r="reflection" r:Version="2">
-                <Bounds Max="7.51602386531621" Min="1.6827027797699" Valid="True" Width="5.83332108554631" />
+                <Bounds Max="8.19594263133794" Min="2" Valid="True" Width="6.19594263133794" />
                 <CanvasClips>
                   <Item Key="717a9d96-8fbe-4089-be3e-2e05bdbe7136">
-                    <Value Author_ID="Default" Auto_Bounds="True" Color="0.24, 0.4, 0.3327997, 1" Duration="5.83332108554631" Input_Pin_ID="11:26:49" Kairos_Source_Method="Sample" Key="717a9d96-8fbe-4089-be3e-2e05bdbe7136" Layer_Index="4" Name="My Ctrl Clip" Position="1.6827027797699" Sampler_Path_ID="Default" Sampler_Position_In="-3.19594263133794" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1">
+                    <Value Author_ID="Default" Color="0.24, 0.4, 0.3327997, 1" Duration="6.19594263133794" Input_Pin_ID="11:26:49" Kairos_Source_Method="Sample" Key="717a9d96-8fbe-4089-be3e-2e05bdbe7136" Layer_Index="4" Name="My Ctrl Clip" Position="2" Sampler_Path_ID="Default" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1">
                       <Blending_Model Global_Alpha="1">
                         <Alpha_Function r:Type="AlphaFunction_Flat [Kairos.Core.Blending]" />
                       </Blending_Model>
-                      <Dispose_Bounds Max="8.51602386531621" Min="7.51602386531621" Valid="True" Width="1" />
-                      <Prepare_Bounds Max="6.51602386531621" Min="5.51602386531621" Valid="True" Width="1" />
+                      <Dispose_Bounds Max="6" Min="5" Valid="True" Width="1" />
+                      <Prepare_Bounds Max="4" Min="3" Valid="True" Width="1" />
                     </Value>
                   </Item>
                 </CanvasClips>
@@ -921,38 +1003,37 @@
                         <Item>717a9d96-8fbe-4089-be3e-2e05bdbe7136</Item>
                       </Author_IDs>
                       <Blender1D_M>
-                        <Bounds Max="7.51602386531621" Min="1.6827027797699" Valid="True" Width="5.83332108554631" />
+                        <Bounds Max="8.19594263133794" Min="2" Valid="True" Width="6.19594263133794" />
                         <Clips>
-                          <Item Author_ID="717a9d96-8fbe-4089-be3e-2e05bdbe7136" Duration="5.83332108554631" Kairos_Source_Method="Sample" Key="454d2e6e-7dda-4e01-8952-258a4d1e9e0c" Layer_Index="4" Parameter_Path="Alpha" Position="1.6827027797699" Sampler_Path_ID="Default" Sampler_Position_In="-3.19594263133794" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1" r:Type="Clip1D_CanvasChild_M [Kairos.Core.Clip]">
+                          <Item Author_ID="717a9d96-8fbe-4089-be3e-2e05bdbe7136" Duration="6.19594263133794" Kairos_Source_Method="Sample" Key="1622e276-0a4c-4089-b8be-469aa8384113" Layer_Index="4" Parameter_Path="Alpha" Position="2" Sampler_Path_ID="Default" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1" r:Type="Clip1D_CanvasChild_M [Kairos.Core.Clip]">
                             <Blending_Model Global_Alpha="1">
                               <Alpha_Function r:Type="AlphaFunction_Flat [Kairos.Core.Blending]" />
                             </Blending_Model>
-                            <Dispose_Bounds Max="8.51602386531621" Min="7.51602386531621" Valid="True" Width="1" />
-                            <Prepare_Bounds Max="6.51602386531621" Min="5.51602386531621" Valid="True" Width="1" />
+                            <Dispose_Bounds Max="6" Min="5" Valid="True" Width="1" />
+                            <Prepare_Bounds Max="4" Min="3" Valid="True" Width="1" />
                           </Item>
                         </Clips>
-                        <Dispose_Bounds Max="8.51602386531621" Min="7.51602386531621" Valid="True" Width="1" />
+                        <Dispose_Bounds Max="6" Min="5" Valid="True" Width="1" />
                         <Initial_Value r:Type="Float32 [Primitive]">0</Initial_Value>
-                        <Prepare_Bounds Max="6.51602386531621" Min="5.51602386531621" Valid="True" Width="1" />
+                        <Prepare_Bounds Max="4" Min="3" Valid="True" Width="1" />
                       </Blender1D_M>
-                      <Bounds Max="7.51602386531621" Min="1.6827027797699" Valid="True" Width="5.83332108554631" />
-                      <Dispose_Bounds Max="8.51602386531621" Min="7.51602386531621" Valid="True" Width="1" />
+                      <Bounds Max="8.19594263133794" Min="2" Valid="True" Width="6.19594263133794" />
+                      <Dispose_Bounds Max="6" Min="5" Valid="True" Width="1" />
                       <Parameter Path="Alpha">
                         <Default_Value r:Type="Float32 [Primitive]">0</Default_Value>
                       </Parameter>
-                      <Prepare_Bounds Max="6.51602386531621" Min="5.51602386531621" Valid="True" Width="1" />
+                      <Prepare_Bounds Max="4" Min="3" Valid="True" Width="1" />
                       <Settings Enabled="True" />
                     </Value>
                   </Item>
                 </Channels>
-                <Dispose_Bounds Max="8.51602386531621" Min="7.51602386531621" Valid="True" Width="1" />
+                <Dispose_Bounds Max="6" Min="5" Valid="True" Width="1" />
                 <Parameter_List>
                   <Item>Alpha</Item>
                 </Parameter_List>
-                <Prepare_Bounds Max="6.51602386531621" Min="5.51602386531621" Valid="True" Width="1" />
+                <Prepare_Bounds Max="4" Min="3" Valid="True" Width="1" />
               </p:DefaultValue>
             </Pin>
-            <Pin Id="DpQGeAFdJJKLnpJnJp0GaU" Name="Clock" Kind="InputPin" />
             <Pin Id="SL2cM6YKWUkLVaLEYX4Txo" Name="Reload" Kind="InputPin" />
             <Pin Id="Ggmv8NM9E3yPmyGv5CX9wY" Name="Initialize" Kind="InputPin" />
             <Pin Id="EsW9tS4P9wyQa72nBzeIKo" Name="Compositor Name" Kind="InputPin" />
@@ -986,6 +1067,7 @@
             </p:NodeReference>
             <Pin Id="TYYn3faQdqjPpVAoGZySSN" Name="Input" Kind="StateInputPin" />
             <Pin Id="QmvhnWFz5RVNpETb4daa2n" Name="Output" Kind="OutputPin" />
+            <Pin Id="TNRG9bVWg65OTJlfIy5HPK" Name="Clock" Kind="OutputPin" />
             <Pin Id="HoAwvZJlrv2LthaVDQr1vw" Name="Canvas Model Reference" Kind="OutputPin" />
             <Pin Id="Jy5cawrET5fMNSRQgZdbR9" Name="Clip Model" Kind="OutputPin" />
             <Pin Id="H79bD0ccZV0NDruTdyTd6q" Name="Sample Position Offset" Kind="OutputPin" />
@@ -1078,7 +1160,7 @@
                 <Choice Kind="TypeFlag" Name="Timeline_M" />
               </p:TypeAnnotation>
               <p:DefaultValue xmlns:r="reflection" r:Version="2">
-                <Bounds Max="2.63737845420837" Min="-3.19594263133794" Valid="True" Width="5.83332108554631" />
+                <Bounds Max="3" Min="-3.19594263133794" Valid="True" Width="6.19594263133794" />
                 <Channels>
                   <Item Key="Alpha">
                     <Value Parameter_Path="Alpha">
@@ -1086,14 +1168,14 @@
                         <Item>Default</Item>
                         <Item>f9035fff-c8f7-40b0-9a58-fa9fc3985442</Item>
                       </Author_IDs>
-                      <Bounds Max="2.63737845420837" Min="-3.19594263133794" Valid="True" Width="5.83332108554631" />
-                      <Dispose_Bounds Max="3.63737845420837" Min="2.63737845420837" Valid="True" Width="1" />
+                      <Bounds Max="3" Min="-3.19594263133794" Valid="True" Width="6.19594263133794" />
+                      <Dispose_Bounds Max="4" Min="3" Valid="True" Width="1" />
                       <Parameter Path="Alpha">
                         <Default_Value r:Type="Float32 [Primitive]">0</Default_Value>
                       </Parameter>
-                      <Prepare_Bounds Max="1.63737845420837" Min="0.63737845420837" Valid="True" Width="1" />
+                      <Prepare_Bounds Max="2" Min="1" Valid="True" Width="1" />
                       <Sampler1D_M>
-                        <Bounds Max="2.63737845420837" Min="-3.19594263133794" Valid="True" Width="5.83332108554631" />
+                        <Bounds Max="3" Min="-3.19594263133794" Valid="True" Width="6.19594263133794" />
                         <Clips>
                           <Item Author_ID="Default" Duration="1" Key="7d6b5cb7-57aa-4cf8-9fb2-5c694f405d5a" Position="-3.19594263133794" r:Type="Clip1D_ConstantValue_M [Kairos.Core.Clip]">
                             <Blending_Model Global_Alpha="1">
@@ -1101,41 +1183,40 @@
                             </Blending_Model>
                             <Value r:Type="Float32 [Primitive]">0</Value>
                           </Item>
-                          <Item Author_ID="f9035fff-c8f7-40b0-9a58-fa9fc3985442" Duration="1" Kairos_Source_Method="Sample" Key="c960fce9-6429-494d-8e13-f3894d58ff5a" Parameter_Path="Alpha" Position="1.63737845420837" Sampler_Path_ID="Default" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1" r:Type="Clip1D_SVPChild_M [Kairos.Core.Clip]">
+                          <Item Author_ID="f9035fff-c8f7-40b0-9a58-fa9fc3985442" Duration="1" Kairos_Source_Method="Sample" Key="d57b7402-c5a0-47eb-afe7-cc4e34a5083e" Parameter_Path="Alpha" Position="2" Sampler_Path_ID="Default" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1" r:Type="Clip1D_SVPChild_M [Kairos.Core.Clip]">
                             <Blending_Model Global_Alpha="1">
                               <Alpha_Function r:Type="AlphaFunction_Flat [Kairos.Core.Blending]" />
                             </Blending_Model>
-                            <Dispose_Bounds Max="3.63737845420837" Min="2.63737845420837" Valid="True" Width="1" />
-                            <Prepare_Bounds Max="1.63737845420837" Min="0.63737845420837" Valid="True" Width="1" />
+                            <Dispose_Bounds Max="4" Min="3" Valid="True" Width="1" />
+                            <Prepare_Bounds Max="2" Min="1" Valid="True" Width="1" />
                           </Item>
                         </Clips>
-                        <Dispose_Bounds Max="3.63737845420837" Min="2.63737845420837" Valid="True" Width="1" />
+                        <Dispose_Bounds Max="4" Min="3" Valid="True" Width="1" />
                         <Initial_Value r:Type="Float32 [Primitive]">0</Initial_Value>
-                        <Prepare_Bounds Max="1.63737845420837" Min="0.63737845420837" Valid="True" Width="1" />
+                        <Prepare_Bounds Max="2" Min="1" Valid="True" Width="1" />
                       </Sampler1D_M>
                       <Settings Enabled="True" />
                     </Value>
                   </Item>
                 </Channels>
-                <Dispose_Bounds Max="3.63737845420837" Min="2.63737845420837" Valid="True" Width="1" />
+                <Dispose_Bounds Max="4" Min="3" Valid="True" Width="1" />
                 <Parameter_List>
                   <Item>Alpha</Item>
                 </Parameter_List>
-                <Prepare_Bounds Max="1.63737845420837" Min="0.63737845420837" Valid="True" Width="1" />
+                <Prepare_Bounds Max="2" Min="1" Valid="True" Width="1" />
                 <SVPClips>
                   <Item Key="f9035fff-c8f7-40b0-9a58-fa9fc3985442">
-                    <Value Author_ID="Default" Color="0.4, 0.4, 0.4, 1" Duration="1" Input_Pin_ID="12:24:15" Kairos_Source_Method="Sample" Key="f9035fff-c8f7-40b0-9a58-fa9fc3985442" Name="My Ctrl Clip" Position="1.63737845420837" Sampler_Path_ID="Default" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1">
+                    <Value Author_ID="Default" Color="0.4, 0.4, 0.4, 1" Duration="1" Input_Pin_ID="12:24:15" Kairos_Source_Method="Sample" Key="f9035fff-c8f7-40b0-9a58-fa9fc3985442" Name="My Ctrl Clip" Position="2" Sampler_Path_ID="Default" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1">
                       <Blending_Model Global_Alpha="1">
                         <Alpha_Function r:Type="AlphaFunction_Flat [Kairos.Core.Blending]" />
                       </Blending_Model>
-                      <Dispose_Bounds Max="3.63737845420837" Min="2.63737845420837" Valid="True" Width="1" />
-                      <Prepare_Bounds Max="1.63737845420837" Min="0.63737845420837" Valid="True" Width="1" />
+                      <Dispose_Bounds Max="4" Min="3" Valid="True" Width="1" />
+                      <Prepare_Bounds Max="2" Min="1" Valid="True" Width="1" />
                     </Value>
                   </Item>
                 </SVPClips>
               </p:DefaultValue>
             </Pin>
-            <Pin Id="VA3gYHV1R6qNPwgSTChNDk" Name="Clock" Kind="InputPin" />
             <Pin Id="FnwWzCqumEOLI0a11jxSkS" Name="Reload" Kind="InputPin" />
             <Pin Id="FdWiSdoE9t0P8gzUKFmqhI" Name="Initialize" Kind="InputPin" />
             <Pin Id="FYcYIXCLPIuPtyIFobAMZ8" Name="Timeline Name" Kind="InputPin" />
@@ -1178,6 +1259,8 @@
             <Pin Id="KvaLMssJE8wOCl8Ld2F7Rg" Name="Clock" Kind="InputPin" />
             <Pin Id="KVA91MFNmnYLpp7DpEFocq" Name="Sampling Position" Kind="InputPin" />
             <Pin Id="TUvCNvGdaEQPTappq2MWiK" Name="Default" Kind="InputPin" />
+            <Pin Id="CbKoWrfX896LaDHia71qCi" Name="Custom StructureContext" Kind="InputPin" />
+            <Pin Id="R3iz5wfgURlLaceotNtqsE" Name="Custom StructureContext Enabled" Kind="InputPin" />
             <Pin Id="GTEvoPXrcAdOkNrTVrHD4v" Name="Found" Kind="OutputPin" />
             <Pin Id="Jimc3i9J1OBNBO3ohMCqzb" Name="Output" Kind="OutputPin" />
           </Node>
@@ -1203,7 +1286,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="KCanvasEditorAndInspector" />
             </p:NodeReference>
-            <Pin Id="GHTpUwCYl03Opyje4Y1khO" Name="Bounds" Kind="InputPin" DefaultValue="748, 12, 916, 376">
+            <Pin Id="GHTpUwCYl03Opyje4Y1khO" Name="Bounds" Kind="InputPin" DefaultValue="752, 12, 912, 376">
               <p:TypeAnnotation LastCategoryFullName="System.Drawing" LastSymbolSource="System.Drawing.dll">
                 <Choice Kind="TypeFlag" Name="Rectangle" />
               </p:TypeAnnotation>
@@ -1347,7 +1430,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="KCanvasEditorAndInspector" />
             </p:NodeReference>
-            <Pin Id="VKcHsjd5YPgLQS3KGYW16N" Name="Bounds" Kind="InputPin" DefaultValue="752, 392, 792, 440">
+            <Pin Id="VKcHsjd5YPgLQS3KGYW16N" Name="Bounds" Kind="InputPin" DefaultValue="748, 390, 876, 440">
               <p:TypeAnnotation LastCategoryFullName="System.Drawing" LastSymbolSource="System.Drawing.dll">
                 <Choice Kind="TypeFlag" Name="Rectangle" />
               </p:TypeAnnotation>
@@ -1355,6 +1438,121 @@
             <Pin Id="DSWJb2cOLFYQStrzdM9OWZ" Name="On Data" Kind="OutputPin" />
             <Pin Id="IDVY8gEv1CyMkOcaKj5OUi" Name="Service Found" Kind="OutputPin" />
           </Node>
+          <Node Bounds="836,349,108,116" Id="M0KS3NlPMAfM9gbRHnHXX5">
+            <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+              <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+              <Choice Kind="ApplicationStatefulRegion" Name="If" />
+              <FullNameCategoryReference ID="Primitive" />
+            </p:NodeReference>
+            <Pin Id="AMPnzMcElqjPoZX9SJvY85" Name="Condition" Kind="InputPin" />
+            <Patch Id="MEVQwnzWmANMcVqJ0f18S6" ManuallySortedPins="true">
+              <Patch Id="PDbDJd1981BOeyMOOI3kX4" Name="Create" ManuallySortedPins="true" />
+              <Patch Id="JREV0I0lp11M2eAvhAkNMI" Name="Then" ManuallySortedPins="true" />
+              <Node Bounds="852,372,54,26" Id="ICH5413Ms4aP5CjwlWHBXU">
+                <p:NodeReference LastCategoryFullName="Kairos.Core.Clock.IKClock" LastSymbolSource="Kairos.Core.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="GetTime" />
+                  <CategoryReference Kind="InterfaceTypeFlag" Name="IKClock" NeedsToBeDirectParent="true" />
+                </p:NodeReference>
+                <Pin Id="TBzEATmAS1nLfKfYAA3BOZ" Name="Input" Kind="StateInputPin" />
+                <Pin Id="VjOvn0puxLALjR72ddAq7d" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="TJvqaENqdeVLM3QKJBCpx2" Name="Time" Kind="OutputPin" />
+              </Node>
+              <Pad Id="HGkjgoaXai9M4GB9swHKbg" Comment="Time" Bounds="852,438,35,15" ShowValueBox="true" isIOBox="true" />
+            </Patch>
+          </Node>
+          <Node Bounds="842,312" Id="AIMBoUFQ8KXOWeARmPRxxN">
+            <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="IsAssigned" />
+              <CategoryReference Kind="ClassType" Name="Object" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="IsXSBO0hLmoQR3nDLI3T4N" Name="X" Kind="InputPin" />
+            <Pin Id="DeDHmCSV6uDPWWtTsPf6Za" Name="Result" Kind="OutputPin" />
+            <Pin Id="CVe7nTsAG35OYombXFQ0rb" Name="Not Assigned" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="1049,637,102,26" Id="AfVCoEHT4dJPDOIrUDTHYr">
+            <p:NodeReference LastCategoryFullName="Kairos.Core.Canvas.IKCanvas" LastSymbolSource="Kairos.Core.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="GetClockReference" />
+              <CategoryReference Kind="InterfaceTypeFlag" Name="IKCanvas" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="AGkC5Gz092wLriTqrre2sW" Name="Input" Kind="StateInputPin" />
+            <Pin Id="N2SeKxyh9s0OQEexscVUDl" Name="Output" Kind="StateOutputPin" />
+            <Pin Id="RVdhhgAttRWPqLZXSeuodP" Name="Clock Reference" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="1066,683,51,26" Id="SKwtrbYXJawLXAjg20baN8">
+            <p:NodeReference LastCategoryFullName="Primitive.Reference" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="Data" />
+              <CategoryReference Kind="ClassType" Name="Reference" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="SXAMOrBVsQpLWpkcYb5ocM" Name="Input" Kind="StateInputPin" />
+            <Pin Id="SjaBOiTI6j4Ow5bDwc95DX" Name="Output" Kind="StateOutputPin" />
+            <Pin Id="P4qBz2c8quUL2bnCgHmaCP" Name="Data" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="1080,730,48,19" Id="BSk71HK03nTNLR5DiFNeyF">
+            <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="CastAs" />
+            </p:NodeReference>
+            <Pin Id="PdRF3hwH0XAQPsIIbU3FpO" Name="Input" Kind="StateInputPin" />
+            <Pin Id="RfNohvRPPx5LAj0Jqbt80R" Name="Default" Kind="InputPin" />
+            <Pin Id="RORHA5p3LtBQO8CpkWnlEC" Name="Result" Kind="OutputPin" />
+            <Pin Id="CFaINzVuqYXPBFt4Xf1bxO" Name="Success" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="1078,769,54,26" Id="EP1sdXcZSbjPsngSGn1IYG">
+            <p:NodeReference LastCategoryFullName="Kairos.Core.Clock.IKClock" LastSymbolSource="Kairos.Core.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="GetTime" />
+              <CategoryReference Kind="InterfaceTypeFlag" Name="IKClock" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="VuW20AOcqnzLOqYL1dZcOS" Name="Input" Kind="StateInputPin" />
+            <Pin Id="CQ5jKorwQUEMiDbMMIXPwn" Name="Output" Kind="StateOutputPin" />
+            <Pin Id="KPcNjNGeHZRPuJRVNFJG7k" Name="Time" Kind="OutputPin" />
+          </Node>
+          <Pad Id="GY0gkjrrOx3NRrPRAfShY7" Comment="Time" Bounds="1088,820,35,15" ShowValueBox="true" isIOBox="true" />
+          <Node Bounds="1015,412,102,26" Id="Sl8z48q9qHwQa96JJFFuxs">
+            <p:NodeReference LastCategoryFullName="Kairos.Core.Canvas.IKCanvas" LastSymbolSource="Kairos.Core.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="GetClockReference" />
+              <CategoryReference Kind="InterfaceTypeFlag" Name="IKCanvas" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="BnAori2kJq7QOhJszxULUi" Name="Input" Kind="StateInputPin" />
+            <Pin Id="M8k0F6s477VMGdymiXjHuW" Name="Output" Kind="StateOutputPin" />
+            <Pin Id="ONhQLfpT48ALSMwsoH2ZXn" Name="Clock Reference" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="1032,458,51,26" Id="FCuF20nAsnvNoxK1xqkYXW">
+            <p:NodeReference LastCategoryFullName="Primitive.Reference" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="Data" />
+              <CategoryReference Kind="ClassType" Name="Reference" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="ArEzxIYCj76LGCFV0k3eCa" Name="Input" Kind="StateInputPin" />
+            <Pin Id="LQSv2xeA6GnOdtAaxi80Ea" Name="Output" Kind="StateOutputPin" />
+            <Pin Id="MOABVdtOf3ANyeBV9e8Qjp" Name="Data" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="1046,505,48,19" Id="S9XHNCnlrHpM2dAXGlKJil">
+            <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="CastAs" />
+            </p:NodeReference>
+            <Pin Id="HeMab52h53ULGQicesbkOj" Name="Input" Kind="StateInputPin" />
+            <Pin Id="Q9V03m9M91PQYpAXMkdZ3T" Name="Default" Kind="InputPin" />
+            <Pin Id="GC3RvuY7V47NMbVOahZUSy" Name="Result" Kind="OutputPin" />
+            <Pin Id="DIXnUa08xw9NnG2DLzpXk4" Name="Success" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="1044,544,54,26" Id="P13cpW5KukeNPT0yXv3GXj">
+            <p:NodeReference LastCategoryFullName="Kairos.Core.Clock.IKClock" LastSymbolSource="Kairos.Core.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="GetTime" />
+              <CategoryReference Kind="InterfaceTypeFlag" Name="IKClock" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="SjfVCRMbnQGNcMkt44PYi8" Name="Input" Kind="StateInputPin" />
+            <Pin Id="AGSshKRABVlOETKJHh25N0" Name="Output" Kind="StateOutputPin" />
+            <Pin Id="Oa2yJocPnEyMaPsU6OFoJf" Name="Time" Kind="OutputPin" />
+          </Node>
+          <Pad Id="Not1i7WHaElN3AFhvw4uGa" Comment="Time" Bounds="1054,595,35,15" ShowValueBox="true" isIOBox="true" />
         </Canvas>
         <Patch Id="Fu2jL7w5vKMMDy7WlQQfpG" Name="Create" />
         <Patch Id="KIY1za4NGAZLTWBoQZjx6K" Name="Update" />
@@ -1397,7 +1595,6 @@
         <Link Id="HnOfFAmskUYLfVzvOnEqG1" Ids="AlavmgPAqbqQMgQITswPOr,KVA91MFNmnYLpp7DpEFocq" />
         <Link Id="V7uxfVP9pMVNLgY13FKzQy" Ids="Jimc3i9J1OBNBO3ohMCqzb,OkivlkMtSzMQIIRNi2llJj" />
         <Link Id="T6KJTIbKwggPFQ1MK8TCwv" Ids="LSvl5L2B5PPNl9GbQ4L4Gu,SpxN9K5U7YYOrt5fi34p9P" />
-        <Link Id="MK3x5LSn1RMMEWhK48u9SR" Ids="V1nr5Fikv3WQHNvMqjioMy,KvaLMssJE8wOCl8Ld2F7Rg" />
         <Link Id="UT73AOo7RjkNV0wHhswi40" Ids="V1nr5Fikv3WQHNvMqjioMy,Pq5DYDh4VSuOOwwOvJ95Pv" />
         <Link Id="BMWggHNmXVWNNCoZ8rzPgP" Ids="LRsbFaSF5gkMIiwDgV5P8P,LyLLsMwCCy1Nz1XsvbtuXT" />
         <Link Id="IC0askwV5rhQaIH5QjF4fA" Ids="U87HzSwxwpaMiMmScVjvL8,TYYn3faQdqjPpVAoGZySSN" />
@@ -1417,8 +1614,23 @@
         <Link Id="NLbVMeEQndpM4FMT7BMhgu" Ids="KAc9u1MrYhhPdPYcE5Op2C,Gh0zfjDT4D1MbIKPWdgXyC" />
         <Link Id="AR1hJyinpBCMbzR4zZ1ubr" Ids="JCIEtKzO9z5LuW3dfbn78W,Jtt62nqyugeOiNz7OBAUkZ" />
         <Link Id="M9vpnlGlZtkMyCeLycs72v" Ids="B2JU6X00hSnMnTN6mQ5y8D,ENyhIVFBHYzNKfL8n0AKJM" />
-        <Link Id="JJTOwLjSjCEPvQPsJpTMEy" Ids="JCIEtKzO9z5LuW3dfbn78W,EB7KczBDiExLRDeLmgTYOF" />
         <Link Id="Gpb9B3Z78bwQRvXJ2ryjYR" Ids="V1nr5Fikv3WQHNvMqjioMy,Ujv5IsQzHoZLEfedO9N2Kj" />
+        <Link Id="LpW3aTIakzMP4wDoA4jd8K" Ids="TNRG9bVWg65OTJlfIy5HPK,TBzEATmAS1nLfKfYAA3BOZ" />
+        <Link Id="NbaJHXSKhnfPxmgOKrojMs" Ids="TJvqaENqdeVLM3QKJBCpx2,HGkjgoaXai9M4GB9swHKbg" />
+        <Link Id="Q5qkUZ4ZiZYOB0b22X49vR" Ids="TNRG9bVWg65OTJlfIy5HPK,IsXSBO0hLmoQR3nDLI3T4N" />
+        <Link Id="HSwgP5i72a4NoaaEDSpwBG" Ids="DeDHmCSV6uDPWWtTsPf6Za,AMPnzMcElqjPoZX9SJvY85" />
+        <Link Id="MOuU32twdznNHWQ4iKtDX8" Ids="V1nr5Fikv3WQHNvMqjioMy,KvaLMssJE8wOCl8Ld2F7Rg" />
+        <Link Id="Vff8oBRMNSsNZF9tBmRaC5" Ids="JCIEtKzO9z5LuW3dfbn78W,EB7KczBDiExLRDeLmgTYOF" />
+        <Link Id="EbnpxRiu5tzOhfy4nLC8xK" Ids="JCIEtKzO9z5LuW3dfbn78W,AGkC5Gz092wLriTqrre2sW" />
+        <Link Id="G25KdZK0cf8PPqwFX3OzEx" Ids="RVdhhgAttRWPqLZXSeuodP,SXAMOrBVsQpLWpkcYb5ocM" />
+        <Link Id="RUZcWWMrveZQYLaaFQn7Pq" Ids="P4qBz2c8quUL2bnCgHmaCP,PdRF3hwH0XAQPsIIbU3FpO" />
+        <Link Id="Ajy591RdVXYMbo5p82V2Dq" Ids="KPcNjNGeHZRPuJRVNFJG7k,GY0gkjrrOx3NRrPRAfShY7" />
+        <Link Id="TEAroG9V3CINJTDcdZFUdD" Ids="RORHA5p3LtBQO8CpkWnlEC,VuW20AOcqnzLOqYL1dZcOS" />
+        <Link Id="K7ZNbm66bbGO7cb79CNPID" Ids="ONhQLfpT48ALSMwsoH2ZXn,ArEzxIYCj76LGCFV0k3eCa" />
+        <Link Id="TPLcv8qJEjoPZgroVb03iI" Ids="MOABVdtOf3ANyeBV9e8Qjp,HeMab52h53ULGQicesbkOj" />
+        <Link Id="HFbhxbLp3GyNV3ylgvpean" Ids="Oa2yJocPnEyMaPsU6OFoJf,Not1i7WHaElN3AFhvw4uGa" />
+        <Link Id="DgsHfeT8rgHPuTnTAdKs0S" Ids="GC3RvuY7V47NMbVOahZUSy,SjfVCRMbnQGNcMkt44PYi8" />
+        <Link Id="Ol5YkcLTJKkP3Jf6ptuMzk" Ids="B2JU6X00hSnMnTN6mQ5y8D,BnAori2kJq7QOhJszxULUi" />
       </Patch>
     </Node>
   </Patch>
