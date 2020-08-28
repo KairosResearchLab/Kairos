@@ -36,11 +36,6 @@ namespace Kairos.Core
         Step, Linear, Tween, Oscillator, Bezier, Branching
     }
 
-    public enum ValueProviderStatus
-    {
-        Off, Prepare, Active, ReadyToDispose
-    }
-
     public enum NeighbourSelection
     {
         Previous, Next
