@@ -40,6 +40,10 @@ namespace Kairos.Core
     {
         Previous, Next
     }
+    public enum ActivationStatus
+    {
+        Inactive, Preparation, Sampling, WaitingForDispose
+    }
 
 }
 
