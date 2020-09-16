@@ -44,6 +44,10 @@ namespace Kairos.Core
     {
         Inactive, Preparation, Sampling, WaitingForDispose
     }
+    public enum CanvasInputPinSorting
+    {
+        ByClipPosition, ByClipName, ByPinID
+    }
 
 }
 
