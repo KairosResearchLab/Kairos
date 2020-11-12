@@ -9,7 +9,7 @@ namespace Kairos
     /// This is for Opt-In.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
-    public class ExposeAttribute : Attribute
+    public class ExposePadAttribute : Attribute
     {
     }
 
@@ -18,7 +18,7 @@ namespace Kairos
     /// This is for Opt-Out.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
-    public class SuppressAttribute : Attribute
+    public class SuppressPadAttribute : Attribute
     {
     }
 }
