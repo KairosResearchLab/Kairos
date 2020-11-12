@@ -831,7 +831,7 @@
               <p:TypeAnnotation LastCategoryFullName="Kairos.Core.Clock.Timer" LastSymbolSource="Kairos.Core.vl">
                 <Choice Kind="TypeFlag" Name="KClock_M" />
               </p:TypeAnnotation>
-              <p:DefaultValue Speed_Multiplier="1" />
+              <p:DefaultValue Seek_Time="60.7739979590127" Speed_Multiplier="1" />
             </Pin>
             <Pin Id="AorbPPcHzXANrOFYh8u7si" Name="Update" Kind="InputPin" />
             <Pin Id="UGtwVpwayEwODhYwUrTuiv" Name="Output" Kind="StateOutputPin" />
@@ -846,17 +846,6 @@
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="676,502,54,26" Id="Jm32OHNcntzPqtYFAx5bZq">
-            <p:NodeReference LastCategoryFullName="Kairos.Core.Clock.IKClock" LastSymbolSource="Kairos.Core.vl">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="OperationCallFlag" Name="GetTime" />
-              <CategoryReference Kind="InterfaceTypeFlag" Name="IKClock" NeedsToBeDirectParent="true" />
-            </p:NodeReference>
-            <Pin Id="Si8qoTX1pNXPMSl7iYWSY6" Name="Input" Kind="StateInputPin" />
-            <Pin Id="G3HEmbqUuvINJAzTcgUaKA" Name="Output" Kind="StateOutputPin" />
-            <Pin Id="SJ3AdVXXt6rMEJAe17LHxC" Name="Time" Kind="OutputPin" />
-          </Node>
-          <Pad Id="QZLupCc6nwWNfBpRmaFsAK" Comment="Time" Bounds="727,549,35,15" ShowValueBox="true" isIOBox="true" />
           <Node Bounds="240,339,65,19" Id="FTxFnMvFqlgPaAkvqaLzm9">
             <p:NodeReference LastCategoryFullName="Kairos.Core.Timeline" LastSymbolSource="Kairos.Core.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -937,9 +926,18 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Timer_UI" />
             </p:NodeReference>
-            <Pin Id="Prqc5efpqvQQTbjixjW9Y1" Name="Model" Kind="InputPin" />
+            <Pin Id="Prqc5efpqvQQTbjixjW9Y1" Name="Model" Kind="InputPin">
+              <p:TypeAnnotation LastCategoryFullName="Kairos.Editor.Timer" LastSymbolSource="Kairos.Editor.vl">
+                <Choice Kind="TypeFlag" Name="Timer_UI_M" />
+              </p:TypeAnnotation>
+              <p:DefaultValue Follow_Time="True" Position="4.38423703157587" Right_Pos="7.64" Snapping_Coef="2" Time_In="-7.7332476512291" Time_Out="7.84608756147842" VisibleUnits="2" Zoom="1.01959" Zoom_Max="10000" Zoom_Min="0.0005" />
+            </Pin>
             <Pin Id="Il2c6w3ovxFMQf66G1N9Zo" Name="Clock" Kind="InputPin" />
-            <Pin Id="Mspk7R1Q2pROyQRNrZwuoH" Name="Sample Position Offset" Kind="InputPin" />
+            <Pin Id="Mspk7R1Q2pROyQRNrZwuoH" Name="Sample Position Offset" Kind="InputPin">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float64" />
+              </p:TypeAnnotation>
+            </Pin>
             <Pin Id="DDvZGCuNjOmL5LgzTa8N0f" Name="Output" Kind="OutputPin" />
             <Pin Id="MNsLUBNg5VhNATadZVMeEY" Name="TimerBarStatus" Kind="OutputPin" />
           </Node>
@@ -960,7 +958,7 @@
                 <p:OuterCategoryReference Kind="Category" Name="Graphics" NeedsToBeDirectParent="true" />
               </CategoryReference>
             </p:NodeReference>
-            <Pin Id="Ruyilf8FaxJOoGa941Czhk" Name="Bounds" Kind="InputPin" DefaultValue="3072, 0, 2194, 1234">
+            <Pin Id="Ruyilf8FaxJOoGa941Czhk" Name="Bounds" Kind="InputPin" DefaultValue="3065, -6, 2207, 1247">
               <p:TypeAnnotation LastCategoryFullName="System.Windows" LastSymbolSource="VL.CoreLib.Windows.vl">
                 <Choice Kind="TypeFlag" Name="Rectangle" />
               </p:TypeAnnotation>
@@ -996,8 +994,6 @@
         <Link Id="PU8rS7M3N7hLMog3KMVcSk" Ids="UGtwVpwayEwODhYwUrTuiv,P6M8nLNFhXqNCu42TxSZTV" />
         <Link Id="HAIjDi3K4d9QODrLJsGo3k" Ids="G0PALKqugElNd3qiOXKEaZ,PjLAvgf74vrMaPW4n5Ggvw" />
         <Link Id="HIhFTbATHgrO92clS6iuzM" Ids="FUUw9U3O1PQODtrWD2qt0N,DR3pqBm5DHLPKaM9sF8xTr" />
-        <Link Id="N3NpXl9S2KfOoBy7bIsOOx" Ids="UGtwVpwayEwODhYwUrTuiv,Si8qoTX1pNXPMSl7iYWSY6" />
-        <Link Id="PTRHJyQc3YBMq0dVoTgixi" Ids="SJ3AdVXXt6rMEJAe17LHxC,QZLupCc6nwWNfBpRmaFsAK" />
         <Link Id="A0IC6vdMAybLStAj9C2O0r" Ids="VP9g646xmhSNawzpkCfAf2,Oddm5TuNF1HLHS6t2ipfzc" />
         <Link Id="Fq3UvDoeGyiPNlRrVVLsI1" Ids="UGtwVpwayEwODhYwUrTuiv,Nb2Qj36koiJPo9obr1LxHn" />
         <Link Id="UCxSugnAqf0Nuf6Go5L964" Ids="UNS9QodmwiqPJ4SM6MUKHe,Ctr8eIT0t70LeWE7TLQUbW" />
