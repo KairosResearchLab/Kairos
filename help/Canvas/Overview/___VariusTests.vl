@@ -484,7 +484,7 @@
             <Pin Id="Uv47cE2eDwkNnrp3a7X4GK" Name="Unused Kanvas Channels" Kind="OutputPin" />
             <Pin Id="Tqtj8Zt5Rz7PJGy0GsfRRo" Name="Datatype KParameters" Kind="OutputPin" />
           </Node>
-          <Pad Id="KNlMXunnt3KLmvfTYNsPAP" Comment="Alpha" Bounds="69,9,35,15" ShowValueBox="true" isIOBox="true" Value="0.27">
+          <Pad Id="KNlMXunnt3KLmvfTYNsPAP" Comment="Alpha" Bounds="69,9,35,15" ShowValueBox="true" isIOBox="true" Value="0.32">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -535,7 +535,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="KCanvasEditorAndInspector" />
             </p:NodeReference>
-            <Pin Id="OfOF9UOftadM88nLzav9q6" Name="Bounds" Kind="InputPin" DefaultValue="330, 321, 1196, 501">
+            <Pin Id="OfOF9UOftadM88nLzav9q6" Name="Bounds" Kind="InputPin" DefaultValue="590, 320, 935, 500">
               <p:TypeAnnotation LastCategoryFullName="System.Windows" LastSymbolSource="VL.CoreLib.Windows.vl">
                 <Choice Kind="TypeFlag" Name="Rectangle" />
               </p:TypeAnnotation>
@@ -643,6 +643,7 @@
                 <Channels>
                   <Item Key="Alpha">
                     <Value Parameter_Path="Alpha">
+                      <Activation Delayed_Dispose_End="0.5" Delayed_Dispose_Start="0.5" Sampling_End="0.5" Valid="True" Width="0.5" />
                       <Author_IDs>
                         <Item>Default</Item>
                       </Author_IDs>
@@ -650,6 +651,15 @@
                         <Default_Value r:Type="Float32 [Primitive]">0.27</Default_Value>
                       </Parameter>
                       <Sampler1D_M>
+                        <Activation Delayed_Dispose_End="0.5" Delayed_Dispose_Start="0.5" Sampling_End="0.5" Valid="True" Width="0.5" />
+                        <Clips>
+                          <Item Author_ID="Default" Duration="0.5" Key="a86b9af5-b3bb-4765-83bc-82d680b37353" r:Type="Clip1D_ConstantValue_M [Kairos.Core.Clip]">
+                            <Blending_Model Global_Alpha="1">
+                              <Alpha_Function r:Type="AlphaFunction_Flat [Kairos.Core.Blending]" />
+                            </Blending_Model>
+                            <Value r:Type="Float32 [Primitive]">0.32</Value>
+                          </Item>
+                        </Clips>
                         <Initial_Value r:Type="Float32 [Primitive]">0.27</Initial_Value>
                       </Sampler1D_M>
                       <Settings Enabled="True" />
@@ -693,8 +703,33 @@
                       <Settings Enabled="True" />
                     </Value>
                   </Item>
+                  <Item Key="Screens&lt;4&gt;@Pos">
+                    <Value Parameter_Path="Screens&lt;4&gt;@Pos">
+                      <Activation Valid="True" />
+                      <Author_IDs>
+                        <Item>Default</Item>
+                      </Author_IDs>
+                      <Parameter Name="Pos" Path="Screens&lt;4&gt;@Pos">
+                        <Default_Value r:Type="Float32 [Primitive]">0.34</Default_Value>
+                      </Parameter>
+                      <Sampler1D_M>
+                        <Activation Valid="True" />
+                        <Clips>
+                          <Item Author_ID="Default" Key="a56d6aa5-4d85-4abf-b98b-30c12d24e427" r:Type="Clip1D_ConstantValue_M [Kairos.Core.Clip]">
+                            <Blending_Model Global_Alpha="1">
+                              <Alpha_Function r:Type="AlphaFunction_Flat [Kairos.Core.Blending]" />
+                            </Blending_Model>
+                            <Value r:Type="Float32 [Primitive]">0.34</Value>
+                          </Item>
+                        </Clips>
+                        <Initial_Value r:Type="Float32 [Primitive]">0.34</Initial_Value>
+                      </Sampler1D_M>
+                      <Settings Enabled="True" />
+                    </Value>
+                  </Item>
                   <Item Key="Screens&lt;5&gt;@Pos">
                     <Value Parameter_Path="Screens&lt;5&gt;@Pos">
+                      <Activation Delayed_Dispose_End="0.5" Delayed_Dispose_Start="0.5" Sampling_End="0.5" Valid="True" Width="0.5" />
                       <Author_IDs>
                         <Item>Default</Item>
                       </Author_IDs>
@@ -702,6 +737,15 @@
                         <Default_Value r:Type="Float32 [Primitive]">0</Default_Value>
                       </Parameter>
                       <Sampler1D_M>
+                        <Activation Delayed_Dispose_End="0.5" Delayed_Dispose_Start="0.5" Sampling_End="0.5" Valid="True" Width="0.5" />
+                        <Clips>
+                          <Item Author_ID="Default" Duration="0.5" Key="123e0a4c-e730-4096-94eb-2ebb8ac38baa" r:Type="Clip1D_ConstantValue_M [Kairos.Core.Clip]">
+                            <Blending_Model Global_Alpha="1">
+                              <Alpha_Function r:Type="AlphaFunction_Flat [Kairos.Core.Blending]" />
+                            </Blending_Model>
+                            <Value r:Type="Float32 [Primitive]">0.73</Value>
+                          </Item>
+                        </Clips>
                         <Initial_Value r:Type="Float32 [Primitive]">0</Initial_Value>
                       </Sampler1D_M>
                       <Settings Enabled="True" />
@@ -726,6 +770,7 @@
                   <Item>Alpha</Item>
                   <Item>Screens&lt;3&gt;@Pos</Item>
                   <Item>Screens&lt;1&gt;@Pos</Item>
+                  <Item>Screens&lt;4&gt;@Pos</Item>
                   <Item>Screens&lt;5&gt;@Pos</Item>
                   <Item>Screens&lt;1&gt;@Size</Item>
                 </Parameter_List>
@@ -735,86 +780,6 @@
             <Pin Id="RKaQGxNhODwNrBjt1RaaRW" Name="Reload" Kind="InputPin" />
             <Pin Id="LeBAP1fEvK1Ou3oOpoPUhu" Name="Initialize" Kind="InputPin" />
             <Pin Id="Nl8I3AmNbZcMTrdookzDRo" Name="Output" Kind="StateOutputPin" />
-          </Node>
-          <Node Bounds="291,193,258,19" Id="OYoj3zW4yMXNTRtlNudnts">
-            <p:NodeReference LastCategoryFullName="Kairos.Core.Compositor" LastSymbolSource="Kairos.Core.vl">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="Compositor" />
-            </p:NodeReference>
-            <Pin Id="UOteHgBk7XaMVzCYB0hdFA" Name="Model" Kind="InputPin">
-              <p:TypeAnnotation LastCategoryFullName="Kairos.Core.Compositor" LastSymbolSource="Kairos.Core.vl">
-                <Choice Kind="TypeFlag" Name="Compositor_M" />
-              </p:TypeAnnotation>
-              <p:DefaultValue Key="d1972fda-dfec-475e-85d8-f1fbf5f99ced" xmlns:r="reflection" r:Version="2">
-                <Activation Delayed_Dispose_End="2.36201765760779" Delayed_Dispose_Start="1.36201765760779" Preparation_End="0.822017669677734" Preparation_Start="-0.177982330322266" Sampling_End="1.36201765760779" Sampling_Start="0.822017669677734" Valid="True" Width="2.53999998793006" />
-                <CanvasClips>
-                  <Item Key="df81904c-8399-43c3-9e53-3f8770fc4575">
-                    <Value Author_ID="Default" Color="0, 0.7426015, 0.7899998, 1" Duration="0.5" Input_Pin_ID="18:21:31" Kairos_Source_Method="Sample" Key="df81904c-8399-43c3-9e53-3f8770fc4575" Name="My Canvas Clip" Position="2" Sampler_Path_ID="Default" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1">
-                      <Activation Delayed_Dispose_End="2" Delayed_Dispose_Start="2" Preparation_End="2" Preparation_Start="2" Sampling_End="2.5" Sampling_Start="2" />
-                      <Blending_Model Global_Alpha="1">
-                        <Alpha_Function r:Type="AlphaFunction_Flat [Kairos.Core.Blending]" />
-                      </Blending_Model>
-                    </Value>
-                  </Item>
-                </CanvasClips>
-                <Channels>
-                  <Item Key="Alpha">
-                    <Value Parameter_Path="Alpha">
-                      <Activation Delayed_Dispose_End="2.36201765760779" Delayed_Dispose_Start="1.36201765760779" Preparation_End="0.822017669677734" Preparation_Start="-0.177982330322266" Sampling_End="1.36201765760779" Sampling_Start="0.822017669677734" Valid="True" Width="2.53999998793006" />
-                      <Author_IDs>
-                        <Item>dbd1a4f4-9e6d-4d7e-9e89-ef077dbb9d44</Item>
-                      </Author_IDs>
-                      <Blender1D_M>
-                        <Activation Delayed_Dispose_End="2.36201765760779" Delayed_Dispose_Start="1.36201765760779" Preparation_End="0.822017669677734" Preparation_Start="-0.177982330322266" Sampling_End="1.36201765760779" Sampling_Start="0.822017669677734" Valid="True" Width="2.53999998793006" />
-                        <Clips>
-                          <Item Author_ID="dbd1a4f4-9e6d-4d7e-9e89-ef077dbb9d44" Duration="0.539999987930059" Kairos_Source_Method="Sample" Key="0daeca6c-85a7-4b9b-b3f9-16d60bd347cf" Layer_Index="3" Parameter_Path="Alpha" Position="0.822017669677734" Sampler_Path_ID="Default" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1" r:Type="Clip1D_SVPChild_M [Kairos.Core.Clip]">
-                            <Activation Delayed_Dispose_End="2.36201765760779" Delayed_Dispose_Start="1.36201765760779" Preparation_End="0.822017669677734" Preparation_Start="-0.177982330322266" Sampling_End="1.36201765760779" Sampling_Start="0.822017669677734" Valid="True" Width="2.53999998793006" />
-                            <Blending_Model Global_Alpha="1">
-                              <Alpha_Function FadeIn="1" FadeIn_Tweener_Mode="InOut" FadeOut="1" FadeOut_Tweener_Mode="InOut" r:Type="AlphaFunction_FadeInOut [Kairos.Core.Blending]" />
-                            </Blending_Model>
-                          </Item>
-                        </Clips>
-                        <Initial_Value r:Type="Float32 [Primitive]">0</Initial_Value>
-                      </Blender1D_M>
-                      <Parameter Name="Alpha" Path="Alpha">
-                        <Default_Value r:Type="Float32 [Primitive]">0</Default_Value>
-                      </Parameter>
-                      <Settings Enabled="True" />
-                    </Value>
-                  </Item>
-                </Channels>
-                <Parameter_List>
-                  <Item>Alpha</Item>
-                </Parameter_List>
-                <SVPClips>
-                  <Item Key="dbd1a4f4-9e6d-4d7e-9e89-ef077dbb9d44">
-                    <Value Author_ID="Default" Color="0.8600001, 0, 0.5676024, 1" Duration="0.539999987930059" Input_Pin_ID="18:21:34" Kairos_Source_Method="Sample" Key="dbd1a4f4-9e6d-4d7e-9e89-ef077dbb9d44" Layer_Index="3" Name="Alpha" Position="0.822017669677734" Sampler_Path_ID="Default" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1" Source_Input_Pin_Enabled="True">
-                      <Activation Delayed_Dispose_End="2.36201765760779" Delayed_Dispose_Start="1.36201765760779" Preparation_End="0.822017669677734" Preparation_Start="-0.177982330322266" Sampling_End="1.36201765760779" Sampling_Start="0.822017669677734" Valid="True" Width="2.53999998793006" />
-                      <Blending_Model Global_Alpha="1">
-                        <Alpha_Function FadeIn="1" FadeIn_Tweener_Mode="InOut" FadeOut="1" FadeOut_Tweener_Mode="InOut" r:Type="AlphaFunction_FadeInOut [Kairos.Core.Blending]" />
-                      </Blending_Model>
-                    </Value>
-                  </Item>
-                </SVPClips>
-              </p:DefaultValue>
-            </Pin>
-            <Pin Id="SL2cM6YKWUkLVaLEYX4Txo" Name="Reload" Kind="InputPin" />
-            <Pin Id="Ggmv8NM9E3yPmyGv5CX9wY" Name="Initialize" Kind="InputPin" />
-            <Pin Id="RrEB3jcXjkfLtOdLYjh9RR" Name="Sync Enabled" Kind="InputPin" />
-            <Pin Id="EsW9tS4P9wyQa72nBzeIKo" Name="Compositor Name" Kind="InputPin" />
-            <Pin Id="JXZGT3XnqSnML98dy8sDUW" Name="18:21:34" Kind="InputPin" PinGroupName="Sources">
-              <p:TypeAnnotation>
-                <Choice Kind="TypeFlag" Name="IStructuredValueProvider" />
-              </p:TypeAnnotation>
-            </Pin>
-            <Pin Id="C6gKq0yyKz1PWg4q8Rz4Al" Name="18:21:31" Kind="InputPin" PinGroupName="Sources">
-              <p:TypeAnnotation>
-                <Choice Kind="TypeFlag" Name="IKCanvas" />
-              </p:TypeAnnotation>
-            </Pin>
-            <Pin Id="DiFpgTQOY2iMHJ06G6tkq8" Name="External Sources" Kind="InputPin" />
-            <Pin Id="NNNI3NzPPhwOqW1dazkyFN" Name="SetSources" Kind="InputPin" />
-            <Pin Id="JCIEtKzO9z5LuW3dfbn78W" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Pad Id="CTyJTFIrflIL1mXJzH9eGs" Comment="" Bounds="327,-214,35,15" ShowValueBox="true" isIOBox="true" Value="0">
             <p:TypeAnnotation>
@@ -843,7 +808,7 @@
               <p:TypeAnnotation LastCategoryFullName="Kairos.Core.Clock.Timer" LastSymbolSource="Kairos.Core.vl">
                 <Choice Kind="TypeFlag" Name="KClock_M" />
               </p:TypeAnnotation>
-              <p:DefaultValue BPM="60" Seek_Time="2.01802874343872" Speed_Multiplier="1" />
+              <p:DefaultValue BPM="60" Seek_Time="-0.454659129509269" Speed_Multiplier="1" />
             </Pin>
             <Pin Id="KrpewqarGM7MeICRQMLkk4" Name="Update" Kind="ApplyPin" />
             <Pin Id="VUtgLtOoMmgMirWarhf0Jk" Name="Output" Kind="StateOutputPin" />
@@ -2525,38 +2490,6 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="642,68,65,19" Id="Rro55sXDlQ2OQTexYC5tuk">
-            <p:NodeReference LastCategoryFullName="Control" LastSymbolSource="CoreLibBasics.vl">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="MonoFlop" />
-            </p:NodeReference>
-            <Pin Id="CB4KUtejdPFP1gp5xrcr2E" Name="Set" Kind="InputPin" />
-            <Pin Id="SK5QorR47WUOz6XD2jLdKq" Name="Time" Kind="InputPin" />
-            <Pin Id="DkxQ5IyY35AMFL9cIeeX3C" Name="Retriggerable" Kind="InputPin" />
-            <Pin Id="KigkDYokMMILsdRdZByMTz" Name="Reset" Kind="InputPin" />
-            <Pin Id="NMLv3oirxe2LjJXKrtqtr7" Name="Value" Kind="OutputPin" />
-            <Pin Id="DDCiLxFnjg8O4BieLkIVau" Name="Inverse Output" Kind="OutputPin" />
-          </Node>
-          <Node Bounds="642,37,54,19" Id="Pqn8Vnj8PJoP0WfsOSEFmG">
-            <p:NodeReference LastCategoryFullName="Control" LastSymbolSource="CoreLibBasics.vl">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="OnOpen" />
-            </p:NodeReference>
-            <Pin Id="CDMruLm13QzPxmqB8cgckV" Name="Simulate" Kind="InputPin" DefaultValue="False">
-              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-                <Choice Kind="TypeFlag" Name="Boolean" />
-              </p:TypeAnnotation>
-            </Pin>
-            <Pin Id="ACucrcsjOuFMmlRDS5Jb1W" Name="Output" Kind="OutputPin" />
-          </Node>
-          <Pad Id="Aoyhy577NN5Ox9XHYih2Od" Comment="" Bounds="644,-5,35,35" ShowValueBox="true" isIOBox="true" Value="True">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-              <Choice Kind="TypeFlag" Name="Boolean" />
-            </p:TypeAnnotation>
-            <p:ValueBoxSettings>
-              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
-            </p:ValueBoxSettings>
-          </Pad>
           <Node Bounds="324,233,83,19" Id="LBPbBrueRDAMGg8K5yGN3o">
             <p:NodeReference LastCategoryFullName="Kairos.Editor.Compositor" LastSymbolSource="Kairos.Editor.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -2569,36 +2502,6 @@
             <Pin Id="Odtxke6ncLAOdE54hEEzHb" Name="Model Reference" Kind="OutputPin" />
             <Pin Id="CnGSBC1OrkJMXqwkWGeqo8" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="UcEWzQGcgjPOM1tBu7b9bo" Comment="SetSources" Bounds="546,143,35,35" ShowValueBox="true" isIOBox="true" Value="True">
-            <p:TypeAnnotation>
-              <Choice Kind="TypeFlag" Name="Boolean" />
-              <FullNameCategoryReference ID="Primitive" />
-            </p:TypeAnnotation>
-            <p:ValueBoxSettings>
-              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
-            </p:ValueBoxSettings>
-          </Pad>
-          <Pad Id="SzVFmoLeFKINd0rLsB1mNW" Comment="Sync Enabled" Bounds="388,142,35,35" ShowValueBox="true" isIOBox="true" Value="True">
-            <p:TypeAnnotation>
-              <Choice Kind="TypeFlag" Name="Boolean" />
-              <FullNameCategoryReference ID="Primitive" />
-            </p:TypeAnnotation>
-            <p:ValueBoxSettings>
-              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
-            </p:ValueBoxSettings>
-          </Pad>
-          <Pad Id="SgiV15QaiMHNCuEXyzv4O8" Bounds="763,-12,302,185" ShowValueBox="true" isIOBox="true" Value="Better to give some frames to the graph to distribute resources and sync clips at all levels&#xD;&#xA;&#xD;&#xA;When sync is disabled, no editing of the model is allowed">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-              <Choice Kind="TypeFlag" Name="String" />
-            </p:TypeAnnotation>
-            <p:ValueBoxSettings>
-              <p:fontsize p:Type="Int32">9</p:fontsize>
-              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
-            </p:ValueBoxSettings>
-          </Pad>
-          <Overlay Id="SEER7UyyrqnPcuq8yl7qD6" Name="Optimization" Bounds="278,-42,819,223">
-            <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
-          </Overlay>
           <Node Bounds="958,-420,54,19" Id="IaeI2FPY4BfQSP1ChoVzys">
             <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -2663,7 +2566,7 @@
             <Pin Id="PTIcb9jSjpRMJ4p1lmx54a" Name="Index" Kind="InputPin" />
             <Pin Id="TdwipznMagsNoRUFmOLpHm" Name="Result" Kind="OutputPin" />
           </Node>
-          <Pad Id="PA5fbCLz86zOGPO3typLT2" Comment="Index" Bounds="45,311,35,15" ShowValueBox="true" isIOBox="true" Value="3">
+          <Pad Id="PA5fbCLz86zOGPO3typLT2" Comment="Index" Bounds="45,311,35,15" ShowValueBox="true" isIOBox="true" Value="5">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
@@ -2678,7 +2581,7 @@
             <Pin Id="G4ps4jSwjrOLVKhy4Pnew0" Name="Pos" Kind="InputPin" />
             <Pin Id="NbjJLLJgY7zQCsY7CpTT6C" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Pad Id="UMRoQO5yLYHNFkLdG1HcZ4" Comment="Pos" Bounds="90,362,35,15" ShowValueBox="true" isIOBox="true" Value="0.34">
+          <Pad Id="UMRoQO5yLYHNFkLdG1HcZ4" Comment="Pos" Bounds="90,362,35,15" ShowValueBox="true" isIOBox="true" Value="0.73">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -2803,6 +2706,193 @@
             <Pin Id="Qrh2jAjLKzyNpCUWvV07gJ" Name="Initialize" Kind="InputPin" />
             <Pin Id="UcUUcJBPnyROdrLy1zFiQR" Name="Output" Kind="StateOutputPin" />
           </Node>
+          <Node Bounds="298,167,70,19" Id="K9D6t32qOCcOUL8LLP0AFj">
+            <p:NodeReference LastCategoryFullName="Kairos.Core.Compositor" LastSymbolSource="Kairos.Core.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Compositor" />
+            </p:NodeReference>
+            <Pin Id="F8rJz072MNqLtTJzSjJt1p" Name="Model" Kind="InputPin">
+              <p:TypeAnnotation LastCategoryFullName="Kairos.Core.Compositor" LastSymbolSource="Kairos.Core.vl">
+                <Choice Kind="TypeFlag" Name="Compositor_M" />
+              </p:TypeAnnotation>
+              <p:DefaultValue Key="70b416da-0148-489e-9bea-3c22599e6cef" xmlns:r="reflection" r:Version="2">
+                <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                <CanvasClips>
+                  <Item Key="91465f31-e4eb-4938-ab81-0dd58d872a86">
+                    <Value Author_ID="Default" Color="0, 0.7426015, 0.7899998, 1" Duration="10" Input_Pin_ID="00:23:37" Kairos_Source_Method="Sample" Key="91465f31-e4eb-4938-ab81-0dd58d872a86" Layer_Index="4" Name="My Canvas Clip" Sampler_Path_ID="Default" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1">
+                      <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                      <Blending_Model Global_Alpha="1">
+                        <Alpha_Function r:Type="AlphaFunction_Flat [Kairos.Core.Blending]" />
+                      </Blending_Model>
+                    </Value>
+                  </Item>
+                </CanvasClips>
+                <Channels>
+                  <Item Key="Alpha">
+                    <Value Parameter_Path="Alpha">
+                      <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                      <Author_IDs>
+                        <Item>91465f31-e4eb-4938-ab81-0dd58d872a86</Item>
+                      </Author_IDs>
+                      <Blender1D_M>
+                        <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                        <Clips>
+                          <Item Author_ID="91465f31-e4eb-4938-ab81-0dd58d872a86" Duration="10" Kairos_Source_Method="Sample" Key="855279d6-02e8-4624-8047-14b9442f0dbc" Layer_Index="4" Parameter_Path="Alpha" Sampler_Path_ID="Default" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1" r:Type="Clip1D_CanvasChild_M [Kairos.Core.Clip]">
+                            <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                            <Blending_Model Global_Alpha="1">
+                              <Alpha_Function r:Type="AlphaFunction_Flat [Kairos.Core.Blending]" />
+                            </Blending_Model>
+                          </Item>
+                        </Clips>
+                        <Initial_Value r:Type="Float32 [Primitive]">0.27</Initial_Value>
+                      </Blender1D_M>
+                      <Parameter Name="Alpha" Path="Alpha">
+                        <Default_Value r:Type="Float32 [Primitive]">0.27</Default_Value>
+                      </Parameter>
+                      <Settings Enabled="True" />
+                    </Value>
+                  </Item>
+                  <Item Key="Screens&lt;3&gt;@Pos">
+                    <Value Parameter_Path="Screens&lt;3&gt;@Pos">
+                      <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                      <Author_IDs>
+                        <Item>91465f31-e4eb-4938-ab81-0dd58d872a86</Item>
+                      </Author_IDs>
+                      <Blender1D_M>
+                        <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                        <Clips>
+                          <Item Author_ID="91465f31-e4eb-4938-ab81-0dd58d872a86" Duration="10" Kairos_Source_Method="Sample" Key="bff06782-55f6-4652-85bc-1d7084647180" Layer_Index="4" Parameter_Path="Screens&lt;3&gt;@Pos" Sampler_Path_ID="Default" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1" r:Type="Clip1D_CanvasChild_M [Kairos.Core.Clip]">
+                            <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                            <Blending_Model Global_Alpha="1">
+                              <Alpha_Function r:Type="AlphaFunction_Flat [Kairos.Core.Blending]" />
+                            </Blending_Model>
+                          </Item>
+                        </Clips>
+                        <Initial_Value r:Type="Float32 [Primitive]">0.73</Initial_Value>
+                      </Blender1D_M>
+                      <Parameter Name="Pos" Path="Screens&lt;3&gt;@Pos">
+                        <Default_Value r:Type="Float32 [Primitive]">0.73</Default_Value>
+                      </Parameter>
+                      <Settings Enabled="True" />
+                    </Value>
+                  </Item>
+                  <Item Key="Screens&lt;1&gt;@Pos">
+                    <Value Parameter_Path="Screens&lt;1&gt;@Pos">
+                      <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                      <Author_IDs>
+                        <Item>91465f31-e4eb-4938-ab81-0dd58d872a86</Item>
+                      </Author_IDs>
+                      <Blender1D_M>
+                        <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                        <Clips>
+                          <Item Author_ID="91465f31-e4eb-4938-ab81-0dd58d872a86" Duration="10" Kairos_Source_Method="Sample" Key="bb5acc59-6d6f-4743-ac86-4f6b23c142d6" Layer_Index="4" Parameter_Path="Screens&lt;1&gt;@Pos" Sampler_Path_ID="Default" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1" r:Type="Clip1D_CanvasChild_M [Kairos.Core.Clip]">
+                            <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                            <Blending_Model Global_Alpha="1">
+                              <Alpha_Function r:Type="AlphaFunction_Flat [Kairos.Core.Blending]" />
+                            </Blending_Model>
+                          </Item>
+                        </Clips>
+                        <Initial_Value r:Type="Float32 [Primitive]">0</Initial_Value>
+                      </Blender1D_M>
+                      <Parameter Name="Screens&lt;1&gt;@Pos" Path="Screens&lt;1&gt;@Pos">
+                        <Default_Value r:Type="Float32 [Primitive]">0</Default_Value>
+                      </Parameter>
+                      <Settings Enabled="True" />
+                    </Value>
+                  </Item>
+                  <Item Key="Screens&lt;4&gt;@Pos">
+                    <Value Parameter_Path="Screens&lt;4&gt;@Pos">
+                      <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                      <Author_IDs>
+                        <Item>91465f31-e4eb-4938-ab81-0dd58d872a86</Item>
+                      </Author_IDs>
+                      <Blender1D_M>
+                        <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                        <Clips>
+                          <Item Author_ID="91465f31-e4eb-4938-ab81-0dd58d872a86" Duration="10" Kairos_Source_Method="Sample" Key="1f80ea3d-ad86-41be-92d2-7578e1f7cfa1" Layer_Index="4" Parameter_Path="Screens&lt;4&gt;@Pos" Sampler_Path_ID="Default" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1" r:Type="Clip1D_CanvasChild_M [Kairos.Core.Clip]">
+                            <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                            <Blending_Model Global_Alpha="1">
+                              <Alpha_Function r:Type="AlphaFunction_Flat [Kairos.Core.Blending]" />
+                            </Blending_Model>
+                          </Item>
+                        </Clips>
+                        <Initial_Value r:Type="Float32 [Primitive]">0.34</Initial_Value>
+                      </Blender1D_M>
+                      <Parameter Name="Pos" Path="Screens&lt;4&gt;@Pos">
+                        <Default_Value r:Type="Float32 [Primitive]">0.34</Default_Value>
+                      </Parameter>
+                      <Settings Enabled="True" />
+                    </Value>
+                  </Item>
+                  <Item Key="Screens&lt;5&gt;@Pos">
+                    <Value Parameter_Path="Screens&lt;5&gt;@Pos">
+                      <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                      <Author_IDs>
+                        <Item>91465f31-e4eb-4938-ab81-0dd58d872a86</Item>
+                      </Author_IDs>
+                      <Blender1D_M>
+                        <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                        <Clips>
+                          <Item Author_ID="91465f31-e4eb-4938-ab81-0dd58d872a86" Duration="10" Kairos_Source_Method="Sample" Key="a26edbc4-550e-4a7e-817b-a9bd2e7093d7" Layer_Index="4" Parameter_Path="Screens&lt;5&gt;@Pos" Sampler_Path_ID="Default" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1" r:Type="Clip1D_CanvasChild_M [Kairos.Core.Clip]">
+                            <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                            <Blending_Model Global_Alpha="1">
+                              <Alpha_Function r:Type="AlphaFunction_Flat [Kairos.Core.Blending]" />
+                            </Blending_Model>
+                          </Item>
+                        </Clips>
+                        <Initial_Value r:Type="Float32 [Primitive]">0</Initial_Value>
+                      </Blender1D_M>
+                      <Parameter Name="Screens&lt;5&gt;@Pos" Path="Screens&lt;5&gt;@Pos">
+                        <Default_Value r:Type="Float32 [Primitive]">0</Default_Value>
+                      </Parameter>
+                      <Settings Enabled="True" />
+                    </Value>
+                  </Item>
+                  <Item Key="Screens&lt;1&gt;@Size">
+                    <Value Parameter_Path="Screens&lt;1&gt;@Size">
+                      <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                      <Author_IDs>
+                        <Item>91465f31-e4eb-4938-ab81-0dd58d872a86</Item>
+                      </Author_IDs>
+                      <Blender1D_M>
+                        <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                        <Clips>
+                          <Item Author_ID="91465f31-e4eb-4938-ab81-0dd58d872a86" Duration="10" Kairos_Source_Method="Sample" Key="bed04b79-6940-411e-9a42-21a1ab129414" Layer_Index="4" Parameter_Path="Screens&lt;1&gt;@Size" Sampler_Path_ID="Default" Sampler_Position_Out="1" Sampler_Range_Mapping="Clamp" Sampler_Speed_Mult="1" r:Type="Clip1D_CanvasChild_M [Kairos.Core.Clip]">
+                            <Activation Delayed_Dispose_End="0.590156942605972" Preparation_End="0.0901569426059723" Sampling_End="10" Valid="True" Width="0.590156942605972" />
+                            <Blending_Model Global_Alpha="1">
+                              <Alpha_Function r:Type="AlphaFunction_Flat [Kairos.Core.Blending]" />
+                            </Blending_Model>
+                          </Item>
+                        </Clips>
+                        <Initial_Value r:Type="Float32 [Primitive]">0.5</Initial_Value>
+                      </Blender1D_M>
+                      <Parameter Name="Screens&lt;1&gt;@Size" Path="Screens&lt;1&gt;@Size">
+                        <Default_Value r:Type="Float32 [Primitive]">0.5</Default_Value>
+                      </Parameter>
+                      <Settings Enabled="True" />
+                    </Value>
+                  </Item>
+                </Channels>
+                <Parameter_List>
+                  <Item>Alpha</Item>
+                  <Item>Screens&lt;3&gt;@Pos</Item>
+                  <Item>Screens&lt;1&gt;@Pos</Item>
+                  <Item>Screens&lt;4&gt;@Pos</Item>
+                  <Item>Screens&lt;5&gt;@Pos</Item>
+                  <Item>Screens&lt;1&gt;@Size</Item>
+                </Parameter_List>
+              </p:DefaultValue>
+            </Pin>
+            <Pin Id="QhdcEjqzoAGPqPU3MUtdKg" Name="Reload" Kind="InputPin" />
+            <Pin Id="QrHfGLuSzz2LlMOfPrxf1X" Name="Initialize" Kind="InputPin" />
+            <Pin Id="BpSOLDvczhRLYknrQxRH3j" Name="Compositor Name" Kind="InputPin" />
+            <Pin Id="BBaz3UpNp4pOal38hzjyxG" Name="00:23:37" Kind="InputPin" PinGroupName="Sources">
+              <p:TypeAnnotation>
+                <Choice Kind="TypeFlag" Name="IKCanvas" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="IJCIGm9K1qPP2hnqpmVP3b" Name="Output" Kind="StateOutputPin" />
+          </Node>
         </Canvas>
         <Patch Id="Fu2jL7w5vKMMDy7WlQQfpG" Name="Create" />
         <Patch Id="KIY1za4NGAZLTWBoQZjx6K" Name="Update" />
@@ -2834,14 +2924,6 @@
         <Link Id="JtDRxVpDFjbO3tEyb3qzyS" Ids="DkQ0yod6u6EPA9oIiOFULr,FeLJHmo48t3OQOhLdc5neD" />
         <Link Id="HVEL52eThrKO4Fj9LFOycd" Ids="SG8eBELfVKXLltSv9dl3Bq,O6Pp4QzuozINcbtQBw7AsO" />
         <Link Id="BHOEpEIDuOFOtnU2vyW4uA" Ids="Nl8I3AmNbZcMTrdookzDRo,FFn0yphoNYNQMgrHxOdbH7" />
-        <Link Id="QK6iXMv1SvPN8jo2PXK5Zj" Ids="ACucrcsjOuFMmlRDS5Jb1W,CB4KUtejdPFP1gp5xrcr2E" />
-        <Link Id="EUAYu3WDYUjLZrCGs4mbRK" Ids="Aoyhy577NN5Ox9XHYih2Od,CDMruLm13QzPxmqB8cgckV" />
-        <Link Id="CE2WqDF8uIRPWcbWB0Laya" Ids="QG4RC9FPFMXPswAhaFT6m1,JXZGT3XnqSnML98dy8sDUW" />
-        <Link Id="GHcioH5NUsHQRxKRWwc24t" Ids="JCIEtKzO9z5LuW3dfbn78W,EHthSiSSVwJMqzlGnOjImM" />
-        <Link Id="KH7UoPDywX1L6mflBEh7Sm" Ids="UcEWzQGcgjPOM1tBu7b9bo,NNNI3NzPPhwOqW1dazkyFN" />
-        <Link Id="ROEMu8LV9Z9QKTLIoQmXSd" Ids="NMLv3oirxe2LjJXKrtqtr7,UcEWzQGcgjPOM1tBu7b9bo" />
-        <Link Id="USlB1AoskonOaymTpIMop8" Ids="SzVFmoLeFKINd0rLsB1mNW,RrEB3jcXjkfLtOdLYjh9RR" />
-        <Link Id="OQf2QjkXumxNpQxDULC8He" Ids="NMLv3oirxe2LjJXKrtqtr7,SzVFmoLeFKINd0rLsB1mNW" />
         <Link Id="EzCNZwfo1YzLPgns0MgptF" Ids="DaURsNjvcJULO40DLHAesh,LXzDbcZTL3QPxRBDy091qa" />
         <Link Id="EN2G2F4RbAFQEPNNm7VE9T" Ids="PzPtHUS9jsePnqvIngCV9h,ODEyv912dlWOwGFz5z3J4f" />
         <Link Id="LJXWGAZNLrKLjmz5oqjLTp" Ids="Nl8I3AmNbZcMTrdookzDRo,Qial0F9C7kCQOKL92tbhRG" />
@@ -2864,7 +2946,8 @@
         <Link Id="H8VsYIZbsgiN6a2pA3MR7N" Ids="TjyTfau8dHjP1zM3CWiQQz,EV7AajSsHysLkiH6nMHlzc" />
         <Link Id="FEJ4EjWurpYMmACd6EyyZI" Ids="EV7AajSsHysLkiH6nMHlzc,IFBV0MYmraFNbYP0qusKNt" />
         <Link Id="QAxGtAlpZS9Nvdz4UgMfdk" Ids="Sigv6x6UF7CMWeuTokY0a9,QMGZJO6YBvHMsH4ICsw6Sz" />
-        <Link Id="JL7OhXxP2CDMoAVw2hYTpw" Ids="Nl8I3AmNbZcMTrdookzDRo,EB7KczBDiExLRDeLmgTYOF" />
+        <Link Id="Gxdnx6qHxCjOCHtAKvo9ls" Ids="IJCIGm9K1qPP2hnqpmVP3b,EB7KczBDiExLRDeLmgTYOF" />
+        <Link Id="QkoJDeuegqsMVkvhv8s5kA" Ids="Nl8I3AmNbZcMTrdookzDRo,BBaz3UpNp4pOal38hzjyxG" />
       </Patch>
     </Node>
   </Patch>
