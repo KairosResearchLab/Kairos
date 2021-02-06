@@ -20,6 +20,10 @@ To use the latest stable version:
 
 ## Licencing
 
+![CC 4.0BY NC SA](http://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)
+Author: Natan Sinigaglia (natan.sinigaglia (at) gmail.com)
+This software is distributed under the [CC Attribution-NonCommercial-ShareAlike 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
+
 Kairos library is free for non-commercial projects and for substantial contributors of the library.
 If you use kairos on commercial projects, the licence costs 100€.
 All the resources from licencing will go into maintainance, documentation and extension of the library.
