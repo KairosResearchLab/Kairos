@@ -51,8 +51,12 @@
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
             </Pin>
-            <Pin Id="E3QGNemmZl3Po2eHH2fRPT" Name="Output Minimum" Kind="InputPin" />
-            <Pin Id="B2IZCtCRTxfL1VL8M9TLFG" Name="Output Maximum" Kind="InputPin" DefaultValue="1">
+            <Pin Id="E3QGNemmZl3Po2eHH2fRPT" Name="Output Minimum" Kind="InputPin" DefaultValue="0.3">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float32" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="B2IZCtCRTxfL1VL8M9TLFG" Name="Output Maximum" Kind="InputPin" DefaultValue="0.7">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
@@ -223,6 +227,38 @@
             <Pin Id="F8Muy6iDii6NMKKaPf4WGm" Name="On New Cycle" Kind="OutputPin" />
             <Pin Id="UJ9rnJKhhMkOA3IfKucTSD" Name="Cycles" Kind="OutputPin" />
           </Node>
+          <Node Bounds="538,58,117,19" Id="T9CuGHaSaAvLPP91aUwzoZ">
+            <p:NodeReference LastCategoryFullName="Kairos.Interpolation" LastSymbolSource="Kairos.Core.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="TweenInterpolation_M" />
+            </p:NodeReference>
+            <Pin Id="CSXoWqTY9GvQR5shnyKK4t" Name="Transition" Kind="InputPin" DefaultValue="Bounce">
+              <p:TypeAnnotation LastCategoryFullName="Math.Tweener" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="TweenerTransition" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="VtEj77J3KaZLcvJRFX9k0w" Name="Mode" Kind="InputPin" />
+            <Pin Id="CEuTmLCJPCSPKQGmfqeI6L" Name="Output" Kind="StateOutputPin" />
+          </Node>
+          <Node Bounds="538,98,102,19" Id="NqgaPPv1eLAQFcqU4VtWaE">
+            <p:NodeReference LastCategoryFullName="Kairos.Interpolation" LastSymbolSource="Kairos.Core.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="InterpolationModel" />
+            </p:NodeReference>
+            <Pin Id="Q1LCQahXOlJM31ldAHayf5" Name="Value Interpolation Model" Kind="InputPin" />
+            <Pin Id="BVJhgZ5eaH0Pr4znyQdlVC" Name="Count Interpolation Model" Kind="InputPin" />
+            <Pin Id="Bi5FwMbIcaaNr6myuY4Cy5" Name="Output" Kind="StateOutputPin" />
+          </Node>
+          <Pad Id="Gx6ByLioYJ6QdWhxcwEva7" Comment="Transition" Bounds="540,-6,64,15" ShowValueBox="true" isIOBox="true" Value="Quart">
+            <p:TypeAnnotation LastCategoryFullName="Math.Tweener" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="TweenerTransition" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="VZTos2Spe81OtCM36OBfTL" Comment="Mode" Bounds="567,26,54,15" ShowValueBox="true" isIOBox="true" Value="InOut">
+            <p:TypeAnnotation LastCategoryFullName="Math.Tweener" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="TweenerMode" />
+            </p:TypeAnnotation>
+          </Pad>
         </Canvas>
         <Patch Id="Fu2jL7w5vKMMDy7WlQQfpG" Name="Create" ParticipatingElements="RIE6YzJyfI6P5PyGoXIetR,A026AZX7AolPZpA1F7lkQ4" />
         <Patch Id="KIY1za4NGAZLTWBoQZjx6K" Name="Update" />
@@ -255,6 +291,10 @@
         <Link Id="A026AZX7AolPZpA1F7lkQ4" Ids="NrDKHnY17XYPqAxyty36Bl,VxY2sdrd0y6PiCE2xTxQ1U" />
         <Link Id="QiXml0Uga9ZPjwDSt9zgU6" Ids="Td011XxTcGNNwIjd6CcY4H,J0JFwEbo8xGMobeNU4wMVM" />
         <Link Id="TA5irYBO0ZNNKZdH24qeDc" Ids="S9pZv0qr1ONM3npR9yULl5,L1nKYOY1rznN82pS1urOs3" />
+        <Link Id="Sf7QaORYprxLWFuXXU4ycs" Ids="Bi5FwMbIcaaNr6myuY4Cy5,QvnKlngcNXINcELqGb89dm" />
+        <Link Id="AwuEjccLXJQQN0iYkjA5QA" Ids="CEuTmLCJPCSPKQGmfqeI6L,Q1LCQahXOlJM31ldAHayf5" />
+        <Link Id="UtmHJl6obmqOyrA2F3zPzG" Ids="Gx6ByLioYJ6QdWhxcwEva7,CSXoWqTY9GvQR5shnyKK4t" />
+        <Link Id="EsP4HxUOjNpMuqnjL1lswy" Ids="VZTos2Spe81OtCM36OBfTL,VtEj77J3KaZLcvJRFX9k0w" />
       </Patch>
     </Node>
   </Patch>
