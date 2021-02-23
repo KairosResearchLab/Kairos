@@ -1,6 +1,6 @@
 # VL.Kairos
 
-A nodeset for value state management
+A value state management system consisting of a vvvv nodeset and custom UI editors
 
 ## Installing
 
@@ -24,8 +24,9 @@ To use the latest stable version:
 Author: Natan Sinigaglia (natan.sinigaglia (at) gmail.com)
 This software is distributed under the [CC Attribution-NonCommercial-ShareAlike 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
 
-Kairos library is free for non-commercial projects and for substantial contributors of the library.
-If you use kairos on commercial projects, the licence costs 100€.
+VL.Kairos library is free for non-commercial projects and for substantial contributors of the library.
+If you use kairos on commercial projects, get in touch at natan.sinigaglia@gmail.com to aquire a licence.
 All the resources from licencing will go into maintainance, documentation and extension of the library.
+Let's make it growing together!
 
 [Natan Sinigaglia](http://natansinigaglia.com/)

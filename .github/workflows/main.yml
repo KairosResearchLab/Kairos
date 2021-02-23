@@ -15,11 +15,15 @@ jobs:
     - name: Git Checkout
       uses: actions/checkout@master
 
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v1.0.2
+
     - name: Setup Nuget.exe
       uses: nuget/setup-nuget@v1
 
     - name: Publish VL Nuget
       uses: vvvv/PublishVLNuget@1.0.29
       with:
-        nuspec: deployment\Elementa.Editor.nuspec
+        csproj: src\DynamicModel\DynamicModel.csproj
+        nuspec: deployment\VL.Kairos.nuspec
         nuget-key: ${{ secrets.NUGET_KEY }}
