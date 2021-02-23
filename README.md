@@ -1,6 +1,6 @@
 # VL.Kairos
 
-A value state management system consisting of a vvvv nodeset and custom UI editors
+A value animation system consisting of a vvvv nodeset and custom UI editors
 
 ## Installing
 
