@@ -14,3 +14,8 @@ Under the following terms:
 * ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
 
 No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+Get in touch to buy licences for commercial projects:
+natan.sinigaglia@gmail.com
+
+thanks
