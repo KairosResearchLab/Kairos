@@ -77,7 +77,7 @@
                       <Node Bounds="855,570,450,19" Id="Ngex5taBVqRM6D4WngkZj0">
                         <p:NodeReference LastCategoryFullName="Kairos.Interpolation" LastSymbolSource="VL.Kairos.Interpolation.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                          <Choice Kind="ProcessAppFlag" Name="AdaptiveInterpolator" />
+                          <Choice Kind="ProcessAppFlag" Name="InterpolationProvider" />
                         </p:NodeReference>
                         <Pin Id="IBOdBjnqS73LXd60xVCBvJ" Name="A" Kind="InputPin" />
                         <Pin Id="JP35DQVS8zCOi6pmAg4bNd" Name="B" Kind="InputPin" />
@@ -13176,7 +13176,7 @@
                 <Pin Id="BmhgEpoXHjJM2yaSfPEvRe" Name="Blending Technique Model" Kind="InputPin" />
                 <Pin Id="BSXlcArxCTFPQhLH1WIHsS" Name="Value Interpolation Model" Kind="InputPin" />
                 <Pin Id="QQ8teYU5qExL0bIgOw86jj" Name="SpreadCount Interpolation Model" Kind="InputPin" />
-                <Pin Id="Bmpy3ml06j9NOid6Rluskv" Name="Background Provider" Kind="InputPin" />
+                <Pin Id="C8NgZxev39bLL9F6M351pP" Name="Background Value" Kind="InputPin" />
                 <Pin Id="IeZhC0NVWNmLp6mKRy0BQi" Name="Value" Kind="InputPin" />
                 <Pin Id="IznfShLtXoNNrvETJ3qJDG" Name="Alpha" Kind="InputPin" />
                 <Pin Id="IVjzbojgW7yL3MVo5Q6U0R" Name="State Output" Kind="OutputPin" />
@@ -13729,7 +13729,7 @@
                 <Pin Id="SPDRnTnuNFCNHEt07kiSv8" Name="Blending Technique Model" Kind="InputPin" />
                 <Pin Id="SAYm0WwZxMcLajuJCFOnHK" Name="Value Interpolation Model" Kind="InputPin" />
                 <Pin Id="V3vPh5ZObhZOj8GucU4LS2" Name="SpreadCount Interpolation Model" Kind="InputPin" />
-                <Pin Id="M1PsEF9bQLLP9cB8TP9tvX" Name="Background Provider" Kind="InputPin" />
+                <Pin Id="RTYaFl03HxlOqK8yx1y2Bw" Name="Background Value" Kind="InputPin" />
                 <Pin Id="MEjL5CejbKhLZV75ocpHMM" Name="Value" Kind="InputPin" />
                 <Pin Id="NvJuctdhvFpQUCUIsCtOuZ" Name="Alpha" Kind="InputPin" />
                 <Pin Id="RrBQQdd7BgvOFdN52RSlzZ" Name="State Output" Kind="OutputPin" />
@@ -16093,7 +16093,7 @@
                 <Pin Id="Phidfid7fT3PnBFhvwLaMF" Name="Blending Technique Model" Kind="InputPin" />
                 <Pin Id="I37NpwrqMMSPXAdRmU7rxU" Name="Value Interpolation Model" Kind="InputPin" />
                 <Pin Id="RyJAIWh9aGJM9302P0jypD" Name="SpreadCount Interpolation Model" Kind="InputPin" />
-                <Pin Id="RS35cfg6bU2Phv8xQQCCj8" Name="Background Provider" Kind="InputPin" />
+                <Pin Id="TIBuEsgI12ZN7oREcBkRCV" Name="Background Value" Kind="InputPin" />
                 <Pin Id="QhwLM3tc5UCN9womggEGvo" Name="Value" Kind="InputPin" />
                 <Pin Id="TLnO6IB25KTPSVMhT62iEz" Name="Alpha" Kind="InputPin" />
                 <Pin Id="RbVo52Oote3L461NOUaTtq" Name="State Output" Kind="OutputPin" />
@@ -25954,7 +25954,6 @@
               <Pad Id="RdSo4cnQuMxMscGruc5Red" SlotId="UmWgGBLeUwzNjmMFTiJAI4" Bounds="634,430" />
               <Pad Id="B3DaW27SSpyM4lSDcDztLN" SlotId="PYagUtsuZRcLbWEW2s7gnH" Bounds="644,344" />
             </Canvas>
-            <Patch Id="HRya7L25QIhMMmSxhu9k9M" Name="Create" />
             <ProcessDefinition Id="ElGEqJrHsf9Pa7LMypvioV" HasStateOut="true">
               <Fragment Id="SqVTPrwUv2zLSb9hdEemUk" Patch="HRya7L25QIhMMmSxhu9k9M" Enabled="true" />
               <Fragment Id="MrW5XmBdzP0OouwucmUXmQ" Patch="JtlHiSvqNC2OrSHV0V9uXn" Enabled="true" />
@@ -25967,18 +25966,6 @@
             <Link Id="VvKIoz8gI0rLwwYhY5m4O3" Ids="Ha1eqm7PmHJME4IFVmyunk,E4U1io7VIAcLVye0Fx6CQH" IsHidden="true" />
             <Link Id="Ti1kwJjF8KHNvQLEYmPHnw" Ids="Rcm5o22sLy7Lb5H1bRI9oI,Sfoe29r49OlPciKu7OKeOa" />
             <Link Id="UUhLsR4ph6eLVcNVDLxRqs" Ids="B1sGiQM9C9aMnAAON1B737,Rcm5o22sLy7Lb5H1bRI9oI" IsHidden="true" />
-            <Patch Id="JtlHiSvqNC2OrSHV0V9uXn" Name="Update">
-              <Pin Id="UHeWjKx8qcoOt3wSF0vMJT" Name="ValueProvider" Kind="InputPin" />
-              <Pin Id="Ha1eqm7PmHJME4IFVmyunk" Name="Background Function" Kind="InputPin" />
-              <Pin Id="B1sGiQM9C9aMnAAON1B737" Name="Sampling Position" Kind="InputPin" />
-              <Pin Id="QCsa7wurIgiLX30vSO5rGL" Name="Context" Kind="InputPin" />
-            </Patch>
-            <Patch Id="G8NoC9bVZlEOemRUxouwg8" Name="SampleBackground" ParticipatingElements="MPoT6wrpHkKPF5Wn2rrqF9">
-              <Pin Id="USMWXLaNNScOCjqsApNmgm" MergeId="1782357" Name="Output" Kind="OutputPin" />
-            </Patch>
-            <Patch Id="NIRew1uGCJFMppPsDj81YK" Name="SampleBackgroundT" ParticipatingElements="U1waLgNS03hP62nyF0EQRN">
-              <Pin Id="NdDJCwyDn4TPTXJ6NXyf9W" MergeId="1795664" Name="OutputT" Kind="OutputPin" />
-            </Patch>
             <Link Id="SlPxVD7lKdsOMNStjeElVn" Ids="BnsoKWFUc7XPrpJAhkGxFQ,USMWXLaNNScOCjqsApNmgm" IsHidden="true" />
             <Link Id="VzIkqDN5hfcOSko8XwjRfM" Ids="OYn8Uv8dQ19PCi9urMWZL0,BnsoKWFUc7XPrpJAhkGxFQ" />
             <Link Id="Kx1kRqyY9cvPYH9MeWboWL" Ids="DiRyl7mOVdfLfZaoeSvVBq,RkWMnIBpLjSPi7dtfz7nK8" />
@@ -26000,6 +25987,19 @@
             <Link Id="FT8gs3kCt2oOv8hmSCMm4W" Ids="B3DaW27SSpyM4lSDcDztLN,QXqigGPJ7ezOcpvp9M7Awm" />
             <Link Id="Gi5C0sZUrp9OjMEhqMGAGi" Ids="STwkNiFZJ0KQAcepfDSG75,NdDJCwyDn4TPTXJ6NXyf9W" IsHidden="true" />
             <Link Id="Nxb8UBTtbAxPsS4YZsrIE4" Ids="KuLCllmLGOlPqb4znoh5GW,STwkNiFZJ0KQAcepfDSG75" />
+            <Patch Id="HRya7L25QIhMMmSxhu9k9M" Name="Create" />
+            <Patch Id="JtlHiSvqNC2OrSHV0V9uXn" Name="Update">
+              <Pin Id="UHeWjKx8qcoOt3wSF0vMJT" Name="ValueProvider" Kind="InputPin" />
+              <Pin Id="Ha1eqm7PmHJME4IFVmyunk" Name="Background Function" Kind="InputPin" />
+              <Pin Id="B1sGiQM9C9aMnAAON1B737" Name="Sampling Position" Kind="InputPin" />
+              <Pin Id="QCsa7wurIgiLX30vSO5rGL" Name="Context" Kind="InputPin" />
+            </Patch>
+            <Patch Id="G8NoC9bVZlEOemRUxouwg8" Name="SampleBackground" ParticipatingElements="MPoT6wrpHkKPF5Wn2rrqF9">
+              <Pin Id="USMWXLaNNScOCjqsApNmgm" MergeId="1782357" Name="Output" Kind="OutputPin" />
+            </Patch>
+            <Patch Id="NIRew1uGCJFMppPsDj81YK" Name="SampleBackgroundT" ParticipatingElements="U1waLgNS03hP62nyF0EQRN">
+              <Pin Id="NdDJCwyDn4TPTXJ6NXyf9W" MergeId="1795664" Name="OutputT" Kind="OutputPin" />
+            </Patch>
           </Patch>
         </Node>
         <!--

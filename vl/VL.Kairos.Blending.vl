@@ -12,18 +12,29 @@
         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
           <Choice Kind="InterfaceDefinition" Name="Interface" />
         </p:NodeReference>
+        <p:Interfaces>
+          <TypeReference LastCategoryFullName="Kairos.Blending" LastSymbolSource="VL.Kairos.Blending.vl">
+            <Choice Kind="InterfaceTypeFlag" Name="IBackgroundFunction" />
+          </TypeReference>
+        </p:Interfaces>
         <Patch Id="MlBtARHTVbuNqkGEpLFFoV" IsGeneric="true">
           <Canvas Id="OkmoN6NdgDmPCP0QBSakTz" CanvasType="Group">
             <ControlPoint Id="KQ5BjLOLbKJOd43W6fEhGl" Bounds="286,297" />
             <Pad Id="U4xTNJIcmSPMIi7ko1Ng0d" Comment="Output" Bounds="286,217,20,15" ShowValueBox="true" isIOBox="true" />
+            <ControlPoint Id="H2MSwt23OxkPyOMQi2bkXy" Bounds="415,304" />
           </Canvas>
           <ProcessDefinition Id="RAYk8mX1bPrP4SlJpkrJV0" IsHidden="true">
             <Fragment Id="AlKORdGSUCLL2OSCuMrrjR" Patch="D1GckRl7y6UN0D80uu7KCv" Enabled="true" />
+            <Fragment Id="Pe3mO4WEJWIOX5GKtOTjYR" Patch="Hs36jrZhPExOs8fxvd0qmE" />
           </ProcessDefinition>
           <Link Id="BFm3gYwFhzSQZSaIivs0RX" Ids="KQ5BjLOLbKJOd43W6fEhGl,JCKYv228R75NlGNA7b2zu6" IsHidden="true" />
           <Link Id="KcYjfMcc9n8P459roxuaOg" Ids="U4xTNJIcmSPMIi7ko1Ng0d,KQ5BjLOLbKJOd43W6fEhGl" />
           <Patch Id="D1GckRl7y6UN0D80uu7KCv" Name="SampleBackgroundT">
             <Pin Id="JCKYv228R75NlGNA7b2zu6" Name="OutputT" Kind="OutputPin" />
+          </Patch>
+          <Link Id="Trm53cLGgzuPHumahwfNzj" Ids="H2MSwt23OxkPyOMQi2bkXy,PJ95lfYqcTuLSJgWiNmvc7" IsHidden="true" />
+          <Patch Id="Hs36jrZhPExOs8fxvd0qmE" Name="SampleBackground">
+            <Pin Id="PJ95lfYqcTuLSJgWiNmvc7" Name="Output" Kind="OutputPin" />
           </Patch>
         </Patch>
       </Node>
@@ -45,24 +56,40 @@
           <Canvas Id="LJgILjCo7hfNyPDSACRKAO" CanvasType="Group">
             <ControlPoint Id="KKNgJLGwMFpMnccnZfdvFH" Bounds="199,118" />
             <Pad Id="TWSBrVdNH6aPjA7GxjRLXt" Bounds="199,158" />
-            <ControlPoint Id="Fs1f0yyR08WMYmFxJWZyCU" Bounds="198,207" />
+            <ControlPoint Id="Fs1f0yyR08WMYmFxJWZyCU" Bounds="198,237" />
+            <ControlPoint Id="MY7lhj1FzYqOFDzD6aoHxo" Bounds="296,234" />
+            <Node Bounds="294,187,57,26" Id="SU8wIhwCOFOPTfvLJQJuRX">
+              <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="AsObject" />
+              </p:NodeReference>
+              <Pin Id="Gqzr82eDWBtLxjo1tHMZhI" Name="Input" Kind="StateInputPin" />
+              <Pin Id="NN1Di8ZmT2LMaEYmpoHoSY" Name="Result" Kind="OutputPin" />
+            </Node>
           </Canvas>
-          <Patch Id="EpY4KHTWxSALxBqK6u6Srq" Name="Create" />
           <ProcessDefinition Id="F1QKfWElJ11O7mzOaANnUw" HasStateOut="true">
             <Fragment Id="PS8h2YjP7jpL72f9PCRLaR" Patch="EpY4KHTWxSALxBqK6u6Srq" Enabled="true" />
             <Fragment Id="PVmtc1hISy6MDTGq8JE9sU" Patch="H3DGCpngDvDQS2wXMa76kv" Enabled="true" />
             <Fragment Id="FaTUmevu3NKLYZwirM0loo" Patch="PYaNZoVt3PoOerWmQAoPXa" />
+            <Fragment Id="UbdaCI54P0qL4Qzq7rP317" Patch="FDSw9eCEBwnO6Gkf9Ko5lc" />
           </ProcessDefinition>
           <Link Id="HhQW6P3rsL9NHLpieesytF" Ids="KKNgJLGwMFpMnccnZfdvFH,TWSBrVdNH6aPjA7GxjRLXt" />
           <Link Id="VMuETkERuS0MRGgxvJUxtO" Ids="I3ofAmX159XODDSTYH6X6J,KKNgJLGwMFpMnccnZfdvFH" IsHidden="true" />
+          <Link Id="Rwff3C2dyUtMXpCiNNB1XM" Ids="Fs1f0yyR08WMYmFxJWZyCU,BSuYlkbmc8SNvGQmO6Dgsl" IsHidden="true" />
+          <Link Id="J4nfCsiXEV6Lkr8RRNuRcq" Ids="TWSBrVdNH6aPjA7GxjRLXt,Fs1f0yyR08WMYmFxJWZyCU" />
+          <Patch Id="EpY4KHTWxSALxBqK6u6Srq" Name="Create" />
           <Patch Id="H3DGCpngDvDQS2wXMa76kv" Name="Update">
             <Pin Id="I3ofAmX159XODDSTYH6X6J" Name="Input" Kind="InputPin" />
           </Patch>
           <Patch Id="PYaNZoVt3PoOerWmQAoPXa" Name="SampleBackgroundT">
             <Pin Id="BSuYlkbmc8SNvGQmO6Dgsl" Name="OutputT" Kind="OutputPin" />
           </Patch>
-          <Link Id="Rwff3C2dyUtMXpCiNNB1XM" Ids="Fs1f0yyR08WMYmFxJWZyCU,BSuYlkbmc8SNvGQmO6Dgsl" IsHidden="true" />
-          <Link Id="J4nfCsiXEV6Lkr8RRNuRcq" Ids="TWSBrVdNH6aPjA7GxjRLXt,Fs1f0yyR08WMYmFxJWZyCU" />
+          <Patch Id="FDSw9eCEBwnO6Gkf9Ko5lc" Name="SampleBackground">
+            <Pin Id="T0NP52xFgDsNbbk53Xoytw" MergeId="667195" Name="Output" Kind="OutputPin" />
+          </Patch>
+          <Link Id="InOJiQxFhkfO5iwmXuuPHz" Ids="MY7lhj1FzYqOFDzD6aoHxo,T0NP52xFgDsNbbk53Xoytw" IsHidden="true" />
+          <Link Id="VEzdXoOzxQXQIE2rVkG6Fb" Ids="TWSBrVdNH6aPjA7GxjRLXt,Gqzr82eDWBtLxjo1tHMZhI" />
+          <Link Id="IjMYmbx2rM6MwTgB8pwZOX" Ids="NN1Di8ZmT2LMaEYmpoHoSY,MY7lhj1FzYqOFDzD6aoHxo" />
         </Patch>
       </Node>
       <!--
@@ -208,7 +235,7 @@
                       <Node Bounds="400,443,125,19" Id="UtjrwEGa1geLmSeOF7qKtP">
                         <p:NodeReference LastCategoryFullName="Kairos.Interpolation" LastSymbolSource="VL.Kairos.Interpolation.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                          <Choice Kind="ProcessAppFlag" Name="AdaptiveInterpolator" />
+                          <Choice Kind="ProcessAppFlag" Name="InterpolationProvider" />
                         </p:NodeReference>
                         <Pin Id="OffTtJQgMrRQdnRonZTwTC" Name="A" Kind="InputPin" />
                         <Pin Id="R7jrJovAGrWLLS7gmeBFLO" Name="B" Kind="InputPin" />
@@ -1825,7 +1852,7 @@
             <Node Bounds="519,578,110,19" Id="PySlOEdM27zLDcVRVqra70">
               <p:NodeReference LastCategoryFullName="Kairos.Interpolation" LastSymbolSource="VL.Kairos.Interpolation.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                <Choice Kind="ProcessAppFlag" Name="AdaptiveInterpolator" />
+                <Choice Kind="ProcessAppFlag" Name="InterpolationProvider" />
               </p:NodeReference>
               <Pin Id="PeSssleprwDLr0xeo4PEz7" Name="A" Kind="InputPin" />
               <Pin Id="HfgrEwQ4DCHOfEKDyzv7hB" Name="B" Kind="InputPin" />
@@ -1926,7 +1953,7 @@
           <Link Id="ElguryzIQXKNItSMm6Kr4K" Ids="Lk5bJ0nbLmTOC1e28ceoH8,MqpvgXQi9kRLjoJgmrztK0" />
         </Patch>
       </Node>
-      <Overlay Id="HeLiLIkXpJqPwJXFBTKBaz" Name="Background Function" Bounds="474,-35,339,192">
+      <Overlay Id="HeLiLIkXpJqPwJXFBTKBaz" Name="Background Function" Bounds="474,-71,339,228">
         <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
       </Overlay>
       <Overlay Id="Bxdr1uyWQ4CNQ7vIJpcJcD" Name="" Bounds="1636,292,274,109">
@@ -11442,7 +11469,7 @@
                   <Node Bounds="365,630,125,19" Id="VM2GTNYvafvLCLHHNueEMm">
                     <p:NodeReference LastCategoryFullName="Kairos.Interpolation" LastSymbolSource="VL.Kairos.Interpolation.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="ProcessAppFlag" Name="AdaptiveInterpolator" />
+                      <Choice Kind="ProcessAppFlag" Name="InterpolationProvider" />
                     </p:NodeReference>
                     <Pin Id="JI4HDVyofNmMK7HdqyWaDh" Name="A" Kind="InputPin" />
                     <Pin Id="PnYB3JRvkUnPaZ96vxn8vd" Name="B" Kind="InputPin" />
@@ -12015,7 +12042,7 @@
           <ControlPoint Id="GE3uYF9NOuoOkmjOLKQKZo" Bounds="997,765" />
           <Pin Id="FWc4HVd3y7EOMb5ZaObiXQ" Name="Value" Kind="InputPin" />
           <ControlPoint Id="K1CLX9JeqaMOu567Xr5ALN" Bounds="1207,770" />
-          <Node Bounds="995,796,292,109" Id="BGrEv8NkDmTMnciVInG1Aj">
+          <Node Bounds="995,796,172,101" Id="BGrEv8NkDmTMnciVInG1Aj">
             <p:NodeReference LastCategoryFullName="System.Reflection.IVLFactory" LastSymbolSource="System.Reflection.vl">
               <Choice Kind="OperationCallFlag" Name="RegisterService" />
               <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
@@ -12035,7 +12062,7 @@
               </Pin>
               <ControlPoint Id="DhBxroiZPahP3IRPh9Ps90" Bounds="1077,804" />
               <ControlPoint Id="DqPkyW58fJmOxjwlSxho2C" Bounds="1009,890" />
-              <Node Bounds="1027,859,124,19" Id="SZSlP2N9iaOL3kkOPjzYN8">
+              <Node Bounds="1031,858,124,19" Id="SZSlP2N9iaOL3kkOPjzYN8">
                 <p:NodeReference LastCategoryFullName="Kairos.Blending" LastSymbolSource="VL.Kairos.Blending.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="ConstrainBlenderType" />
@@ -12051,16 +12078,6 @@
                 </p:NodeReference>
                 <Pin Id="Po1AfSsLStzNMPcGRek9oF" Name="Input" Kind="StateInputPin" />
                 <Pin Id="HYa0TJIdp3gPRf3W3nDPnI" Name="Result" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="1175,859,100,26" Id="VvfOHT5rMzpNDpJwbr9h4z">
-                <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
-                  <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                </p:NodeReference>
-                <Pin Id="H6gGRb4vgs2Qc2OESwKSud" Name="Input" Kind="StateInputPin" />
-                <Pin Id="OpmWAWT1xPbMo3grpJVgw9" Name="Value" Kind="InputPin" />
-                <Pin Id="HymT0Si0sLnPFGqbEnWV1B" Name="Model Constructor" Kind="InputPin" />
-                <Pin Id="CUqrUtoVnpLPbreMyfy8fw" Name="Output" Kind="StateOutputPin" />
               </Node>
             </Patch>
           </Node>
@@ -12103,6 +12120,16 @@
           <Link Id="DDmS3lmVubsNLQR9x7NpkO" Ids="N9t0UjqixiSN0NSAHdYoME,HymT0Si0sLnPFGqbEnWV1B" />
           <Link Id="NPyZ1Ftk7KmNEk79e73eMw" Ids="R39kI29d8l6LOpuVFfC5Ik,GTQy5KuHoQlLcIcaCp7vGb" />
           <Link Id="FRDjAuRiVVYMc6A6nFXCin" Ids="K1CLX9JeqaMOu567Xr5ALN,OpmWAWT1xPbMo3grpJVgw9" />
+          <Node Bounds="1182,859,100,26" Id="VvfOHT5rMzpNDpJwbr9h4z">
+            <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="H6gGRb4vgs2Qc2OESwKSud" Name="Input" Kind="StateInputPin" />
+            <Pin Id="OpmWAWT1xPbMo3grpJVgw9" Name="Value" Kind="InputPin" />
+            <Pin Id="HymT0Si0sLnPFGqbEnWV1B" Name="Model Constructor" Kind="InputPin" />
+            <Pin Id="CUqrUtoVnpLPbreMyfy8fw" Name="Output" Kind="StateOutputPin" />
+          </Node>
         </Patch>
       </Node>
       <!--
@@ -12123,7 +12150,7 @@
           <ControlPoint Id="RZcQBQDGBlIMcWOc1Cc6lI" Bounds="997,1033" />
           <Pin Id="Tx4GjzAJ9RfLWxKhJKWItk" Name="Value" Kind="InputPin" />
           <ControlPoint Id="KT02oPh9MkaPuGmmKp3cIN" Bounds="1184,1033" />
-          <Node Bounds="995,1064,289,110" Id="Fb7v1BVw5xaNUCnHJfkd1x">
+          <Node Bounds="995,1064,165,101" Id="Fb7v1BVw5xaNUCnHJfkd1x">
             <p:NodeReference LastCategoryFullName="System.Reflection.IVLFactory" LastSymbolSource="System.Reflection.vl">
               <Choice Kind="OperationCallFlag" Name="RegisterService" />
               <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
@@ -12143,7 +12170,7 @@
               </Pin>
               <ControlPoint Id="VbAi2Kkvqz5OSSWGDJS2Mg" Bounds="1077,1072" />
               <ControlPoint Id="PPFbTNKR9niMM0LDjwUgM5" Bounds="1009,1158" />
-              <Node Bounds="1027,1127,124,19" Id="ArWwkbaiBQ6NHmvm5OSuPR">
+              <Node Bounds="1024,1125,124,19" Id="ArWwkbaiBQ6NHmvm5OSuPR">
                 <p:NodeReference LastCategoryFullName="Kairos.Blending" LastSymbolSource="VL.Kairos.Blending.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="ConstrainBlenderType" />
@@ -12159,16 +12186,6 @@
                 </p:NodeReference>
                 <Pin Id="F2Inps4NBcnPFWuE9XdAKA" Name="Input" Kind="StateInputPin" />
                 <Pin Id="BNC9Yxz418eNQ8FDvZQt4J" Name="Result" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="1172,1128,100,26" Id="Rm3DAHDF8bnLwLn5VixMTi">
-                <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
-                  <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                </p:NodeReference>
-                <Pin Id="VzsseqrmuwyNpmKZGtOpw7" Name="Input" Kind="StateInputPin" />
-                <Pin Id="Pz1BVuh3EcdMX3I6uVbHNd" Name="Value" Kind="InputPin" />
-                <Pin Id="HMz9UnuDkmcP6kiyt2oxln" Name="Model Constructor" Kind="InputPin" />
-                <Pin Id="R4jFMEKgqxaMhVUHEM3r1S" Name="Output" Kind="StateOutputPin" />
               </Node>
             </Patch>
           </Node>
@@ -12211,6 +12228,16 @@
           <Link Id="FT7MEVSV9WvOo3eFSpiX6c" Ids="OLd3MON6vHTOQ9EEP8Vkss,HMz9UnuDkmcP6kiyt2oxln" />
           <Link Id="PzFODkn1IAjPHPLHpWboDd" Ids="VNePB73xQLVMN4xZhIo9O3,T3bIVawlpT5Lsbbcwqp8oG" />
           <Link Id="UQ2alDob8cPLLh3pgUNI1H" Ids="KT02oPh9MkaPuGmmKp3cIN,Pz1BVuh3EcdMX3I6uVbHNd" />
+          <Node Bounds="1179,1125,100,19" Id="Rm3DAHDF8bnLwLn5VixMTi">
+            <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="VzsseqrmuwyNpmKZGtOpw7" Name="Input" Kind="StateInputPin" />
+            <Pin Id="Pz1BVuh3EcdMX3I6uVbHNd" Name="Value" Kind="InputPin" />
+            <Pin Id="HMz9UnuDkmcP6kiyt2oxln" Name="Model Constructor" Kind="InputPin" />
+            <Pin Id="R4jFMEKgqxaMhVUHEM3r1S" Name="Output" Kind="StateOutputPin" />
+          </Node>
         </Patch>
       </Node>
       <!--
@@ -12231,7 +12258,7 @@
           <ControlPoint Id="Q5eUgnEqcPeMSG6GT2xzkR" Bounds="997,1311" />
           <Pin Id="DvTvHimRyK3Qcje8yuxoTC" Name="Value" Kind="InputPin" />
           <ControlPoint Id="DEJQmEcSffgP9CX4Fz72Ri" Bounds="1179,1314" />
-          <Node Bounds="995,1342,287,109" Id="R9ROFN0iIiVQQLaqfgOvEK">
+          <Node Bounds="995,1342,172,102" Id="R9ROFN0iIiVQQLaqfgOvEK">
             <p:NodeReference LastCategoryFullName="System.Reflection.IVLFactory" LastSymbolSource="System.Reflection.vl">
               <Choice Kind="OperationCallFlag" Name="RegisterService" />
               <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
@@ -12251,7 +12278,7 @@
               </Pin>
               <ControlPoint Id="R4MmJB1vUhAPeyCfcKFj7b" Bounds="1077,1350" />
               <ControlPoint Id="UemAKFvAlgfNWYUOJuon3n" Bounds="1009,1436" />
-              <Node Bounds="1027,1405,124,19" Id="S7wtjRSV6XzNZEtXYmfqDM">
+              <Node Bounds="1031,1405,124,19" Id="S7wtjRSV6XzNZEtXYmfqDM">
                 <p:NodeReference LastCategoryFullName="Kairos.Blending" LastSymbolSource="VL.Kairos.Blending.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="ConstrainBlenderType" />
@@ -12267,16 +12294,6 @@
                 </p:NodeReference>
                 <Pin Id="O5pkCNiGdc4LK5fouRc0l0" Name="Input" Kind="StateInputPin" />
                 <Pin Id="KJpZnwxyyXyMUe9hjREckN" Name="Result" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="1170,1405,100,26" Id="BZ7oLNohN70L5hePpuPOUb">
-                <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
-                  <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                </p:NodeReference>
-                <Pin Id="C8QhyriEA8fMBq04n02SL7" Name="Input" Kind="StateInputPin" />
-                <Pin Id="UyEFGWOZpBTLMPvZ4m4eCw" Name="Value" Kind="InputPin" />
-                <Pin Id="QseEIKKc71MOrXGUQ710YU" Name="Model Constructor" Kind="InputPin" />
-                <Pin Id="Kooz1CtD56aQE23WWrOCJi" Name="Output" Kind="StateOutputPin" />
               </Node>
             </Patch>
           </Node>
@@ -12319,6 +12336,16 @@
           <Link Id="KkhywfO5kWpQWmgpsv2FbZ" Ids="Rk0Q1BHIG9bNTXfN6Ww5d0,QseEIKKc71MOrXGUQ710YU" />
           <Link Id="IGNJvDrT4m4QFlq9J5MDIY" Ids="U5DQMGhypH0LC8jbj3haX9,OPGywWSmZC9L4luMQ9mD6C" />
           <Link Id="NZlgJ7qeppqNElH9WM7UXv" Ids="DEJQmEcSffgP9CX4Fz72Ri,UyEFGWOZpBTLMPvZ4m4eCw" />
+          <Node Bounds="1179,1405,100,26" Id="BZ7oLNohN70L5hePpuPOUb">
+            <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="C8QhyriEA8fMBq04n02SL7" Name="Input" Kind="StateInputPin" />
+            <Pin Id="UyEFGWOZpBTLMPvZ4m4eCw" Name="Value" Kind="InputPin" />
+            <Pin Id="QseEIKKc71MOrXGUQ710YU" Name="Model Constructor" Kind="InputPin" />
+            <Pin Id="Kooz1CtD56aQE23WWrOCJi" Name="Output" Kind="StateOutputPin" />
+          </Node>
         </Patch>
       </Node>
       <!--
@@ -12339,7 +12366,7 @@
           <ControlPoint Id="HLz6wOUH5EnPGowmAhVwwo" Bounds="997,1584" />
           <Pin Id="IwECQHW17a1OKIsNSEIRax" Name="Value" Kind="InputPin" />
           <ControlPoint Id="Qw3zwjfQvpNLcPXn8etDUy" Bounds="1175,1586" />
-          <Node Bounds="995,1615,286,109" Id="J7liY5Jx9euMWXnllaH69B">
+          <Node Bounds="995,1615,173,102" Id="J7liY5Jx9euMWXnllaH69B">
             <p:NodeReference LastCategoryFullName="System.Reflection.IVLFactory" LastSymbolSource="System.Reflection.vl">
               <Choice Kind="OperationCallFlag" Name="RegisterService" />
               <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
@@ -12359,7 +12386,7 @@
               </Pin>
               <ControlPoint Id="KpgLG0tV389P9m7RshYdOJ" Bounds="1077,1623" />
               <ControlPoint Id="LGCP12JpUwNOtY5Ar86On8" Bounds="1009,1709" />
-              <Node Bounds="1027,1678,124,19" Id="FhwjmSCP7QROr9JH46Kzca">
+              <Node Bounds="1032,1678,124,19" Id="FhwjmSCP7QROr9JH46Kzca">
                 <p:NodeReference LastCategoryFullName="Kairos.Blending" LastSymbolSource="VL.Kairos.Blending.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="ConstrainBlenderType" />
@@ -12375,16 +12402,6 @@
                 </p:NodeReference>
                 <Pin Id="JIjxN4M1631LEGG7Gmx4hp" Name="Input" Kind="StateInputPin" />
                 <Pin Id="N5iRHgBuJ2qMKsn6JqpAp6" Name="Result" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="1169,1678,100,26" Id="EP8PynQ7WfkLJZ02SEN9sb">
-                <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
-                  <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                </p:NodeReference>
-                <Pin Id="Q7BccRlJDRzLaG0v0H8Nbx" Name="Input" Kind="StateInputPin" />
-                <Pin Id="Fjt699mSdSLOTJ4UMGnKML" Name="Value" Kind="InputPin" />
-                <Pin Id="Ojt7TVHjdgeP2A0JOkJ5ir" Name="Model Constructor" Kind="InputPin" />
-                <Pin Id="OTX7IckGXL5OuNdlGkTrsL" Name="Output" Kind="StateOutputPin" />
               </Node>
             </Patch>
           </Node>
@@ -12427,6 +12444,16 @@
           <Link Id="So69sanUMhRMnw5IDThg70" Ids="PMtKV1ZCRUEOpiLg1Qp9Fu,Ojt7TVHjdgeP2A0JOkJ5ir" />
           <Link Id="KFjesfaDNKHNy1TQUD3ljw" Ids="GCTfIAJ5DtVOHKpyW9miMf,ChzJov7MJqGLQ9jfBw2ZHr" />
           <Link Id="TpV1NK5QyQLQYWghguPQbC" Ids="Qw3zwjfQvpNLcPXn8etDUy,Fjt699mSdSLOTJ4UMGnKML" />
+          <Node Bounds="1186,1677,100,19" Id="EP8PynQ7WfkLJZ02SEN9sb">
+            <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="Q7BccRlJDRzLaG0v0H8Nbx" Name="Input" Kind="StateInputPin" />
+            <Pin Id="Fjt699mSdSLOTJ4UMGnKML" Name="Value" Kind="InputPin" />
+            <Pin Id="Ojt7TVHjdgeP2A0JOkJ5ir" Name="Model Constructor" Kind="InputPin" />
+            <Pin Id="OTX7IckGXL5OuNdlGkTrsL" Name="Output" Kind="StateOutputPin" />
+          </Node>
         </Patch>
       </Node>
       <!--
@@ -12447,7 +12474,7 @@
           <ControlPoint Id="BwaHQLrjgIlPb89WpPUkIs" Bounds="997,1859" />
           <Pin Id="NknnVtKD9LFLTQ0OjfFbJp" Name="Value" Kind="InputPin" />
           <ControlPoint Id="EOwBB9yl2JwNA3WU9FojiV" Bounds="1178,1860" />
-          <Node Bounds="995,1890,288,110" Id="LqCGv2SsoUOMlLldwypfCu">
+          <Node Bounds="995,1890,175,102" Id="LqCGv2SsoUOMlLldwypfCu">
             <p:NodeReference LastCategoryFullName="System.Reflection.IVLFactory" LastSymbolSource="System.Reflection.vl">
               <Choice Kind="OperationCallFlag" Name="RegisterService" />
               <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
@@ -12467,7 +12494,7 @@
               </Pin>
               <ControlPoint Id="LtCIgD9IoSWOJPQND0yxcN" Bounds="1077,1898" />
               <ControlPoint Id="JiXXHDtjUiqLkrH8oJSbPu" Bounds="1009,1984" />
-              <Node Bounds="1027,1953,124,19" Id="QJhbG218TunMT20ug43jmv">
+              <Node Bounds="1034,1953,124,19" Id="QJhbG218TunMT20ug43jmv">
                 <p:NodeReference LastCategoryFullName="Kairos.Blending" LastSymbolSource="VL.Kairos.Blending.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="ConstrainBlenderType" />
@@ -12483,16 +12510,6 @@
                 </p:NodeReference>
                 <Pin Id="CvpCOW1mgH8P8qWMZUNHBP" Name="Input" Kind="StateInputPin" />
                 <Pin Id="CkKdE6XK9cpPVsQ0IwCVTR" Name="Result" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="1171,1954,100,26" Id="PYIqqgpgJU6QGKFvNYQ5sv">
-                <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
-                  <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                </p:NodeReference>
-                <Pin Id="FsWLJMUXlk0MUJaFWKuUql" Name="Input" Kind="StateInputPin" />
-                <Pin Id="AVwohwG1iX3LynA1HITQRa" Name="Value" Kind="InputPin" />
-                <Pin Id="SdSNiaJzjlLOEvSdZGkJti" Name="Model Constructor" Kind="InputPin" />
-                <Pin Id="DIJA1T8e7G0OebJeubEEgd" Name="Output" Kind="StateOutputPin" />
               </Node>
             </Patch>
           </Node>
@@ -12535,6 +12552,16 @@
           <Link Id="NdGhBpqkqSqOpoDG9bRohk" Ids="BCwov4KGHQfNO3NFc5jbNr,SdSNiaJzjlLOEvSdZGkJti" />
           <Link Id="EhayVXzszV2LkmikHieqBg" Ids="OFODwRd9lBvPoQwZZ1a7kZ,N3MqtWJJ6O6NbsiW2I1uTl" />
           <Link Id="FMfmUnoFXSTLfcNgLylQrj" Ids="EOwBB9yl2JwNA3WU9FojiV,AVwohwG1iX3LynA1HITQRa" />
+          <Node Bounds="1182,1954,100,26" Id="PYIqqgpgJU6QGKFvNYQ5sv">
+            <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="FsWLJMUXlk0MUJaFWKuUql" Name="Input" Kind="StateInputPin" />
+            <Pin Id="AVwohwG1iX3LynA1HITQRa" Name="Value" Kind="InputPin" />
+            <Pin Id="SdSNiaJzjlLOEvSdZGkJti" Name="Model Constructor" Kind="InputPin" />
+            <Pin Id="DIJA1T8e7G0OebJeubEEgd" Name="Output" Kind="StateOutputPin" />
+          </Node>
         </Patch>
       </Node>
       <!--
@@ -12555,7 +12582,7 @@
           <ControlPoint Id="CK4udv9TotpLqP4gUFwnFc" Bounds="997,2133" />
           <Pin Id="UrYnUkrvU87PCB7rxPnhGT" Name="Value" Kind="InputPin" />
           <ControlPoint Id="KqZxYq9pDB0McC7pu1nnff" Bounds="1178,2138" />
-          <Node Bounds="995,2164,290,109" Id="JN4FCtAFkKRNG2mexZCY5Q">
+          <Node Bounds="995,2164,170,102" Id="JN4FCtAFkKRNG2mexZCY5Q">
             <p:NodeReference LastCategoryFullName="System.Reflection.IVLFactory" LastSymbolSource="System.Reflection.vl">
               <Choice Kind="OperationCallFlag" Name="RegisterService" />
               <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
@@ -12575,7 +12602,7 @@
               </Pin>
               <ControlPoint Id="DR7BUD2UyO6LEU2NuHhfuc" Bounds="1077,2172" />
               <ControlPoint Id="SXL7bTSDkwpMpO5KqT2wzG" Bounds="1009,2258" />
-              <Node Bounds="1027,2227,124,19" Id="NG3rA06rD5gLJHIudSf5kP">
+              <Node Bounds="1029,2227,124,19" Id="NG3rA06rD5gLJHIudSf5kP">
                 <p:NodeReference LastCategoryFullName="Kairos.Blending" LastSymbolSource="VL.Kairos.Blending.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="ConstrainBlenderType" />
@@ -12591,16 +12618,6 @@
                 </p:NodeReference>
                 <Pin Id="EAYBnw8zpiCMoiIxtRXmUB" Name="Input" Kind="StateInputPin" />
                 <Pin Id="BU1xI4DwQ07LfqU2OIDt5W" Name="Result" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="1173,2227,100,26" Id="UrdrZCU42itMcFOWL4D6eP">
-                <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
-                  <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                </p:NodeReference>
-                <Pin Id="TEgMoXoM1E7M7MxM2sriNl" Name="Input" Kind="StateInputPin" />
-                <Pin Id="G4pSSCVw3aQMDVjmHO4lwE" Name="Value" Kind="InputPin" />
-                <Pin Id="HpgcyANn1BaLXUUDFZcxwt" Name="Model Constructor" Kind="InputPin" />
-                <Pin Id="Tj72QFVKQr3Nsl5ccD0Iuq" Name="Output" Kind="StateOutputPin" />
               </Node>
             </Patch>
           </Node>
@@ -12643,6 +12660,16 @@
           <Link Id="NHOU2G8K7dsMP4nUBzJXJQ" Ids="J48YDr4chTsOD5nGFik4DF,HpgcyANn1BaLXUUDFZcxwt" />
           <Link Id="DCihNxhNWK4Ll33awvHwTl" Ids="C8Umyc6xtavN4FmdFJSm01,AUQILQM2dUqPnm5CjclCGn" />
           <Link Id="EugToGrD7hHOmWyTM8JNPQ" Ids="KqZxYq9pDB0McC7pu1nnff,G4pSSCVw3aQMDVjmHO4lwE" />
+          <Node Bounds="1180,2227,100,26" Id="UrdrZCU42itMcFOWL4D6eP">
+            <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="TEgMoXoM1E7M7MxM2sriNl" Name="Input" Kind="StateInputPin" />
+            <Pin Id="G4pSSCVw3aQMDVjmHO4lwE" Name="Value" Kind="InputPin" />
+            <Pin Id="HpgcyANn1BaLXUUDFZcxwt" Name="Model Constructor" Kind="InputPin" />
+            <Pin Id="Tj72QFVKQr3Nsl5ccD0Iuq" Name="Output" Kind="StateOutputPin" />
+          </Node>
         </Patch>
       </Node>
       <!--
@@ -12663,7 +12690,7 @@
           <ControlPoint Id="FBLKAwpjmRUOklw8qatqiR" Bounds="996,2402" />
           <Pin Id="I0w4nufaTUBPC8yzAppGt3" Name="Value" Kind="InputPin" />
           <ControlPoint Id="SlHy9F7jLL7PXkDGd9wEjH" Bounds="1178,2408" />
-          <Node Bounds="994,2433,292,109" Id="BDEdWCMQTQjPVOvPwhgTiq">
+          <Node Bounds="994,2433,172,102" Id="BDEdWCMQTQjPVOvPwhgTiq">
             <p:NodeReference LastCategoryFullName="System.Reflection.IVLFactory" LastSymbolSource="System.Reflection.vl">
               <Choice Kind="OperationCallFlag" Name="RegisterService" />
               <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
@@ -12683,7 +12710,7 @@
               </Pin>
               <ControlPoint Id="SLmS3gS7hDIND5Z3KJ4YVr" Bounds="1076,2441" />
               <ControlPoint Id="CPX3zZlhDHcPrzE5ngypCg" Bounds="1008,2527" />
-              <Node Bounds="1026,2496,124,19" Id="VJgegU4PkEyMjAojho8PbL">
+              <Node Bounds="1030,2496,124,19" Id="VJgegU4PkEyMjAojho8PbL">
                 <p:NodeReference LastCategoryFullName="Kairos.Blending" LastSymbolSource="VL.Kairos.Blending.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="ConstrainBlenderType" />
@@ -12699,16 +12726,6 @@
                 </p:NodeReference>
                 <Pin Id="DXvYXf4Ib0gMjgUaxtsZfQ" Name="Input" Kind="StateInputPin" />
                 <Pin Id="NBfX194fCKtOGlBIdUQgm9" Name="Result" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="1174,2496,100,26" Id="FNkyf4OsmBvOgl5gTFoAXp">
-                <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
-                  <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                </p:NodeReference>
-                <Pin Id="ARqXpAwrrAtN7t0R8ggwRP" Name="Input" Kind="StateInputPin" />
-                <Pin Id="LkrlSqDhhDmOTsSGmLj1po" Name="Value" Kind="InputPin" />
-                <Pin Id="VBMk98l5nBkLFkM1QyKYqn" Name="Model Constructor" Kind="InputPin" />
-                <Pin Id="Qj4g7Rc2JSRMPYXEbbHsX3" Name="Output" Kind="StateOutputPin" />
               </Node>
             </Patch>
           </Node>
@@ -12751,6 +12768,16 @@
           <Link Id="LsMUhcezd5BOsPbuBW4By0" Ids="R49SFo9Tz11PSpZOHg8YWS,VBMk98l5nBkLFkM1QyKYqn" />
           <Link Id="MJehLCfweSCN6Xq44mk09H" Ids="QBEtJOVvusJQJcZA7XO7wF,He3CkpG8bOSLqb2967bbQL" />
           <Link Id="EUkmetZod0SLVc56XUUu5b" Ids="SlHy9F7jLL7PXkDGd9wEjH,LkrlSqDhhDmOTsSGmLj1po" />
+          <Node Bounds="1178,2496,100,26" Id="FNkyf4OsmBvOgl5gTFoAXp">
+            <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="ARqXpAwrrAtN7t0R8ggwRP" Name="Input" Kind="StateInputPin" />
+            <Pin Id="LkrlSqDhhDmOTsSGmLj1po" Name="Value" Kind="InputPin" />
+            <Pin Id="VBMk98l5nBkLFkM1QyKYqn" Name="Model Constructor" Kind="InputPin" />
+            <Pin Id="Qj4g7Rc2JSRMPYXEbbHsX3" Name="Output" Kind="StateOutputPin" />
+          </Node>
         </Patch>
       </Node>
       <!--
@@ -12771,7 +12798,7 @@
           <ControlPoint Id="QH0Co7fXb58Pe3Lu5AqzS3" Bounds="996,2678" />
           <Pin Id="CUOacV3NGXxNelyLXD1D5R" Name="Value" Kind="InputPin" />
           <ControlPoint Id="ROf9faJXRVdO0ExxkzTXpi" Bounds="1177,2683" />
-          <Node Bounds="994,2709,289,110" Id="MmgkCRuUSqwN9cPhPcrUN8">
+          <Node Bounds="994,2709,171,103" Id="MmgkCRuUSqwN9cPhPcrUN8">
             <p:NodeReference LastCategoryFullName="System.Reflection.IVLFactory" LastSymbolSource="System.Reflection.vl">
               <Choice Kind="OperationCallFlag" Name="RegisterService" />
               <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
@@ -12791,7 +12818,7 @@
               </Pin>
               <ControlPoint Id="LcfK6D9x3MfLws61vS9g4E" Bounds="1076,2717" />
               <ControlPoint Id="NYLwepX9igYOjwQiS5HTVu" Bounds="1008,2803" />
-              <Node Bounds="1026,2772,124,19" Id="NvI32uBMFZ0QSNXp23NdjV">
+              <Node Bounds="1029,2773,124,19" Id="NvI32uBMFZ0QSNXp23NdjV">
                 <p:NodeReference LastCategoryFullName="Kairos.Blending" LastSymbolSource="VL.Kairos.Blending.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="ConstrainBlenderType" />
@@ -12807,16 +12834,6 @@
                 </p:NodeReference>
                 <Pin Id="BugvzqxafroNDaBtbxXAT5" Name="Input" Kind="StateInputPin" />
                 <Pin Id="BT5rAihoO1lQKbzOJ2v0v1" Name="Result" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="1171,2773,100,26" Id="OeX0kV3qWWhQZvUcvJCfrr">
-                <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
-                  <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                </p:NodeReference>
-                <Pin Id="Fpc4OzhJpsaP0COnWO4pub" Name="Input" Kind="StateInputPin" />
-                <Pin Id="VwYYKSxyFWeP3dbJtjcgz6" Name="Value" Kind="InputPin" />
-                <Pin Id="EL9EFxLDSiHOcmk13IF1lW" Name="Model Constructor" Kind="InputPin" />
-                <Pin Id="NCMVgQKGHuWPPZ7ZI14Kgb" Name="Output" Kind="StateOutputPin" />
               </Node>
             </Patch>
           </Node>
@@ -12859,6 +12876,16 @@
           <Link Id="Lm0TEro2HNPNsWnDwc1PlR" Ids="OTt6JUM9SOHMgkrreisMlv,EL9EFxLDSiHOcmk13IF1lW" />
           <Link Id="VvZUQy5pAJZMwvECQgqlVd" Ids="MoFQmQh7EjCP5Z5m0Yg7GD,S5nBb13XOoANA2S4tLBvHZ" />
           <Link Id="U4urafE6G8YNiwVPV6lSMg" Ids="ROf9faJXRVdO0ExxkzTXpi,VwYYKSxyFWeP3dbJtjcgz6" />
+          <Node Bounds="1189,2773,100,26" Id="OeX0kV3qWWhQZvUcvJCfrr">
+            <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="Fpc4OzhJpsaP0COnWO4pub" Name="Input" Kind="StateInputPin" />
+            <Pin Id="VwYYKSxyFWeP3dbJtjcgz6" Name="Value" Kind="InputPin" />
+            <Pin Id="EL9EFxLDSiHOcmk13IF1lW" Name="Model Constructor" Kind="InputPin" />
+            <Pin Id="NCMVgQKGHuWPPZ7ZI14Kgb" Name="Output" Kind="StateOutputPin" />
+          </Node>
         </Patch>
       </Node>
       <!--
@@ -12879,7 +12906,7 @@
           <ControlPoint Id="B6EjqFuix3GMLH0nnvOFZC" Bounds="996,2955" />
           <Pin Id="FWEDmWoycPCPcdYxhu9Wun" Name="Value" Kind="InputPin" />
           <ControlPoint Id="EeQ7Gx6YZNDNqif0TEdgob" Bounds="1173,2957" />
-          <Node Bounds="994,2986,292,110" Id="VYZe5Gl0uehLqeidcmqxHY">
+          <Node Bounds="994,2986,168,102" Id="VYZe5Gl0uehLqeidcmqxHY">
             <p:NodeReference LastCategoryFullName="System.Reflection.IVLFactory" LastSymbolSource="System.Reflection.vl">
               <Choice Kind="OperationCallFlag" Name="RegisterService" />
               <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
@@ -12915,16 +12942,6 @@
                 </p:NodeReference>
                 <Pin Id="PUkjGnn0ZgzNXVe2VJvYk4" Name="Input" Kind="StateInputPin" />
                 <Pin Id="GYTq5Ds15evLSqL5tMDupD" Name="Result" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="1174,3050,100,26" Id="J0lL4Ek0DS9PEXeqPYJsSS">
-                <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
-                  <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                </p:NodeReference>
-                <Pin Id="KRZQaP4e7NNLY5aL0f7UIv" Name="Input" Kind="StateInputPin" />
-                <Pin Id="RLnrZu2eTW5LJFSDNFFecm" Name="Value" Kind="InputPin" />
-                <Pin Id="MwwRySPn31ZLAK5eX3gw2V" Name="Model Constructor" Kind="InputPin" />
-                <Pin Id="L4GbEEtLNjjMaIr58LcM1f" Name="Output" Kind="StateOutputPin" />
               </Node>
             </Patch>
           </Node>
@@ -12967,6 +12984,16 @@
           <Link Id="EulDz6HXQNiLzggEWB6IBw" Ids="DAUMVkQ1ef6LKXPuBAlCQV,MwwRySPn31ZLAK5eX3gw2V" />
           <Link Id="VGGVskHgLsCMe9twAm6l1u" Ids="AB98Gb1VCi8LZlzeoP5dfa,C68BiMl0c4QLWnlJ5coXtu" />
           <Link Id="LUH89qzeODZMorzVdKIP8e" Ids="EeQ7Gx6YZNDNqif0TEdgob,RLnrZu2eTW5LJFSDNFFecm" />
+          <Node Bounds="1179,3048,100,26" Id="J0lL4Ek0DS9PEXeqPYJsSS">
+            <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="KRZQaP4e7NNLY5aL0f7UIv" Name="Input" Kind="StateInputPin" />
+            <Pin Id="RLnrZu2eTW5LJFSDNFFecm" Name="Value" Kind="InputPin" />
+            <Pin Id="MwwRySPn31ZLAK5eX3gw2V" Name="Model Constructor" Kind="InputPin" />
+            <Pin Id="L4GbEEtLNjjMaIr58LcM1f" Name="Output" Kind="StateOutputPin" />
+          </Node>
         </Patch>
       </Node>
       <Overlay Id="UIzorelpXghPoE67nL7IQG" Name="Model" Bounds="170,197,271,2963">
@@ -12995,7 +13022,7 @@
           <Pin Id="R7K0tRA2YCAPLG621jIl3e" Name="Value" Kind="InputPin" />
           <ControlPoint Id="IeJRwJhbBXcQH4nnvqHhcB" Bounds="1185,499" />
           <Link Id="FVC4FCTbILrNNbSe1uTZho" Ids="R7K0tRA2YCAPLG621jIl3e,IeJRwJhbBXcQH4nnvqHhcB" IsHidden="true" />
-          <Node Bounds="995,526,305,105" Id="RTRVaVTZXEsLSaBvjogiKk">
+          <Node Bounds="995,526,174,101" Id="RTRVaVTZXEsLSaBvjogiKk">
             <p:NodeReference LastCategoryFullName="System.Reflection.IVLFactory" LastSymbolSource="System.Reflection.vl">
               <Choice Kind="OperationCallFlag" Name="RegisterService" />
               <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
@@ -13015,7 +13042,7 @@
               </Pin>
               <ControlPoint Id="G7s8lPwRxn2N9vrgXeozBB" Bounds="1077,534" />
               <ControlPoint Id="P5lPPO9qz7tM8WyW7lwpPG" Bounds="1009,620" />
-              <Node Bounds="1027,589,124,19" Id="JCRhimMD6B1QGPrieOJD6K">
+              <Node Bounds="1033,586,124,19" Id="JCRhimMD6B1QGPrieOJD6K">
                 <p:NodeReference LastCategoryFullName="Kairos.Blending" LastSymbolSource="VL.Kairos.Blending.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="ConstrainBlenderType" />
@@ -13031,16 +13058,6 @@
                 </p:NodeReference>
                 <Pin Id="RbwkITLTdIpM5mvY0qhf6p" Name="Input" Kind="StateInputPin" />
                 <Pin Id="G79fzWAES8WLewjQa5LSYu" Name="Result" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="1188,585,100,26" Id="LLCa5JgNNeYNs7fsYDpKbX">
-                <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
-                  <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                </p:NodeReference>
-                <Pin Id="R66q2qA8zlmNTBNMglO37d" Name="Input" Kind="StateInputPin" />
-                <Pin Id="S4KDSt7xHPJN39e6vO23l3" Name="Value" Kind="InputPin" />
-                <Pin Id="MHmPHhvS3D4M9WblMnQBcM" Name="Model Constructor" Kind="InputPin" />
-                <Pin Id="LuFpq1y8JnYPCMgkxjw6kT" Name="Output" Kind="StateOutputPin" />
               </Node>
             </Patch>
           </Node>
@@ -13081,6 +13098,16 @@
           <Link Id="O8aPs9Do9fAMoL0MfZkyIo" Ids="D0VZ35hDakMPq3SluNkoqc,MHmPHhvS3D4M9WblMnQBcM" />
           <Link Id="RAibJLbxXFtOxSR4xoeQAP" Ids="JYjCXSjTsCEObx4CK2YlBg,UP7Iufd4MWUNd0L0VI66Oo" />
           <Link Id="BW0z7KYcFrwNcNGF5Av7Dv" Ids="IeJRwJhbBXcQH4nnvqHhcB,S4KDSt7xHPJN39e6vO23l3" />
+          <Node Bounds="1189,590,100,26" Id="LLCa5JgNNeYNs7fsYDpKbX">
+            <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="R66q2qA8zlmNTBNMglO37d" Name="Input" Kind="StateInputPin" />
+            <Pin Id="S4KDSt7xHPJN39e6vO23l3" Name="Value" Kind="InputPin" />
+            <Pin Id="MHmPHhvS3D4M9WblMnQBcM" Name="Model Constructor" Kind="InputPin" />
+            <Pin Id="LuFpq1y8JnYPCMgkxjw6kT" Name="Output" Kind="StateOutputPin" />
+          </Node>
         </Patch>
       </Node>
       <!--
@@ -14986,7 +15013,7 @@
     ************************ RegisterCustomBlender (Advanced) ************************
 
 -->
-      <Node Name="RegisterCustomBlender (Advanced)" Bounds="915,3381,513,212" Id="ULdCjPBgWQeMfo7q0IxtcD">
+      <Node Name="RegisterCustomBlender (Advanced)" Bounds="915,3381,532,212" Id="ULdCjPBgWQeMfo7q0IxtcD">
         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
           <Choice Kind="OperationDefinition" Name="Operation" />
         </p:NodeReference>
@@ -14995,7 +15022,7 @@
           <Link Id="BcyMSTY8q9eLqazB2fgadI" Ids="EyahOg7PnKIOENNzJn96Rv,FheTLhiGX9bM1RAu98u3hP" IsHidden="true" />
           <ControlPoint Id="RWsbnQObWbZNyo7b0ARefC" Bounds="1273,3399" />
           <Link Id="MDhVK0oPqZOPIog9a9bNhI" Ids="VHBHpk2SkjzLZIlSQD0XaH,RWsbnQObWbZNyo7b0ARefC" IsHidden="true" />
-          <Node Bounds="1000,3427,409,120" Id="BA2dXXW2ckSOhKYv0UOpqx">
+          <Node Bounds="1000,3431,244,116" Id="BA2dXXW2ckSOhKYv0UOpqx">
             <p:NodeReference LastCategoryFullName="System.Reflection.IVLFactory" LastSymbolSource="System.Reflection.vl">
               <Choice Kind="OperationCallFlag" Name="RegisterService" />
               <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
@@ -15028,26 +15055,7 @@
                 <Pin Id="QYlCTkW4DWFNXnwCESWSN4" Name="Input" Kind="StateInputPin" />
                 <Pin Id="Ua3mEp88s5LQUjPTDaUBu0" Name="Result" Kind="OutputPin" />
               </Node>
-              <Node Bounds="1223,3490,100,26" Id="MWIP217XkN5QMWAdCr4SV7">
-                <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
-                  <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                </p:NodeReference>
-                <Pin Id="P8VA6AdxI7SMEGEne3f3rR" Name="Input" Kind="StateInputPin" />
-                <Pin Id="UmcdA8vV6Q0QAonOeefKlJ" Name="Value" Kind="InputPin" />
-                <Pin Id="Rpz67ki1YE3PngpTna41ft" Name="Model Constructor" Kind="InputPin" />
-                <Pin Id="LG3F7qGli38NblOS58QVEe" Name="Output" Kind="StateOutputPin" />
-              </Node>
-              <Node Bounds="1318,3450,79,26" Id="U9NstwVj7o6NUXLoQOVn79">
-                <p:NodeReference LastCategoryFullName="Primitive.Delegates.Delegate (0 -&gt; 1)" LastSymbolSource="CoreLibBasics.vl">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <Choice Kind="OperationCallFlag" Name="Invoke" />
-                  <CategoryReference Kind="FuncType" Name="Delegate (0 -&gt; 1)" NeedsToBeDirectParent="true" />
-                </p:NodeReference>
-                <Pin Id="Kz4wGmBHpENPcIw6MuEWUw" Name="Input" Kind="StateInputPin" />
-                <Pin Id="GtQRLlVQoVkLSrsXK51I65" Name="Result" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="1146,3455,87,19" Id="NiFnWRY7gycNcHzW7qNcaS">
+              <Node Bounds="1145,3455,87,19" Id="NiFnWRY7gycNcHzW7qNcaS">
                 <p:NodeReference LastCategoryFullName="Primitive.TypeHelpers" LastSymbolSource="CoreLibBasics.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="ConstrainTypes" />
@@ -15077,7 +15085,6 @@
           <Link Id="TB6EGFVon4wLs9WhNQKnOn" Ids="TwCwxZXekdOO0jsXrc4HgY,K8fv7zaBZKHOu458yaQCp3" IsHidden="true" />
           <ControlPoint Id="I5svqJEwKvjPkouw1wWf9F" Bounds="1175,3399" />
           <Link Id="DmDadmbxTy3MFjolRLSRoN" Ids="JCdUCsCy7kOO7aPorFu5AT,I5svqJEwKvjPkouw1wWf9F" IsHidden="true" />
-          <Link Id="KtquYlpMlZYMtTU6bxl9FJ" Ids="GtQRLlVQoVkLSrsXK51I65,Rpz67ki1YE3PngpTna41ft" />
           <Link Id="QhnyCjv5V0OOff2IE79HEB" Ids="I5svqJEwKvjPkouw1wWf9F,ATVuPBy5P6CPFcou3npRjH" />
           <Pin Id="EyahOg7PnKIOENNzJn96Rv" Name="Input" Kind="InputPin">
             <p:TypeAnnotation>
@@ -15090,11 +15097,59 @@
           <Pin Id="VHBHpk2SkjzLZIlSQD0XaH" Name="Value" Kind="InputPin" />
           <Pin Id="ItyWbTrPpxsMuzmC93riqm" Name="Output" Kind="OutputPin" Bounds="909,10" />
           <Link Id="Lm4hbbEAsauNGhLOKJWmKh" Ids="RWsbnQObWbZNyo7b0ARefC,UmcdA8vV6Q0QAonOeefKlJ" />
+          <Node Bounds="1261,3500,100,19" Id="MWIP217XkN5QMWAdCr4SV7">
+            <p:NodeReference LastCategoryFullName="Kairos.Blending.BlendingRegistry" LastSymbolSource="VL.Kairos.Blending.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterTechnique" />
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="P8VA6AdxI7SMEGEne3f3rR" Name="Input" Kind="StateInputPin" />
+            <Pin Id="UmcdA8vV6Q0QAonOeefKlJ" Name="Value" Kind="InputPin" />
+            <Pin Id="Rpz67ki1YE3PngpTna41ft" Name="Model Constructor" Kind="InputPin" />
+            <Pin Id="LG3F7qGli38NblOS58QVEe" Name="Output" Kind="StateOutputPin" />
+          </Node>
+          <Node Bounds="1356,3460,79,19" Id="U9NstwVj7o6NUXLoQOVn79">
+            <p:NodeReference LastCategoryFullName="Primitive.Delegates.Delegate (0 -&gt; 1)" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="Invoke" />
+              <CategoryReference Kind="FuncType" Name="Delegate (0 -&gt; 1)" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="Kz4wGmBHpENPcIw6MuEWUw" Name="Input" Kind="StateInputPin" />
+            <Pin Id="GtQRLlVQoVkLSrsXK51I65" Name="Result" Kind="OutputPin" />
+          </Node>
+          <Link Id="KtquYlpMlZYMtTU6bxl9FJ" Ids="GtQRLlVQoVkLSrsXK51I65,Rpz67ki1YE3PngpTna41ft" />
         </Patch>
       </Node>
       <Overlay Id="POmw5RDIO93PCahxpZBprl" Name="" Bounds="1622,591,294,128">
         <p:ColorIndex p:Type="Int32">3</p:ColorIndex>
       </Overlay>
+      <!--
+
+    ************************ IBackgroundFunction (Advanced) ************************
+
+-->
+      <Node Name="IBackgroundFunction (Advanced)" Bounds="532,17" Id="UqyXefARErzMztV37bugji">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+          <Choice Kind="InterfaceDefinition" Name="Interface" />
+        </p:NodeReference>
+        <Patch Id="KlvKq0Ni2blPacCQ7jLuqF">
+          <Canvas Id="TSngB4DY0DUNdruiTMfMUR" CanvasType="Group">
+            <ControlPoint Id="RTX2FvkvNo7ONaBwtb98Yn" Bounds="286,297" />
+            <Pad Id="VjYIdWXPhBQMjoHfvcBgjL" Comment="Output" Bounds="286,217,20,15" ShowValueBox="true" isIOBox="true">
+              <p:TypeAnnotation>
+                <Choice Kind="TypeFlag" Name="Object" />
+              </p:TypeAnnotation>
+            </Pad>
+          </Canvas>
+          <ProcessDefinition Id="DHtOZU2cM1CO5jaD0Vhp2q" IsHidden="true">
+            <Fragment Id="Lqd5fQV1BqyP7eyg9bLcEh" Patch="AMSQL45yMJnNbKTlizodr7" Enabled="true" />
+          </ProcessDefinition>
+          <Link Id="UDCb9cUo02oNNvmCMaLaA9" Ids="RTX2FvkvNo7ONaBwtb98Yn,MHgXAHUIGOlNOBDm8IXK1O" IsHidden="true" />
+          <Link Id="OWbZSo6I22BOiUv3eKaBp6" Ids="VjYIdWXPhBQMjoHfvcBgjL,RTX2FvkvNo7ONaBwtb98Yn" />
+          <Patch Id="AMSQL45yMJnNbKTlizodr7" Name="SampleBackground">
+            <Pin Id="MHgXAHUIGOlNOBDm8IXK1O" Name="Output" Kind="OutputPin" />
+          </Patch>
+        </Patch>
+      </Node>
     </Canvas>
     <!--
 
