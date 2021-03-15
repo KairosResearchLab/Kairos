@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="F0bYjICDrHkNRRd6Ovh0fZ" LanguageVersion="2021.3.1.89" Version="0.128">
+<Document xmlns:p="property" Id="NmUczCpj4ONORwsCq6RXwc" LanguageVersion="2021.3.1.89" Version="0.128">
   <NugetDependency Id="It84BxKL3hAOf856v3EFbh" Location="VL.CoreLib" Version="2021.3.1" />
   <Patch Id="Gna1zKzxolKPkctAGLKscN">
-    <Canvas Id="UOzHdE9VneDMy4iayYz4DI" DefaultCategory="Kairos.Mixer" CanvasType="FullCategory">
+    <Canvas Id="UOzHdE9VneDMy4iayYz4DI" DefaultCategory="Kairos.Composition" CanvasType="FullCategory">
       <!--
 
-    ************************ Mixer ************************
+    ************************ Composition ************************
 
 -->
-      <Node Name="Mixer" Category="Kairos" Aspects="Advanced" Bounds="315,226" Id="LQd5zDeQNofPKFi1yhjxwg">
+      <Node Name="Composition" Category="Kairos" Aspects="Advanced" Bounds="315,226" Id="LQd5zDeQNofPKFi1yhjxwg">
         <p:NodeReference>
           <Choice Kind="ClassDefinition" Name="Class" />
           <FullNameCategoryReference ID="Primitive" />
@@ -36,7 +36,7 @@
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="PinSyncronization" />
               </p:NodeReference>
-              <Pin Id="EPoAYrKXtY5OfXSjT8h9eg" Name="Context" Kind="InputPin" />
+              <Pin Id="EPoAYrKXtY5OfXSjT8h9eg" Name="Canvas Context" Kind="InputPin" />
               <Pin Id="FnbhCDraM8KPsI38EjnhTd" Name="Input Pins Sorting" Kind="InputPin" />
               <Pin Id="URZAr0aBOmBMtsMyqqkLzV" Name="Output Pins" Kind="OutputPin" />
             </Node>
@@ -149,6 +149,7 @@
             <Node Bounds="858,910,247,19" Id="HBCekMbIgw5O0rA762pQbx">
               <p:NodeReference LastCategoryFullName="Kairos.Canvas" LastSymbolSource="VL.Kairos.Core.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="Category" Name="Canvas" NeedsToBeDirectParent="true" />
                 <Choice Kind="ProcessAppFlag" Name="CanvasContext" />
               </p:NodeReference>
               <Pin Id="LXuB5V6gBKXPA352TOyZap" Name="Node Context" Kind="InputPin" />
@@ -294,17 +295,17 @@
               </Patch>
               <ControlPoint Id="UdrW7WZM9yDQHZFtxBxvk3" Bounds="560,906" Alignment="Top" />
             </Node>
-            <Node Bounds="858,1019,70,26" Id="Gt0IrCr7CQGQVIaYAQLnXH">
-              <p:NodeReference LastCategoryFullName="Kairos.CanvasContext" LastSymbolSource="VL.Kairos.Core.vl">
+            <Node Bounds="858,1019,-8,19" Id="Gt0IrCr7CQGQVIaYAQLnXH">
+              <p:NodeReference LastCategoryFullName="Kairos.Canvas.CanvasContext" LastSymbolSource="VL.Kairos.Core.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="SetThis" />
-                <CategoryReference Kind="ClassType" Name="CanvasContext" NeedsToBeDirectParent="true" />
+                <CategoryReference Kind="RecordType" Name="CanvasContext" NeedsToBeDirectParent="true" />
               </p:NodeReference>
               <Pin Id="NiYCk4uk9OsN5gOpZpIGpZ" Name="Input" Kind="StateInputPin" />
               <Pin Id="GSCNwUvhqTWQGakBkTMWrv" Name="This" Kind="InputPin" />
               <Pin Id="LD85Cuhv8CKOxlzSjKGeUD" Name="Output" Kind="StateOutputPin" />
             </Node>
-            <Pad Id="FWWTpnmWy1eP4n1lUGH2De" Bounds="277,100,182,54" ShowValueBox="true" isIOBox="true" Value="Timeline">
+            <Pad Id="FWWTpnmWy1eP4n1lUGH2De" Bounds="277,100,239,59" ShowValueBox="true" isIOBox="true" Value="Composition">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
@@ -373,6 +374,31 @@
           <Link Id="J7gKXkvfpzZL0KuIXGTgC2" Ids="Md2DwFPKhJYMIn5MRiWf3B,PKCxOHegowFNP2WpNyvp57" />
           <Link Id="U3QiAkxAhZpLdatCw25y2I" Ids="JLTXzE3OvcLPWZdat7h9nj,TMofvnvW685NUmk6AbhaFv" IsHidden="true" />
           <Link Id="KnxZ0lqY5THLgYKIl9Sq8I" Ids="TMofvnvW685NUmk6AbhaFv,LXuB5V6gBKXPA352TOyZap" />
+          <Link Id="FfQzQe2g1uwNO91m8cNidP" Ids="VgpJrA7O31aLopvkV4oSnB,QvTJc1o2wotLn8gGp5UU0Y" />
+          <Link Id="SEmGveqjB0jLtpRysoukVW" Ids="BFRruD14SkSORWVgpMakKw,DAI0ISSm4bwONrzJsczaVy" />
+          <Slot Id="V2GaXunUn5ONKauEZxMvyx" Name="Channel Model Constructor" />
+          <Link Id="VoXvC4et95VLAoywtOjPRr" Ids="M0dUZhqVEMxNNGT7zagzlW,MH3lXFDKmyVMQbApljDUev" />
+          <Link Id="CRmu0h0MBGWQTJnAE6rCz3" Ids="D0OSij1IrSXMBnW25Xy3c0,M4ROEO2en1nOP2yxEq8Jqf" />
+          <Link Id="LLlX1Fy58giPEJrDhX5Gaq" Ids="OeGLvMFpFanPYk4D8quVRf,VJW3WisReUDPtlMiGMMYaW" />
+          <Link Id="TLzLeRoMrCeLqD9pWA39fS" Ids="IHj2eRtri1LODVrBOqDJXS,Bq3aYMU3RUoNNfq6Ih58e5" />
+          <Link Id="UQaDcsl6TOUOBvj22MxVWI" Ids="I0cgfFItlWiNPUdLO6KBSb,C8e4L98KWimNAD3BQNnval" />
+          <Link Id="KLL0VHULseFN2IoT7WP4Om" Ids="Ey20xKw04EVNzWwIHwlUNK,OW41U0eRF9cLbC3wBGWWxV" />
+          <Link Id="N2CJwbLDgALOH5Bc4W4lI5" Ids="D766iCw7H0tOLAt5fPoTh1,HogKTW7PR9HOCsJTsEokEu" />
+          <Link Id="ENrkMf8b2isLa3Pjo9Gn3t" Ids="P3OloIPrfwPOhwPTrtLzFM,MAoj4j2ppvIPI0mOFiDFAG" />
+          <Link Id="AGVHHYtPF4OPW0iNSxWYm8" Ids="TzM39kpHy1POeHZ56XaxfU,Liu1UdcTqnsN1SLE7UrPLh" />
+          <Link Id="QcEfq6hJb7RPrmnn6noTRV" Ids="JtPTTKeTLkeNNUjOMSF2Ng,E1YVYOjWrNzPvXl1SSV0vh" />
+          <Link Id="H2ee8nEBpaHPQUVbo2PtDR" Ids="RqBFiFAfavcOrl0YTICC61,J87zdHGM0CjNlcfiZ5ufwk" />
+          <Link Id="G3RRYBimTPOPd7jPB5gtNV" Ids="I0SFpJl3j3vL38fSvWgdzc,MZwKHtodjlVQTvtpMvk1eW" />
+          <Link Id="L77Ky2Htm5XNCGTTjVaXAx" Ids="T9r8UXZlfFLN7pROh51dDi,CaSlVmBsnIKPdehRlLeLai" />
+          <Link Id="G1MMJLVGHhuOxlpAUYkddS" Ids="E5a21J3PmKxOfow9LygM71,KgNfKmyH2qfMgHXRSNWkI6" />
+          <Link Id="FckHQN7bDrYK9nUasv1KuW" Ids="SR8MrJ7OsPWO9auaqSYxl2,UdrW7WZM9yDQHZFtxBxvk3" />
+          <Link Id="Rb3eLRd3dQ4NxwvGiXQnup" Ids="UdrW7WZM9yDQHZFtxBxvk3,VeXlsp6pgleMcXdvM0ETWM" />
+          <Link Id="O9IKNGhPWUDMXcyWB6HDFR" Ids="OipQ2g0lIvuOKydiTNhReh,Gpgj7EecLmvPmth592pGx9" />
+          <Link Id="HieL44C1GdyOrCt9mT4yHy" Ids="C45sereDGNmL6JRc2ZhgzT,RUdY87K6F44OcgVVdaxl0R" />
+          <Link Id="QxSBxgVYZS8ML0WUZUez0Y" Ids="U0nL2C47D5NOua6H2rsBZn,NiYCk4uk9OsN5gOpZpIGpZ" />
+          <Link Id="GVhqrTTG2tqM9aqGuI72lv" Ids="U0nL2C47D5NOua6H2rsBZn,GSCNwUvhqTWQGakBkTMWrv" />
+          <Link Id="KX3hv0PggQ8MyCiYAqi9Az" Ids="LD85Cuhv8CKOxlzSjKGeUD,EPoAYrKXtY5OfXSjT8h9eg" />
+          <Link Id="EeV4R8Mz4vWMPJADAvyMEA" Ids="I0cgfFItlWiNPUdLO6KBSb,CwhIMjeLf4SK9sNYpT4yP3" />
           <Patch Id="B7LkODYmFXqNyOZRDHAoea" Name="Create" ParticipatingElements="GVHFk9dqY30PIc8jtnPKS6,Gt0IrCr7CQGQVIaYAQLnXH,DgFdcPXt74kMl5LKuXHXnl,TLzLeRoMrCeLqD9pWA39fS">
             <Pin Id="FAMsqm7p1VyMocMHorIv4L" Name="Model" Kind="InputPin">
               <p:DefaultValue Key="f88e7ab6-5b0c-4ff3-a282-3582db693802" Name="Timeline">
@@ -460,31 +486,6 @@
           <Patch Id="Pb37kxGTTHpMRQjh9jiu2Z" Name="GetModelStream">
             <Pin Id="CyteJMsGl7aOyaVkG0va90" Name="Model Stream" Kind="OutputPin" />
           </Patch>
-          <Link Id="FfQzQe2g1uwNO91m8cNidP" Ids="VgpJrA7O31aLopvkV4oSnB,QvTJc1o2wotLn8gGp5UU0Y" />
-          <Link Id="SEmGveqjB0jLtpRysoukVW" Ids="BFRruD14SkSORWVgpMakKw,DAI0ISSm4bwONrzJsczaVy" />
-          <Slot Id="V2GaXunUn5ONKauEZxMvyx" Name="Channel Model Constructor" />
-          <Link Id="VoXvC4et95VLAoywtOjPRr" Ids="M0dUZhqVEMxNNGT7zagzlW,MH3lXFDKmyVMQbApljDUev" />
-          <Link Id="CRmu0h0MBGWQTJnAE6rCz3" Ids="D0OSij1IrSXMBnW25Xy3c0,M4ROEO2en1nOP2yxEq8Jqf" />
-          <Link Id="LLlX1Fy58giPEJrDhX5Gaq" Ids="OeGLvMFpFanPYk4D8quVRf,VJW3WisReUDPtlMiGMMYaW" />
-          <Link Id="TLzLeRoMrCeLqD9pWA39fS" Ids="IHj2eRtri1LODVrBOqDJXS,Bq3aYMU3RUoNNfq6Ih58e5" />
-          <Link Id="UQaDcsl6TOUOBvj22MxVWI" Ids="I0cgfFItlWiNPUdLO6KBSb,C8e4L98KWimNAD3BQNnval" />
-          <Link Id="KLL0VHULseFN2IoT7WP4Om" Ids="Ey20xKw04EVNzWwIHwlUNK,OW41U0eRF9cLbC3wBGWWxV" />
-          <Link Id="N2CJwbLDgALOH5Bc4W4lI5" Ids="D766iCw7H0tOLAt5fPoTh1,HogKTW7PR9HOCsJTsEokEu" />
-          <Link Id="ENrkMf8b2isLa3Pjo9Gn3t" Ids="P3OloIPrfwPOhwPTrtLzFM,MAoj4j2ppvIPI0mOFiDFAG" />
-          <Link Id="AGVHHYtPF4OPW0iNSxWYm8" Ids="TzM39kpHy1POeHZ56XaxfU,Liu1UdcTqnsN1SLE7UrPLh" />
-          <Link Id="QcEfq6hJb7RPrmnn6noTRV" Ids="JtPTTKeTLkeNNUjOMSF2Ng,E1YVYOjWrNzPvXl1SSV0vh" />
-          <Link Id="H2ee8nEBpaHPQUVbo2PtDR" Ids="RqBFiFAfavcOrl0YTICC61,J87zdHGM0CjNlcfiZ5ufwk" />
-          <Link Id="G3RRYBimTPOPd7jPB5gtNV" Ids="I0SFpJl3j3vL38fSvWgdzc,MZwKHtodjlVQTvtpMvk1eW" />
-          <Link Id="L77Ky2Htm5XNCGTTjVaXAx" Ids="T9r8UXZlfFLN7pROh51dDi,CaSlVmBsnIKPdehRlLeLai" />
-          <Link Id="G1MMJLVGHhuOxlpAUYkddS" Ids="E5a21J3PmKxOfow9LygM71,KgNfKmyH2qfMgHXRSNWkI6" />
-          <Link Id="FckHQN7bDrYK9nUasv1KuW" Ids="SR8MrJ7OsPWO9auaqSYxl2,UdrW7WZM9yDQHZFtxBxvk3" />
-          <Link Id="Rb3eLRd3dQ4NxwvGiXQnup" Ids="UdrW7WZM9yDQHZFtxBxvk3,VeXlsp6pgleMcXdvM0ETWM" />
-          <Link Id="O9IKNGhPWUDMXcyWB6HDFR" Ids="OipQ2g0lIvuOKydiTNhReh,Gpgj7EecLmvPmth592pGx9" />
-          <Link Id="HieL44C1GdyOrCt9mT4yHy" Ids="C45sereDGNmL6JRc2ZhgzT,RUdY87K6F44OcgVVdaxl0R" />
-          <Link Id="QxSBxgVYZS8ML0WUZUez0Y" Ids="U0nL2C47D5NOua6H2rsBZn,NiYCk4uk9OsN5gOpZpIGpZ" />
-          <Link Id="GVhqrTTG2tqM9aqGuI72lv" Ids="U0nL2C47D5NOua6H2rsBZn,GSCNwUvhqTWQGakBkTMWrv" />
-          <Link Id="KX3hv0PggQ8MyCiYAqi9Az" Ids="LD85Cuhv8CKOxlzSjKGeUD,EPoAYrKXtY5OfXSjT8h9eg" />
-          <Link Id="EeV4R8Mz4vWMPJADAvyMEA" Ids="I0cgfFItlWiNPUdLO6KBSb,CwhIMjeLf4SK9sNYpT4yP3" />
         </Patch>
       </Node>
     </Canvas>
