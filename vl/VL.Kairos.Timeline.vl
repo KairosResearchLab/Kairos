@@ -123,7 +123,7 @@
                   </p:NodeReference>
                   <Pin Id="IGAQSTPW4QtLp70OFN2GgE" Name="Author ID" Kind="InputPin" />
                   <Pin Id="VNQp0ivEHdcOhEjQDN1hx3" Name="Parameter" Kind="InputPin" />
-                  <Pin Id="CcJpR3pbKW1PLYGCYHVuNw" Name="ValueProvider Model" Kind="InputPin" />
+                  <Pin Id="CcJpR3pbKW1PLYGCYHVuNw" Name="Value Provider" Kind="InputPin" />
                   <Pin Id="FLDfRJFf93HM18v9M1AjkW" Name="Output" Kind="StateOutputPin" />
                 </Node>
                 <Node Bounds="611,303,80,26" Id="T93nRE7HTypLi283BXzHLc">
@@ -323,6 +323,16 @@
               </p:ValueBoxSettings>
             </Pad>
             <ControlPoint Id="SXe0DIDKPONN3lNUKkPu68" Bounds="1152,895" />
+            <Pad Id="HV98c5UTKjWNeVczx7b50u" SlotId="FKs0eH4y09kL2b93QFM9id" Bounds="1319,262" />
+            <ControlPoint Id="KRZu75gSPtQOxoIHrwjlf4" Bounds="1319,306" />
+            <Node Bounds="1317,202,46,26" Id="SbpaHp9pvehM9ssS1zAWxa">
+              <p:NodeReference LastCategoryFullName="System.GUID" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="RecordType" Name="GUID" />
+                <Choice Kind="OperationCallFlag" Name="Create" />
+              </p:NodeReference>
+              <Pin Id="L8729aBwcucMsizoLSMgIN" Name="Result" Kind="StateOutputPin" />
+            </Node>
           </Canvas>
           <Link Id="MnUhCAWQ472Lm9QPphteUU" Ids="M6hiiV3C2RSPijaQ0qPtj8,GlQQ6NYTHu9PAmx4DsE2Ks" IsHidden="true" />
           <Link Id="Sn2V4wsxq5VN3ErFz9MEF3" Ids="S3ti52ewl9SQJHD4IwAeJu,OT7djiO03dfPKWxHR0HNqW" IsHidden="true" />
@@ -356,6 +366,7 @@
             <Fragment Id="QzGHTn7ByvbQLIuwyhl8JY" Patch="S1HHHgiOV92Oo6bIt5zZJB" />
             <Fragment Id="EDFtMMPCzXMNVW28g1EvAF" Patch="AyzPCu9e5FLPTi5kkLXspv" Enabled="true" />
             <Fragment Id="NdU24w6TuW0QbrJRcW4D2L" Patch="Jv4JcYiEF4hMGm9M5sly92" />
+            <Fragment Id="DN0rjWzdjxYLFeUFge1GV7" Patch="Sc5PsKDsMpfMuTEKXkyBhX" />
           </ProcessDefinition>
           <Link Id="Dlzkeh40Tf6Pjuj5TuEWBW" Ids="OT7djiO03dfPKWxHR0HNqW,IezhKCQwnioMfHowkEXfpI" />
           <Link Id="CroXd2292tULwBQgZMdeRc" Ids="VtchBnzE9JvLOW0pz6Ur18,ATk6ADVdyKLQV4NTS3BaUt" IsHidden="true" />
@@ -400,7 +411,7 @@
           <Link Id="Vwiqw1B3SBELLK1IMY8Wce" Ids="MaCbdYEcWP1NWSNpKo2p78,Jurx7zxbtKSMPynXsDaFBH" IsHidden="true" />
           <Link Id="Nrok7RGt3cQP8OOEHu8zIN" Ids="Jurx7zxbtKSMPynXsDaFBH,AcrULrZZjCYLVbCznnxSsL" />
           <Link Id="IrIhV5kUtaDOm05ARcJNLe" Ids="KS11se5geKaLiQ1jhIcbxK,O1AmbgEbVX8NGYC12hVwZD" />
-          <Patch Id="SLyznpN5mnWNO9qMeVrvRY" Name="Create" ParticipatingElements="JPvGAvlCDorMc4jBKYTVSt,IHLPiD3bgSzNacw5KyMdTi,IMi1IaBdxhaL1te1NZyLyV,PZ8TxyOr9iWNgdjjVnt90S">
+          <Patch Id="SLyznpN5mnWNO9qMeVrvRY" Name="Create" ParticipatingElements="JPvGAvlCDorMc4jBKYTVSt,IHLPiD3bgSzNacw5KyMdTi,SbpaHp9pvehM9ssS1zAWxa,IMi1IaBdxhaL1te1NZyLyV,PZ8TxyOr9iWNgdjjVnt90S">
             <Pin Id="S3ti52ewl9SQJHD4IwAeJu" Name="Model" Kind="InputPin">
               <p:DefaultValue Key="f88e7ab6-5b0c-4ff3-a282-3582db693802" Name="Timeline">
                 <Timer>
@@ -485,6 +496,17 @@
           <Link Id="PNPmyKwa0taLvzhBPJ8MOT" Ids="GlQQ6NYTHu9PAmx4DsE2Ks,PofkAFfCsFiPVpRlJ6jXN2" />
           <Link Id="OLS1qO6PEoiLmp5OPaX7Mf" Ids="GlQQ6NYTHu9PAmx4DsE2Ks,SXe0DIDKPONN3lNUKkPu68" />
           <Link Id="B0jyXGgsbZ0Ln6m4So5SPI" Ids="SXe0DIDKPONN3lNUKkPu68,NX551WnnjrWQdiRciIWID9" IsHidden="true" />
+          <Slot Id="FKs0eH4y09kL2b93QFM9id" Name="Key">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="GUID" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Patch Id="Sc5PsKDsMpfMuTEKXkyBhX" Name="GetKey">
+            <Pin Id="UQxXQ4owbBWM7EcQ2BzA9Q" MergeId="151893" Name="Key" Kind="OutputPin" />
+          </Patch>
+          <Link Id="Q6Ipgwl9e5aP2Zq6HYAt6Q" Ids="HV98c5UTKjWNeVczx7b50u,KRZu75gSPtQOxoIHrwjlf4" />
+          <Link Id="SIIfkD3RJheOvUeZOfBOGZ" Ids="KRZu75gSPtQOxoIHrwjlf4,UQxXQ4owbBWM7EcQ2BzA9Q" IsHidden="true" />
+          <Link Id="F7JyKNVOiIMNHJ9RqxVOWG" Ids="L8729aBwcucMsizoLSMgIN,HV98c5UTKjWNeVczx7b50u" />
         </Patch>
       </Node>
     </Canvas>
