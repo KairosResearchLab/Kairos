@@ -6393,7 +6393,7 @@
                   <Node Bounds="332,937,174,19" Id="BVJMv8TmU4mOEsGDIy0yA4">
                     <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
+                      <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (ModelStream)" />
                     </p:NodeReference>
                     <Pin Id="AxJvsqM35t4NY7KEOEItNq" Name="Model Stream" Kind="InputPin" />
                     <Pin Id="IgbY9JmJ3FFOcaMkIWkTNM" Name="Descendant" Kind="InputPin" />
@@ -7413,9 +7413,9 @@
                           <Pin Id="TxQDSDSHiRUMAnTdY44L3K" Name="Canvas Context" Kind="OutputPin" />
                         </Node>
                         <Node Bounds="405,305,15,19" Id="J5GIG9R6JABM4JW4CayXW1">
-                          <p:NodeReference LastCategoryFullName="Kairos.Canvas.Query.Model" LastSymbolSource="VL.Kairos.Core.vl">
+                          <p:NodeReference LastCategoryFullName="Kairos.Canvas.Query.Runtime" LastSymbolSource="VL.Kairos.Core.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                            <Choice Kind="OperationCallFlag" Name="GetChannels (Model)" />
+                            <Choice Kind="OperationCallFlag" Name="GetChannels (Runtime)" />
                           </p:NodeReference>
                           <Pin Id="TvMHEzf69lbPG8dBYS9CnN" Name="Input" Kind="StateInputPin" />
                           <Pin Id="HlWMJN3W0lnPT9WpMfAxhu" Name="Channels" Kind="OutputPin" />
@@ -11455,6 +11455,8 @@
                       <CategoryReference Kind="Category" Name="Primitive" />
                     </p:NodeReference>
                     <Pin Id="A8CkVrU2ZB3MZpVxMuybKz" Name="Condition" Kind="InputPin" />
+                    <ControlPoint Id="S5dQLkwBwFUNANHdLn2yeg" Bounds="-180,339" Alignment="Bottom" />
+                    <ControlPoint Id="EiG2jVbMC05LdaG6APHn91" Bounds="-180,225" Alignment="Top" />
                     <Patch Id="OO5a10FgIdOLsctmgrgLqT" ManuallySortedPins="true">
                       <Patch Id="TS1CqV3VhInPmjwLianNyB" Name="Create" ManuallySortedPins="true" />
                       <Patch Id="CvlVhgWUlE9MrwKqvwyM8W" Name="Then" ManuallySortedPins="true" />
@@ -11470,20 +11472,22 @@
                           <Pin Id="VNMLR6WnLnJLV0dvpV1ESx" Name="Result" Kind="OutputPin" />
                           <ControlPoint Id="OnyAEJxchbrK9vLT548mGc" Bounds="-168,315" />
                           <Node Bounds="-170,262,89,26" Id="Uxw7U4tbhyxOZVOkj5I1fp">
-                            <p:NodeReference LastCategoryFullName="Kairos.Canvas.ICanvasModel.DefaultCanvasModel" LastSymbolSource="VL.Kairos.Core.vl">
+                            <p:NodeReference LastCategoryFullName="Kairos.Canvas.DefaultCanvasModel" LastSymbolSource="VL.Kairos.Core.vl">
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                               <Choice Kind="OperationCallFlag" Name="Create" />
-                              <CategoryReference Kind="ClassType" Name="DefaultCanvasModel" NeedsToBeDirectParent="true">
-                                <p:OuterCategoryReference Kind="InterfaceTypeFlag" Name="ICanvasModel" NeedsToBeDirectParent="true" />
-                              </CategoryReference>
+                              <CategoryReference Kind="RecordType" Name="DefaultCanvasModel" NeedsToBeDirectParent="true" />
                             </p:NodeReference>
+                            <Pin Id="Dgr7Og3OHZgOFaJFAh3Ugm" Name="Name" Kind="InputPin" DefaultValue="Default Timeline">
+                              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                                <Choice Kind="TypeFlag" Name="String" />
+                              </p:TypeAnnotation>
+                            </Pin>
+                            <Pin Id="BAlnTEHKbg9NQHQFjfpfIu" Name="Channel Model Constructor" Kind="InputPin" />
                             <Pin Id="VHAlKNblbxTPSnbYrGggkk" Name="Output" Kind="StateOutputPin" />
                           </Node>
                         </Patch>
                       </Node>
                     </Patch>
-                    <ControlPoint Id="S5dQLkwBwFUNANHdLn2yeg" Bounds="-180,339" Alignment="Bottom" />
-                    <ControlPoint Id="EiG2jVbMC05LdaG6APHn91" Bounds="-180,225" Alignment="Top" />
                   </Node>
                   <Link Id="A2prRzbZg76PtwoUewvb4B" Ids="OnyAEJxchbrK9vLT548mGc,VNMLR6WnLnJLV0dvpV1ESx" IsHidden="true" />
                   <Link Id="PqxQGvqShphPYeT44dAgGt" Ids="VHAlKNblbxTPSnbYrGggkk,OnyAEJxchbrK9vLT548mGc" />
@@ -11507,28 +11511,6 @@
                     <Pin Id="BvujtDvwBKEPsxllcoUtBx" Name="Result" Kind="OutputPin" />
                   </Node>
                   <Link Id="JSQVwYYgbggPH9um0oORzS" Ids="BvujtDvwBKEPsxllcoUtBx,EiG2jVbMC05LdaG6APHn91" />
-                </Patch>
-              </Node>
-              <!--
-
-    ************************ DefaultCanvasModel (Internal) ************************
-
--->
-              <Node Name="DefaultCanvasModel (Internal)" Bounds="-285,72" Id="Cpz5BSybj5nLsxyxIOBrfQ">
-                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
-                  <Choice Kind="ClassDefinition" Name="Class" />
-                </p:NodeReference>
-                <p:Interfaces>
-                  <TypeReference LastCategoryFullName="Kairos.Canvas" LastSymbolSource="VL.Kairos.Core.vl">
-                    <Choice Kind="InterfaceTypeFlag" Name="ICanvasModel" />
-                  </TypeReference>
-                </p:Interfaces>
-                <Patch Id="LxU3V4FvQ3aPUWoj3FKojr">
-                  <Canvas Id="BT5F5can5HOMqZAuUd0Vzx" CanvasType="Group" />
-                  <Patch Id="BysXs6tnzTPNgn3KUxWhHc" Name="Create" />
-                  <ProcessDefinition Id="NquKbSBO7ZuMV50H3S06TX" IsHidden="true">
-                    <Fragment Id="J5xGL4kBlXtPkA4AdVF34m" Patch="BysXs6tnzTPNgn3KUxWhHc" Enabled="true" />
-                  </ProcessDefinition>
                 </Patch>
               </Node>
               <!--
@@ -14865,10 +14847,10 @@
           <Canvas Id="Ihus1zI61UKN8OJI7pFip2" Name="Model" Position="234,136">
             <!--
 
-    ************************ AddClipToChannel (Canvas) ************************
+    ************************ AddClipToChannel (ICanvas) ************************
 
 -->
-            <Node Name="AddClipToChannel (Canvas)" Bounds="202,535,429,265" Id="FnrZnV6dIwsLa3qNWCuczt">
+            <Node Name="AddClipToChannel (ICanvas)" Bounds="202,535,429,265" Id="FnrZnV6dIwsLa3qNWCuczt">
               <p:NodeReference>
                 <Choice Kind="OperationDefinition" Name="Operation" />
               </p:NodeReference>
@@ -14896,7 +14878,7 @@
                     <Node Bounds="237,718,174,19" Id="O3V6QGvjM54O6bRW56B3Ls">
                       <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                        <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
+                        <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (ModelStream)" />
                       </p:NodeReference>
                       <Pin Id="QTy5pmN96e4M2jQTxEbxE1" Name="Model Stream" Kind="InputPin" />
                       <Pin Id="TQRL4M5BxpKQdzRmyZvg7J" Name="Descendant" Kind="InputPin" />
@@ -14960,10 +14942,10 @@
             </Node>
             <!--
 
-    ************************ ReplaceInCanvasModelAndValidate (Model) ************************
+    ************************ ReplaceInCanvasModelAndValidate (ModelStream) ************************
 
 -->
-            <Node Name="ReplaceInCanvasModelAndValidate (Model)" Bounds="187,172,348,233" Id="SkqRSMaHXMhNFuCeaZA9hc">
+            <Node Name="ReplaceInCanvasModelAndValidate (ModelStream)" Bounds="187,172,348,233" Id="SkqRSMaHXMhNFuCeaZA9hc">
               <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
                 <Choice Kind="OperationDefinition" Name="Operation" />
               </p:NodeReference>
@@ -14976,7 +14958,7 @@
                   <Pin Id="M7LmOm67tUsL78nlg4kw5u" Name="Model Stream" Kind="InputPin" />
                   <Pin Id="KGNZpgoWMvjN2QsgrQj1oB" Name="Descendant" Kind="InputPin" />
                   <Pin Id="CpJ3Gzgye4sMhTIv7qzVYx" Name="Model Stream" Kind="OutputPin" />
-                  <Pin Id="H3MTFV84yeZMoCeDeatlWR" Name="Result" Kind="OutputPin" />
+                  <Pin Id="H3MTFV84yeZMoCeDeatlWR" Name="Success" Kind="OutputPin" />
                   <Pin Id="TDzgQwQLa2dO30K53ALrRf" Name="New Model" Kind="OutputPin" />
                   <Patch Id="SH86Lu9XcwYPcyS00SmTCG" Name="Validator" ManuallySortedPins="true">
                     <Pin Id="QfXnaAR7mSVLpxJ7vvEBFm" Name="Input" Kind="InputPin" />
@@ -15124,7 +15106,7 @@
                             <Node Bounds="215,703,126,19" Id="PDFOdcNeBfiOm1Qo8mwmZu">
                               <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
                                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                                <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
+                                <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (ModelStream)" />
                               </p:NodeReference>
                               <Pin Id="EOIuZxNvlVnMVg30jzhnLI" Name="Model Stream" Kind="InputPin" />
                               <Pin Id="Fi1sWieBEZZOmKVZ3m3Qzq" Name="Descendant" Kind="InputPin" />
@@ -15315,7 +15297,7 @@
                   <Node Bounds="950,419,174,19" Id="VQZXa5M4gDvQLv5iGKyaXK">
                     <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
+                      <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (ModelStream)" />
                     </p:NodeReference>
                     <Pin Id="O5NbiJHKVMSLaORXFoWVA2" Name="Model Stream" Kind="InputPin" />
                     <Pin Id="RHmdZDQ1FrRLqRPm6B2aa6" Name="Descendant" Kind="InputPin" />
@@ -15491,7 +15473,7 @@
                       <Node Bounds="334,895,174,19" Id="JemFj5cJPi7MYuk7XZkloS">
                         <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                          <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
+                          <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (ModelStream)" />
                         </p:NodeReference>
                         <Pin Id="RajHEGyZpOsQNNcbwUGCqh" Name="Model Stream" Kind="InputPin" />
                         <Pin Id="K0Y6DGRARczO2M4KFbwvom" Name="Descendant" Kind="InputPin" />
@@ -15645,10 +15627,10 @@
             </Canvas>
             <!--
 
-    ************************ RemoveClipsFromChannelByKey (Model) ************************
+    ************************ RemoveClipsFromChannelByKey (ICanvas) ************************
 
 -->
-            <Node Name="RemoveClipsFromChannelByKey (Model)" Bounds="719,536,256,257" Id="LKXNlLQOiDWNBElafjQyHl">
+            <Node Name="RemoveClipsFromChannelByKey (ICanvas)" Bounds="719,536,256,257" Id="LKXNlLQOiDWNBElafjQyHl">
               <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
                 <Choice Kind="OperationDefinition" Name="Operation" />
               </p:NodeReference>
@@ -15693,7 +15675,7 @@
                 <Node Bounds="731,727,174,19" Id="ShYiXs7RZvVPPUC5XNoC4R">
                   <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
+                    <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (ModelStream)" />
                   </p:NodeReference>
                   <Pin Id="TQQOpHJ9tviOvrofHtOWkT" Name="Model Stream" Kind="InputPin" />
                   <Pin Id="KBxVa99UHXFMZhLaDKRhOc" Name="Descendant" Kind="InputPin" />
@@ -15719,79 +15701,10 @@
             </Node>
             <!--
 
-    ************************ RemoveClipsFromChannelsByKey (Canvas) ************************
+    ************************ EditModel (ICanvas) ************************
 
 -->
-            <Node Name="RemoveClipsFromChannelsByKey (Canvas)" Bounds="1085,539,304,195" Id="BigGaue0cUGQN6V0YSn5zh">
-              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
-                <Choice Kind="OperationDefinition" Name="Operation" />
-              </p:NodeReference>
-              <Patch Id="CalnUOodLDPMf8YSMb2maj">
-                <ControlPoint Id="NqCQoWOh9ZwLCicfV23jdt" Bounds="1099,557" />
-                <Pin Id="OQruM8duowrQHC9pVpsMss" Name="Input" Kind="InputPin" Bounds="-258,394" />
-                <Link Id="VhqOfZsyetTNiqEOTZhZDc" Ids="OQruM8duowrQHC9pVpsMss,NqCQoWOh9ZwLCicfV23jdt" IsHidden="true" />
-                <ControlPoint Id="Rz5QBrRCeg2LJlkYpT9mOW" Bounds="1329,592" />
-                <Pin Id="P2pfa2MoOeILLlULX4eY9S" Name="Clip Key" Kind="InputPin" Bounds="1105,279" />
-                <Link Id="MTrPoRgaaiONtlssu4jATf" Ids="P2pfa2MoOeILLlULX4eY9S,Rz5QBrRCeg2LJlkYpT9mOW" IsHidden="true" />
-                <Node Bounds="1097,581,74,19" Id="JnCwvX1MTI4NPViVJHgmtj">
-                  <p:NodeReference LastCategoryFullName="Kairos.Canvas.Query.Model" LastSymbolSource="VL.Kairos.Core.vl">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="GetModel" />
-                    <CategoryReference Kind="Category" Name="Model" NeedsToBeDirectParent="true">
-                      <p:OuterCategoryReference Kind="Category" Name="Query" NeedsToBeDirectParent="true">
-                        <p:OuterCategoryReference Kind="Category" Name="Canvas" NeedsToBeDirectParent="true" />
-                      </p:OuterCategoryReference>
-                    </CategoryReference>
-                  </p:NodeReference>
-                  <Pin Id="HrydjfncCFaLrtFrvlF51q" Name="Input" Kind="InputPin" />
-                  <Pin Id="JpitvhnFrRbMLt2lspI79K" Name="Model Stream" Kind="OutputPin" />
-                  <Pin Id="MaE4Zwz8cucLABG5RxDCx2" Name="Model" Kind="OutputPin" />
-                </Node>
-                <Link Id="BnnwD4mzN31QNgPTrbNMwp" Ids="NqCQoWOh9ZwLCicfV23jdt,HrydjfncCFaLrtFrvlF51q" />
-                <Node Bounds="1097,668,174,19" Id="LgViSIKTNS1LaBP60tjohE">
-                  <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
-                  </p:NodeReference>
-                  <Pin Id="KHrz4imkfaGP4tQiSeZr09" Name="Model Stream" Kind="InputPin" />
-                  <Pin Id="CXr9duULIRiPFc3cZTRFtC" Name="Descendant" Kind="InputPin" />
-                  <Pin Id="IMyJZV1mLYTNYShbhEoZnK" Name="Model Stream" Kind="OutputPin" />
-                  <Pin Id="ELKoKASU5N3NtiH4eNRYWG" Name="Success" Kind="OutputPin" />
-                  <Pin Id="HB4kAlTmZW1PCMzyDVWnc5" Name="New Model" Kind="OutputPin" />
-                </Node>
-                <ControlPoint Id="QEFNxJU0VsHNNDBt0Wn5eU" Bounds="1099,717" />
-                <Pin Id="VymMkUma5qmM1knriDtqIO" Name="Model Stream" Kind="OutputPin" Bounds="1901,789" />
-                <ControlPoint Id="V0ZlLmpPxH1OZHCsQxaMts" Bounds="1184,717" />
-                <Pin Id="RXw6E0uN77cLCiyWXdQA7a" Name="Success" Kind="OutputPin" Bounds="1986,790" />
-                <ControlPoint Id="FhBkNLPsnJQPm8SOtTRjEa" Bounds="1268,717" />
-                <Pin Id="EpAeHNQaNHYNWp8WZjsiF5" Name="New Model" Kind="OutputPin" Bounds="2070,793" />
-                <Link Id="BgetBf2EpKSPbZ6Fqjevz2" Ids="IMyJZV1mLYTNYShbhEoZnK,QEFNxJU0VsHNNDBt0Wn5eU" />
-                <Link Id="RNJOCW7hIwmPD0JKXsKoBL" Ids="QEFNxJU0VsHNNDBt0Wn5eU,VymMkUma5qmM1knriDtqIO" IsHidden="true" />
-                <Link Id="MoVgy38ZNB4O7noPPjh1k1" Ids="ELKoKASU5N3NtiH4eNRYWG,V0ZlLmpPxH1OZHCsQxaMts" />
-                <Link Id="AaZVeJRzUTANdxsofFsx7C" Ids="V0ZlLmpPxH1OZHCsQxaMts,RXw6E0uN77cLCiyWXdQA7a" IsHidden="true" />
-                <Link Id="KEXB2ZKxwOsMZjtz8yXcI0" Ids="HB4kAlTmZW1PCMzyDVWnc5,FhBkNLPsnJQPm8SOtTRjEa" />
-                <Link Id="KZNcjANmuE9OXeWORaEQGh" Ids="FhBkNLPsnJQPm8SOtTRjEa,EpAeHNQaNHYNWp8WZjsiF5" IsHidden="true" />
-                <Link Id="GCWMjfkzqyDMXqK55sXoeC" Ids="JpitvhnFrRbMLt2lspI79K,KHrz4imkfaGP4tQiSeZr09" />
-                <Node Bounds="1166,620,166,19" Id="KOgrgXCpSGTNTtU2yfhZfd">
-                  <p:NodeReference LastCategoryFullName="Kairos.Canvas.ICanvasModel" LastSymbolSource="VL.Kairos.Core.vl">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="RemoveClipsFromChannelsByKey" />
-                  </p:NodeReference>
-                  <Pin Id="L0a9L8LHinRNFk1EGkpSqt" Name="Input" Kind="InputPin" />
-                  <Pin Id="JQ2skWv5Pv7Lbta8lm7arF" Name="Clip Key" Kind="InputPin" />
-                  <Pin Id="Esxv9dsEHOILiYgYPhW9Xq" Name="Output" Kind="OutputPin" />
-                </Node>
-                <Link Id="J9ZraUAJIcmMnZdoR9LGbc" Ids="MaE4Zwz8cucLABG5RxDCx2,L0a9L8LHinRNFk1EGkpSqt" />
-                <Link Id="T27kk10wyifNtOHlXiHX0h" Ids="Rz5QBrRCeg2LJlkYpT9mOW,JQ2skWv5Pv7Lbta8lm7arF" />
-                <Link Id="Jq76n5vyjkDOr0F9cvU8VD" Ids="Esxv9dsEHOILiYgYPhW9Xq,CXr9duULIRiPFc3cZTRFtC" />
-              </Patch>
-            </Node>
-            <!--
-
-    ************************ EditModel (Canvas) ************************
-
--->
-            <Node Name="EditModel (Canvas)" Bounds="608,166,259,263" Id="CAigolaOeJLPMemWMCaLr8">
+            <Node Name="EditModel (ICanvas)" Bounds="608,166,259,263" Id="CAigolaOeJLPMemWMCaLr8">
               <p:NodeReference>
                 <Choice Kind="OperationDefinition" Name="Operation" />
               </p:NodeReference>
@@ -15816,7 +15729,7 @@
                 <Node Bounds="620,361,177,19" Id="LqQdSuqiTZYOgxfBKsrM9l">
                   <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
+                    <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (ModelStream)" />
                   </p:NodeReference>
                   <Pin Id="S9lIOQN7ZWUNwEKqr2fpNo" Name="Model Stream" Kind="InputPin" />
                   <Pin Id="TxrsD6hvkruLSFYURwvYDN" Name="Descendant" Kind="InputPin" />
@@ -15867,10 +15780,10 @@
           <Canvas Id="KGSS3Z5liLOO6jet8Py2dc" Name="CanvasContext" Position="233,206">
             <!--
 
-    ************************ SetClock (CanvasContext) ************************
+    ************************ SetClock (ICanvas) ************************
 
 -->
-            <Node Name="SetClock (CanvasContext)" Bounds="263,204,149,154" Id="K0lbEpFznjYO85N2amU7Tv">
+            <Node Name="SetClock (ICanvas)" Bounds="263,204,149,154" Id="K0lbEpFznjYO85N2amU7Tv">
               <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
                 <Choice Kind="OperationDefinition" Name="Operation" />
               </p:NodeReference>
@@ -15908,10 +15821,10 @@
             </Node>
             <!--
 
-    ************************ SetBoundDatatype (CanvasContext) ************************
+    ************************ SetBoundDatatype (ICanvas) ************************
 
 -->
-            <Node Name="SetBoundDatatype (CanvasContext)" Bounds="548,204,203,154" Id="EIqXmlzGavjPe28421sNps">
+            <Node Name="SetBoundDatatype (ICanvas)" Bounds="548,204,203,154" Id="EIqXmlzGavjPe28421sNps">
               <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
                 <Choice Kind="OperationDefinition" Name="Operation" />
               </p:NodeReference>
@@ -16027,9 +15940,9 @@
                     </Patch>
                   </Node>
                   <Node Bounds="553,277,74,19" Id="SEtSobFGfAFLyRt9pJpHtf">
-                    <p:NodeReference LastCategoryFullName="Kairos.Canvas.Query.Model" LastSymbolSource="VL.Kairos.Core.vl">
+                    <p:NodeReference LastCategoryFullName="Kairos.Canvas.Query.Runtime" LastSymbolSource="VL.Kairos.Core.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="OperationCallFlag" Name="GetChannels (Model)" />
+                      <Choice Kind="OperationCallFlag" Name="GetChannels (Runtime)" />
                     </p:NodeReference>
                     <Pin Id="VGMU2Bl1SUePD9M89pn2lk" Name="Input" Kind="StateInputPin" />
                     <Pin Id="KbdXTdamdTjLS77kcRijXI" Name="Channels" Kind="OutputPin" />
@@ -16132,7 +16045,7 @@
                         <CategoryReference Kind="Category" Name="Primitive" />
                       </p:NodeReference>
                       <Pin Id="MJqrPZA18P3Qc6lF7KGKRD" Name="Break" Kind="OutputPin" />
-                      <ControlPoint Id="I0NgEUKD7zBQOTy1C4pAAo" Bounds="327,544" Alignment="Top" />
+                      <ControlPoint Id="I0NgEUKD7zBQOTy1C4pAAo" Bounds="331,544" Alignment="Top" />
                       <ControlPoint Id="HCFHQWQJgurOHgkfsSikxt" Bounds="299,544" Alignment="Top" />
                       <ControlPoint Id="EK7aVqLpaB1LJWe8Vs9T6O" Bounds="491,647" Alignment="Bottom" />
                       <ControlPoint Id="F6WOi6aWx7POqHA5SSTCEq" Bounds="299,647" Alignment="Bottom" />
@@ -16140,7 +16053,7 @@
                         <Patch Id="U5Xjua1wC8lLm5IcBCoCj5" Name="Create" ManuallySortedPins="true" />
                         <Patch Id="RGTFPdBfJenLGsDj5hB2gR" Name="Update" ManuallySortedPins="true" />
                         <Patch Id="MoBnCfBoXAALePphvjv7gh" Name="Dispose" ManuallySortedPins="true" />
-                        <Node Bounds="325,562,62,26" Id="No77wuNH2yCMJe7fOGxGFA">
+                        <Node Bounds="329,562,62,26" Id="No77wuNH2yCMJe7fOGxGFA">
                           <p:NodeReference LastCategoryFullName="Collections.Common.KeyValuePair" LastSymbolSource="VL.Collections.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <CategoryReference Kind="RecordType" Name="KeyValuePair" NeedsToBeDirectParent="true" />
@@ -16167,9 +16080,9 @@
                       </Patch>
                     </Node>
                     <Node Bounds="339,254,24,26" Id="FbcLcXMfL8wMBc6GZM3C4e">
-                      <p:NodeReference LastCategoryFullName="Kairos.Canvas.Query.Model" LastSymbolSource="VL.Kairos.Core.vl">
+                      <p:NodeReference LastCategoryFullName="Kairos.Canvas.Query.Runtime" LastSymbolSource="VL.Kairos.Core.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                        <Choice Kind="OperationCallFlag" Name="GetChannels (Model)" />
+                        <Choice Kind="OperationCallFlag" Name="GetChannels (Runtime)" />
                       </p:NodeReference>
                       <Pin Id="EZIFOBwZO1iMmu6dgUkU5d" Name="Input" Kind="StateInputPin" />
                       <Pin Id="Hgbh7ybtYK6QBdQ9lnzyyV" Name="Channels" Kind="OutputPin" />
@@ -16248,7 +16161,7 @@
                       <Pin Id="MxhzHWhPgwXNXpG8J2HaN8" Name="Output" Kind="OutputPin" />
                       <Pin Id="PBPgETBzxBtP2B4LuyXy7X" Name="Clock" Kind="OutputPin" />
                     </Node>
-                    <Node Bounds="352,439,37,19" Id="KDKWrokdUkpPiLCSLKBAoP">
+                    <Node Bounds="424,442,37,19" Id="KDKWrokdUkpPiLCSLKBAoP">
                       <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastSymbolSource="CoreLibBasics.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                         <Choice Kind="OperationCallFlag" Name="NOT" />
@@ -16257,7 +16170,7 @@
                       <Pin Id="DJVW7m2ntKCNOZ2V9T2UA6" Name="Input" Kind="StateInputPin" />
                       <Pin Id="UtzdxanuF0gQNjF3rugIC0" Name="Output" Kind="StateOutputPin" />
                     </Node>
-                    <Node Bounds="352,484,30,19" Id="FnezEXyMpJQMEEdYnu6zIK">
+                    <Node Bounds="424,487,30,19" Id="FnezEXyMpJQMEEdYnu6zIK">
                       <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastSymbolSource="CoreLibBasics.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                         <Choice Kind="OperationCallFlag" Name="OR" />
@@ -16284,7 +16197,7 @@
                 <ControlPoint Id="DxXyRntpKE5OyTV4QzOMdE" Bounds="299,697" />
                 <ControlPoint Id="V0WyI20mXGmLMfk3MCLkyO" Bounds="785,529" />
                 <ControlPoint Id="CmvidzEecO8QKK8p6mkPLY" Bounds="489,163" />
-                <ControlPoint Id="C0xY4rIEMdSNPiIV8eJm85" Bounds="93,430" />
+                <ControlPoint Id="C0xY4rIEMdSNPiIV8eJm85" Bounds="450,130" />
               </Canvas>
               <Patch Id="Nsk7ews2P5vOaAz89OwuPz" Name="Create" />
               <Patch Id="CNDkmwxhUSPOqlgFX3U2UN" Name="Update" ManuallySortedPins="true">
@@ -16668,9 +16581,9 @@
                     <ControlPoint Id="Utjf9Zz1wipL7Dm8hGcsnQ" Bounds="203,415" Alignment="Bottom" />
                   </Node>
                   <Node Bounds="201,254,74,19" Id="LAOpyM6oiLzOR3qYnE73Ph">
-                    <p:NodeReference LastCategoryFullName="Kairos.Canvas.Query.Model" LastSymbolSource="VL.Kairos.Core.vl">
+                    <p:NodeReference LastCategoryFullName="Kairos.Canvas.Query.Runtime" LastSymbolSource="VL.Kairos.Core.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="OperationCallFlag" Name="GetChannels (Model)" />
+                      <Choice Kind="OperationCallFlag" Name="GetChannels (Runtime)" />
                     </p:NodeReference>
                     <Pin Id="Ht1PJGopyJUOm9YLdxHo7v" Name="Input" Kind="StateInputPin" />
                     <Pin Id="RkAu2kGUjMUMxfTVAJIy6v" Name="Channels" Kind="OutputPin" />
@@ -17298,11 +17211,11 @@
                               <p:NodeReference>
                                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                                 <CategoryReference Kind="RecordType" Name="CanvasMasterClipModel" NeedsToBeDirectParent="true" />
-                                <Choice Kind="OperationCallFlag" Name="GetCanvasInputPinID" />
+                                <Choice Kind="OperationCallFlag" Name="GetInputPinID" />
                               </p:NodeReference>
                               <Pin Id="Mw0mrXvEFOgPr2QJOrLnib" Name="Input" Kind="StateInputPin" />
                               <Pin Id="SASAMQkDJpVOY2LYAql8u1" Name="Output" Kind="OutputPin" />
-                              <Pin Id="TICbI5fqa1ELxKGze9mwtJ" Name="Canvas Input Pin ID" Kind="OutputPin" />
+                              <Pin Id="TICbI5fqa1ELxKGze9mwtJ" Name="Input Pin ID" Kind="OutputPin" />
                             </Node>
                             <Node Bounds="1557,532,66,26" Id="DqAmlLU0UnGLPcY1cCVRka">
                               <p:NodeReference LastCategoryFullName="Collections.Builder.SpreadBuilder" LastSymbolSource="VL.Collections.vl">
@@ -17380,11 +17293,12 @@
                             <Node Bounds="1215,281,134,26" Id="KwDY718g436NP1xyyoaSK6">
                               <p:NodeReference LastCategoryFullName="Kairos.MasterClip.ChannelMasterClipModel" LastSymbolSource="VL.Kairos.Core.vl">
                                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                                <Choice Kind="OperationCallFlag" Name="GetChannelClipInputPinID" />
+                                <Choice Kind="OperationCallFlag" Name="GetInputPinID" />
+                                <CategoryReference Kind="RecordType" Name="ChannelMasterClipModel" NeedsToBeDirectParent="true" />
                               </p:NodeReference>
                               <Pin Id="G0lDU0hefXhPDJUS6b2nhy" Name="Input" Kind="StateInputPin" />
                               <Pin Id="J35UJmL2fysNy7C6OryOcH" Name="Output" Kind="OutputPin" />
-                              <Pin Id="Gm9AX79qGBWNaJkYmzZ1SL" Name="ChannelClip Input Pin ID" Kind="OutputPin" />
+                              <Pin Id="Gm9AX79qGBWNaJkYmzZ1SL" Name="Input Pin ID" Kind="OutputPin" />
                             </Node>
                             <Node Bounds="1187,485,66,26" Id="FXpS0YiSlluLDm6mktW6U3">
                               <p:NodeReference LastCategoryFullName="Collections.Builder.SpreadBuilder" LastSymbolSource="VL.Collections.vl">
@@ -17446,7 +17360,7 @@
                               </p:NodeReference>
                               <Pin Id="Bh0WT2ESQR6OgeRWWFXuNX" Name="Input" Kind="StateInputPin" />
                               <Pin Id="Ii9cjh9kyl5PLKDrIDjmV0" Name="Output" Kind="OutputPin" />
-                              <Pin Id="MY5aL7EuS07NCeeSxZZGCg" Name="ChannelClip Input Pin ID Enabled" Kind="OutputPin" />
+                              <Pin Id="MY5aL7EuS07NCeeSxZZGCg" Name="Input Pin ID Enabled" Kind="OutputPin" />
                             </Node>
                             <Pad Id="O9avkXAU3q8MhiUJvgsoNt" Comment="" Bounds="1241,400,86,15" ShowValueBox="true" isIOBox="true" Value="IChannelRuntime">
                               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
@@ -18616,7 +18530,7 @@
                     <Node Bounds="176,1445,174,19" Id="T7pLvGzzhwTM6i43JZhPTy">
                       <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                        <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
+                        <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (ModelStream)" />
                       </p:NodeReference>
                       <Pin Id="JR6yjxTfl9YMVjw8E9qliu" Name="Model Stream" Kind="InputPin" />
                       <Pin Id="PzdWeFykNhuQZspXh9XXNH" Name="Descendant" Kind="InputPin" />
@@ -18795,7 +18709,7 @@
                     <Node Bounds="180,900,174,19" Id="KVkR6Fja4GzOEzqbBmd62j">
                       <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                        <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
+                        <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (ModelStream)" />
                       </p:NodeReference>
                       <Pin Id="BXPUDlh7Tr0M3nv8w2KyQF" Name="Model Stream" Kind="InputPin" />
                       <Pin Id="JFyb9YTQALnQCWsK5mSP7r" Name="Descendant" Kind="InputPin" />
@@ -18818,17 +18732,17 @@
                       <Pin Id="PinE7IVBSYtLrkJxLggJnY" Name="Blending Model" Kind="InputPin" />
                       <Pin Id="DzSnmmMuJnpLMCaDBM7XBr" Name="Sampling Model" Kind="InputPin" />
                       <Pin Id="PvA4V0yFwT9PXopnJ94Sdo" Name="Color" Kind="InputPin" />
-                      <Pin Id="I9DS8xR6LlLO1IZcA8y5Py" Name="ChannelClip Input Pin ID Enabled" Kind="InputPin" />
+                      <Pin Id="I9DS8xR6LlLO1IZcA8y5Py" Name="Input Pin ID Enabled" Kind="InputPin" />
                       <Pin Id="JJKOmigFOMTPpdIvyVXsQS" Name="Output" Kind="StateOutputPin" />
                     </Node>
                     <Node Bounds="369,692,132,26" Id="AUOSI8E6Gd8N8W9zRNK9gR">
-                      <p:NodeReference LastCategoryFullName="Kairos.MasterClip.ChannelMasterClipModel" LastSymbolSource="VL.Kairos.Core.vl">
+                      <p:NodeReference>
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                        <Choice Kind="OperationCallFlag" Name="SetChannelClipInputPinID" />
+                        <Choice Kind="OperationCallFlag" Name="SetInputPinID" />
                         <CategoryReference Kind="RecordType" Name="ChannelMasterClipModel" NeedsToBeDirectParent="true" />
                       </p:NodeReference>
                       <Pin Id="MG2sqCKYen6MV1hdILGBeO" Name="Input" Kind="StateInputPin" />
-                      <Pin Id="UCoqVXEc7GtMFjGhS2iyaM" Name="ChannelClip Input Pin ID" Kind="InputPin" />
+                      <Pin Id="UCoqVXEc7GtMFjGhS2iyaM" Name="Input Pin ID" Kind="InputPin" />
                       <Pin Id="UvvWqYw2GmvMh3EWSxZbee" Name="Output" Kind="StateOutputPin" />
                     </Node>
                     <Pad Id="JfffJIxPvE7PAzNVm1dExv" Comment="" Bounds="532,763,67,15" ShowValueBox="true" isIOBox="true" Value="Sample">
@@ -30913,7 +30827,7 @@
                             <Node Bounds="140,448,119,19" Id="TjtLJDa3EclPYAvKnnA6kL">
                               <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
                                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                                <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
+                                <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (ModelStream)" />
                               </p:NodeReference>
                               <Pin Id="BQGR6kF8zKmP0BZsZChXal" Name="Model Stream" Kind="InputPin" />
                               <Pin Id="EkjOUua4JxiLPByHfzBRH9" Name="Descendant" Kind="InputPin" />
@@ -32373,7 +32287,7 @@
               <Fragment Id="KuRQnATeSQgPlqDMBA51hD" Patch="Es7awPAZzRAOYLJrJC5tQ5" />
               <Fragment Id="EApen7s4eapOP0RHAxZkul" Patch="KRvTPKg5DpbLsMEaOty85a" />
             </ProcessDefinition>
-            <Slot Id="BWy2vryGq7NLdOnxQkfBqC" Name="Canvas Input Pin ID">
+            <Slot Id="BWy2vryGq7NLdOnxQkfBqC" Name="Input Pin ID">
               <p:Attributes>
                 <AttributeData>
                   <p:TypeReference LastCategoryFullName="Elementa.Attributes" LastSymbolSource="Elementa.dll">
@@ -32649,11 +32563,11 @@
               </Pin>
               <Pin Id="RLiLBx73fNNMyKpW5ByTn4" Name="Auto Bounds" Kind="InputPin" DefaultValue="True" />
             </Patch>
-            <Patch Id="KJeFZF9zce3PQcdIQinPli" Name="SetCanvasInputPinID">
-              <Pin Id="Tp7NWbe2lkyLfTzfBlXxsJ" MergeId="313063" Name="Canvas Input Pin ID" Kind="InputPin" />
+            <Patch Id="KJeFZF9zce3PQcdIQinPli" Name="SetInputPinID">
+              <Pin Id="Tp7NWbe2lkyLfTzfBlXxsJ" MergeId="313063" Name="Input Pin ID" Kind="InputPin" />
             </Patch>
-            <Patch Id="A1OC4cM8SKsMxdHh4N8xuT" Name="GetCanvasInputPinID">
-              <Pin Id="APR60WZaLEmM3azF5Cj6BS" Name="Canvas Input Pin ID" Kind="OutputPin" />
+            <Patch Id="A1OC4cM8SKsMxdHh4N8xuT" Name="GetInputPinID">
+              <Pin Id="APR60WZaLEmM3azF5Cj6BS" Name="Input Pin ID" Kind="OutputPin" />
             </Patch>
             <Patch Id="AoEz0NzHYpgNfqT9Zx8ltv" Name="GetKey">
               <Pin Id="VhC1yxsK0VVOnvDsudZ7c9" Name="Key" Kind="OutputPin" />
@@ -32786,11 +32700,11 @@
                 <p:NodeReference>
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <CategoryReference Kind="RecordType" Name="CanvasMasterClipModel" NeedsToBeDirectParent="true" />
-                  <Choice Kind="OperationCallFlag" Name="GetCanvasInputPinID" />
+                  <Choice Kind="OperationCallFlag" Name="GetInputPinID" />
                 </p:NodeReference>
                 <Pin Id="NxyCaaZoTipPZfYLof94GH" Name="Input" Kind="StateInputPin" />
                 <Pin Id="VYeFLI7DepRNG50qLNRXdv" Name="Output" Kind="OutputPin" />
-                <Pin Id="Trxdv1yDf6dOa4pBc435e0" Name="Canvas Input Pin ID" Kind="OutputPin" />
+                <Pin Id="Trxdv1yDf6dOa4pBc435e0" Name="Input Pin ID" Kind="OutputPin" />
               </Node>
               <Pad Id="H8hF9lGHlF9LD52I5lT0pp" SlotId="Tthm8B8hjt4NbBcg0dHvUD" Bounds="1361,373" />
               <Node Bounds="1359,480,171,19" Id="L90ntl4q3M4Ox4GHFDWJuu">
@@ -32991,7 +32905,7 @@
                           <Node Bounds="71,1137,174,19" Id="JvPeBbCAn4gP6uL6qYFRCp">
                             <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                              <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
+                              <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (ModelStream)" />
                             </p:NodeReference>
                             <Pin Id="QPp6D0eiEZYO61IUCPa6WM" Name="Model Stream" Kind="InputPin" />
                             <Pin Id="OY1gj1ZDXJmL12JjGLvOgE" Name="Descendant" Kind="InputPin" />
@@ -33311,7 +33225,7 @@
                         <Node Bounds="159,1156,119,19" Id="KGz1TMTK4kWL7t9DNlZaoO">
                           <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                            <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
+                            <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (ModelStream)" />
                           </p:NodeReference>
                           <Pin Id="AjobDEjcsKeNWfyldrFcLc" Name="Model Stream" Kind="InputPin" />
                           <Pin Id="V6MheJpdN32NqtSZaQacbc" Name="Descendant" Kind="InputPin" />
@@ -33692,7 +33606,7 @@
                     <Pin Id="G1a2cQ44KipQXTogfMz6PC" Name="Model Stream" Kind="InputPin" />
                     <Pin Id="NKOayxDQEdkNQCjOz1Jaa4" Name="Descendant" Kind="InputPin" />
                     <Pin Id="EV0jrJow2eJLb02Qm8Qa8t" Name="Model Stream" Kind="OutputPin" />
-                    <Pin Id="OHh1kabkIFcOo317nUJ6Tp" Name="Result" Kind="OutputPin" />
+                    <Pin Id="OHh1kabkIFcOo317nUJ6Tp" Name="Success" Kind="OutputPin" />
                     <Pin Id="PiYndjKYP48MoGIO24RBpR" Name="New Model" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="1063,1186,77,26" Id="JdtaDlrhLzAMnxSvo16QtM">
@@ -33793,7 +33707,7 @@
                   <Node Bounds="814,793,107,19" Id="OZnpoaspiEMMudF3YonCbE">
                     <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.CanvasContext" LastSymbolSource="VL.Kairos.Core.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="OperationCallFlag" Name="SetBoundDatatype (CanvasContext)" />
+                      <Choice Kind="OperationCallFlag" Name="SetBoundDatatype (ICanvas)" />
                     </p:NodeReference>
                     <Pin Id="AXoRsgyywvOMJYCjvIFziT" Name="Input" Kind="StateInputPin" />
                     <Pin Id="C9TeMmVxzevOkNLEQTrXXg" Name="Bound Datatype" Kind="InputPin" />
@@ -34054,9 +33968,9 @@
                         <Patch Id="Sd4eEImgvAsMFFkzGppSfg" Name="Create" ManuallySortedPins="true" />
                         <Patch Id="GQv1G8xIsmVPuAmLj5d8lX" Name="Then" ManuallySortedPins="true" />
                         <Node Bounds="539,446,74,19" Id="VUTe4LLSHrGOHJfsfNZZqL">
-                          <p:NodeReference LastCategoryFullName="Kairos.Canvas.Query.Model" LastSymbolSource="VL.Kairos.Core.vl">
+                          <p:NodeReference LastCategoryFullName="Kairos.Canvas.Query.Runtime" LastSymbolSource="VL.Kairos.Core.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                            <Choice Kind="OperationCallFlag" Name="GetChannels (Model)" />
+                            <Choice Kind="OperationCallFlag" Name="GetChannels (Runtime)" />
                           </p:NodeReference>
                           <Pin Id="FE20HTrcDUwOnKgqOBlz8N" Name="Input" Kind="StateInputPin" />
                           <Pin Id="KNE5PENmXnTMUgtTo0oKWm" Name="Channels" Kind="OutputPin" />
@@ -34485,7 +34399,7 @@
                   <Node Bounds="467,1816,174,19" Id="U3rzuNcqmHoNVRtWcte5CS">
                     <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
+                      <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (ModelStream)" />
                     </p:NodeReference>
                     <Pin Id="HEwfxOTvBnfPScUYQrhIQV" Name="Model Stream" Kind="InputPin" />
                     <Pin Id="EVbA1HFXlsVQY9YXYxOoxd" Name="Descendant" Kind="InputPin" />
@@ -35424,7 +35338,7 @@
               <Fragment Id="HCMT7KhPZV3L4ItY86Al4a" Patch="V4yfxGuxQbfPp1j7TzrsU8" />
               <Fragment Id="AEDWJM0imHNLSGjkO4KJee" Patch="Vgqh5GeKQzePhgRf2130h2" />
             </ProcessDefinition>
-            <Slot Id="QE8YFQyeemvLd3R3qwDqzB" Name="ChannelClip Input Pin ID">
+            <Slot Id="QE8YFQyeemvLd3R3qwDqzB" Name="Input Pin ID">
               <p:Attributes>
                 <AttributeData>
                   <p:TypeReference LastCategoryFullName="Elementa.Attributes" LastSymbolSource="Elementa.dll">
@@ -35565,7 +35479,7 @@
             <Link Id="QbPafegyGXqOT3KkPLkoE7" Ids="H9KGlf6m2bTNcq4wXG4Thu,L0TnGaSdX1WNo7fHSsrBsb" />
             <Link Id="HsQ76x9Lhi0OIyBbxWYQ0l" Ids="A9Xjvehto79MRvfmffA0kC,H9KGlf6m2bTNcq4wXG4Thu" IsHidden="true" />
             <Link Id="SafS9gLxiNzLdUwRtMOGiq" Ids="NmFJTlxOHUUQSU6llIn2av,Aul2tVQOLDqLVgAIiPFiUk" IsHidden="true" />
-            <Slot Id="F7BAzj86tueQZI5Ie9Onvs" Name="ChannelClip Input Pin ID Enabled">
+            <Slot Id="F7BAzj86tueQZI5Ie9Onvs" Name="Input Pin ID Enabled">
               <p:TypeAnnotation>
                 <Choice Kind="TypeFlag" Name="Boolean" />
               </p:TypeAnnotation>
@@ -35693,17 +35607,17 @@
                   <Choice Kind="TypeFlag" Name="RGBA" />
                 </p:TypeAnnotation>
               </Pin>
-              <Pin Id="FvsxHYUas5UPuubxrtE0jO" Name="ChannelClip Input Pin ID Enabled" Kind="InputPin" DefaultValue="True">
+              <Pin Id="FvsxHYUas5UPuubxrtE0jO" Name="Input Pin ID Enabled" Kind="InputPin" DefaultValue="True">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                   <Choice Kind="TypeFlag" Name="Boolean" />
                 </p:TypeAnnotation>
               </Pin>
             </Patch>
-            <Patch Id="GttpOUaUdqgO9szcSTCuWR" Name="SetChannelClipInputPinID">
-              <Pin Id="TgEbynvsb6ePwVYGi5tEaW" MergeId="313063" Name="ChannelClip Input Pin ID" Kind="InputPin" />
+            <Patch Id="GttpOUaUdqgO9szcSTCuWR" Name="SetInputPinID">
+              <Pin Id="TgEbynvsb6ePwVYGi5tEaW" MergeId="313063" Name="Input Pin ID" Kind="InputPin" />
             </Patch>
-            <Patch Id="HYbr7LBSDHjOLi8tScsjts" Name="GetChannelClipInputPinID">
-              <Pin Id="DJeJAGVO70fMUXzGUNJiod" Name="ChannelClip Input Pin ID" Kind="OutputPin" />
+            <Patch Id="HYbr7LBSDHjOLi8tScsjts" Name="GetInputPinID">
+              <Pin Id="DJeJAGVO70fMUXzGUNJiod" Name="Input Pin ID" Kind="OutputPin" />
             </Patch>
             <Patch Id="FHG7dR0sXOGOAa5SCRdqrd" Name="GetKey">
               <Pin Id="RejtxA4PKaPMjqZF4VAtBT" Name="Key" Kind="OutputPin" />
@@ -35763,7 +35677,7 @@
             </Patch>
             <Patch Id="JQYi1SLJqVnQDmb9v3sgQm" Name="Split" />
             <Patch Id="QQwo46VOR7cN0DF5wBsFx4" Name="GetSourceInputPinEnabled">
-              <Pin Id="Ab9pVXDmHZ9MY329Aj7nyF" Name="ChannelClip Input Pin ID Enabled" Kind="OutputPin" />
+              <Pin Id="Ab9pVXDmHZ9MY329Aj7nyF" Name="Input Pin ID Enabled" Kind="OutputPin" />
             </Patch>
             <Patch Id="Msf9ZJX8r3YQIN6Li4nUNu" Name="GetLayer">
               <Pin Id="BPbdcoByaYLO7okjhQ4xxD" Name="Layer" Kind="OutputPin" />
@@ -35829,11 +35743,12 @@
               <Node Bounds="1089,372,95,26" Id="PKB218TCr87Ny3qla3UVF7">
                 <p:NodeReference LastCategoryFullName="Kairos.MasterClip.ChannelMasterClipModel" LastSymbolSource="VL.Kairos.Core.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <Choice Kind="OperationCallFlag" Name="GetChannelClipInputPinID" />
+                  <Choice Kind="OperationCallFlag" Name="GetInputPinID" />
+                  <CategoryReference Kind="RecordType" Name="ChannelMasterClipModel" NeedsToBeDirectParent="true" />
                 </p:NodeReference>
                 <Pin Id="P97AJno9O2JPuBJqkDQWkH" Name="Input" Kind="StateInputPin" />
                 <Pin Id="KWpgd81ENyEMRi84zvbmLi" Name="Output" Kind="OutputPin" />
-                <Pin Id="TUnQciUi5avLnkWOwGF8cP" Name="ChannelClip Input Pin ID" Kind="OutputPin" />
+                <Pin Id="TUnQciUi5avLnkWOwGF8cP" Name="Input Pin ID" Kind="OutputPin" />
               </Node>
               <Pad Id="JSm9x5se6guMeC92ZupwTK" SlotId="Vekxn9TyrBfNEMtR9vbDU7" Bounds="1091,354" />
               <Node Bounds="1089,491,48,19" Id="ExVyHP1KI2zOqSgalCTBfn">
@@ -36050,7 +35965,7 @@
                       <Node Bounds="50,1149,174,19" Id="TaYBRyM3W3dP9MUysfMNWE">
                         <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                          <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
+                          <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (ModelStream)" />
                         </p:NodeReference>
                         <Pin Id="VvMXUxtaju3NeJHtt62QTm" Name="Model Stream" Kind="InputPin" />
                         <Pin Id="UpeVqBlOVJHNcYuS2OfNqP" Name="Descendant" Kind="InputPin" />
@@ -36312,7 +36227,7 @@
                         <Node Bounds="300,662,119,19" Id="DJb56VPamE4PMG7R96A4Ae">
                           <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                            <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
+                            <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (ModelStream)" />
                           </p:NodeReference>
                           <Pin Id="PrSeM64rNJBOb3CtIiYKC6" Name="Model Stream" Kind="InputPin" />
                           <Pin Id="Ahjw1AbYa4dPlDaiAdJdma" Name="Descendant" Kind="InputPin" />
@@ -36472,7 +36387,7 @@
                     <Pin Id="PpWePuHeHsCMAgOo655bb1" Name="Model Stream" Kind="InputPin" />
                     <Pin Id="JtrMZJEcOCROD5cNm3K9tS" Name="Descendant" Kind="InputPin" />
                     <Pin Id="H8LYpc2ETc0NUribbUeqRF" Name="Model Stream" Kind="OutputPin" />
-                    <Pin Id="Q8VXbvJjMqRPYYyTqm5jSs" Name="Result" Kind="OutputPin" />
+                    <Pin Id="Q8VXbvJjMqRPYYyTqm5jSs" Name="Success" Kind="OutputPin" />
                     <Pin Id="IjBhrHnvjSMQMuLKeroVJV" Name="New Model" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="1344,1191,105,26" Id="VTXNtWba9WjMvR2BD8rlkY">
@@ -36956,7 +36871,7 @@
                   <Node Bounds="371,1704,174,19" Id="NO3HT6pQSgqMgP9vk9ttSF">
                     <p:NodeReference LastCategoryFullName="Kairos.Canvas.Edit.Model" LastSymbolSource="VL.Kairos.Core.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (Model)" />
+                      <Choice Kind="OperationCallFlag" Name="ReplaceInCanvasModelAndValidate (ModelStream)" />
                     </p:NodeReference>
                     <Pin Id="Oj51MgM76MROyJfgoNmOjQ" Name="Model Stream" Kind="InputPin" />
                     <Pin Id="D1JnOBPseBkP22rpto051a" Name="Descendant" Kind="InputPin" />
