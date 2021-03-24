@@ -1,6 +1,9 @@
 # VL.Kairos
 
-A value animation system consisting of a vvvv nodeset and custom UI editors
+A value animation system consisting of a vvvv nodeset and custom UI editors.
+
+Try it with vvvv, a visual live-programming environment for .NET
+Download: http://visualprogramming.net
 
 ## Installing
 
