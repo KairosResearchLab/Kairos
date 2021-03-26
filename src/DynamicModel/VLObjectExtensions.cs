@@ -151,6 +151,22 @@ namespace Kairos
         }
 
         /// <summary>
+        /// Whether or not the type is supported by <see cref="TryReplaceDescendant"/>.
+        /// </summary>
+        public static bool IsSupportedCollectionType(IVLTypeInfo type)
+        {
+            var clrType = type?.ClrType;
+            if (clrType is null)
+                return false;
+            var arguments = clrType.GenericTypeArguments;
+            if (typeof(ISpread).IsAssignableFrom(clrType) && arguments.Length == 1 && typeof(IVLObject).IsAssignableFrom(arguments[0]))
+                return true;
+            if (typeof(IDictionary).IsAssignableFrom(clrType) && arguments.Length == 2 && typeof(IVLObject).IsAssignableFrom(arguments[1]))
+                return true;
+            return false;
+        }
+
+        /// <summary>
         /// Traverses into the object graph of <paramref name="instance"/> and if it can find a descendant with the same <see cref="IVLObject.Identity"/>
         /// as the given <paramref name="descendant"/> replaces it and outputs a new <paramref name="updatedInstance"/>.
         /// </summary>
