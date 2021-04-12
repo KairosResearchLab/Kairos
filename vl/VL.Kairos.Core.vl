@@ -77,17 +77,18 @@
                       <Node Bounds="876,1364,450,19" Id="Ngex5taBVqRM6D4WngkZj0">
                         <p:NodeReference LastCategoryFullName="Kairos.Interpolation" LastSymbolSource="VL.Kairos.Interpolation.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                          <Choice Kind="ProcessAppFlag" Name="Interpolator" />
+                          <Choice Kind="ProcessAppFlag" Name="Interpolate" />
+                          <CategoryReference Kind="Category" Name="Interpolation" NeedsToBeDirectParent="true" />
                         </p:NodeReference>
                         <Pin Id="IBOdBjnqS73LXd60xVCBvJ" Name="A" Kind="InputPin" />
                         <Pin Id="JP35DQVS8zCOi6pmAg4bNd" Name="B" Kind="InputPin" />
                         <Pin Id="IcDgsAcCvgYMhY0gG44J2C" Name="Value Interpolation Model" Kind="InputPin" />
                         <Pin Id="UCTnq7ItpclNUwY7nVosda" Name="SpreadCount Interpolation Model" Kind="InputPin" />
                         <Pin Id="GoLfWdeBx2yNVYEFeuiTNS" Name="Scalar" Kind="InputPin" />
-                        <Pin Id="HOsAYjvDSvlP8htLYYOu2e" Name="State Output" Kind="OutputPin" />
+                        <Pin Id="PkQgCY5Ed9gOtLseXvdxJV" Name="State Output" Kind="OutputPin" />
                         <Pin Id="P2hbMZynpmmOMYdCBs8Q1S" Name="Output" Kind="OutputPin" />
-                        <Pin Id="QBUKW0kJ53gQTo2EF4g0iO" Name="Interpolator" Kind="OutputPin" />
-                        <Pin Id="QUhMNkqhbvpLUp4imsPoqj" Name="Found" Kind="OutputPin" />
+                        <Pin Id="DtW3mHEMEd0QEoPGYydx0H" Name="Interpolator" Kind="OutputPin" />
+                        <Pin Id="Tz8FUbPBOlVQWkAmaWUtp2" Name="Found" Kind="OutputPin" />
                       </Node>
                       <Node Bounds="1131,1318,84,26" Id="PTsmU3eBUYtOJlLiiIJ5Lp">
                         <p:NodeReference LastCategoryFullName="Kairos.Clip.InterpolationModel" LastSymbolSource="Kairos.Core.vl">
@@ -1659,10 +1660,10 @@
         </Node>
         <!--
 
-    ************************ InterpolatorRuntime (Advanced) ************************
+    ************************ Interpolator (Advanced) ************************
 
 -->
-        <Node Name="InterpolatorRuntime (Advanced)" Aspects="Advanced" Bounds="630,437" Id="HyZCQ2AD1eKLuMWdOc6mmM">
+        <Node Name="Interpolator (Advanced)" Aspects="Advanced" Bounds="630,437" Id="HyZCQ2AD1eKLuMWdOc6mmM">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="ClassDefinition" Name="Class" />
           </p:NodeReference>
@@ -2828,10 +2829,10 @@
         </Node>
         <!--
 
-    ************************ CompositorRuntime (Advanced) ************************
+    ************************ Compositor (Advanced) ************************
 
 -->
-        <Node Name="CompositorRuntime (Advanced)" Aspects="Advanced" Bounds="630,562" Id="OYGN5EVXRuPNfE0a0dlr7s">
+        <Node Name="Compositor (Advanced)" Aspects="Advanced" Bounds="630,562" Id="OYGN5EVXRuPNfE0a0dlr7s">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="ClassDefinition" Name="Class" />
           </p:NodeReference>
@@ -4423,10 +4424,10 @@
                   <ControlPoint Id="P3Bn6Wfq9SUNoYL8sO17hl" Bounds="785,596" />
                   <ControlPoint Id="L0855Wr2YH9N6JBUkCI9my" Bounds="785,676" />
                   <Node Bounds="783,622,112,26" Id="D4c06Jq4eXAO0L2uB3knlE">
-                    <p:NodeReference LastCategoryFullName="Kairos.Aggregator.InterpolatorRuntime" LastSymbolSource="VL.Kairos.Core.vl">
+                    <p:NodeReference LastCategoryFullName="Kairos.Aggregator.Interpolator" LastSymbolSource="VL.Kairos.Core.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="Create" />
-                      <CategoryReference Kind="ClassType" Name="InterpolatorRuntime" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="Interpolator" NeedsToBeDirectParent="true" />
                     </p:NodeReference>
                     <Pin Id="IcuPxf3fN81Pdczf98TUdc" Name="Model" Kind="InputPin" />
                     <Pin Id="SSBZI1iN1LvNFLvGLcLgGp" Name="Output" Kind="StateOutputPin" />
@@ -4452,10 +4453,13 @@
                   <ControlPoint Id="CVV4FgYRf8KQAVk0kw9kSJ" Bounds="785,776" />
                   <ControlPoint Id="VdIAUdkKSPIQRvSVlj9qkP" Bounds="785,856" />
                   <Node Bounds="783,805,88,26" Id="Nr4PllMNCocOuChhqHQaBU">
-                    <p:NodeReference>
+                    <p:NodeReference LastCategoryFullName="Kairos.Aggregator.Compositor" LastSymbolSource="VL.Kairos.Core.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="Create" />
-                      <CategoryReference Kind="ClassType" Name="CompositorRuntime" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="Compositor" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="Compositor" NeedsToBeDirectParent="true">
+                        <p:OuterCategoryReference Kind="Category" Name="Aggregator" NeedsToBeDirectParent="true" />
+                      </CategoryReference>
                     </p:NodeReference>
                     <Pin Id="VCYXCw3gUreOQvvstNt3p3" Name="Output" Kind="StateOutputPin" />
                     <Pin Id="N0xXTLjuu9nLIdeejhY9MC" Name="Model" Kind="InputPin" />
@@ -4482,10 +4486,10 @@
                   <ControlPoint Id="MPRhQDkDA51N2HaATOc7H4" Bounds="433,583" />
                   <ControlPoint Id="MoWJ3rzEkDPQBH7OD5zFJ6" Bounds="433,663" />
                   <Node Bounds="431,608,112,26" Id="RCDDi6YZRzwNdumV8Erl2W">
-                    <p:NodeReference LastCategoryFullName="Kairos.Aggregator.InterpolatorRuntime" LastSymbolSource="VL.Kairos.Core.vl">
+                    <p:NodeReference LastCategoryFullName="Kairos.Aggregator.Interpolator" LastSymbolSource="VL.Kairos.Core.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="Create" />
-                      <CategoryReference Kind="ClassType" Name="InterpolatorRuntime" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="Interpolator" NeedsToBeDirectParent="true" />
                     </p:NodeReference>
                     <Pin Id="HQz28gY06vcPj0sTejONHO" Name="Model" Kind="InputPin" />
                     <Pin Id="Gk06Hd6BcyHNmCiGjIbPgx" Name="Output" Kind="StateOutputPin" />
@@ -4511,10 +4515,13 @@
                   <ControlPoint Id="Fi5KbyzRBZJMaAbf65G84Q" Bounds="433,778" />
                   <ControlPoint Id="TKZxCttH4isN33wizO0gWq" Bounds="433,858" />
                   <Node Bounds="431,807,88,26" Id="PAlVALC3IbWLLGjiimpWml">
-                    <p:NodeReference>
+                    <p:NodeReference LastCategoryFullName="Kairos.Aggregator.Compositor" LastSymbolSource="VL.Kairos.Core.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="Create" />
-                      <CategoryReference Kind="ClassType" Name="CompositorRuntime" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="Compositor" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="ClassType" Name="Compositor" NeedsToBeDirectParent="true">
+                        <p:OuterCategoryReference Kind="Category" Name="Aggregator" NeedsToBeDirectParent="true" />
+                      </CategoryReference>
                     </p:NodeReference>
                     <Pin Id="CutnMTCQjYvPbNfHQBsRKJ" Name="Output" Kind="StateOutputPin" />
                     <Pin Id="HgHvlM5Bf96MwI4bSOmmyA" Name="Model" Kind="InputPin" />
@@ -8081,6 +8088,7 @@
                     <Choice Kind="ProcessAppFlag" Name="Interpolator" />
                     <CategoryReference Kind="Category" Name="Aggregator" NeedsToBeDirectParent="true" />
                   </p:NodeReference>
+                  <Pin Id="KxzAibbk3fyMFioGRnLJJ9" Name="Model" Kind="InputPin" />
                   <Pin Id="Qlps5e83GfqMUvDiVeo4Il" Name="Output" Kind="OutputPin" />
                   <Pin Id="D5jFjN3Fv0ILf1DsVV67ZB" Name="Clips" Kind="InputPin" />
                 </Node>
@@ -8221,8 +8229,9 @@
                     <Choice Kind="ProcessAppFlag" Name="Compositor" />
                     <CategoryReference Kind="Category" Name="Aggregator" NeedsToBeDirectParent="true" />
                   </p:NodeReference>
-                  <Pin Id="IxMFkiE28vfMEjoHKqIZlg" Name="Clips" Kind="InputPin" />
+                  <Pin Id="KumGgpiWafUO01M4wl516E" Name="Model" Kind="InputPin" />
                   <Pin Id="Oihcz3o8dV4PhIQW9ulZzW" Name="Output" Kind="OutputPin" />
+                  <Pin Id="IxMFkiE28vfMEjoHKqIZlg" Name="Clips" Kind="InputPin" />
                 </Node>
                 <ControlPoint Id="QP4nAO08zuwMkmUsQsx1tF" Bounds="242,509" />
                 <Node Bounds="535,406,57,19" Id="PoJo7EOOqgyLNG06IdKkcS">
@@ -30627,10 +30636,10 @@
             <Patch Id="KyxiArcORZGQKvMk6pCGoH" IsGeneric="true" ManuallySortedPins="true">
               <ControlPoint Id="H8zsHjH7fP2NNxBuru8gTH" Bounds="281,1312" />
               <Node Bounds="70,1256,214,26" Id="JycFiiS1ziHMm9CNUPqnNZ">
-                <p:NodeReference LastCategoryFullName="Kairos.Compositing.ICompositorT" LastSymbolSource="VL.Kairos.Compositing.vl">
+                <p:NodeReference LastCategoryFullName="Kairos.Compositing.ICompositionFunction" LastSymbolSource="VL.Kairos.Compositing.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="Compose" />
-                  <CategoryReference Kind="InterfaceTypeFlag" Name="ICompositorT" NeedsToBeDirectParent="true" />
+                  <CategoryReference Kind="InterfaceTypeFlag" Name="ICompositionFunction" NeedsToBeDirectParent="true" />
                 </p:NodeReference>
                 <Pin Id="GcUqtuH2z6rObrzg1at9j6" Name="Input" Kind="StateInputPin" />
                 <Pin Id="K59bybni1STOv7y5vaDQKh" Name="Alpha" Kind="InputPin" />
@@ -30660,10 +30669,10 @@
               <ControlPoint Id="JBXakRSbtrJOfRi2HbLEx9" Bounds="94,1086" />
               <Link Id="Vvc3eWDSOyOLKBrZrZ1CLD" Ids="S7RTOnkIvmzOL6N295DBxt,JBXakRSbtrJOfRi2HbLEx9" IsHidden="true" />
               <Node Bounds="70,868,83,26" Id="FZj7U5y2ybpLjh30kveBpv">
-                <p:NodeReference LastCategoryFullName="Kairos.Compositing.ICompositorT" LastSymbolSource="VL.Kairos.Compositing.vl">
+                <p:NodeReference LastCategoryFullName="Kairos.Compositing.ICompositionFunction" LastSymbolSource="VL.Kairos.Compositing.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="SetForeground" />
-                  <CategoryReference Kind="InterfaceTypeFlag" Name="ICompositorT" NeedsToBeDirectParent="true" />
+                  <CategoryReference Kind="InterfaceTypeFlag" Name="ICompositionFunction" NeedsToBeDirectParent="true" />
                 </p:NodeReference>
                 <Pin Id="CdIPoWgOjm8MNz3475qso5" Name="Input" Kind="StateInputPin" />
                 <Pin Id="SvqlOueKa19PSonwUi3PvK" Name="Foreground" Kind="InputPin" />
@@ -30727,9 +30736,9 @@
                   <Patch Id="Uo5IrXQmyLjOkXer4xg0xm" Name="Create" ManuallySortedPins="true" />
                   <Patch Id="Ae2frXX5xB9MbnYjTu42Ph" Name="Then" ManuallySortedPins="true" />
                   <Node Bounds="70,1174,84,26" Id="HrBoGs7P1mLOW6Tn5GNeiS">
-                    <p:NodeReference LastCategoryFullName="Kairos.Compositing.ICompositorT" LastSymbolSource="VL.Kairos.Compositing.vl">
+                    <p:NodeReference LastCategoryFullName="Kairos.Compositing.ICompositionFunction" LastSymbolSource="VL.Kairos.Compositing.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <CategoryReference Kind="InterfaceTypeFlag" Name="ICompositorT" NeedsToBeDirectParent="true" />
+                      <CategoryReference Kind="InterfaceTypeFlag" Name="ICompositionFunction" NeedsToBeDirectParent="true" />
                       <Choice Kind="OperationCallFlag" Name="SetBackground" />
                     </p:NodeReference>
                     <Pin Id="ENgMp0Bov5pQX12Wv05dXd" Name="Input" Kind="StateInputPin" />
