@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="OAsdwVeZOQ0QajvjlxLbQE" LanguageVersion="2021.3.1.89" Version="0.128">
-  <NugetDependency Id="MHNAo07MSl2MlnISnXzi66" Location="VL.CoreLib" Version="2021.3.1" />
+<Document xmlns:p="property" Id="OAsdwVeZOQ0QajvjlxLbQE" LanguageVersion="2021.4.0.165" Version="0.128">
+  <NugetDependency Id="MHNAo07MSl2MlnISnXzi66" Location="VL.CoreLib" Version="2021.4.0-0165-gf4046461f2" />
   <Patch Id="JJeqyBxsY5FQKZzkjXGa1h">
     <Canvas Id="NcXb7OitCELPW3Jir0NIzE" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
     <!--
@@ -34,7 +34,7 @@
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="Kbt4GxdlB6uQBhJXlGgOfS" Comment="" Bounds="255,666,36,116" ShowValueBox="true" isIOBox="true">
+          <Pad Id="Kbt4GxdlB6uQBhJXlGgOfS" Comment="" Bounds="226,662,36,116" ShowValueBox="true" isIOBox="true">
             <p:ValueBoxSettings>
               <p:maximum p:Type="Single">1</p:maximum>
               <p:maxvisibleentries p:Type="Int32">58</p:maxvisibleentries>
@@ -133,7 +133,8 @@
           <Node Bounds="189,562,42,19" Id="Toi9OJ1SsIDNlGWTOBZT0D">
             <p:NodeReference LastCategoryFullName="Kairos.Interpolation" LastSymbolSource="VL.Kairos.Interpolation.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="InterpolationProvider" />
+              <Choice Kind="ProcessAppFlag" Name="Interpolate" />
+              <CategoryReference Kind="Category" Name="Interpolation" NeedsToBeDirectParent="true" />
             </p:NodeReference>
             <Pin Id="CChVS7VvH0aOnHYMe1xekz" Name="A" Kind="InputPin" />
             <Pin Id="UtI8qL70LkyPmDB0P2YUYx" Name="B" Kind="InputPin" />
@@ -199,7 +200,8 @@
           <Node Bounds="549,562,126,19" Id="KdJF8oLEG6QOQHArDVkYz6">
             <p:NodeReference LastCategoryFullName="Kairos.Interpolation" LastSymbolSource="VL.Kairos.Interpolation.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="InterpolationProvider" />
+              <Choice Kind="ProcessAppFlag" Name="Interpolate" />
+              <CategoryReference Kind="Category" Name="Interpolation" NeedsToBeDirectParent="true" />
             </p:NodeReference>
             <Pin Id="UNW7kf5v64UOEuebCz5hXd" Name="A" Kind="InputPin" />
             <Pin Id="DzGtjYIwE9vNjhfvDtaViC" Name="B" Kind="InputPin" />
@@ -319,7 +321,8 @@
           <Node Bounds="1104,562,126,19" Id="KypVmPFwnThNJbcqbhc8Su">
             <p:NodeReference LastCategoryFullName="Kairos.Interpolation" LastSymbolSource="VL.Kairos.Interpolation.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="InterpolationProvider" />
+              <Choice Kind="ProcessAppFlag" Name="Interpolate" />
+              <CategoryReference Kind="Category" Name="Interpolation" NeedsToBeDirectParent="true" />
             </p:NodeReference>
             <Pin Id="T8Z2O8frVFrPmsZdPn8ItR" Name="A" Kind="InputPin" />
             <Pin Id="RLcbSa9nR0PPMgoOK2LluR" Name="B" Kind="InputPin" />
@@ -475,6 +478,22 @@
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
+          <Node Bounds="390,751,42,19" Id="HGjsXzy6p1iL03tEyva2BT">
+            <p:NodeReference LastCategoryFullName="Kairos.Interpolation" LastSymbolSource="VL.Kairos.Interpolation.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Interpolate" />
+              <CategoryReference Kind="Category" Name="Interpolation" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="LalZCM5oSmBPBApfMEg1uA" Name="A" Kind="InputPin" />
+            <Pin Id="O5zG5UDJothNAyD0vsvNTF" Name="B" Kind="InputPin" />
+            <Pin Id="JNYp7mVrMCpObZ6S1PxgZk" Name="Value Interpolation Model" Kind="InputPin" />
+            <Pin Id="L6DdbLck35ZPeO9AStMV1n" Name="SpreadCount Interpolation Model" Kind="InputPin" />
+            <Pin Id="HUqVo5wC5ljPNLZMbLFC1W" Name="Scalar" Kind="InputPin" />
+            <Pin Id="UHEmjWu8cYIOc7CojySGOT" Name="State Output" Kind="StateOutputPin" />
+            <Pin Id="ReZtWrdcC8jMsH4UP16LOZ" Name="Output" Kind="OutputPin" />
+            <Pin Id="RFask2F3zsCQPawvqq11gt" Name="Interpolator" Kind="OutputPin" />
+            <Pin Id="T9BFhkyiG1DMIEmkARmdwm" Name="Found" Kind="OutputPin" />
+          </Node>
         </Canvas>
         <Patch Id="TEf7q9oBv0eOw09yAu3uOJ" Name="Create" />
         <Patch Id="VkoBaeZWmCbOjl64VmD3MX" Name="Update" />
@@ -527,6 +546,6 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="OXPS2n3wrZBL26r9HjJWiZ" Location="VL.CoreLib" Version="2021.3.1" />
+  <NugetDependency Id="OXPS2n3wrZBL26r9HjJWiZ" Location="VL.CoreLib" Version="2021.4.0-0165-gf4046461f2" />
   <NugetDependency Id="JhNvmE7psjuP1jlRFZQYsQ" Location="VL.Kairos" Version="0.0.0.0" />
 </Document>
