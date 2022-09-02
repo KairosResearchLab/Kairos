@@ -4,14 +4,22 @@
 
 ![VL.Kairos banner](/img/banner.png)
 
-A value animation system consisting of a vvvv nodeset and custom UI editors.
+### A complete framework for data control and composition within [vvvv](http://visualprogramming.net)
 
-Try it with vvvv, a visual live-programming environment for .NET
-Download: http://visualprogramming.net
+## Features
+
+* High level functionalities
+    * Timeline tool
+    * Compositor tool
+* Tools are nestable inside each other
+* Advanced techniques for interpolation, blending and compositing data and tools
+* Data binding helpers to take control of a vvvv application
+
+![VL.Kairos tools](/img/tools.png)
 
 ## Installing
 
-To use the latest stable version:
+To use the latest stable version in vvvv gamma (2021.3.3):
 1. Go to Gamma's Quad menu > Manage Nugets > Commandline and type:
 
 	```
