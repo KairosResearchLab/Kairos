@@ -12,7 +12,8 @@
     * Timeline tool
     * Compositor tool
 * Tools are nestable inside each other
-* Advanced techniques for interpolation, blending and compositing data and tools
+* Advanced layering system
+* Advanced interpolation, blending and compositing techniques
 * Direct support for most of standard types (Boolean, Intereger32, Float32, Float64, Vector2, Vector3, Vector4, Matrix, RGBA, String, Skia layer, Stride Entity)
 * Support for collections (for any implemented type)
 * Custom type registration
