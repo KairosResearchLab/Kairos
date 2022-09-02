@@ -13,7 +13,12 @@
     * Compositor tool
 * Tools are nestable inside each other
 * Advanced techniques for interpolation, blending and compositing data and tools
-* Data binding helpers to take control of a vvvv application
+* Direct support for most of standard types (Boolean, Intereger32, Float32, Float64, Vector2, Vector3, Vector4, Matrix, RGBA, String, Skia layer, Stride Entity)
+* Support for collections (for any implemented type)
+* Custom type registration
+* Custom Interpolation/Blending/Compositing technique registration
+* Data binding helpers for vvvv app control
+
 
 ![VL.Kairos tools](/img/tools.png)
 
