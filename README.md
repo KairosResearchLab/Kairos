@@ -4,7 +4,7 @@
 
 ![VL.Kairos banner](/img/banner.png)
 
-### A complete framework for data control and composition within [vvvv](http://visualprogramming.net)
+### A complete framework for data control and composition in [vvvv](http://visualprogramming.net)
 
 ## Features
 
