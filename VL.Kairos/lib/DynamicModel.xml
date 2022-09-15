@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DynamicModel</name>
+    </assembly>
+    <members>
+        <member name="T:Kairos.ExposeAttribute">
+            <summary>
+            ExposePadAttribute is used to filter pads that are visible in a Timeline.
+            This is for Opt-In.
+            </summary>
+        </member>
+        <member name="T:Kairos.SuppressAttribute">
+            <summary>
+            SuppressAttribute is used to filter pads that are visible in a Timeline.
+            This is for Opt-Out.
+            </summary>
+        </member>
+        <member name="M:Kairos.VLObjectExtensions.TryGetValueByPath``1(VL.Core.IVLObject,System.String,``0,``0@)">
+            <summary>
+            Tries to retrieve the value from the given path. The path is a dot separated string of property names.
+            </summary>
+            <typeparam name="T">The expected type of the value.</typeparam>
+            <param name="instance">The root instance to start the lookup from.</param>
+            <param name="path">A dot separated string of property names. Spreaded properties can be indexed using [N] for example "MySpread[0]" retrieves the first value in MySpread.</param>
+            <param name="defaultValue">The default value to use in case the lookup failed.</param>
+            <param name="value">The returned value.</param>
+            <returns>True if the lookup succeeded.</returns>
+        </member>
+        <member name="M:Kairos.VLObjectExtensions.WithValueByPath``2(``0,System.String,``1)">
+            <summary>
+            Tries to set the value of the given path. The path is a dot separated string of property names.
+            </summary>
+            <typeparam name="TInstance">The type of the instance.</typeparam>
+            <typeparam name="TValue">The expected type of the value.</typeparam>
+            <param name="instance">The root instance to start the lookup from.</param>
+            <param name="path">A dot separated string of property names. Spreaded properties can be indexed using [N] for example "MySpread[0]" sets the first value in MySpread.</param>
+            <param name="value">The value to set.</param>
+            <returns>The new root instance (if it is a record) with the updated spine.</returns>
+        </member>
+        <member name="M:Kairos.VLObjectExtensions.IsSupportedCollectionType(VL.Core.IVLTypeInfo)">
+            <summary>
+            Whether or not the type is supported by <see cref="M:Kairos.VLObjectExtensions.TryReplaceDescendant``2(``0,``1,``0@)"/>.
+            </summary>
+        </member>
+        <member name="M:Kairos.VLObjectExtensions.TryReplaceDescendant``2(``0,``1,``0@)">
+            <summary>
+            Traverses into the object graph of <paramref name="instance"/> and if it can find a descendant with the same <see cref="P:VL.Core.IVLObject.Identity"/>
+            as the given <paramref name="descendant"/> replaces it and outputs a new <paramref name="updatedInstance"/>.
+            </summary>
+            <remarks>
+            Only user defined properties will be traversed. If a property holds many children it must be of type <see cref="T:VL.Lib.Collections.ISpread"/> or <see cref="T:System.Collections.IDictionary"/>. Other collection types will not be looked at.
+            </remarks>
+            <typeparam name="TInstance">The type of the instance.</typeparam>
+            <typeparam name="TDescendant">The type of the descendant.</typeparam>
+            <param name="instance">The instance to traverse into.</param>
+            <param name="descendant">The new descendant.</param>
+            <param name="updatedInstance">The updated instance with the descendant replaced.</param>
+            <returns>Returns true if a descendant with the same <see cref="P:VL.Core.IVLObject.Identity"/> as the given one was found and replaced.</returns>
+        </member>
+    </members>
+</doc>
