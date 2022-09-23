@@ -1,0 +1,1 @@
+"C:\Program Files\vvvv\vvvv_gamma_2022.5.0-0225-ge247e95b60\vvvv.exe" --package-repositories C:\REPO --enable-attributes-editor
