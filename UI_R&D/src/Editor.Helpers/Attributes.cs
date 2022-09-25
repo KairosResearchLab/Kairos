@@ -33,4 +33,9 @@
         }
         public object Value { get; }
     }
+
+    public class TestAttribute : Attribute
+    {
+        public string SomeText { get; set; }
+    }
 }
