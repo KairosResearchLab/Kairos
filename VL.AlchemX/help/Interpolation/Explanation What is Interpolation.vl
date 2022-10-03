@@ -31,7 +31,7 @@
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="Renderer" />
               </p:NodeReference>
-              <Pin Id="PNv2xhglwrnPm8JqXlsEHJ" Name="Bounds" Kind="InputPin" DefaultValue="918, 296, 535, 342" />
+              <Pin Id="PNv2xhglwrnPm8JqXlsEHJ" Name="Bounds" Kind="InputPin" DefaultValue="918, 296, 534, 342" />
               <Pin Id="Ga6yPetQL44OtW9AHj2rbf" Name="Input" Kind="InputPin" />
               <Pin Id="UhMkLZNluykPfm5jDAAL58" Name="Color" Kind="InputPin" DefaultValue="0.96, 0.96, 0.96, 1" />
               <Pin Id="TmKyIihWM92NmeN3DZkM0U" Name="Clear" Kind="InputPin" />
@@ -262,11 +262,6 @@
               </p:TypeAnnotation>
             </Pin>
           </Patch>
-          <!--
-
-    ************************  ************************
-
--->
           <ProcessDefinition Id="MU0IP6tgpeOK9pheZsy81p">
             <Fragment Id="Nqlna6S6ZLrMN0wAINb1zN" Patch="B9jGNzHSCWlLeTyrwOKKPK" Enabled="true" />
             <Fragment Id="RT958WpSr9cPj2eWe5sPRA" Patch="MbIxP07e4DxQXmSoRFOyBL" Enabled="true" />
@@ -340,7 +335,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="LWUm67X2eg1PRhMQi0RNI6" Bounds="56,205,687,60" ShowValueBox="true" isIOBox="true" Value="Interpolating between two values A and B means &quot;fading&quot; between those two values. The &quot;progress&quot; of that fade is defined by a simple float value. See a simple example below, we are interpolating from 0 to 10, and a sine wave controls that fading :">
+          <Pad Id="LWUm67X2eg1PRhMQi0RNI6" Bounds="56,205,687,60" ShowValueBox="true" isIOBox="true" Value="Interpolating between two values A and B means &quot;fading&quot; between those two values. The &quot;progress&quot; of that fade is defined by a simple float value. See a simple example below, we are interpolating from 0 to 10, and a simple triangle wave controls that fade.">
             <p:TypeAnnotation>
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -371,14 +366,6 @@
             <Pin Id="DKKGNoOCCRZN8t5DORWqWM" Name="Phase" Kind="OutputPin" />
             <Pin Id="IzrUG8aySk4Lp2zrIAPjGn" Name="On New Cycle" Kind="OutputPin" />
             <Pin Id="CcNkvqKe3uaP5Scl9zOKIX" Name="Cycles" Kind="OutputPin" />
-          </Node>
-          <Node Bounds="402,336,58,19" Id="Bu460fo1T93MojAwhzSOk1">
-            <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="CoreLibBasics.vl">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="OperationCallFlag" Name="SineWave" />
-            </p:NodeReference>
-            <Pin Id="SzqoVPL4jWSQKQCWstqyeY" Name="Phase" Kind="InputPin" />
-            <Pin Id="LwG8qSLztd1PkmP5pdnyIG" Name="Output" Kind="OutputPin" />
           </Node>
           <Pad Id="BL5LCjB5DBdQVtIzHqyant" Comment="" Bounds="350,528,32,112" ShowValueBox="true" isIOBox="true">
             <p:ValueBoxSettings>
@@ -425,7 +412,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="AE0mLTrp2K8N4j65v3u23E" Bounds="56,670,691,159" ShowValueBox="true" isIOBox="true" Value="This Scalar value is like a cursor that smoothly moves between values A and B. What we're seeing here is a simple linear interpolation : the &quot;fade&quot; between A and B is linear. If we were to graph the output value over time, we would get a straight line.&#xD;&#xA;&#xD;&#xA;But there are more fun and creative ways to interpolate between values. AlchemX offers different interpolation models (you can find them in the node browser under the AlchemX.Interpolation.Model category). Try to connect the TweenInterpolationModel node to the Value Interpolation Model of Interpolate and see how the value now behaves!">
+          <Pad Id="AE0mLTrp2K8N4j65v3u23E" Bounds="56,670,698,123" ShowValueBox="true" isIOBox="true" Value="This Scalar value is like a cursor that moves between values A and B. What we're seeing here is a simple linear interpolation : the &quot;fade&quot; between A and B is linear. Have a look at the graph in the renderer : we get a straight line.&#xD;&#xA;&#xD;&#xA;But there are more fun and creative ways to interpolate between values. AlchemX offers different interpolation models (you can find them in the node browser under the AlchemX.Interpolation.Model category). Try to connect the TweenInterpolationModel node to the Value Interpolation Model of Interpolate and see how the value now behaves!">
             <p:TypeAnnotation>
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -475,6 +462,15 @@
             <Pin Id="Rlb0dcU7ne7LcMjfzDVOFu" Name="Cyclic" Kind="InputPin" />
             <Pin Id="RX2eGinwafvPQw33dQKbG4" Name="Output" Kind="StateOutputPin" />
           </Node>
+          <Node Bounds="402,334,77,19" Id="N2czk9m62hEO0BLCFZhPeb">
+            <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="TriangleWave" />
+            </p:NodeReference>
+            <Pin Id="Mw2w3zRaUqlOOlvzCGgdpQ" Name="Phase" Kind="InputPin" />
+            <Pin Id="QzT1KeRa5xMOrdFqssaHJV" Name="Slope" Kind="InputPin" />
+            <Pin Id="MHS556Bnk7UOjVgjKCtxIY" Name="Output" Kind="OutputPin" />
+          </Node>
         </Canvas>
         <Patch Id="TEf7q9oBv0eOw09yAu3uOJ" Name="Create" />
         <Patch Id="VkoBaeZWmCbOjl64VmD3MX" Name="Update" />
@@ -484,12 +480,12 @@
         </ProcessDefinition>
         <Link Id="MEzxKGiUlUYNuIu3FwJTUQ" Ids="PVPC9MW3wMwP5SOIkHukUp,JhawTVnWLqXPlaKTw1YlIa" />
         <Link Id="O4wXBslf6HdOYrQ0cJ8dX3" Ids="CnLo1SAEkYAM6d4GGoAsrP,B0R4sHM2MMCOOH9Ee8PF6y" />
-        <Link Id="VSnXuVeU8bvQXHrw44LFpf" Ids="DKKGNoOCCRZN8t5DORWqWM,SzqoVPL4jWSQKQCWstqyeY" />
         <Link Id="JPkcxeFnRSSPjx7BIutkwA" Ids="MhtTRCoNVWEL5OhMbTD7Ei,BL5LCjB5DBdQVtIzHqyant" />
-        <Link Id="VrqPlvJGo7WOMdLwxs9sm7" Ids="LwG8qSLztd1PkmP5pdnyIG,TNjspLb1KE5M4hS4VFGyO3" />
         <Link Id="HO7tfjK9QWeMocRqFXUteu" Ids="LE2JgGfGRbANRpUnpp4ggc,EeQHtsczSOwOhGbRGGMRqw" />
         <Link Id="HKRFUVwPeSGOYgypvmxW0p" Ids="LE2JgGfGRbANRpUnpp4ggc,IDdzsJ0GSSvO7H4vREIhnr" />
         <Link Id="TnR6Qy1caXaOQZ7nRs8LPb" Ids="MhtTRCoNVWEL5OhMbTD7Ei,H9neryGKhVlPzoDxOpMEfh,J0hbd0ROHJjOp2rfxJrr0T" />
+        <Link Id="F7qwhMFHkw8P7mqIsHa42z" Ids="DKKGNoOCCRZN8t5DORWqWM,Mw2w3zRaUqlOOlvzCGgdpQ" />
+        <Link Id="LWWy0dLlJqPLRbM80jSHOR" Ids="MHS556Bnk7UOjVgjKCtxIY,TNjspLb1KE5M4hS4VFGyO3" />
       </Patch>
     </Node>
   </Patch>
