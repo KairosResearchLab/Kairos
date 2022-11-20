@@ -2,36 +2,7 @@
 <Document xmlns:p="property" Id="JoNrxeEff3sMvD8L6qrDA8" LanguageVersion="2022.5.0-0363-7bef174365" Version="0.128">
   <Patch Id="OdwjHxvmpTwQVNFJ9pLKQP">
     <Canvas Id="TFkrzzMqabMLaJgnlwzp1b" DefaultCategory="Kairos.TimelineUI" CanvasType="FullCategory">
-      <!--
-
-    ************************ TimelineEditor ************************
-
--->
-      <Node Name="TimelineEditor" Bounds="105,498" Id="VCBSYgK6o5KNq0a36wmycv">
-        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
-          <Choice Kind="ClassDefinition" Name="Class" />
-        </p:NodeReference>
-        <Patch Id="CzIG2pBHb0PN2Qru1skXVH">
-          <Canvas Id="JSl4nvWy6XdOUum5DDwMkN" CanvasType="Group">
-            <Pad Id="I3j9SILLPsSMxSttrPuIjR" SlotId="DYZ1PSQMsQXPdGB6RKujhp" Bounds="226,232" />
-          </Canvas>
-          <Patch Id="D4Cpjs0PUivMDORkH3EODM" Name="Create" />
-          <ProcessDefinition Id="Fhh37njP6qUOtQCOvatfGr" IsHidden="true">
-            <Fragment Id="OsPHDHpk04WMo5mgXbpUSI" Patch="D4Cpjs0PUivMDORkH3EODM" Enabled="true" />
-          </ProcessDefinition>
-          <Slot Id="DYZ1PSQMsQXPdGB6RKujhp" Name="TimelineUI Model Stream">
-            <p:TypeAnnotation p:Type="TypeReference">
-              <Choice Kind="TypeFlag" Name="Channel" />
-              <p:TypeArguments>
-                <TypeReference>
-                  <Choice Kind="TypeFlag" Name="TimelineUIModel" />
-                </TypeReference>
-              </p:TypeArguments>
-            </p:TypeAnnotation>
-          </Slot>
-        </Patch>
-      </Node>
-      <Canvas Id="ScyP9H9pkunNyBIFZJi1LL" Name="KeyframeUI" Position="103,202">
+      <Canvas Id="ScyP9H9pkunNyBIFZJi1LL" Name="KeyframeUI.Internal" Position="103,202">
         <!--
 
     ************************ ConstantValueKeyframeUIModel ************************
@@ -257,30 +228,49 @@
           <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
         </p:ValueBoxSettings>
       </Pad>
-      <Canvas Id="NbvYDS288y3NppjaOPbXAx" Name="TrackUI" Position="103,271">
+      <Canvas Id="NbvYDS288y3NppjaOPbXAx" Name="TrackUI.Internal" Position="103,271">
         <!--
 
-    ************************ TrackUIModel ************************
+    ************************ TimelineTrackUIModel ************************
 
 -->
-        <Node Name="TrackUIModel" Bounds="112,237" Id="TrosnsbOP4COOXknhln093">
+        <Node Name="TimelineTrackUIModel" Bounds="112,237" Id="TrosnsbOP4COOXknhln093">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="RecordDefinition" Name="Record" />
           </p:NodeReference>
           <Patch Id="TUBnu7MpvB0NLnjeKzVk3i">
-            <Canvas Id="QxKAZlOVDzJLEJkwJ3XjUF" CanvasType="Group" />
-            <Patch Id="ImfGdwmXVxuOZzIr3yzvcw" Name="Create" />
+            <Canvas Id="QxKAZlOVDzJLEJkwJ3XjUF" CanvasType="Group">
+              <Pad Id="GMA5o1NdTAsQSgwhPJUb8I" SlotId="CGeuMJYinNwMnlHsvLcJwM" Bounds="341,246" />
+              <ControlPoint Id="TGqSBpji8t3NdJ6Duqdx6f" Bounds="342,194" />
+              <ControlPoint Id="J8lqZ4aqkdpOd1iy0uYwYq" Bounds="370,218" />
+            </Canvas>
+            <Patch Id="ImfGdwmXVxuOZzIr3yzvcw" Name="Create">
+              <Pin Id="GHWfp6hEBPtPmIxUtkdUn0" Name="Model" Kind="InputPin" />
+            </Patch>
             <ProcessDefinition Id="P6GZfQeaDkxOspilId8p7F" IsHidden="true">
               <Fragment Id="EOzLahWGCyYLaLwQM0ChOb" Patch="ImfGdwmXVxuOZzIr3yzvcw" Enabled="true" />
+              <Fragment Id="VGC6qVVK5znPBpssNytJhJ" Patch="PIidu3WDsl8Nh3dk9HgPSY" />
             </ProcessDefinition>
+            <Patch Id="PIidu3WDsl8Nh3dk9HgPSY" Name="SetModel">
+              <Pin Id="DP5HgkxXa77ORPZIoxyrnW" Name="Model" Kind="InputPin" />
+            </Patch>
+            <Slot Id="CGeuMJYinNwMnlHsvLcJwM" Name="Model">
+              <p:TypeAnnotation p:Type="TypeReference">
+                <Choice Kind="TypeFlag" Name="TimelineTrackModel" />
+              </p:TypeAnnotation>
+            </Slot>
+            <Link Id="LEERVnfieMkPUg5WwLpZ3M" Ids="TGqSBpji8t3NdJ6Duqdx6f,GMA5o1NdTAsQSgwhPJUb8I" />
+            <Link Id="MoJA8gTQYVaN3mRXnWN4n1" Ids="GHWfp6hEBPtPmIxUtkdUn0,TGqSBpji8t3NdJ6Duqdx6f" IsHidden="true" />
+            <Link Id="GgSiMQmBhOGLCLYhryIrng" Ids="J8lqZ4aqkdpOd1iy0uYwYq,GMA5o1NdTAsQSgwhPJUb8I" />
+            <Link Id="PmMx8hy95YDNXXI5klVcF2" Ids="DP5HgkxXa77ORPZIoxyrnW,J8lqZ4aqkdpOd1iy0uYwYq" IsHidden="true" />
           </Patch>
         </Node>
         <!--
 
-    ************************ TrackUI ************************
+    ************************ TimelineTrackUI ************************
 
 -->
-        <Node Name="TrackUI" Bounds="349,237" Id="Ho9XxXF0SKFPh1zWc4gdwA">
+        <Node Name="TimelineTrackUI" Bounds="349,237" Id="Ho9XxXF0SKFPh1zWc4gdwA">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="ClassDefinition" Name="Class" />
           </p:NodeReference>
@@ -292,7 +282,7 @@
             </ProcessDefinition>
           </Patch>
         </Node>
-        <Pad Id="HIfVKuN7gvrPnKX6w6q6hq" Bounds="96,123,326,50" ShowValueBox="true" isIOBox="true" Value="TimelineUI.TrackUI">
+        <Pad Id="HIfVKuN7gvrPnKX6w6q6hq" Bounds="96,123,460,58" ShowValueBox="true" isIOBox="true" Value="TimelineUI.TrackUI">
           <p:TypeAnnotation>
             <Choice Kind="TypeFlag" Name="String" />
           </p:TypeAnnotation>
@@ -302,7 +292,7 @@
           </p:ValueBoxSettings>
         </Pad>
       </Canvas>
-      <Canvas Id="FYbZ6OhSpxCMsJgivZKNex" Name="ControllerUI" Position="103,340">
+      <Canvas Id="FYbZ6OhSpxCMsJgivZKNex" Name="ControllerUI.Internal" Position="103,340">
         <!--
 
     ************************ CompositionClipUIModel ************************
@@ -372,10 +362,10 @@
       <Canvas Id="IjwQYB0nyCULm2sXJiHTsR" Name="CompositionUI" Position="103,409">
         <!--
 
-    ************************ TimelineUIModel ************************
+    ************************ TimelineUIModel (Internal) ************************
 
 -->
-        <Node Name="TimelineUIModel" Bounds="134,279" Id="M3FQEdOaaGCMrRIuvTyyC2">
+        <Node Name="TimelineUIModel (Internal)" Bounds="134,279" Id="M3FQEdOaaGCMrRIuvTyyC2">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
             <Choice Kind="RecordDefinition" Name="Record" />
           </p:NodeReference>
@@ -400,7 +390,7 @@
                     <Choice Kind="TypeFlag" Name="String" />
                   </TypeReference>
                   <TypeReference>
-                    <Choice Kind="TypeFlag" Name="TrackUIModel" />
+                    <Choice Kind="TypeFlag" Name="TimelineTrackUIModel" />
                   </TypeReference>
                 </p:TypeArguments>
               </p:TypeAnnotation>
@@ -428,11 +418,58 @@
             <Choice Kind="ClassDefinition" Name="Class" />
           </p:NodeReference>
           <Patch Id="Hlk1gsrIslrPidESe9ygJl">
-            <Canvas Id="No4Bgnazbl2LN2BotnkDWR" BordersChecked="false" CanvasType="Group" />
-            <Patch Id="OZoCKTSo1OJOs5Qm69n6DH" Name="Create" />
-            <ProcessDefinition Id="BWUssl6Q0c1QZ4BJGDjgYO" IsHidden="true">
+            <Canvas Id="No4Bgnazbl2LN2BotnkDWR" CanvasType="Group">
+              <Pad Id="PfPDMObqmKqO2irB9Ahg0G" SlotId="Vf4yUA9wkvNQPqtXSR2B4w" Bounds="483,903" />
+              <Pad Id="J0qi9wlFiu2PdQsj7lX1Z0" SlotId="SZOh04UK4IILKPBt6eFzQP" Bounds="346,587" />
+              <ControlPoint Id="EmtyKGZ38kNLMhG6PZJFWv" Bounds="566,469" />
+              <Pad Id="TCFfiki9GOWLtdfh3uZdWg" SlotId="JvKb7bOf2sBPnXct92Z4NB" Bounds="566,505" />
+              <Node Bounds="498,641,127,19" Id="FKCgn8huhouOdOecTzvcV6">
+                <p:NodeReference LastCategoryFullName="Kairos.TimelineUI.CompositionUI.TimelineUI" LastSymbolSource="VL.Kairos.TimelineUI.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="ProcessAppFlag" Name="SyncronizationProcessor" />
+                </p:NodeReference>
+                <Pin Id="Dr0XiO7yADvNRcyM2FMKjq" Name="TimelineUI Model Stream" Kind="InputPin" />
+                <Pin Id="NDqgAYLUzWTP7KVfWxLe1e" Name="Timeline" Kind="InputPin" />
+              </Node>
+            </Canvas>
+            <ProcessDefinition Id="BWUssl6Q0c1QZ4BJGDjgYO">
               <Fragment Id="OJnnlLYSIDfQdyfnOPSmIK" Patch="OZoCKTSo1OJOs5Qm69n6DH" Enabled="true" />
             </ProcessDefinition>
+            <Slot Id="Vf4yUA9wkvNQPqtXSR2B4w" Name="TracksUI">
+              <p:TypeAnnotation p:Type="TypeReference">
+                <Choice Kind="TypeFlag" Name="Dictionary" />
+                <p:TypeArguments>
+                  <TypeReference>
+                    <Choice Kind="TypeFlag" Name="String" />
+                  </TypeReference>
+                  <TypeReference>
+                    <Choice Kind="TypeFlag" Name="TimelineTrackUI" />
+                  </TypeReference>
+                </p:TypeArguments>
+              </p:TypeAnnotation>
+            </Slot>
+            <Slot Id="SZOh04UK4IILKPBt6eFzQP" Name="TimelineUI Model Stream">
+              <p:TypeAnnotation p:Type="TypeReference">
+                <Choice Kind="TypeFlag" Name="Channel" />
+                <p:TypeArguments>
+                  <TypeReference>
+                    <Choice Kind="TypeFlag" Name="TimelineUIModel" />
+                  </TypeReference>
+                </p:TypeArguments>
+              </p:TypeAnnotation>
+            </Slot>
+            <Slot Id="JvKb7bOf2sBPnXct92Z4NB" Name="Timeline" />
+            <Link Id="AJt6bAQnZvALsAh2z7JJ80" Ids="VDPhRQhD2oELVZEgbgUexS,EmtyKGZ38kNLMhG6PZJFWv" IsHidden="true" />
+            <Link Id="Hq0wVqnrTxJN1qmh37tZ4n" Ids="EmtyKGZ38kNLMhG6PZJFWv,TCFfiki9GOWLtdfh3uZdWg" />
+            <Patch Id="OZoCKTSo1OJOs5Qm69n6DH" Name="Create">
+              <Pin Id="VDPhRQhD2oELVZEgbgUexS" Name="Timeline" Kind="InputPin">
+                <p:TypeAnnotation LastCategoryFullName="Kairos" LastSymbolSource="VL.Kairos.Runtime.Timeline.vl" LastDependency="VL.Kairos.Runtime.vl">
+                  <Choice Kind="TypeFlag" Name="Timeline" />
+                </p:TypeAnnotation>
+              </Pin>
+            </Patch>
+            <Link Id="A8gn8Zw5mtqLyrnk9iP0cs" Ids="J0qi9wlFiu2PdQsj7lX1Z0,Dr0XiO7yADvNRcyM2FMKjq" />
+            <Link Id="AOs3gajgROsL6XXeNDKT8p" Ids="EmtyKGZ38kNLMhG6PZJFWv,NDqgAYLUzWTP7KVfWxLe1e" />
           </Patch>
         </Node>
         <Pad Id="FHYV4lHUBrlOSwOCv10Axi" Bounds="116,143,441,54" ShowValueBox="true" isIOBox="true" Value="TimelineUI.CompositionUI">
@@ -444,6 +481,272 @@
             <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
           </p:ValueBoxSettings>
         </Pad>
+        <!--
+
+    ************************ SyncronizeTracksUItoTracksModel (Internal) ************************
+
+-->
+        <Node Name="SyncronizeTracksUItoTracksModel (Internal)" Bounds="500,390" Id="EKGGngqzoLwOOOeBYjXOyc">
+          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
+            <Choice Kind="ContainerDefinition" Name="Process" />
+          </p:NodeReference>
+          <Patch Id="No0bU4kswp9N5ywAJHwIFw">
+            <Canvas Id="JhrluaJgT0aNCXkUwFmief" CanvasType="Group">
+              <Node Bounds="503,412,465,274" Id="Ecz5gVRGL7VNdGlK8EOsl2">
+                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                  <CategoryReference Kind="Category" Name="Primitive" />
+                  <Choice Kind="ProcessStatefulRegion" Name="Cache" />
+                </p:NodeReference>
+                <Pin Id="OmU7Iqjoh8NOFaEYhdud7C" Name="Force" Kind="InputPin" />
+                <Pin Id="IsulVwiXjOzMABJhfcYuov" Name="Dispose Cached Outputs" Kind="InputPin" />
+                <Pin Id="PTByIOIYo4eLG7NHob3H87" Name="Has Changed" Kind="OutputPin" />
+                <Patch Id="EX43sGBfJJiLPhVf8ZNLA4" ManuallySortedPins="true">
+                  <Patch Id="CYHedvnVen7Nx18SrCgtfH" Name="Create" ManuallySortedPins="true" />
+                  <Patch Id="N50ab6vZqQeMjxO1UuNuto" Name="Then" ManuallySortedPins="true" />
+                  <Node Bounds="634,510,322,155" Id="RYdhUbQYpFVLvYI5gZbNKg">
+                    <p:NodeReference LastCategoryFullName="Kairos.Runtime.Core.Utils.Sync" LastSymbolSource="VL.Kairos.Runtime.Core.vl" LastDependency="VL.Kairos.Runtime.vl">
+                      <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+                      <Choice Kind="ProcessAppFlag" Name="SyncToModel (Dictionary)" />
+                    </p:NodeReference>
+                    <Pin Id="F3zlujv3ixHQEsofNfdMg4" Name="Runtime" Kind="InputPin" />
+                    <Pin Id="S9i4gTeRTUtPftbS88fZv9" Name="Model" Kind="InputPin" />
+                    <Pin Id="PjXHyAHhBkdNcsRoymLnv6" Name="Output" Kind="OutputPin" />
+                    <Patch Id="A3GUtZnqXPFQKjUUyNZCRq" Name="Create" ManuallySortedPins="true">
+                      <Pin Id="DvnS4znbBEYLDFJc4Th6WO" Name="Input" Kind="InputPin" />
+                      <Pin Id="SUxNEXAPO9iPDzn6zvOyWt" Name="Result" Kind="OutputPin" />
+                      <ControlPoint Id="J3UjKqcJMcQPU6ZqHUJMK9" Bounds="648,518" />
+                      <ControlPoint Id="QfmLDABUSaCLhEaHYY5GKO" Bounds="648,658" />
+                      <Node Bounds="646,584,96,26" Id="Gy4WeEsnNzqPabcvMcxUFb">
+                        <p:NodeReference LastCategoryFullName="Kairos.TimelineUI.TrackUI.TrackUIModel" LastSymbolSource="VL.Kairos.TimelineUI.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <CategoryReference Kind="Category" Name="TrackUI" />
+                          <CategoryReference Kind="RecordType" Name="TimelineTrackUIModel" />
+                          <Choice Kind="OperationCallFlag" Name="Create" />
+                        </p:NodeReference>
+                        <Pin Id="KaXoS8e8PIYNjffWarPHwr" Name="Model" Kind="InputPin" />
+                        <Pin Id="IhHRR7GUcTYL9YAK7tYPIP" Name="Output" Kind="StateOutputPin" />
+                      </Node>
+                      <Node Bounds="646,539,58,19" Id="V5fqF4TZISlM4clmF8sA8v">
+                        <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="VL.CoreLib.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <Choice Kind="OperationCallFlag" Name="HardCast" />
+                        </p:NodeReference>
+                        <Pin Id="Pid9KnkaECnM0lDBxB8Of4" Name="Input" Kind="StateInputPin" />
+                        <Pin Id="CuQUAYLgTmQO2aXvO6bXFK" Name="Result" Kind="OutputPin" />
+                      </Node>
+                    </Patch>
+                    <Patch Id="NyGnvvMkFA2OGhh14ajrS3" Name="Sync" ManuallySortedPins="true">
+                      <Pin Id="SZDsZewfpImOWCJy2i1PSU" Name="Input 1" Kind="InputPin" />
+                      <Pin Id="QauJIs5ode9Mcyq5MTioZz" Name="Input 2" Kind="InputPin" />
+                      <Pin Id="QsQLbtPVzfROpF2FbjfeHh" Name="Result" Kind="OutputPin" />
+                      <ControlPoint Id="Ti8lmBEWMPALrajNuRig6J" Bounds="768,518" />
+                      <ControlPoint Id="MBFbsVCdpnSLrMPZscRPtQ" Bounds="888,518" />
+                      <ControlPoint Id="JPoDNXfurynNbqo46UxDNj" Bounds="768,658" />
+                      <Node Bounds="766,568,96,26" Id="KpC0kywG3sxN5aj8xk5LsH">
+                        <p:NodeReference LastCategoryFullName="Kairos.TimelineUI.TrackUI.TrackUIModel" LastSymbolSource="VL.Kairos.TimelineUI.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <CategoryReference Kind="Category" Name="TrackUI" />
+                          <CategoryReference Kind="RecordType" Name="TimelineTrackUIModel" />
+                          <Choice Kind="OperationCallFlag" Name="SetModel" />
+                        </p:NodeReference>
+                        <Pin Id="Tdy6Gb6Z7WKMspDaB2mYQs" Name="Input" Kind="InputPin" />
+                        <Pin Id="PRJO8Ehos2tOzDPX0ottiT" Name="Model" Kind="InputPin" />
+                        <Pin Id="Rx1y4HyVyk3QChGrkBuW45" Name="Output" Kind="StateOutputPin" />
+                      </Node>
+                      <Node Bounds="886,536,58,19" Id="KqIdQr33WEaNIXP25HIUAC">
+                        <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="VL.CoreLib.vl">
+                          <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                          <Choice Kind="OperationCallFlag" Name="HardCast" />
+                        </p:NodeReference>
+                        <Pin Id="TcOIoYaf7LJPvvqxK1CZVv" Name="Input" Kind="StateInputPin" />
+                        <Pin Id="DSw4MZTexWVOl7abDjCcgl" Name="Result" Kind="OutputPin" />
+                      </Node>
+                    </Patch>
+                  </Node>
+                  <Node Bounds="634,471,76,26" Id="VQ95U6KKmMzL1XYhoRzwtg">
+                    <p:NodeReference LastCategoryFullName="Kairos.TimelineUI.CompositionUI.TimelineUIModel" LastSymbolSource="VL.Kairos.TimelineUI.vl">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <CategoryReference Kind="RecordType" Name="TimelineUIModel" NeedsToBeDirectParent="true" />
+                      <Choice Kind="OperationCallFlag" Name="GetTracks" />
+                    </p:NodeReference>
+                    <Pin Id="GMZagHDoXUHPkoxVqjuzFs" Name="Input" Kind="StateInputPin" />
+                    <Pin Id="AitWFBnnQ0XL4O8GZMfLsG" Name="Tracks" Kind="OutputPin" />
+                  </Node>
+                  <Node Bounds="598,441,41,19" Id="BfnBaMFHHKtNCAUFE5KeSi">
+                    <p:NodeReference LastCategoryFullName="Reactive.Channel" LastSymbolSource="VL.CoreLib.vl">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <CategoryReference Kind="ClassType" Name="Channel" NeedsToBeDirectParent="true" />
+                      <Choice Kind="OperationCallFlag" Name="Value" />
+                    </p:NodeReference>
+                    <Pin Id="HxAwOPEcsO0NCzQHv5x27i" Name="Input" Kind="StateInputPin" />
+                    <Pin Id="IoAtDc91rHGQSs88brrVvu" Name="Output" Kind="StateOutputPin" />
+                    <Pin Id="OvHYM4YQUlINSiOXBW6AGN" Name="Value" Kind="OutputPin" />
+                  </Node>
+                </Patch>
+                <ControlPoint Id="PTRCxb1btNVOefLrlpb1e7" Bounds="953,418" Alignment="Top" />
+              </Node>
+              <ControlPoint Id="JcMVnmDL1RDNzJhIQOvjJ8" Bounds="953,360" />
+              <Pad Id="QDzwvxzDOzCLvbVI9jAH3i" SlotId="EHXdUUf2OPuNB2kr0tfdQd" Bounds="600,381" />
+              <ControlPoint Id="TISPwfzG8XqOP0SQKDOBqV" Bounds="600,333" />
+            </Canvas>
+            <Patch Id="L9bXUhGAU2eLHTA4Ql4Zhc" Name="Create">
+              <Pin Id="SXMXe4nb2T3OPOUERsHUt6" Name="TimelineUI Model Stream" Kind="InputPin" />
+            </Patch>
+            <Patch Id="Q0QL2iz6G58OaiYoRUkIfb" Name="Update">
+              <Pin Id="By4E9VByxzENtv4r0hc6F9" Name="Tracks Model" Kind="InputPin" Bounds="681,330">
+                <p:TypeAnnotation LastCategoryFullName="Collections" LastSymbolSource="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="Dictionary" />
+                  <p:TypeArguments>
+                    <TypeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                      <Choice Kind="TypeFlag" Name="String" />
+                    </TypeReference>
+                    <TypeReference LastCategoryFullName="Kairos.Runtime.Core.Track" LastSymbolSource="VL.Kairos.Runtime.Core.vl" LastDependency="VL.Kairos.Runtime.vl">
+                      <Choice Kind="TypeFlag" Name="ITrackModel" />
+                    </TypeReference>
+                  </p:TypeArguments>
+                </p:TypeAnnotation>
+              </Pin>
+            </Patch>
+            <ProcessDefinition Id="HSi4ovZ8Q6zOGV8KlB0tCU">
+              <Fragment Id="B1dOCiyxkYQMApjZYmtQDE" Patch="L9bXUhGAU2eLHTA4Ql4Zhc" Enabled="true" />
+              <Fragment Id="NiMHsAL8ymDOyftJmJtLAD" Patch="Q0QL2iz6G58OaiYoRUkIfb" Enabled="true" />
+            </ProcessDefinition>
+            <Link Id="UhMKNLGs1fKL6P6AY05wq3" Ids="By4E9VByxzENtv4r0hc6F9,JcMVnmDL1RDNzJhIQOvjJ8" IsHidden="true" />
+            <Link Id="JQV3QdXhKkhLuzcviPFKo8" Ids="JcMVnmDL1RDNzJhIQOvjJ8,PTRCxb1btNVOefLrlpb1e7" />
+            <Slot Id="EHXdUUf2OPuNB2kr0tfdQd" Name="TimelineUI Model Stream">
+              <p:TypeAnnotation p:Type="TypeReference">
+                <Choice Kind="TypeFlag" Name="Channel" />
+                <p:TypeArguments>
+                  <TypeReference>
+                    <Choice Kind="TypeFlag" Name="TimelineUIModel" />
+                  </TypeReference>
+                </p:TypeArguments>
+              </p:TypeAnnotation>
+            </Slot>
+            <Link Id="PVS6qn0i20CPE4qfoWh2JU" Ids="TISPwfzG8XqOP0SQKDOBqV,QDzwvxzDOzCLvbVI9jAH3i" />
+            <Link Id="LcsngsfcPIQOX33G0ebFc9" Ids="SXMXe4nb2T3OPOUERsHUt6,TISPwfzG8XqOP0SQKDOBqV" IsHidden="true" />
+            <Link Id="NtbKF0fwrOOOGRA5aztvdF" Ids="DvnS4znbBEYLDFJc4Th6WO,J3UjKqcJMcQPU6ZqHUJMK9" IsHidden="true" />
+            <Link Id="THKgWAbshpFNz5oUYhCdAy" Ids="QfmLDABUSaCLhEaHYY5GKO,SUxNEXAPO9iPDzn6zvOyWt" IsHidden="true" />
+            <Link Id="DszyVg8Y0E5PjLK9xpsmQY" Ids="SZDsZewfpImOWCJy2i1PSU,Ti8lmBEWMPALrajNuRig6J" IsHidden="true" />
+            <Link Id="GoyHRnMZek6L2F3S1RPyOQ" Ids="QauJIs5ode9Mcyq5MTioZz,MBFbsVCdpnSLrMPZscRPtQ" IsHidden="true" />
+            <Link Id="BMVX6kMuMujPJKkKduNQ1C" Ids="JPoDNXfurynNbqo46UxDNj,QsQLbtPVzfROpF2FbjfeHh" IsHidden="true" />
+            <Link Id="FLlh6FdXEkJOLWJrlABOTX" Ids="IhHRR7GUcTYL9YAK7tYPIP,QfmLDABUSaCLhEaHYY5GKO" />
+            <Link Id="D1wvIF1xgMyM3qoGQU483k" Ids="J3UjKqcJMcQPU6ZqHUJMK9,Pid9KnkaECnM0lDBxB8Of4" />
+            <Link Id="U6cipQSHxmjOx4601j0842" Ids="Ti8lmBEWMPALrajNuRig6J,Tdy6Gb6Z7WKMspDaB2mYQs" />
+            <Link Id="Q6SWtxvOpxpQT6VEuDxUBe" Ids="Rx1y4HyVyk3QChGrkBuW45,JPoDNXfurynNbqo46UxDNj" />
+            <Link Id="RmmIshMPL5fPPiyYDhGxwB" Ids="QDzwvxzDOzCLvbVI9jAH3i,HxAwOPEcsO0NCzQHv5x27i" />
+            <Link Id="IZYyKOKXayeLY4m8gDWsMJ" Ids="OvHYM4YQUlINSiOXBW6AGN,GMZagHDoXUHPkoxVqjuzFs" />
+            <Link Id="M8emG1AiPd9MeOQqaHpamk" Ids="AitWFBnnQ0XL4O8GZMfLsG,F3zlujv3ixHQEsofNfdMg4" />
+            <Link Id="RHn65QUrzuuM1hkV4H5iSV" Ids="PTRCxb1btNVOefLrlpb1e7,S9i4gTeRTUtPftbS88fZv9" />
+            <Link Id="RgPx6KucOFWMlfNQekO1a1" Ids="CuQUAYLgTmQO2aXvO6bXFK,KaXoS8e8PIYNjffWarPHwr" />
+            <Link Id="Ufsitu5Z8lhOYprpBE1dXt" Ids="MBFbsVCdpnSLrMPZscRPtQ,TcOIoYaf7LJPvvqxK1CZVv" />
+            <Link Id="VVp4KlpCP4YPMc4xLFnoMf" Ids="DSw4MZTexWVOl7abDjCcgl,PRJO8Ehos2tOzDPX0ottiT" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ SyncronizationProcessor (Internal) ************************
+
+-->
+        <Node Name="SyncronizationProcessor (Internal)" Bounds="460,335" Id="QMsfjzWOSNEP7Io0S9OhXA">
+          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
+            <Choice Kind="ContainerDefinition" Name="Process" />
+          </p:NodeReference>
+          <Patch Id="GwQTh8Ck7MwNg4CIMftUN1">
+            <Canvas Id="Kz4qpJTfS8hLmrNu3U7Qt5" CanvasType="Group">
+              <ControlPoint Id="BfFUPdIxOEDMyWXJvoS8qr" Bounds="589,636" />
+              <Node Bounds="641,407,150,26" Id="R21Hbpdc13TOdyXVPhbvLT">
+                <p:NodeReference LastCategoryFullName="Kairos.Timeline" LastSymbolSource="VL.Kairos.Runtime.Timeline.vl" LastDependency="VL.Kairos.Runtime.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="ClassType" Name="Timeline" NeedsToBeDirectParent="true">
+                    <p:OuterCategoryReference Kind="Category" Name="Kairos" NeedsToBeDirectParent="true" />
+                  </CategoryReference>
+                  <Choice Kind="OperationCallFlag" Name="GetPostSyncModelObservable" />
+                </p:NodeReference>
+                <Pin Id="S3m8Phpc6dJNOBGVZLJbCJ" Name="Input" Kind="StateInputPin" />
+                <Pin Id="Q9y2Me0CnqXNlqLt6B4twf" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="RCxVLf0SHErMryfNbQsXIt" Name="Post Sync Model Observable" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="786,464,512,341" Id="Rht2vhEynFtMQbYVZfDYGm">
+                <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.CoreLib.vl">
+                  <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                  <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
+                  <Choice Kind="ProcessAppFlag" Name="ForEach" />
+                </p:NodeReference>
+                <Pin Id="TWqySAlS8trMOycLclvxQ5" Name="Messages" Kind="InputPin" />
+                <Pin Id="Bny3lYUDGBFMBhgm6hC6TO" Name="Reset" Kind="InputPin" />
+                <Pin Id="NTZPXdb8ciyMNLSSg0wq49" Name="Result" Kind="OutputPin" />
+                <Patch Id="D4WRzsz5coHMfU0YseZR4f" ManuallySortedPins="true">
+                  <ControlPoint Id="FcO26ZYrnApNoedZxWJ8Wc" Bounds="966,472" />
+                  <ControlPoint Id="B813iv6voq2ObglDaPn4Cd" Bounds="808,798" />
+                  <Patch Id="SswpQy7AZ5pNjNuyXpG7eJ" Name="Create" ManuallySortedPins="true" />
+                  <Patch Id="J3oATLW5msNQaD8tQWWSq3" Name="Update" ManuallySortedPins="true">
+                    <Pin Id="Vu6OVkmqtgGNy5XQ9G6GHh" Name="Input 1" Kind="InputPin" />
+                    <Pin Id="Qs86WHWYKP7QAGrkMBp5Ni" Name="Output" Kind="OutputPin">
+                      <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                        <Choice Kind="TypeFlag" Name="Boolean" />
+                      </p:TypeAnnotation>
+                    </Pin>
+                  </Patch>
+                  <Node Bounds="964,510,58,19" Id="CSQsj47h2xvNTWYNSf9TGE">
+                    <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="VL.CoreLib.vl">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <Choice Kind="OperationCallFlag" Name="HardCast" />
+                    </p:NodeReference>
+                    <Pin Id="Ca9Wd5mVKqjMebtnOTC39Q" Name="Input" Kind="StateInputPin" />
+                    <Pin Id="QpkSxt8rR5nNWmGGohUyza" Name="Result" Kind="OutputPin" />
+                  </Node>
+                  <Node Bounds="964,575,69,26" Id="EV0sbulWCnwNBpTT9NBZ5K">
+                    <p:NodeReference LastCategoryFullName="Kairos.Runtime.Timeline.TimelineModel" LastSymbolSource="VL.Kairos.Runtime.Timeline.vl" LastDependency="VL.Kairos.Runtime.vl">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <CategoryReference Kind="RecordType" Name="TimelineModel" />
+                      <Choice Kind="OperationCallFlag" Name="GetTracks" />
+                    </p:NodeReference>
+                    <Pin Id="QGH3q95Cbk8L6KKj7RVvsC" Name="Input" Kind="StateInputPin" />
+                    <Pin Id="KywTuGei2SKOsSGYWoT6pD" Name="Tracks" Kind="OutputPin" />
+                  </Node>
+                  <Node Bounds="1204,575,82,26" Id="CGndhHYof0ZP8npNC1b4E7">
+                    <p:NodeReference LastCategoryFullName="Kairos.Runtime.Timeline.TimelineModel" LastSymbolSource="VL.Kairos.Runtime.Timeline.vl" LastDependency="VL.Kairos.Runtime.vl">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <CategoryReference Kind="RecordType" Name="TimelineModel" />
+                      <Choice Kind="OperationCallFlag" Name="GetControllers" />
+                    </p:NodeReference>
+                    <Pin Id="OMPqtVdcqleOz8ektApemi" Name="Input" Kind="StateInputPin" />
+                    <Pin Id="NPTUGEkyiZHPtFRr4gLoKj" Name="Controllers" Kind="OutputPin" />
+                  </Node>
+                  <Node Bounds="798,688,171,19" Id="AR6YNg6WBY8MOa74ONf6ds">
+                    <p:NodeReference LastCategoryFullName="Kairos.TimelineUI.CompositionUI.TimelineUI.SyncronizationProcessor" LastSymbolSource="VL.Kairos.TimelineUI.vl">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <Choice Kind="ProcessAppFlag" Name="SyncronizeTracksUItoTracksModel" />
+                    </p:NodeReference>
+                    <Pin Id="F33zcme0egOQEb41GWx6t3" Name="TimelineUI Model Stream" Kind="InputPin" />
+                    <Pin Id="IuLjCsmDW6iQQaJNKwXmqi" Name="Tracks Model" Kind="InputPin" />
+                  </Node>
+                </Patch>
+              </Node>
+              <ControlPoint Id="Uj55N4Kh1p1P2xLjX1NnOZ" Bounds="643,379" />
+            </Canvas>
+            <Patch Id="PCSYyyvhM9jLIfHERgMqp0" Name="Create">
+              <Pin Id="VrXDpDQuBJsNkvYKlavIgK" Name="TimelineUI Model Stream" Kind="InputPin" />
+              <Pin Id="R9hnoEGFmvaQWDKHyS09Jz" Name="Timeline" Kind="InputPin" />
+            </Patch>
+            <ProcessDefinition Id="RFK9MCh06PVNfTsOjKzDTJ">
+              <Fragment Id="EtQrQeTToNuOVI7QwlzFxK" Patch="PCSYyyvhM9jLIfHERgMqp0" Enabled="true" />
+            </ProcessDefinition>
+            <Link Id="TnVhAxpeUIDMGce5CR7opz" Ids="VrXDpDQuBJsNkvYKlavIgK,BfFUPdIxOEDMyWXJvoS8qr" IsHidden="true" />
+            <Link Id="RfjfCpQbdLnMYZvwJ5tgkx" Ids="Vu6OVkmqtgGNy5XQ9G6GHh,FcO26ZYrnApNoedZxWJ8Wc" IsHidden="true" />
+            <Link Id="VSChjP9dlODMYDWn6qWImQ" Ids="B813iv6voq2ObglDaPn4Cd,Qs86WHWYKP7QAGrkMBp5Ni" IsHidden="true" />
+            <Link Id="MbRo2KsMjdTNLDxp2w0RKG" Ids="RCxVLf0SHErMryfNbQsXIt,TWqySAlS8trMOycLclvxQ5" />
+            <Link Id="SirAdG1PXnbLRrJoC5pgY9" Ids="FcO26ZYrnApNoedZxWJ8Wc,Ca9Wd5mVKqjMebtnOTC39Q" />
+            <Link Id="HyrFtU7zE1EM3IFxRK2rAx" Ids="Uj55N4Kh1p1P2xLjX1NnOZ,S3m8Phpc6dJNOBGVZLJbCJ" />
+            <Link Id="PeNjdU42WkmLJd3DcRThSU" Ids="R9hnoEGFmvaQWDKHyS09Jz,Uj55N4Kh1p1P2xLjX1NnOZ" IsHidden="true" />
+            <Link Id="LHi9A52qkyzPZX0mXjNe1o" Ids="QpkSxt8rR5nNWmGGohUyza,QGH3q95Cbk8L6KKj7RVvsC" />
+            <Link Id="IzeUkelryBEOPMd1yVPHd4" Ids="QpkSxt8rR5nNWmGGohUyza,OMPqtVdcqleOz8ektApemi" />
+            <Link Id="QP8Q6XK0eRSOGYa0rHy3nK" Ids="KywTuGei2SKOsSGYWoT6pD,IuLjCsmDW6iQQaJNKwXmqi" />
+            <Link Id="BqbgSYgDTXGM6kDG7QdaWW" Ids="BfFUPdIxOEDMyWXJvoS8qr,F33zcme0egOQEb41GWx6t3" />
+          </Patch>
+        </Node>
       </Canvas>
     </Canvas>
     <!--
