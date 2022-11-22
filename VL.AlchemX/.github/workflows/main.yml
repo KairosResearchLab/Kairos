@@ -3,10 +3,20 @@ name: push_nuget
 on:
   workflow_dispatch:
     inputs:
+      branch:
+        description: 'The branch to release from'
+        requred: true
+        default: 'main'
       version:
         description: 'The version to push'
         required: false
         default: 'X.X.X'
+      is_pre:
+        description: 'Is pre release'
+        type: boolean
+      notes:
+        description: 'A description for this release, will be displayed in the Releases section'
+        required: true
 
 jobs:
   build:
@@ -14,6 +24,8 @@ jobs:
     steps:
     - name: Git Checkout
       uses: actions/checkout@master
+      with:
+        ref: ${{ github.event.inputs.branch }}
     
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v1.0.2
@@ -24,6 +36,16 @@ jobs:
     - name: Publish VL Nuget
       uses: vvvv/PublishVLNuget@1.0.41
       with:
+        csproj:
         nuspec: deployment/VL.AlchemX.nuspec
         version: ${{ github.event.inputs.version }}
         nuget-key: ${{ secrets.NUGET_KEY }}
+
+    - name: Create tag and release
+      uses: avakar/tag-and-release@v1.0.0
+      with:
+        tag_name: ${{ format('Kairos {0}', github.event.inputs.version) }}
+        prerelease: ${{ github.event.inputs.is_pre }}
+        body: ${{ github.event.inputs.notes }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
