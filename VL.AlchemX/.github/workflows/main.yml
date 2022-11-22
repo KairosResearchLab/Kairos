@@ -1,4 +1,4 @@
-name: push_nuget
+name: release-alchemx
 
 on:
   workflow_dispatch:
@@ -44,7 +44,7 @@ jobs:
     - name: Create tag and release
       uses: avakar/tag-and-release@v1.0.0
       with:
-        tag_name: ${{ format('Kairos {0}', github.event.inputs.version) }}
+        tag_name: ${{ format('AlchemX {0}', github.event.inputs.version) }}
         prerelease: ${{ github.event.inputs.is_pre }}
         body: ${{ github.event.inputs.notes }}
       env:
