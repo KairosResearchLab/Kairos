@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="Q5gxGPO5irXPMzGPkC28oK" LanguageVersion="2022.5.0-0376-fb5b9f3634" Version="0.128">
+<Document xmlns:p="property" Id="Q5gxGPO5irXPMzGPkC28oK" LanguageVersion="2022.5.0-0390-383f5b6cc5" Version="0.128">
   <Patch Id="LXv0ddmdjXNQZnqEXXDb3W">
     <Canvas Id="KCGQRwxbluWObmtEmvdQAk" DefaultCategory="LayerX" CanvasType="FullCategory">
       <Canvas Id="Dv85rVoqEaYMIPpGsm5NCI" Name="1D" Position="163,485">
@@ -29,7 +29,7 @@
                 <p:NodeReference LastCategoryFullName="LayerX.Background.IBackgroundFunctionT" LastSymbolSource="VL.LayerX.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="SampleBackgroundT" />
-                  <CategoryReference Kind="Category" Name="IBackgroundFunctionT" NeedsToBeDirectParent="true" />
+                  <CategoryReference Kind="Category" Name="IBackgroundProviderT" NeedsToBeDirectParent="true" />
                 </p:NodeReference>
                 <Pin Id="El4lN6K6R8oNljxe75Yx6v" Name="Input" Kind="StateInputPin" />
                 <Pin Id="U7Ws8xqcsUaOwwGeLAUlft" Name="Output" Kind="OutputPin" />
@@ -61,7 +61,7 @@
             <Patch Id="MNwa9Qxkoe3OWrfvG6hYUe" Name="SampleT">
               <Pin Id="VcD3CesP90xMQ2QAmmOsm9" MergeId="495572" Name="Background Function" Kind="InputPin">
                 <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                  <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                  <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="K2KTnfCJgKfNLXiOA3kn1C" MergeId="321329" Name="Sampling Position" Kind="InputPin">
@@ -130,7 +130,7 @@
             <Patch Id="PreChKU2PSiLGGLa05YZDJ" Name="Sample">
               <Pin Id="FlS8x99HJ5fL4GNRIPKyRB" MergeId="335677" Name="Background Function" Kind="InputPin">
                 <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                  <Choice Kind="TypeFlag" Name="IBackgroundFunction" />
+                  <Choice Kind="TypeFlag" Name="IBackgroundProvider" />
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="HE9p87pkqx5L9FtdDFRaq3" MergeId="335676" Name="Sampling Position" Kind="InputPin">
@@ -184,7 +184,7 @@
                 <p:NodeReference LastCategoryFullName="LayerX.Background.IBackgroundFunctionT" LastSymbolSource="VL.LayerX.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="SampleBackgroundT" />
-                  <CategoryReference Kind="Category" Name="IBackgroundFunctionT" NeedsToBeDirectParent="true" />
+                  <CategoryReference Kind="Category" Name="IBackgroundProviderT" NeedsToBeDirectParent="true" />
                 </p:NodeReference>
                 <Pin Id="VCxlAVhwxtqLVbwwwsHnm1" Name="Input" Kind="StateInputPin" />
                 <Pin Id="O5yFXsns7SwMdO0jvC7wlQ" Name="Output" Kind="OutputPin" />
@@ -264,7 +264,7 @@
             <Patch Id="RlJyOQYZ1mMPzZibqLaCb7" Name="SampleT">
               <Pin Id="A6TTv1cn12wN3we2XPvWcF" MergeId="314272" Name="Background Function" Kind="InputPin">
                 <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                  <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                  <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                   <p:TypeArguments>
                     <TypeReference>
                       <Choice Kind="TypeFlag" Name="T" />
@@ -459,7 +459,7 @@
                   <Node Bounds="769,382,109,26" Id="B61UBVD3MUgQK4Y5D46Yrz">
                     <p:NodeReference LastCategoryFullName="LayerX.Background.IBackgroundFunctionT" LastSymbolSource="VL.LayerX.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <CategoryReference Kind="InterfaceTypeFlag" Name="IBackgroundFunctionT" />
+                      <CategoryReference Kind="InterfaceTypeFlag" Name="IBackgroundProviderT" />
                       <Choice Kind="OperationCallFlag" Name="SampleBackgroundT" />
                     </p:NodeReference>
                     <Pin Id="MZ6WAvnXY2DQdH3aGLndck" Name="Input" Kind="StateInputPin" />
@@ -586,10 +586,10 @@
           </Node>
           <!--
 
-    ************************ MinBoundTransportFunction ************************
+    ************************ PositionTransportFunction ************************
 
 -->
-          <Node Name="MinBoundTransportFunction" Bounds="267,725" Id="Gk0Px0DpRUBLaZuSNQRAHG">
+          <Node Name="PositionTransportFunction" Bounds="267,725" Id="Gk0Px0DpRUBLaZuSNQRAHG">
             <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
               <Choice Kind="ContainerDefinition" Name="Process" />
             </p:NodeReference>
@@ -654,7 +654,7 @@
               <Link Id="PtbfObdhV77LW1GxuQL6bu" Ids="AWHY8YryKg9L30Fw7amIPL,IohV5eujX6eL9jetiXdp5u" IsHidden="true" />
               <Patch Id="DkxgPCfuEVePGotxmB8q7m" Name="Create" />
               <Patch Id="JmHvhsyJn4JLPU4EaLZ3vx" Name="Update">
-                <Pin Id="ElNyeHzcxfOMZ7LlgDSvyQ" Name="Bound Min" Kind="InputPin" Bounds="480,230">
+                <Pin Id="ElNyeHzcxfOMZ7LlgDSvyQ" Name="Position" Kind="InputPin" Bounds="480,230">
                   <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
                     <Choice Kind="TypeFlag" Name="Float64" />
                   </p:TypeAnnotation>
@@ -683,7 +683,7 @@
     ************************ Interpolator1D ************************
 
 -->
-          <Node Name="Interpolator1D" Bounds="192,254" Id="OkqWZlWTOCsQUALJndKTny">
+          <Node Name="Interpolator1D" Bounds="192,314" Id="OkqWZlWTOCsQUALJndKTny">
             <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
               <Choice Kind="ClassDefinition" Name="Class" />
             </p:NodeReference>
@@ -697,7 +697,7 @@
                 <ControlPoint Id="Lsg0YpcAUmqQDnyM3zzTN2" Bounds="571,2031" />
                 <ControlPoint Id="E0QJw5yTQddN5jpOHgLeGj" Bounds="537,2008" />
                 <ControlPoint Id="F6cNf1vhB4rNPkwkcruREt" Bounds="570,2252" />
-                <Node Bounds="209,198,507,274" Id="UUdvBP2ApFoP3drB96lIbH">
+                <Node Bounds="229,198,186,126" Id="UUdvBP2ApFoP3drB96lIbH">
                   <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
                     <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                     <Choice Kind="ProcessStatefulRegion" Name="Cache" />
@@ -707,61 +707,10 @@
                   <Pin Id="TVyydKxW65uLabrNJ0X6Ue" Name="Dispose Cached Outputs" Kind="InputPin" />
                   <Pin Id="NkImTOjwL7mPaKT16UhUhx" Name="Has Changed" Kind="OutputPin" />
                   <ControlPoint Id="CE87BWpcRiWN6WX7X31fTs" Bounds="275,204" Alignment="Top" />
-                  <ControlPoint Id="TlUkWptAt3YLAV6tglIyAq" Bounds="409,466" Alignment="Bottom" />
-                  <ControlPoint Id="PhFzktGFIARMMEFjshuuKB" Bounds="529,466" Alignment="Bottom" />
-                  <ControlPoint Id="FoK9sqAG9VwOzTls5VAuan" Bounds="275,466" Alignment="Bottom" />
                   <Patch Id="Qmxx11v1nqdQS9mmhi2pLQ" ManuallySortedPins="true">
                     <Patch Id="NeHupWVBZhYLiijHvKeT75" Name="Create" ManuallySortedPins="true" />
                     <Patch Id="KSUCVSoIqvCMjtBcspnGMs" Name="Then" ManuallySortedPins="true" />
-                    <Node Bounds="261,336,443,108" Id="GxYnVK3r404MRYjsyoExVK">
-                      <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
-                        <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
-                        <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
-                        <CategoryReference Kind="Category" Name="Primitive" />
-                      </p:NodeReference>
-                      <Pin Id="OQPGKA2HfuBPqIc9U9u8Z8" Name="Break" Kind="OutputPin" />
-                      <ControlPoint Id="QUpFezUmvDoNaz4PXEfNMj" Bounds="275,342" Alignment="Top" />
-                      <ControlPoint Id="Dn2L66XRJaqOdZEenGQPoE" Bounds="409,438" Alignment="Bottom" />
-                      <ControlPoint Id="DRIaH7UMD9zMxBi4iwHzN0" Bounds="529,438" Alignment="Bottom" />
-                      <ControlPoint Id="CoGRlMeonLkMnJjcomn5V3" Bounds="275,438" Alignment="Bottom" />
-                      <Patch Id="NvyXpTPlV0tQCzp0nhhnY4" ManuallySortedPins="true">
-                        <Patch Id="VCIM5JXDGG8OghM62T1JsA" Name="Create" ManuallySortedPins="true" />
-                        <Patch Id="UARr5bD5lgpPIjFQ4NP2iJ" Name="Update" ManuallySortedPins="true">
-                          <Pin Id="K1OszfrAEr9QZaOrlYOXVt" Name="Keep" Kind="OutputPin" />
-                        </Patch>
-                        <Patch Id="AKtmnBmCxjgLLyOfRhjQfr" Name="Dispose" ManuallySortedPins="true" />
-                        <Node Bounds="303,375,92,26" Id="GO1QPkbFhQaLMjWD1EF24R">
-                          <p:NodeReference LastCategoryFullName="LayerX.1D.Interpolator1D.Keyframe (Interpolator1D)" LastSymbolSource="VL.LayerX.vl">
-                            <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                            <Choice Kind="OperationCallFlag" Name="GetBoundMin" />
-                          </p:NodeReference>
-                          <Pin Id="KvMY6tyaenmL6DClhXDp8B" Name="Input" Kind="StateInputPin" />
-                          <Pin Id="LED9tQwkpYzL4dhs7kgxDz" Name="Output" Kind="OutputPin" />
-                          <Pin Id="HN8ZNQoLO6XQIRUsuvtIjl" Name="Bound Min" Kind="OutputPin" />
-                        </Node>
-                        <Node Bounds="423,375,92,19" Id="UYiTfftLkcfOibyx67oxMv">
-                          <p:NodeReference LastCategoryFullName="LayerX.1D.Interpolator1D.Keyframe (Interpolator1D)" LastSymbolSource="VL.LayerX.vl">
-                            <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                            <Choice Kind="OperationCallFlag" Name="GetBoundMax" />
-                          </p:NodeReference>
-                          <Pin Id="J0biDj6zTfRLlepkgkdQAj" Name="Input" Kind="StateInputPin" />
-                          <Pin Id="RO2InAjKL3tN8CKZwBngF9" Name="Output" Kind="OutputPin" />
-                          <Pin Id="ULLJRusKx6PQWBwGjTFs2x" Name="Bound Max" Kind="OutputPin" />
-                        </Node>
-                        <Node Bounds="552,375,109,26" Id="NJC3qK51H31QaCSLaZMWJB">
-                          <p:NodeReference LastCategoryFullName="LayerX.1D.Interpolator1D.Keyframe (Interpolator1D)" LastSymbolSource="VL.LayerX.vl">
-                            <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                            <CategoryReference Kind="RecordType" Name="Keyframe (Interpolator1D)" NeedsToBeDirectParent="true" />
-                            <Choice Kind="OperationCallFlag" Name="GetEnabled" />
-                          </p:NodeReference>
-                          <Pin Id="SnU2yMH9nt2ND3hhXhZfyF" Name="Input" Kind="StateInputPin" />
-                          <Pin Id="UR78oCihMd2LdMvuLTcmmq" Name="Output" Kind="OutputPin" />
-                          <Pin Id="PJFFP1LcsM5NSoyKrJmjf0" Name="Enabled" Kind="OutputPin" />
-                        </Node>
-                        <ControlPoint Id="JSxaU6iIKOfP44kTDPFYFT" Bounds="658,419" />
-                      </Patch>
-                    </Node>
-                    <Node Bounds="273,227,130,80" Id="J0BrS1IAYANQAE7q7L8MLg">
+                    <Node Bounds="273,224,130,80" Id="J0BrS1IAYANQAE7q7L8MLg">
                       <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.CoreLib.vl">
                         <Choice Kind="OperationCallFlag" Name="Where" />
                         <CategoryReference Kind="RecordType" Name="Spread" NeedsToBeDirectParent="true" />
@@ -773,10 +722,10 @@
                         <Pin Id="AKEJeiX0NCEPgS8MCfx2VY" Name="Input 1" Kind="InputPin" />
                         <Pin Id="BKnd32juN9KPuXuMp3q9SZ" Name="Input 2" Kind="InputPin" />
                         <Pin Id="KzE6u0BuOq8P0JAsc3T9ot" Name="Result" Kind="OutputPin" />
-                        <ControlPoint Id="HFWNDX80O8HLkEaYooveRt" Bounds="287,235" />
-                        <ControlPoint Id="E8WsEvnxrvqOsx7E4UniGi" Bounds="347,235" />
-                        <ControlPoint Id="HWBg9W4AwSsO4FFSoHTmvu" Bounds="287,300" />
-                        <Node Bounds="285,256,65,19" Id="TO39rTX8cSHQWT0hJ6inF9">
+                        <ControlPoint Id="HFWNDX80O8HLkEaYooveRt" Bounds="287,232" />
+                        <ControlPoint Id="E8WsEvnxrvqOsx7E4UniGi" Bounds="347,232" />
+                        <ControlPoint Id="HWBg9W4AwSsO4FFSoHTmvu" Bounds="287,297" />
+                        <Node Bounds="285,253,65,19" Id="TO39rTX8cSHQWT0hJ6inF9">
                           <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="VL.CoreLib.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="OperationCallFlag" Name="IsAssigned" />
@@ -788,6 +737,7 @@
                       </Patch>
                     </Node>
                   </Patch>
+                  <ControlPoint Id="MDGGNMkD0XFME87WO2eDdX" Bounds="275,318" Alignment="Bottom" />
                 </Node>
                 <ControlPoint Id="OtY18K3DstXMduUiqTXGKK" Bounds="275,150" />
                 <Node Bounds="235,1439,37,19" Id="JyrszutRsNkP3UQqqFKFKI">
@@ -984,7 +934,7 @@
                         <Node Bounds="1046,1500,109,26" Id="K9f5OKgUl8FQUVbrzWPC43">
                           <p:NodeReference LastCategoryFullName="LayerX.Background.IBackgroundFunctionT" LastSymbolSource="VL.LayerX.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                            <CategoryReference Kind="InterfaceTypeFlag" Name="IBackgroundFunctionT" />
+                            <CategoryReference Kind="InterfaceTypeFlag" Name="IBackgroundProviderT" />
                             <Choice Kind="OperationCallFlag" Name="SampleBackgroundT" />
                           </p:NodeReference>
                           <Pin Id="IyA0xyFDY0VOq3ODxKeCyb" Name="Input" Kind="StateInputPin" />
@@ -1016,22 +966,20 @@
                     <Pin Id="LELoZnUnju2QPWCFxz2Uce" Name="Assigned" Kind="OutputPin" Bounds="1545,1010" />
                   </Patch>
                 </Node>
-                <Pad Id="TfPZ0Gx4fXsMpWQrzs1K57" SlotId="A5bVcCqEJ7dOu6OVyGWkG2" Bounds="409,509" />
-                <Pad Id="TdMXwXJNwsTNAULNAEWq2c" SlotId="HWAytuBVlLeOPn0NWN1DVU" Bounds="529,509" />
-                <Pad Id="Vum8jigOcoUPBPD8H6wxgb" SlotId="FNHi3hxnzdCMpWnFbqlnEr" Bounds="275,509" />
-                <Pad Id="UNrsQCtMm3nQGt6c5qdJbu" SlotId="HWAytuBVlLeOPn0NWN1DVU" Bounds="620,833" />
-                <Pad Id="Bnk39rNWWF9QHh5j4A7eKz" SlotId="A5bVcCqEJ7dOu6OVyGWkG2" Bounds="232,676" />
-                <Node Bounds="583,863,146,149" Id="N89UhEJjPLwOxbaA0gSRIL">
+                <Pad Id="TdMXwXJNwsTNAULNAEWq2c" SlotId="HWAytuBVlLeOPn0NWN1DVU" Bounds="439,671" />
+                <Pad Id="Vum8jigOcoUPBPD8H6wxgb" SlotId="FNHi3hxnzdCMpWnFbqlnEr" Bounds="275,357" />
+                <Pad Id="UNrsQCtMm3nQGt6c5qdJbu" SlotId="HWAytuBVlLeOPn0NWN1DVU" Bounds="707,848" />
+                <Node Bounds="670,878,146,150" Id="N89UhEJjPLwOxbaA0gSRIL">
                   <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
                     <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                     <Choice Kind="ApplicationStatefulRegion" Name="If" />
                     <FullNameCategoryReference ID="Primitive" />
                   </p:NodeReference>
                   <Pin Id="VR6Fg0I8FGcPZ89DGlBaoo" Name="Condition" Kind="InputPin" />
-                  <ControlPoint Id="FlrhMn99YSCMoHYapk9rIH" Bounds="597,1007" Alignment="Bottom" />
-                  <ControlPoint Id="Rl49Bucv2l0PyOXCyca9zc" Bounds="641,870" Alignment="Top" />
+                  <ControlPoint Id="FlrhMn99YSCMoHYapk9rIH" Bounds="684,1023" Alignment="Bottom" />
+                  <ControlPoint Id="Rl49Bucv2l0PyOXCyca9zc" Bounds="728,885" Alignment="Top" />
                   <Patch Id="UCYlPEunRz6PE6hfGLbiBB" ManuallySortedPins="true">
-                    <Node Bounds="595,934,122,19" Id="LWMpe6Hiq79LNWWoOHOGfz">
+                    <Node Bounds="682,949,122,19" Id="LWMpe6Hiq79LNWWoOHOGfz">
                       <p:NodeReference LastCategoryFullName="VL.Kairos.Layer.Utils" LastSymbolSource="VL.LayerX.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                         <Choice Kind="OperationCallFlag" Name="MapToUnitRangeClamp" />
@@ -1041,7 +989,7 @@
                       <Pin Id="IDnn1039MJcN14OcVMwkgw" Name="Input Maximum" Kind="InputPin" />
                       <Pin Id="FtaJ6O3m6L7NPRcpLY7A7p" Name="Output" Kind="OutputPin" />
                     </Node>
-                    <Node Bounds="595,962,62,19" Id="JuTDPeB3iUUPrDxS1AhBZe">
+                    <Node Bounds="682,977,62,19" Id="JuTDPeB3iUUPrDxS1AhBZe">
                       <p:NodeReference LastCategoryFullName="System.Conversion" LastSymbolSource="VL.CoreLib.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                         <Choice Kind="OperationCallFlag" Name="ToFloat32" />
@@ -1049,7 +997,7 @@
                       <Pin Id="E82CAAJgyD2QOJ472B2TmW" Name="Input" Kind="InputPin" />
                       <Pin Id="M24Ksq3UtpONHz5bl2DvOF" Name="Result" Kind="OutputPin" />
                     </Node>
-                    <Node Bounds="618,887,65,26" Id="DK23UDOiINTNyw1TCF5QRG">
+                    <Node Bounds="705,902,65,26" Id="DK23UDOiINTNyw1TCF5QRG">
                       <p:NodeReference LastCategoryFullName="Collections.Interfaces.IReadOnlyList" LastSymbolSource="VL.CoreLib.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                         <CategoryReference Kind="MutableInterfaceType" Name="IReadOnlyList" />
@@ -1064,9 +1012,9 @@
                     <Patch Id="ER2nzZweEhMMxa9JnAcDnF" Name="Then" ManuallySortedPins="true" />
                   </Patch>
                 </Node>
-                <ControlPoint Id="LDFGvdisiorOfgAiXGBMA2" Bounds="598,797" />
-                <ControlPoint Id="PW6ABNk72OLQMqcwIhzM3K" Bounds="607,748" />
-                <Node Bounds="230,700,358,19" Id="S8xaTXv9UU5K9lvpyyephS">
+                <ControlPoint Id="LDFGvdisiorOfgAiXGBMA2" Bounds="685,812" />
+                <ControlPoint Id="PW6ABNk72OLQMqcwIhzM3K" Bounds="694,763" />
+                <Node Bounds="317,715,358,19" Id="S8xaTXv9UU5K9lvpyyephS">
                   <p:NodeReference LastCategoryFullName="Collections" LastSymbolSource="VL.CoreLib.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="BinarySearch" />
@@ -1080,13 +1028,13 @@
                   <Pin Id="OXKgxEXOPeAQIh0vFAmv5f" Name="Upper Index" Kind="OutputPin" />
                   <Pin Id="QP1r5OAVZfMOyeJyrcp5OI" Name="Success" Kind="OutputPin" />
                 </Node>
-                <ControlPoint Id="DncGNgxVWuqOJFXSHCVxaI" Bounds="585,661" />
-                <Overlay Id="Uyvp9FQMYNILe72qeD898K" Name="Binary Search and Clip HitTest" Bounds="130,586,642,503">
+                <ControlPoint Id="DncGNgxVWuqOJFXSHCVxaI" Bounds="672,691" />
+                <Overlay Id="Uyvp9FQMYNILe72qeD898K" Name="Binary Search and Clip HitTest" Bounds="131,453,728,636">
                   <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
                 </Overlay>
-                <Pad Id="GT3NFxTHqlXQXvwSdA8N14" SlotId="Udv2fs7Rs2dOzrgINFmqOk" Bounds="377,952" />
-                <Pad Id="OuuEz0UPPMaMuCMdaACldW" SlotId="NzUQTyIHF7hPx7D7fdKuI8" Bounds="597,1034" />
-                <Pad Id="IyQBNnjxm6hOgYZ6LMlHVk" SlotId="KaemmcvRa3kPnHowxbSZDv" Bounds="408,763" />
+                <Pad Id="GT3NFxTHqlXQXvwSdA8N14" SlotId="Udv2fs7Rs2dOzrgINFmqOk" Bounds="326,967" />
+                <Pad Id="OuuEz0UPPMaMuCMdaACldW" SlotId="NzUQTyIHF7hPx7D7fdKuI8" Bounds="684,1049" />
+                <Pad Id="IyQBNnjxm6hOgYZ6LMlHVk" SlotId="KaemmcvRa3kPnHowxbSZDv" Bounds="495,757" />
                 <Node Bounds="272,1997,36,19" Id="IcseuF5IHpOPWHGh4Gjn5f">
                   <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -1101,7 +1049,7 @@
                 <Pad Id="PltuOYOvwv6N99JwKpFsr2" SlotId="FNHi3hxnzdCMpWnFbqlnEr" Bounds="458,1233" />
                 <Pad Id="VaTBRC3uWzVMfQfsylQky7" SlotId="FNHi3hxnzdCMpWnFbqlnEr" Bounds="361,1488" />
                 <Pad Id="USJnCiONbCsPgFTSUMW1pQ" SlotId="NzUQTyIHF7hPx7D7fdKuI8" Bounds="698,1465" />
-                <Pad Id="BHlD5vLr5RJMGS7XJwzk4b" SlotId="JxtMrP61t4rNbqHXwPu0pW" Bounds="497,763" />
+                <Pad Id="BHlD5vLr5RJMGS7XJwzk4b" SlotId="JxtMrP61t4rNbqHXwPu0pW" Bounds="584,757" />
                 <Pad Id="DkCFlk4nh6yN5PloBUU74b" SlotId="JxtMrP61t4rNbqHXwPu0pW" Bounds="408,1463" />
                 <Overlay Id="I9Eee0TgHlJMj91h8G2gTO" Name="Interpolate T" Bounds="132,1165,628,689">
                   <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
@@ -1166,11 +1114,10 @@
                 <Overlay Id="OtEILG26HTELMMF51qNy0e" Name="SampleT" Bounds="131,1910,668,406">
                   <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
                 </Overlay>
-                <Overlay Id="JEP4qRByF29QDuIuw3Zi7q" Name="SetClips" Bounds="131,101,683,438">
+                <Overlay Id="JEP4qRByF29QDuIuw3Zi7q" Name="SetClips" Bounds="131,101,683,293">
                   <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
                 </Overlay>
-                <Pad Id="GRyGREdMb0bNSESadEZYvW" SlotId="FNHi3hxnzdCMpWnFbqlnEr" Bounds="230,835" />
-                <Node Bounds="228,853,65,26" Id="PWZopxRxeNBMXFSQ2PaEPM">
+                <Node Bounds="212,868,65,26" Id="PWZopxRxeNBMXFSQ2PaEPM">
                   <p:NodeReference LastCategoryFullName="Collections.Interfaces.IReadOnlyList" LastSymbolSource="VL.CoreLib.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <CategoryReference Kind="MutableInterfaceType" Name="IReadOnlyList" />
@@ -1181,7 +1128,7 @@
                   <Pin Id="MARMFxswm25MTG79DrIBTn" Name="Output" Kind="StateOutputPin" />
                   <Pin Id="KGmGXUATjU0LtS1YpJjdcJ" Name="Item" Kind="OutputPin" />
                 </Node>
-                <Node Bounds="288,900,92,26" Id="ShxH6vhoDiOLxjkIOMZvIX">
+                <Node Bounds="272,915,109,26" Id="ShxH6vhoDiOLxjkIOMZvIX">
                   <p:NodeReference LastCategoryFullName="LayerX.1D.Interpolator1D.Keyframe (Interpolator1D)" LastSymbolSource="VL.LayerX.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <CategoryReference Kind="RecordType" Name="Keyframe (Interpolator1D)" NeedsToBeDirectParent="true" />
@@ -1191,45 +1138,68 @@
                   <Pin Id="PfmunU4SaXhNDnJ9lX5fb3" Name="Sampling Position" Kind="InputPin" />
                   <Pin Id="GB4OPAV8qSWM6y0fPGg1Zr" Name="Output" Kind="StateOutputPin" />
                   <Pin Id="R7Am9bmOt81PGl1zLp20uT" Name="Result" Kind="OutputPin" />
+                  <Pin Id="LJIbEGQgoUOQAx6IeECH29" Name="Sampling is After" Kind="OutputPin" />
                 </Node>
-                <ControlPoint Id="MJ3vp1YIfehNEGi6pEHofG" Bounds="377,886" />
+                <ControlPoint Id="MJ3vp1YIfehNEGi6pEHofG" Bounds="378,885" />
                 <ControlPoint Id="SAlH9mICbByPu4no2imT7Z" Bounds="525,1492" />
                 <ControlPoint Id="TMPxSi6tZHyNNPh4ZstbmO" Bounds="385,1328" />
                 <ControlPoint Id="EGWSrKdEgbMQZgCUqg7qVp" Bounds="618,2055" />
-                <Pad Id="I4zIImmr3lmPKicSZDbJbv" Comment="Force" Bounds="969,391,35,35" ShowValueBox="true" isIOBox="true" Value="True">
-                  <p:TypeAnnotation>
-                    <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+                <Node Bounds="201,551,413,96" Id="GxYnVK3r404MRYjsyoExVK">
+                  <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+                    <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                    <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
                     <CategoryReference Kind="Category" Name="Primitive" />
-                  </p:TypeAnnotation>
-                  <p:ValueBoxSettings>
-                    <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
-                  </p:ValueBoxSettings>
-                </Pad>
-                <Pad Id="A8RRxi3zCYdLKyPtkx4Mol" Bounds="863,464,174,251" ShowValueBox="true" isIOBox="true" Value="now keyframes are Classes!!!!! rework the interpolator">
-                  <p:TypeAnnotation>
-                    <Choice Kind="TypeFlag" Name="String" />
-                  </p:TypeAnnotation>
-                  <p:ValueBoxSettings>
-                    <p:fontsize p:Type="Int32">20</p:fontsize>
-                    <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
-                  </p:ValueBoxSettings>
-                </Pad>
-                <Pad Id="IvMBheI6YJRPKzW2kXV14M" Bounds="1068,429,282,391" ShowValueBox="true" isIOBox="true" Value="1, 0, 0, 1">
-                  <p:TypeAnnotation>
-                    <Choice Kind="ImmutableTypeFlag" Name="RGBA" />
-                    <CategoryReference Kind="Category" Name="Color" />
-                  </p:TypeAnnotation>
-                </Pad>
+                  </p:NodeReference>
+                  <Pin Id="OQPGKA2HfuBPqIc9U9u8Z8" Name="Break" Kind="OutputPin" />
+                  <ControlPoint Id="QUpFezUmvDoNaz4PXEfNMj" Bounds="215,558" Alignment="Top" />
+                  <ControlPoint Id="Dn2L66XRJaqOdZEenGQPoE" Bounds="319,642" Alignment="Bottom" />
+                  <ControlPoint Id="DRIaH7UMD9zMxBi4iwHzN0" Bounds="439,642" Alignment="Bottom" />
+                  <Patch Id="NvyXpTPlV0tQCzp0nhhnY4" ManuallySortedPins="true">
+                    <Patch Id="VCIM5JXDGG8OghM62T1JsA" Name="Create" ManuallySortedPins="true" />
+                    <Patch Id="UARr5bD5lgpPIjFQ4NP2iJ" Name="Update" ManuallySortedPins="true">
+                      <Pin Id="K1OszfrAEr9QZaOrlYOXVt" Name="Keep" Kind="OutputPin" />
+                    </Patch>
+                    <Patch Id="AKtmnBmCxjgLLyOfRhjQfr" Name="Dispose" ManuallySortedPins="true" />
+                    <Node Bounds="213,582,109,26" Id="GO1QPkbFhQaLMjWD1EF24R">
+                      <p:NodeReference LastCategoryFullName="LayerX.1D.Interpolator1D.Keyframe (Interpolator1D)" LastSymbolSource="VL.LayerX.vl">
+                        <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                        <Choice Kind="OperationCallFlag" Name="GetPosition" />
+                      </p:NodeReference>
+                      <Pin Id="KvMY6tyaenmL6DClhXDp8B" Name="Input" Kind="StateInputPin" />
+                      <Pin Id="LED9tQwkpYzL4dhs7kgxDz" Name="Output" Kind="OutputPin" />
+                      <Pin Id="HN8ZNQoLO6XQIRUsuvtIjl" Name="Position" Kind="OutputPin" />
+                    </Node>
+                    <Node Bounds="333,582,109,26" Id="UYiTfftLkcfOibyx67oxMv">
+                      <p:NodeReference LastCategoryFullName="LayerX.1D.Interpolator1D.Keyframe (Interpolator1D)" LastSymbolSource="VL.LayerX.vl">
+                        <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                        <Choice Kind="OperationCallFlag" Name="GetEndPosition" />
+                      </p:NodeReference>
+                      <Pin Id="J0biDj6zTfRLlepkgkdQAj" Name="Input" Kind="StateInputPin" />
+                      <Pin Id="RO2InAjKL3tN8CKZwBngF9" Name="Output" Kind="OutputPin" />
+                      <Pin Id="ULLJRusKx6PQWBwGjTFs2x" Name="End Position" Kind="OutputPin" />
+                    </Node>
+                    <Node Bounds="462,582,109,26" Id="NJC3qK51H31QaCSLaZMWJB">
+                      <p:NodeReference LastCategoryFullName="LayerX.1D.Interpolator1D.Keyframe (Interpolator1D)" LastSymbolSource="VL.LayerX.vl">
+                        <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                        <CategoryReference Kind="RecordType" Name="Keyframe (Interpolator1D)" NeedsToBeDirectParent="true" />
+                        <Choice Kind="OperationCallFlag" Name="GetEnabled" />
+                      </p:NodeReference>
+                      <Pin Id="SnU2yMH9nt2ND3hhXhZfyF" Name="Input" Kind="StateInputPin" />
+                      <Pin Id="UR78oCihMd2LdMvuLTcmmq" Name="Output" Kind="OutputPin" />
+                      <Pin Id="PJFFP1LcsM5NSoyKrJmjf0" Name="Enabled" Kind="OutputPin" />
+                    </Node>
+                    <ControlPoint Id="JSxaU6iIKOfP44kTDPFYFT" Bounds="568,626" />
+                  </Patch>
+                  <ControlPoint Id="CkzcviH3a4ZPbIyOBmNhzV" Bounds="215,642" Alignment="Bottom" />
+                </Node>
+                <Pad Id="VVcuxLiSUnaOpAC9sQdlCW" SlotId="FNHi3hxnzdCMpWnFbqlnEr" Bounds="215,530" />
+                <Pad Id="BNkBDsKhoeELV9H1eTPNqU" SlotId="FNHi3hxnzdCMpWnFbqlnEr" Bounds="215,671" />
               </Canvas>
               <Link Id="PsLivK7GDZxLDPazDUTeIY" Ids="STL5PoGh3keQdfhjlwelZX,Lsg0YpcAUmqQDnyM3zzTN2" IsHidden="true" />
               <Link Id="L5JH2DQP3NdNGKiJiuhSXq" Ids="Irkh9nwhhDwL3mY9qwcQIr,E0QJw5yTQddN5jpOHgLeGj" IsHidden="true" />
               <Link Id="MZqcFaAygeOPh26xCoFDuN" Ids="F6cNf1vhB4rNPkwkcruREt,QR5doMzg7hpOeM0GTRPi13" IsHidden="true" />
-              <Link Id="QXD62OTivn0OLBQLnFxjHK" Ids="QUpFezUmvDoNaz4PXEfNMj,KvMY6tyaenmL6DClhXDp8B" />
-              <Link Id="OdY2Eh9B6LLOe1kj4xGmxB" Ids="Dn2L66XRJaqOdZEenGQPoE,TlUkWptAt3YLAV6tglIyAq" />
-              <Link Id="HGQBtrxtU1VNJSYrWVhxhh" Ids="DRIaH7UMD9zMxBi4iwHzN0,PhFzktGFIARMMEFjshuuKB" />
               <Link Id="AYcwSvf3tkGNMpYXXWHeIZ" Ids="Lsg0YpcAUmqQDnyM3zzTN2,MSK43zwO4rKNDrTJCl8DA3" />
               <Link Id="HTzPsRQShcrPtWHnlauD9G" Ids="Uw40Vd5KT2KNGjLFyqysMj,OtY18K3DstXMduUiqTXGKK" IsHidden="true" />
-              <Link Id="HT1fMDgtHeuNf4h9J6tsXl" Ids="QUpFezUmvDoNaz4PXEfNMj,J0biDj6zTfRLlepkgkdQAj" />
               <ProcessDefinition Id="NpwkxdE2tFtOmlfLXYUtZs" HasStateOut="true">
                 <Fragment Id="TDft9JKRscdQTwY9ptY4zn" Patch="UwhGSgVVpKKO5nOGGVHrmg" Enabled="true" />
                 <Fragment Id="GbcsvsiVZ2bMiOwzHQ3gFs" Patch="IIDsjppci3eQNJKZo5KxRE" Enabled="true" />
@@ -1239,11 +1209,6 @@
                 <Fragment Id="C10EQDSS5yZPKexpB5nKAD" Patch="UCgVaFjVCFfLrSzDxSFvk4" />
               </ProcessDefinition>
               <Link Id="B0zhwfrcjunLPxRSQE0ayz" Ids="E0QJw5yTQddN5jpOHgLeGj,KbNWZxtobVPLebHM9CeiZS" />
-              <Link Id="JkISey7K4TvQOotFnkXpH1" Ids="QUpFezUmvDoNaz4PXEfNMj,SnU2yMH9nt2ND3hhXhZfyF" />
-              <Link Id="HjJEcG6BSM6LB7qJqbikXO" Ids="JSxaU6iIKOfP44kTDPFYFT,K1OszfrAEr9QZaOrlYOXVt" IsHidden="true" />
-              <Link Id="RGFrkPZI4aoM7rFVuCx7gO" Ids="PJFFP1LcsM5NSoyKrJmjf0,JSxaU6iIKOfP44kTDPFYFT" />
-              <Link Id="FA7rj46Ex0qLfC1thBeHR9" Ids="QUpFezUmvDoNaz4PXEfNMj,CoGRlMeonLkMnJjcomn5V3" />
-              <Link Id="RIBjRNIrvRjMuB9a4PFO1V" Ids="CoGRlMeonLkMnJjcomn5V3,FoK9sqAG9VwOzTls5VAuan" />
               <Link Id="AkdlK8Ob5YKM3NKGDyEHW3" Ids="OtY18K3DstXMduUiqTXGKK,CE87BWpcRiWN6WX7X31fTs" />
               <Link Id="KJetPxbSmagPbVO9suoU6A" Ids="AKEJeiX0NCEPgS8MCfx2VY,HFWNDX80O8HLkEaYooveRt" IsHidden="true" />
               <Link Id="JXkV8TKL16HQQAudaEswMD" Ids="BKnd32juN9KPuXuMp3q9SZ,E8WsEvnxrvqOsx7E4UniGi" IsHidden="true" />
@@ -1251,9 +1216,6 @@
               <Link Id="QMquqP7a0D9PLfkRhs0aLC" Ids="CE87BWpcRiWN6WX7X31fTs,D7bLDXexvHmP92QNsRRjXV" />
               <Link Id="FiuiUdUrnN3QC1RDZTMNfR" Ids="HFWNDX80O8HLkEaYooveRt,O5scPqqUwhRNdjkjJo2ciK" />
               <Link Id="CZ336wYYywnNrmZJvZdMr9" Ids="HFbJtmkTuDnOPGOBYJehl5,HWBg9W4AwSsO4FFSoHTmvu" />
-              <Link Id="SwjNkAhvkrxLlaaH8FroH7" Ids="Vc3WShqWAILPG3kz0e5TTv,QUpFezUmvDoNaz4PXEfNMj" />
-              <Link Id="RsWaVNIawh8OiR57t5VMlN" Ids="HN8ZNQoLO6XQIRUsuvtIjl,Dn2L66XRJaqOdZEenGQPoE" />
-              <Link Id="OQaBjUuPHMXNaKroHYD523" Ids="ULLJRusKx6PQWBwGjTFs2x,DRIaH7UMD9zMxBi4iwHzN0" />
               <Link Id="BsunGlFCQ7kLRkLrIyH74e" Ids="FvrUpglPm8XQFJohVjdEcF,VVaR3fxtyi2MK8PiqwmG7k" IsFeedback="true" />
               <Link Id="POTJl5brBNkNv04ebavzzM" Ids="UhGX6KUS7L6MrxQ3dbr3fG,DLSQcM0547iNK7VAGjrTOv" IsHidden="true" />
               <Link Id="Alf8BJuVEs0N97dG42sFy2" Ids="EZR2L4T5xqoP7J0T31dA7d,QwtkhPGbDBOLRhQL53irQQ" />
@@ -1274,11 +1236,7 @@
               <Link Id="BCqoeXXbTwqOw5TLWQWhMs" Ids="KAHlqxqrTLlOs8h9muzgOi,FgmAtW6CxeyOJBpsNCdjXK" />
               <Link Id="QwJ4srFNwtbPcLbAUMRzy3" Ids="VdDCEhdvTHRNF0rEfxpMBW,I6TNCmdkLl2Ljfv5j9K8YM" />
               <Link Id="TiiWdmPTY59OiPFiL85DY7" Ids="TYFzxlssfNeNwPNHOWVkIn,EkPZdQ544PvP69IEdE0bn3" IsHidden="true" />
-              <Slot Id="A5bVcCqEJ7dOu6OVyGWkG2" Name="Bound Min" />
-              <Link Id="NlgcUFGMIgIL0jHZxPRATM" Ids="TlUkWptAt3YLAV6tglIyAq,TfPZ0Gx4fXsMpWQrzs1K57" />
-              <Slot Id="HWAytuBVlLeOPn0NWN1DVU" Name="Bound Max" />
-              <Link Id="PdTX6p0m5KCMgbzzFzNUeu" Ids="PhFzktGFIARMMEFjshuuKB,TdMXwXJNwsTNAULNAEWq2c" />
-              <Link Id="D13yGsKkFoDMCBn80mWIy4" Ids="FoK9sqAG9VwOzTls5VAuan,Vum8jigOcoUPBPD8H6wxgb" />
+              <Slot Id="HWAytuBVlLeOPn0NWN1DVU" Name="End Position" />
               <Slot Id="FNHi3hxnzdCMpWnFbqlnEr" Name="Shapes" />
               <Link Id="KxiAxE4CBlcP3oiKzzSir8" Ids="Rl49Bucv2l0PyOXCyca9zc,FlrhMn99YSCMoHYapk9rIH" IsFeedback="true" />
               <Link Id="P5qaVYqehYIO9RtOrc53WW" Ids="M24Ksq3UtpONHz5bl2DvOF,FlrhMn99YSCMoHYapk9rIH" />
@@ -1288,12 +1246,10 @@
               <Link Id="GJv1rTQqTenPdGXfuwOkMF" Ids="FtaJ6O3m6L7NPRcpLY7A7p,E82CAAJgyD2QOJ472B2TmW" />
               <Link Id="K2tHPQYWIZQP2ZIGn4Wzlg" Ids="Qen2gSeoBUKOcITCRrRo4w,DncGNgxVWuqOJFXSHCVxaI" IsHidden="true" />
               <Link Id="VVEQEtK7aLLLV1V0FtQbmq" Ids="DncGNgxVWuqOJFXSHCVxaI,DwqEv8xKHVbQGXtKYDW0iy" />
-              <Link Id="QQBPcW5sJNNPOd1K8nZRdN" Ids="SizH5mrMSoFNwHYo8YppOY,PBS0zV5JMPNNBDxUklkfkv" />
               <Link Id="OqjWHzbZoeaLaWKTa2j74s" Ids="NMwN5hWseh2Ma3ooEOp5L3,IDnn1039MJcN14OcVMwkgw" />
               <Link Id="DUYHTpWbIvkQReqZYaCtlj" Ids="QP1r5OAVZfMOyeJyrcp5OI,PW6ABNk72OLQMqcwIhzM3K" />
               <Link Id="AKLRO6NyKIvPtrXYs5L12r" Ids="QP1r5OAVZfMOyeJyrcp5OI,VR6Fg0I8FGcPZ89DGlBaoo" />
               <Link Id="DYb0kkNjZwSNhQaIjVVTEN" Ids="DD8Lr0hjGF9NrM11aIq0yd,QK2lsKDrVYHOvNMNAadhEd" />
-              <Link Id="DGIiQC1YQPbM2z0rJmReDJ" Ids="Bnk39rNWWF9QHh5j4A7eKz,NAdOJ3ksfOiMjDS7P6tnhp" />
               <Link Id="C3Augzasj08NyanzIMFmqI" Ids="UNrsQCtMm3nQGt6c5qdJbu,HEf3Jpdz1rvPLMTz6Befke" />
               <Slot Id="Udv2fs7Rs2dOzrgINFmqOk" Name="Hit Test Result" />
               <Link Id="D1bdvexHtZsMNwW7nwgfiI" Ids="FlrhMn99YSCMoHYapk9rIH,OuuEz0UPPMaMuCMdaACldW" />
@@ -1318,8 +1274,6 @@
               <Link Id="FnRTxdNO1IJNUhkTuqxpAw" Ids="RrzjXB7GPvHLaMEldIN52N,TZwGZJuFAivMaX7PkeolBs" IsFeedback="true" />
               <Link Id="AqPSA2beFycMCTsZgAvzmv" Ids="TZwGZJuFAivMaX7PkeolBs,F6cNf1vhB4rNPkwkcruREt" />
               <Link Id="LjQ48GewSmlOwQFmsQ8UL4" Ids="HlDazdFaES6PImc8Mq8Hxz,TZwGZJuFAivMaX7PkeolBs" />
-              <Link Id="NQslyQckphHP77sQVC6pt9" Ids="GRyGREdMb0bNSESadEZYvW,IbgDJRupMksNLPstV4wryS" />
-              <Link Id="BGvxBKr6Nj5NlnYRj0nAVI" Ids="SizH5mrMSoFNwHYo8YppOY,K18wPFa6DqZNqjam8BnCU4" />
               <Link Id="USNjuTh1t36MtdLM2yZ4N4" Ids="KGmGXUATjU0LtS1YpJjdcJ,ScyQfXCs7LKNV73CRYITXD" />
               <Link Id="VFVTQJVj2geNnoFN3mS4PJ" Ids="R7Am9bmOt81PGl1zLp20uT,GT3NFxTHqlXQXvwSdA8N14" />
               <Link Id="OjsuqGBl1HUPyVWy4Chs2I" Ids="Qen2gSeoBUKOcITCRrRo4w,MJ3vp1YIfehNEGi6pEHofG" IsHidden="true" />
@@ -1334,7 +1288,7 @@
               <Patch Id="HJjtUpfB2yIOBnXinh13Nq" Name="SampleT">
                 <Pin Id="Irkh9nwhhDwL3mY9qwcQIr" MergeId="314272" Name="Background Function" Kind="InputPin">
                   <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                    <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                     <p:TypeArguments>
                       <TypeReference>
                         <Choice Kind="TypeFlag" Name="T" />
@@ -1360,7 +1314,7 @@
                 </Pin>
                 <Pin Id="Vx4y6xI0lScMMrGbz6F3aD" Name="Alpha Function" Kind="InputPin" />
               </Patch>
-              <Patch Id="IIDsjppci3eQNJKZo5KxRE" Name="SetClips" ParticipatingElements="NlgcUFGMIgIL0jHZxPRATM,PdTX6p0m5KCMgbzzFzNUeu,D13yGsKkFoDMCBn80mWIy4">
+              <Patch Id="IIDsjppci3eQNJKZo5KxRE" Name="SetClips" ParticipatingElements="K4unGoZDVnDPsdDPg2mGeK">
                 <Pin Id="Uw40Vd5KT2KNGjLFyqysMj" Name="Keyframes" Kind="InputPin" />
               </Patch>
               <Patch Id="UCgVaFjVCFfLrSzDxSFvk4" Name="BinarySearchAndHitTest" ParticipatingElements="S8xaTXv9UU5K9lvpyyephS,PWZopxRxeNBMXFSQ2PaEPM">
@@ -1369,7 +1323,23 @@
               </Patch>
               <Link Id="ASw4g1UlLbfPPwmAOW1oeW" Ids="VdDCEhdvTHRNF0rEfxpMBW,B5XwfnOStWNQTM1K5lizBG" />
               <Link Id="O2Jggdqaxu2M7RCtZMi9Du" Ids="VjYSbtkBZnTLVyzrFm6Nx3,GKcsNgnOW0TNFjzkEwnjF1" />
-              <Link Id="DCWnvukIldqLky1ZWOKdoF" Ids="I4zIImmr3lmPKicSZDbJbv,O7jHQ17HmNzObtkhgtPXGO" />
+              <Link Id="QXD62OTivn0OLBQLnFxjHK" Ids="QUpFezUmvDoNaz4PXEfNMj,KvMY6tyaenmL6DClhXDp8B" />
+              <Link Id="HT1fMDgtHeuNf4h9J6tsXl" Ids="QUpFezUmvDoNaz4PXEfNMj,J0biDj6zTfRLlepkgkdQAj" />
+              <Link Id="JkISey7K4TvQOotFnkXpH1" Ids="QUpFezUmvDoNaz4PXEfNMj,SnU2yMH9nt2ND3hhXhZfyF" />
+              <Link Id="HjJEcG6BSM6LB7qJqbikXO" Ids="JSxaU6iIKOfP44kTDPFYFT,K1OszfrAEr9QZaOrlYOXVt" IsHidden="true" />
+              <Link Id="RGFrkPZI4aoM7rFVuCx7gO" Ids="PJFFP1LcsM5NSoyKrJmjf0,JSxaU6iIKOfP44kTDPFYFT" />
+              <Link Id="RsWaVNIawh8OiR57t5VMlN" Ids="HN8ZNQoLO6XQIRUsuvtIjl,Dn2L66XRJaqOdZEenGQPoE" />
+              <Link Id="OQaBjUuPHMXNaKroHYD523" Ids="ULLJRusKx6PQWBwGjTFs2x,DRIaH7UMD9zMxBi4iwHzN0" />
+              <Link Id="DBbfDYxAaSsQBtCKD3GjpM" Ids="DRIaH7UMD9zMxBi4iwHzN0,TdMXwXJNwsTNAULNAEWq2c" />
+              <Link Id="KzEUiI95rxzQZprccnZqqA" Ids="Vc3WShqWAILPG3kz0e5TTv,MDGGNMkD0XFME87WO2eDdX" />
+              <Link Id="K4unGoZDVnDPsdDPg2mGeK" Ids="MDGGNMkD0XFME87WO2eDdX,Vum8jigOcoUPBPD8H6wxgb" />
+              <Link Id="AztKqPBhJOXQKVSPxDfOF1" Ids="VVcuxLiSUnaOpAC9sQdlCW,QUpFezUmvDoNaz4PXEfNMj" />
+              <Link Id="REudFyWFbp5N1PvaffK1rA" Ids="Dn2L66XRJaqOdZEenGQPoE,NAdOJ3ksfOiMjDS7P6tnhp" />
+              <Link Id="PTF209esssROgl6w9ycC3f" Ids="CkzcviH3a4ZPbIyOBmNhzV,BNkBDsKhoeELV9H1eTPNqU" />
+              <Link Id="MhA04VwCvVoNLaXsJV5BWv" Ids="BNkBDsKhoeELV9H1eTPNqU,IbgDJRupMksNLPstV4wryS" />
+              <Link Id="CeQop5l4NenOcfrd7Wzp6e" Ids="LED9tQwkpYzL4dhs7kgxDz,CkzcviH3a4ZPbIyOBmNhzV" />
+              <Link Id="Cce8Tn4evx2Lp7mHzhIiR5" Ids="IyQBNnjxm6hOgYZ6LMlHVk,K18wPFa6DqZNqjam8BnCU4" />
+              <Link Id="UFnisr9c945OeXn143qufW" Ids="IyQBNnjxm6hOgYZ6LMlHVk,PBS0zV5JMPNNBDxUklkfkv" />
             </Patch>
           </Node>
           <!--
@@ -1377,7 +1347,7 @@
     ************************ Keyframe (Interpolator1D) ************************
 
 -->
-          <Node Name="Keyframe (Interpolator1D)" Bounds="192,167" Id="BqLH4wkfexoQdBaBEelayF">
+          <Node Name="Keyframe (Interpolator1D)" Bounds="192,242" Id="BqLH4wkfexoQdBaBEelayF">
             <p:NodeReference>
               <Choice Kind="ClassDefinition" Name="Class" />
               <CategoryReference Kind="Category" Name="Primitive" />
@@ -1385,12 +1355,10 @@
             <Patch Id="RwGw9XA7O37PaJMCttQjah" IsGeneric="true" ExplicitTypeParameters="T">
               <Canvas Id="JqDeJYIXZ9VONL3JMbv0DC" CanvasType="Group">
                 <Pad Id="CG2M1Fj90GVMKpnoCLK75j" SlotId="Onl6mokuWruOnwFMWUQrKx" Bounds="200,597" />
-                <ControlPoint Id="DfoUzFr5oXQMU9qosyul53" Bounds="404,211" />
-                <ControlPoint Id="IdI1GubQ1AIPgGQVcZIyde" Bounds="407,306" />
                 <ControlPoint Id="C708uDABFAcP0EIv9ifgwj" Bounds="227,646" />
                 <ControlPoint Id="PC37BITrnEeMrdI2UeXTrQ" Bounds="200,534" />
-                <Pad Id="NbfpfRg0L8WOg0Y67r1FfR" SlotId="SADYPYo54tDOwmEy2Tm3nu" Bounds="1018,260" />
-                <ControlPoint Id="UmkLK5Gfj7oNcdATO22fBq" Bounds="1018,187" />
+                <Pad Id="NbfpfRg0L8WOg0Y67r1FfR" SlotId="SADYPYo54tDOwmEy2Tm3nu" Bounds="1018,255" />
+                <ControlPoint Id="UmkLK5Gfj7oNcdATO22fBq" Bounds="1018,184" />
                 <ControlPoint Id="Puy6sxKXCKONrsnsZXqQfv" Bounds="1018,321" />
                 <!--
 
@@ -1435,12 +1403,12 @@
                   <Pin Id="Q7UbkJ3UqWVNYsoKZ8Dj52" Name="Output" Kind="StateOutputPin" />
                   <Pin Id="HQSTHLKBDPkOamKLJasGGQ" Name="Value" Kind="OutputPin" />
                 </Node>
-                <Pad Id="EiA9mTLunDLMoW58CtLKlu" SlotId="EF1r2fmYVh0NS1oAzX6KWx" Bounds="1290,264" />
-                <ControlPoint Id="Pld5fZn17e1Mmg5Llwr4nR" Bounds="1290,191" />
+                <Pad Id="EiA9mTLunDLMoW58CtLKlu" SlotId="EF1r2fmYVh0NS1oAzX6KWx" Bounds="1290,255" />
+                <ControlPoint Id="Pld5fZn17e1Mmg5Llwr4nR" Bounds="1290,184" />
                 <ControlPoint Id="A8clS2Jyn3SQWzQZKVPw3o" Bounds="1290,325" />
                 <ControlPoint Id="L2XPvIzAsp9PZTDYzburkL" Bounds="701,501" />
                 <Pad Id="TOpCBL1U5oiMqcAdmRFIh4" Bounds="701,535" />
-                <Pad Id="PHYmpMilzgIL6GeADHoBsy" Comment="" Bounds="1359,191,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+                <Pad Id="PHYmpMilzgIL6GeADHoBsy" Comment="" Bounds="1311,203,35,35" ShowValueBox="true" isIOBox="true" Value="True">
                   <p:TypeAnnotation>
                     <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
                     <FullNameCategoryReference ID="Primitive" />
@@ -1450,13 +1418,13 @@
                   </p:ValueBoxSettings>
                 </Pad>
                 <Pad Id="E50jovtbeA4Pil1x9oT1dm" SlotId="BdSsYRNwV80QJR4jRdvBZ5" Bounds="383,255" />
-                <ControlPoint Id="F8ONl5QIliTLynlRcrg4Aw" Bounds="383,178" />
+                <ControlPoint Id="F8ONl5QIliTLynlRcrg4Aw" Bounds="383,184" />
                 <ControlPoint Id="NGVJcTVy4OhPpKF0fq0Xp9" Bounds="383,344" />
                 <Pad Id="FGre1rj1k7BPoUHrdkOkEe" SlotId="BdSsYRNwV80QJR4jRdvBZ5" Bounds="752,566" />
                 <Pad Id="CozSn4f4iX8PzV3mNV8KHM" SlotId="BdSsYRNwV80QJR4jRdvBZ5" Bounds="1361,597" />
                 <ControlPoint Id="NGuyKl5aViUNBQ6IzrrJKI" Bounds="1335,623" />
-                <ControlPoint Id="LZJNzQfIJuROaxbHH5xwDc" Bounds="1335,733" />
-                <Overlay Id="KKW0hwNQ11NNlQo990SDkv" Name="Hit Test" Bounds="1265,534,253,247">
+                <ControlPoint Id="LZJNzQfIJuROaxbHH5xwDc" Bounds="1335,748" />
+                <Overlay Id="KKW0hwNQ11NNlQo990SDkv" Name="Hit Test" Bounds="1265,534,301,247">
                   <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
                 </Overlay>
                 <Node Bounds="699,662,106,19" Id="Bk0uXqby9oJQcfDMKHlRRJ">
@@ -1469,12 +1437,12 @@
                   <Pin Id="FaiCHgIvUExPJQoayhdFkr" Name="Input" Kind="InputPin" />
                   <Pin Id="SXnTfAjZk6AOxPc0HhAx9a" Name="Output" Kind="OutputPin" />
                 </Node>
-                <Node Bounds="750,586,145,19" Id="BPAOlA3QCUxP8HivC5pFtC">
+                <Node Bounds="750,586,102,19" Id="BPAOlA3QCUxP8HivC5pFtC">
                   <p:NodeReference LastCategoryFullName="LayerX.1D.Interpolator1D.Keyframe (Interpolator1D)" LastSymbolSource="VL.LayerX.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="ProcessAppFlag" Name="MinBoundTransportFunction" />
+                    <Choice Kind="ProcessAppFlag" Name="PositionTransportFunction" />
                   </p:NodeReference>
-                  <Pin Id="KYgyqmeOqOFM3pHcDAKeZH" Name="Bound Min" Kind="InputPin" />
+                  <Pin Id="KYgyqmeOqOFM3pHcDAKeZH" Name="Position" Kind="InputPin" />
                   <Pin Id="Qxl8GzH0P6SNejxsB8BD2W" Name="Output" Kind="OutputPin" />
                 </Node>
                 <ControlPoint Id="VmQKHt5vTwpPoePAUZbkgi" Bounds="1054,633" />
@@ -1490,32 +1458,23 @@
                   <Pin Id="BceU6E5S8mjNbIauoBPqwr" Name="Alpha Blending Model" Kind="InputPin" />
                   <Pin Id="Twh4A6BfdlJP4nNhNxxgSw" Name="Output" Kind="OutputPin" />
                 </Node>
-                <ControlPoint Id="KJChOXHO2V0LHgbvYkhX7F" Bounds="721,165" />
-                <ControlPoint Id="EhbSGmCi1fkPT6ZTpB0uPH" Bounds="701,347" />
-                <Pad Id="S6FIg9BFEtPNa8QRYej2h8" SlotId="AM8Y6kFrUMfOIuKJmLZWaQ" Bounds="574,258" />
-                <ControlPoint Id="BKE5h7kf5gDPRFNc7GWN0j" Bounds="574,136" />
-                <ControlPoint Id="IrJMRkhKSvaMEpVkEcPVf8" Bounds="574,347" />
-                <Pad Id="U6dHaFDOJhAN4xh2oJWzPr" SlotId="BdSsYRNwV80QJR4jRdvBZ5" Bounds="701,165" />
-                <Node Bounds="699,185,25,19" Id="LPXAbkrSfrHPq8jCAES2ek">
+                <ControlPoint Id="KJChOXHO2V0LHgbvYkhX7F" Bounds="581,184" />
+                <ControlPoint Id="EhbSGmCi1fkPT6ZTpB0uPH" Bounds="581,344" />
+                <ControlPoint Id="BKE5h7kf5gDPRFNc7GWN0j" Bounds="694,150" />
+                <ControlPoint Id="IrJMRkhKSvaMEpVkEcPVf8" Bounds="694,347" />
+                <Pad Id="U6dHaFDOJhAN4xh2oJWzPr" SlotId="BdSsYRNwV80QJR4jRdvBZ5" Bounds="714,184" />
+                <Pad Id="AViyMEpZLPqNB2jfmVctuk" SlotId="BdSsYRNwV80QJR4jRdvBZ5" Bounds="694,270" />
+                <Node Bounds="692,303,25,19" Id="PsaQOBypMcRNxTT1thaAbm">
                   <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="VL.CoreLib.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="Category" Name="Math" NeedsToBeDirectParent="true" />
                     <Choice Kind="OperationCallFlag" Name="+" />
-                  </p:NodeReference>
-                  <Pin Id="ECmmoYgH1XZQJtsY3nd7Im" Name="Input" Kind="InputPin" />
-                  <Pin Id="RPD6cuml9kqQAT0nTLgQrk" Name="Input 2" Kind="InputPin" />
-                  <Pin Id="EJLPtGBQPKUNs5M3BYpTBe" Name="Output" Kind="OutputPin" />
-                </Node>
-                <Pad Id="AViyMEpZLPqNB2jfmVctuk" SlotId="BdSsYRNwV80QJR4jRdvBZ5" Bounds="721,261" />
-                <Node Bounds="699,303,25,19" Id="PsaQOBypMcRNxTT1thaAbm">
-                  <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="VL.CoreLib.vl">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="-" />
                   </p:NodeReference>
                   <Pin Id="RyQcafvKlvWNRILd3z4Bg9" Name="Input" Kind="InputPin" />
                   <Pin Id="TNCgQesp9TEM10ck50ov4e" Name="Input 2" Kind="InputPin" />
                   <Pin Id="FUnBREpgIuuPBKgIUzZ2C8" Name="Output" Kind="OutputPin" />
                 </Node>
-                <Node Bounds="1333,647,31,19" Id="Gq9jkxvtD7CLaBz6f2Gb2P">
+                <Node Bounds="1333,662,31,19" Id="Gq9jkxvtD7CLaBz6f2Gb2P">
                   <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="VL.CoreLib.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="&gt;=" />
@@ -1524,7 +1483,7 @@
                   <Pin Id="QRBjoGVUlysP83QuAaPgkL" Name="Input 2" Kind="InputPin" />
                   <Pin Id="H3S9KniG4ebN7ypTUMlsJD" Name="Result" Kind="OutputPin" />
                 </Node>
-                <Node Bounds="1333,688,102,19" Id="RQsNJ2cueOhNAd6NKto7GN">
+                <Node Bounds="1333,703,102,19" Id="RQsNJ2cueOhNAd6NKto7GN">
                   <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastSymbolSource="VL.CoreLib.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="AND" />
@@ -1533,8 +1492,7 @@
                   <Pin Id="EjxX2yz6KYpPQTXucxJKbu" Name="Input 2" Kind="InputPin" />
                   <Pin Id="HxDSNNiNdGBLU5JxbXtf8M" Name="Output" Kind="StateOutputPin" />
                 </Node>
-                <Pad Id="Ke69HC8rr6rNlZcBVvYbUQ" SlotId="AM8Y6kFrUMfOIuKJmLZWaQ" Bounds="1452,597" />
-                <Node Bounds="1430,647,25,19" Id="TuDkIDZu3G7P5EIPgmdLQt">
+                <Node Bounds="1430,662,25,19" Id="TuDkIDZu3G7P5EIPgmdLQt">
                   <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="VL.CoreLib.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="&lt;" />
@@ -1543,6 +1501,28 @@
                   <Pin Id="Os3QToYnQQdM1UfW5CS3hW" Name="Input 2" Kind="InputPin" />
                   <Pin Id="Qp4Y8pX3JzxPxhUX671C8P" Name="Result" Kind="OutputPin" />
                 </Node>
+                <Pad Id="IR4H4M9kIe4OiKcilkKGFM" SlotId="T7YycMMjODmOWKwcaVdevi" Bounds="581,255" />
+                <Node Bounds="692,208,25,19" Id="CYaU2V0mr8mQOXtb3SETke">
+                  <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="VL.CoreLib.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="-" />
+                  </p:NodeReference>
+                  <Pin Id="R51i0jxsaOoORtNPaPuq9k" Name="Input" Kind="InputPin" />
+                  <Pin Id="Lt47gVYT3fpNeRx5xI5PhU" Name="Input 2" Kind="InputPin" />
+                  <Pin Id="H2DvDOahvOMQO62WGO5G9i" Name="Output" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="1450,626,25,19" Id="RlRpytHV56yOt9sZOOtZui">
+                  <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="VL.CoreLib.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="Category" Name="Math" NeedsToBeDirectParent="true" />
+                    <Choice Kind="OperationCallFlag" Name="+" />
+                  </p:NodeReference>
+                  <Pin Id="EaGpk9uJvdMMJLvSIjtKdc" Name="Input" Kind="InputPin" />
+                  <Pin Id="SSnWE4FiJL9NRoqsgHu3vA" Name="Input 2" Kind="InputPin" />
+                  <Pin Id="U4ZnVMHuXwFOt1vyUs8DEI" Name="Output" Kind="OutputPin" />
+                </Node>
+                <Pad Id="EoTRGpSRWB9QQuq2etyAIQ" SlotId="T7YycMMjODmOWKwcaVdevi" Bounds="1472,597" />
+                <ControlPoint Id="UGeDaV7wwUYLrCfCf6CrtV" Bounds="1435,748" />
               </Canvas>
               <Slot Id="Onl6mokuWruOnwFMWUQrKx" Name="Layer">
                 <p:TypeAnnotation p:Type="TypeReference">
@@ -1554,8 +1534,6 @@
                   </p:TypeArguments>
                 </p:TypeAnnotation>
               </Slot>
-              <Link Id="JxgGKQ0EDS5LE0TyakJBiC" Ids="I2PmkzOXn1NOPw29BbYMN0,DfoUzFr5oXQMU9qosyul53" IsHidden="true" />
-              <Link Id="A794TbgWct8LdXmA53BkKA" Ids="IdI1GubQ1AIPgGQVcZIyde,CIYh3I51ZwbLeDpRwbtYIi" IsHidden="true" />
               <Link Id="LmqoeNSF635OCcRqAqvBWT" Ids="CG2M1Fj90GVMKpnoCLK75j,C708uDABFAcP0EIv9ifgwj" />
               <Link Id="NJhKmJh6RelOSEFTobqL7e" Ids="PC37BITrnEeMrdI2UeXTrQ,CG2M1Fj90GVMKpnoCLK75j" />
               <Slot Id="SADYPYo54tDOwmEy2Tm3nu" Name="Interpolation Model">
@@ -1584,7 +1562,7 @@
               <Link Id="NQNFWRY7X3UP5nWY2WmPka" Ids="CCzdUCtftB9QMoeFHBObKn,L2XPvIzAsp9PZTDYzburkL" IsHidden="true" />
               <Link Id="Tz2KlhpN42QOSL8PpA0bqp" Ids="L2XPvIzAsp9PZTDYzburkL,TOpCBL1U5oiMqcAdmRFIh4" />
               <Link Id="RCHanaEW3BeQR5vOkeHhgc" Ids="PHYmpMilzgIL6GeADHoBsy,EiA9mTLunDLMoW58CtLKlu" />
-              <Slot Id="BdSsYRNwV80QJR4jRdvBZ5" Name="Bound Min">
+              <Slot Id="BdSsYRNwV80QJR4jRdvBZ5" Name="Position">
                 <p:TypeAnnotation p:Type="TypeReference">
                   <Choice Kind="TypeFlag" Name="Float64" />
                 </p:TypeAnnotation>
@@ -1593,8 +1571,6 @@
               <Link Id="RMlbX1NuOY4L36yeuHUCba" Ids="NGVJcTVy4OhPpKF0fq0Xp9,IEFiuMKxf4qOLbm4o9g6CA" IsHidden="true" />
               <Link Id="VcNq5m6bP0mLhLw6aZCz9K" Ids="E50jovtbeA4Pil1x9oT1dm,NGVJcTVy4OhPpKF0fq0Xp9" />
               <Link Id="Uws04iL46wUPXbc4eEh41V" Ids="MbD5JgnzKzsPLvLTJPvEuE,F8ONl5QIliTLynlRcrg4Aw" IsHidden="true" />
-              <Link Id="EYWBRctXoBZPBfzD3ZBeCz" Ids="DfoUzFr5oXQMU9qosyul53,E50jovtbeA4Pil1x9oT1dm" />
-              <Link Id="FCrnPggPHJ1NMuyn6VnRGd" Ids="E50jovtbeA4Pil1x9oT1dm,IdI1GubQ1AIPgGQVcZIyde" />
               <Link Id="LQcSWY6PihVPRHhVrLrIro" Ids="HFBPgkSfuvNNxw29mxHwCe,NGuyKl5aViUNBQ6IzrrJKI" IsHidden="true" />
               <Link Id="SavdvdWCeksOmy5KIISXHK" Ids="LZJNzQfIJuROaxbHH5xwDc,IAYmg5V77QlMbqNk2vn6FZ" IsHidden="true" />
               <Link Id="CQ1gu89FLzULiEc3nk1VSQ" Ids="TOpCBL1U5oiMqcAdmRFIh4,UBmchHxEbvoQAETcrdFd0a" />
@@ -1612,12 +1588,6 @@
               <Link Id="UVzeaeDOmZeL3i6vlqYq2E" Ids="C708uDABFAcP0EIv9ifgwj,McYyweC51UIQHTJbRrSP3V" IsHidden="true" />
               <Link Id="JD8808c7ZWuNihdHxAZ4Rb" Ids="HQSTHLKBDPkOamKLJasGGQ,TpGe35hvev8Nvz6vXKfvIP" />
               <Patch Id="JTmaevRNHLzOV22PoQpExY" Name="Create" ParticipatingElements="RCHanaEW3BeQR5vOkeHhgc" />
-              <Patch Id="Ow8LLBHgPGLLN1jJ9Jjegy" Name="SetPosition">
-                <Pin Id="I2PmkzOXn1NOPw29BbYMN0" Name="Position" Kind="InputPin" />
-              </Patch>
-              <Patch Id="EmZnBSTXDqeL7NVICwfkPG" Name="GetPosition">
-                <Pin Id="CIYh3I51ZwbLeDpRwbtYIi" Name="Position" Kind="OutputPin" />
-              </Patch>
               <Patch Id="Fg6aPIDoAKrL4XULcKOxch" Name="GetLayer">
                 <Pin Id="McYyweC51UIQHTJbRrSP3V" Name="Layer" Kind="OutputPin" />
               </Patch>
@@ -1653,18 +1623,19 @@
                   </p:TypeAnnotation>
                 </Pin>
               </Patch>
-              <Patch Id="GfTNXiRc7RPQICxAfsM21x" Name="SetBoundMin">
-                <Pin Id="MbD5JgnzKzsPLvLTJPvEuE" MergeId="336426" Name="Bound Min" Kind="InputPin" />
+              <Patch Id="GfTNXiRc7RPQICxAfsM21x" Name="SetPosition">
+                <Pin Id="MbD5JgnzKzsPLvLTJPvEuE" MergeId="336426" Name="Position" Kind="InputPin" />
               </Patch>
-              <Patch Id="FK5zhCMduJCNuTEYhdXHKX" Name="GetBoundMax">
-                <Pin Id="BuIJ5Nkrp8QMjBYLugPYQr" MergeId="336187" Name="Bound Max" Kind="OutputPin" />
+              <Patch Id="FK5zhCMduJCNuTEYhdXHKX" Name="GetEndPosition">
+                <Pin Id="BuIJ5Nkrp8QMjBYLugPYQr" MergeId="336187" Name="End Position" Kind="OutputPin" />
               </Patch>
-              <Patch Id="JQbuRgOJQE7No17OzNugdH" Name="GetBoundMin">
-                <Pin Id="IEFiuMKxf4qOLbm4o9g6CA" MergeId="336185" Name="Bound Min" Kind="OutputPin" />
+              <Patch Id="JQbuRgOJQE7No17OzNugdH" Name="GetPosition">
+                <Pin Id="IEFiuMKxf4qOLbm4o9g6CA" MergeId="336185" Name="Position" Kind="OutputPin" />
               </Patch>
               <Patch Id="SPUOpeSw0u6PXunCjhJ1mN" Name="HitTest">
                 <Pin Id="HFBPgkSfuvNNxw29mxHwCe" Name="Sampling Position" Kind="InputPin" />
                 <Pin Id="IAYmg5V77QlMbqNk2vn6FZ" Name="Result" Kind="OutputPin" />
+                <Pin Id="IRxiHsXmCX0OLX8l923qgs" Name="Sampling is After" Kind="OutputPin" Bounds="1435,748" />
               </Patch>
               <Patch Id="Ez4GLlFax5XPYt8AsqdC40" Name="SetAlpha">
                 <Pin Id="BkAsirnGj7NMErYbNxTchw" MergeId="472889" Name="Alpha" Kind="InputPin" DefaultValue="1">
@@ -1680,42 +1651,27 @@
                   </p:TypeAnnotation>
                 </Pin>
               </Patch>
-              <Slot Id="AM8Y6kFrUMfOIuKJmLZWaQ" Name="Bound Max">
-                <p:TypeAnnotation p:Type="TypeReference">
-                  <Choice Kind="TypeFlag" Name="Float64" />
-                </p:TypeAnnotation>
-              </Slot>
               <Patch Id="MHVVzGhTLl0NE8cBaKeAvr" Name="SetDuration">
                 <Pin Id="AATzwmd4nw1Pl4G2jT8JE5" MergeId="174441" Name="Duration" Kind="InputPin" />
               </Patch>
               <Patch Id="BaWOJIm2uKsOjZclB2yLB1" Name="GetDuration">
                 <Pin Id="M5dczXdE8PiME4EbQo2r6I" MergeId="174443" Name="Duration" Kind="OutputPin" />
               </Patch>
-              <Patch Id="LV0aGgMbyheOnGof2eF8GH" Name="SetBoundMax">
-                <Pin Id="OzMmTO4cFndP99WCBLhtO9" MergeId="174522" Name="Bound Max" Kind="InputPin" />
+              <Patch Id="LV0aGgMbyheOnGof2eF8GH" Name="SetEndPosition">
+                <Pin Id="OzMmTO4cFndP99WCBLhtO9" MergeId="174522" Name="End Position" Kind="InputPin" />
               </Patch>
               <Link Id="Ku7BCwoGRbnNX7anjOXsdT" Ids="AATzwmd4nw1Pl4G2jT8JE5,KJChOXHO2V0LHgbvYkhX7F" IsHidden="true" />
               <Link Id="JiCPDur7KDGMPhiYYgbAC8" Ids="EhbSGmCi1fkPT6ZTpB0uPH,M5dczXdE8PiME4EbQo2r6I" IsHidden="true" />
               <Link Id="ImBcZUMc3slOQHJlPtIjLt" Ids="OzMmTO4cFndP99WCBLhtO9,BKE5h7kf5gDPRFNc7GWN0j" IsHidden="true" />
-              <Link Id="GFJYVvywsbSL0Z6xKbFtXW" Ids="BKE5h7kf5gDPRFNc7GWN0j,S6FIg9BFEtPNa8QRYej2h8" />
               <Link Id="JlDVaYX4LrEL5byNYsOJAv" Ids="IrJMRkhKSvaMEpVkEcPVf8,BuIJ5Nkrp8QMjBYLugPYQr" IsHidden="true" />
-              <Link Id="IonvCmjjtqUPUk1nI3qaqZ" Ids="S6FIg9BFEtPNa8QRYej2h8,IrJMRkhKSvaMEpVkEcPVf8" />
-              <Link Id="MghlJU5MFkPOpjtFvgISRW" Ids="U6dHaFDOJhAN4xh2oJWzPr,ECmmoYgH1XZQJtsY3nd7Im" />
-              <Link Id="Fw2iF24Vce3QbWMJm9sIzf" Ids="KJChOXHO2V0LHgbvYkhX7F,RPD6cuml9kqQAT0nTLgQrk" />
-              <Link Id="GNkpApZjFN4LqpHWQZ7K6u" Ids="EJLPtGBQPKUNs5M3BYpTBe,S6FIg9BFEtPNa8QRYej2h8" />
-              <Link Id="NQbbsgFsjmULqaKPdQpLLu" Ids="FUnBREpgIuuPBKgIUzZ2C8,EhbSGmCi1fkPT6ZTpB0uPH" />
-              <Link Id="CYwz1uDHikSLvI78eh4v8h" Ids="S6FIg9BFEtPNa8QRYej2h8,RyQcafvKlvWNRILd3z4Bg9" />
-              <Link Id="Tf772kTLLkPNZHP6Jw2Xjd" Ids="AViyMEpZLPqNB2jfmVctuk,TNCgQesp9TEM10ck50ov4e" />
               <ProcessDefinition Id="LK9muXTt7tJPCvv2gSrInL" HasStateOut="true">
                 <Fragment Id="AA0FFNfTDHMNx47AFqBqLF" Patch="JTmaevRNHLzOV22PoQpExY" Enabled="true" />
                 <Fragment Id="GynInMgSuDpQbS0nfK7f8b" Patch="HkPjIHUR5ZFM0goAXntQQi" />
                 <Fragment Id="KszqWYwa3sMMafPpvSoeoV" Patch="VoCIhwATHCLOI94wWLXImQ" Enabled="true" />
-                <Fragment Id="Mw6XDVIT51IQZAZNvdr1Om" Patch="Ow8LLBHgPGLLN1jJ9Jjegy" Enabled="true" />
                 <Fragment Id="MpqmJBAPlAIO0o0qZ6B2YV" Patch="MHVVzGhTLl0NE8cBaKeAvr" Enabled="true" />
                 <Fragment Id="J6IBBNJ5fYZPpJa1Gv4q1n" Patch="LSkMHdYHqqPOz8aFVJv560" Enabled="true" />
                 <Fragment Id="Koeedztyse4P1ZVjxM7Ul9" Patch="JmwQ6PAVOprN3Bh7FAuSB8" Enabled="true" />
                 <Fragment Id="QBUki0UWPKTLv6btUwAp3g" Patch="DIIA2NF60AfPNh62Wm5kvz" Enabled="true" />
-                <Fragment Id="QZCbp47W00lOB3jRfREloI" Patch="EmZnBSTXDqeL7NVICwfkPG" />
                 <Fragment Id="GOJrAp4CpDfLOKRqrJaMIi" Patch="BaWOJIm2uKsOjZclB2yLB1" />
                 <Fragment Id="BUpOttqQB33L7VeLtQyCxF" Patch="Fg6aPIDoAKrL4XULcKOxch" />
                 <Fragment Id="J249vVD1b0iOpY2UU6djpq" Patch="Ct1hais5nQZPbd1KwBnmcr" />
@@ -1733,10 +1689,23 @@
               <Link Id="LpEpC75P0LbPz1OgGSsx3L" Ids="CozSn4f4iX8PzV3mNV8KHM,QRBjoGVUlysP83QuAaPgkL" />
               <Link Id="A25AkFuElrmLYqpLWLx5lx" Ids="H3S9KniG4ebN7ypTUMlsJD,E5kIeeAuCH8NfsoZ7EWIaE" />
               <Link Id="Ml06kkuEULKPfX304IRjIg" Ids="NGuyKl5aViUNBQ6IzrrJKI,TkW4c6ZaZ7bLIqt8Qe75AS" />
-              <Link Id="NJwZr16B0VoLlHdOVHAEee" Ids="Ke69HC8rr6rNlZcBVvYbUQ,Os3QToYnQQdM1UfW5CS3hW" />
               <Link Id="BOZcLTIPkJiNb32Nd7XTbz" Ids="Qp4Y8pX3JzxPxhUX671C8P,EjxX2yz6KYpPQTXucxJKbu" />
               <Link Id="RIGQSnJ9xiDPseMHHvjsEH" Ids="HxDSNNiNdGBLU5JxbXtf8M,LZJNzQfIJuROaxbHH5xwDc" />
               <Link Id="Sr5bJLhcHjjNgycpBIQHBz" Ids="SXnTfAjZk6AOxPc0HhAx9a,SZSt8dbSAylQKyye0Xlpfq" />
+              <Slot Id="T7YycMMjODmOWKwcaVdevi" Name="Duration" />
+              <Link Id="PrSX8fUZkClNYjdPPzV9Cf" Ids="KJChOXHO2V0LHgbvYkhX7F,IR4H4M9kIe4OiKcilkKGFM" />
+              <Link Id="GqVCsSMeUSLPTJUEFTyqgf" Ids="IR4H4M9kIe4OiKcilkKGFM,EhbSGmCi1fkPT6ZTpB0uPH" />
+              <Link Id="JL5p9ufPbeYMSAifuzmFFj" Ids="AViyMEpZLPqNB2jfmVctuk,RyQcafvKlvWNRILd3z4Bg9" />
+              <Link Id="SbrzmHCDqawNnhVk6zLVXr" Ids="IR4H4M9kIe4OiKcilkKGFM,TNCgQesp9TEM10ck50ov4e" />
+              <Link Id="Vo94CQyCrUtQJM5BOuHiQK" Ids="FUnBREpgIuuPBKgIUzZ2C8,IrJMRkhKSvaMEpVkEcPVf8" />
+              <Link Id="El9A7si7guXO5yEuwZkBFL" Ids="BKE5h7kf5gDPRFNc7GWN0j,R51i0jxsaOoORtNPaPuq9k" />
+              <Link Id="Qk0oO70yaIYOolvCS2hfii" Ids="U6dHaFDOJhAN4xh2oJWzPr,Lt47gVYT3fpNeRx5xI5PhU" />
+              <Link Id="VWRK0DIplcTN1HRc5VvIk4" Ids="H2DvDOahvOMQO62WGO5G9i,IR4H4M9kIe4OiKcilkKGFM" />
+              <Link Id="DoK1jDtFmVPMMIF8gAShsh" Ids="EoTRGpSRWB9QQuq2etyAIQ,SSnWE4FiJL9NRoqsgHu3vA" />
+              <Link Id="QsG3ResDh6ULGcgAlZeiSz" Ids="CozSn4f4iX8PzV3mNV8KHM,EaGpk9uJvdMMJLvSIjtKdc" />
+              <Link Id="IYFQGEzguJtQQd2eaawBPX" Ids="U4ZnVMHuXwFOt1vyUs8DEI,Os3QToYnQQdM1UfW5CS3hW" />
+              <Link Id="CAc6CpF23q4LnN3ifSbPoA" Ids="H3S9KniG4ebN7ypTUMlsJD,UGeDaV7wwUYLrCfCf6CrtV" />
+              <Link Id="TIYA2FQNNCfPOSZhxsXKsS" Ids="UGeDaV7wwUYLrCfCf6CrtV,IRxiHsXmCX0OLX8l923qgs" IsHidden="true" />
             </Patch>
           </Node>
         </Canvas>
@@ -1768,7 +1737,7 @@
                   <ControlPoint Id="LbEooatFEw3NsMqcLTxb4p" Bounds="305,327" Alignment="Top" />
                   <ControlPoint Id="BiwQiAAXc18PKfoukRsFEf" Bounds="222,403,-21,0" Alignment="Bottom">
                     <p:TypeAnnotation>
-                      <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                      <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                     </p:TypeAnnotation>
                   </ControlPoint>
                   <ControlPoint Id="Ug6EMqFgvi9OlVG7dFbJu6" Bounds="222,327" Alignment="Top" />
@@ -1796,7 +1765,7 @@
                   <p:NodeReference LastCategoryFullName="LayerX.Background.IBackgroundFunctionT" LastSymbolSource="VL.LayerX.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="SampleBackgroundT" />
-                    <CategoryReference Kind="Category" Name="IBackgroundFunctionT" NeedsToBeDirectParent="true" />
+                    <CategoryReference Kind="Category" Name="IBackgroundProviderT" NeedsToBeDirectParent="true" />
                   </p:NodeReference>
                   <Pin Id="R2PJmjZ7UXQN38kEqcCLRv" Name="Input" Kind="StateInputPin" />
                   <Pin Id="H8s99GAfCuVNbDkngn1E4k" Name="Output" Kind="OutputPin" />
@@ -2209,7 +2178,7 @@
               <Patch Id="LIrWpPJkhDyO9d0wjoRr3o" Name="SampleLayerT" ParticipatingElements="L0KkIxEHS17OarmDTymFZT">
                 <Pin Id="NB3JrzUKRyaPIKmI7HiUMl" MergeId="623411" Name="Background Function" Kind="InputPin">
                   <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                    <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                   </p:TypeAnnotation>
                 </Pin>
                 <Pin Id="TdN57siJ2HsP4uCiGlZ840" MergeId="623412" Name="Sampling Position" Kind="InputPin">
@@ -2654,7 +2623,7 @@
             </p:NodeReference>
             <p:Interfaces>
               <TypeReference LastCategoryFullName="Main" LastSymbolSource="blendingAlgorithmSketch.vl">
-                <Choice Kind="InterfaceTypeFlag" Name="IBackgroundFunctionT" />
+                <Choice Kind="InterfaceTypeFlag" Name="IBackgroundProviderT" />
               </TypeReference>
             </p:Interfaces>
             <Patch Id="JNvr1sAVEjgNNHYm7znD9P" IsGeneric="true" ExplicitTypeParameters="T">
@@ -2874,7 +2843,7 @@
                 </Pin>
                 <Pin Id="VF02QlxjfvKOicWAq4h5jM" Name="Background Function" Kind="InputPin">
                   <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                    <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                   </p:TypeAnnotation>
                 </Pin>
                 <Pin Id="NFsl2tHRGQKMj9BV7ecgwI" Name="Alpha Function" Kind="InputPin" Bounds="618,486" />
@@ -2920,7 +2889,7 @@
                   <ControlPoint Id="SwY4lWNnRYWLujX7VnLZqP" Bounds="305,327" Alignment="Top" />
                   <ControlPoint Id="Kky02zCmYs2Mgv3mJmcLgz" Bounds="222,403,-21,0" Alignment="Bottom">
                     <p:TypeAnnotation>
-                      <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                      <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                     </p:TypeAnnotation>
                   </ControlPoint>
                   <ControlPoint Id="ORiK71JR0aHPMV8JRy3zTe" Bounds="222,327" Alignment="Top" />
@@ -2948,7 +2917,7 @@
                   <p:NodeReference LastCategoryFullName="LayerX.Background.IBackgroundFunctionT" LastSymbolSource="VL.LayerX.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="SampleBackgroundT" />
-                    <CategoryReference Kind="Category" Name="IBackgroundFunctionT" NeedsToBeDirectParent="true" />
+                    <CategoryReference Kind="Category" Name="IBackgroundProviderT" NeedsToBeDirectParent="true" />
                   </p:NodeReference>
                   <Pin Id="RSEUJsQlohXOYSDk4YZmSo" Name="Input" Kind="StateInputPin" />
                   <Pin Id="UpMFCNB6LWvP26REIHR82N" Name="Output" Kind="OutputPin" />
@@ -3107,7 +3076,7 @@
             </p:NodeReference>
             <p:Interfaces>
               <TypeReference LastCategoryFullName="Main" LastSymbolSource="blendingAlgorithmSketch.vl">
-                <Choice Kind="InterfaceTypeFlag" Name="IBackgroundFunctionT" />
+                <Choice Kind="InterfaceTypeFlag" Name="IBackgroundProviderT" />
               </TypeReference>
             </p:Interfaces>
             <Patch Id="C5kkK5woXoaLIVtgjM89sK" IsGeneric="true" ExplicitTypeParameters="T">
@@ -3325,7 +3294,7 @@
                 </Pin>
                 <Pin Id="Ro0lw33BQc0M1aifwzC3Q6" Name="Background Function" Kind="InputPin">
                   <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                    <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                   </p:TypeAnnotation>
                 </Pin>
                 <Pin Id="TmXFgiingPAMUdhoMcTxGg" Name="Sampling Position" Kind="InputPin" />
@@ -3733,7 +3702,7 @@
                         <Node Bounds="2006,770,109,26" Id="U3iCHgKyYIvN9lKjXf9rcT">
                           <p:NodeReference LastCategoryFullName="LayerX.Background.IBackgroundFunctionT" LastSymbolSource="VL.LayerX.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                            <CategoryReference Kind="InterfaceTypeFlag" Name="IBackgroundFunctionT" />
+                            <CategoryReference Kind="InterfaceTypeFlag" Name="IBackgroundProviderT" />
                             <Choice Kind="OperationCallFlag" Name="SampleBackgroundT" />
                           </p:NodeReference>
                           <Pin Id="SqKrhc5E8j1Qd9FrXBpjTv" Name="Input" Kind="StateInputPin" />
@@ -3932,7 +3901,7 @@
               <Patch Id="NSjjaCpn27JNketB9ERD1o" Name="SampleT">
                 <Pin Id="TByoou6yfWvPBUkFWbMe1j" MergeId="314272" Name="Background Function" Kind="InputPin">
                   <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                    <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                     <p:TypeArguments>
                       <TypeReference>
                         <Choice Kind="TypeFlag" Name="T" />
@@ -4103,7 +4072,7 @@
                   <Pin Id="BqMgEsme0zpPPzZDa5RogA" Name="Force" Kind="InputPin" />
                   <Pin Id="ScG1KLUH8G9MgvG6cjCYpZ" Name="Dispose Cached Outputs" Kind="InputPin" />
                   <Pin Id="RXa4oCLw2KQLttSc0s66Kf" Name="Has Changed" Kind="OutputPin" />
-                  <ControlPoint Id="IV51ZLFi30xMpwcVAPkzvO" Bounds="591,546" Alignment="Bottom" />
+                  <ControlPoint Id="IV51ZLFi30xMpwcVAPkzvO" Bounds="591,546" Name="IFunctionSampler" Alignment="Bottom" />
                   <ControlPoint Id="HWQzFat9r6iMskMf9roiP5" Bounds="623,422" Alignment="Top" />
                   <Patch Id="R0IkCv7RRZmNkntsQr9uNR" ManuallySortedPins="true">
                     <Patch Id="HnIM34A0FEYPuJYLOzV3nK" Name="Create" ManuallySortedPins="true" />
@@ -4132,7 +4101,11 @@
                     </Node>
                   </Patch>
                 </Node>
-                <Pad Id="D45STx1b4JbLFjvztFAaUd" Bounds="714,575" />
+                <Pad Id="D45STx1b4JbLFjvztFAaUd" Bounds="714,575">
+                  <p:TypeAnnotation>
+                    <Choice Kind="TypeFlag" Name="IFunctionSampler" />
+                  </p:TypeAnnotation>
+                </Pad>
                 <Pad Id="PiM8xYpzhfNLAJL7CtqrJ8" Comment="" Bounds="1167,325,35,35" ShowValueBox="true" isIOBox="true" Value="True">
                   <p:TypeAnnotation>
                     <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
@@ -4295,7 +4268,7 @@
               <Patch Id="KMMuvAl6cTAPpIiDKvPkLD" Name="SampleLayerT" ParticipatingElements="V6nwGliNTiqPV0gJMobazl">
                 <Pin Id="JBkrnGaGvruQGbTHMs7fQN" MergeId="473465" Name="Background Function" Kind="InputPin">
                   <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                    <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                   </p:TypeAnnotation>
                 </Pin>
                 <Pin Id="CaPsiRe7dzMPprPlR37rwu" Name="Clip Slot Index" Kind="InputPin">
@@ -4732,7 +4705,7 @@
             <Patch Id="UA9NY4S608iNZEPt8zGOLV" Name="SampleT">
               <Pin Id="TxIgblIGmVuMldLOFqaap9" MergeId="473152" Name="Background Function" Kind="InputPin">
                 <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                  <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                  <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="UGMbzczuFHENxnwIob8pHN" MergeId="473150" Name="Sampling Position" Kind="InputPin">
@@ -4896,7 +4869,7 @@
                 <p:NodeReference LastCategoryFullName="LayerX.Background.IBackgroundFunctionT" LastSymbolSource="VL.LayerX.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="SampleBackgroundT" />
-                  <CategoryReference Kind="Category" Name="IBackgroundFunctionT" NeedsToBeDirectParent="true" />
+                  <CategoryReference Kind="Category" Name="IBackgroundProviderT" NeedsToBeDirectParent="true" />
                 </p:NodeReference>
                 <Pin Id="P1xSvEwC2RiM3PKTQVLjFF" Name="Input" Kind="StateInputPin" />
                 <Pin Id="L3qKaeVDtKoNrWP8ZVTGJx" Name="Output" Kind="OutputPin" />
@@ -4971,7 +4944,7 @@
             <Patch Id="TXHyizB6NXpOQvo3WVPJ4J" Name="SampleT">
               <Pin Id="HrpAFd7t7B9NkPrJ3hI4UD" MergeId="473152" Name="Background Function" Kind="InputPin">
                 <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                  <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                  <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="ARCVSiHXFHCNqrZAI7xfe6" MergeId="473150" Name="Sampling Position" Kind="InputPin">
@@ -5036,7 +5009,7 @@
                 <p:NodeReference LastCategoryFullName="LayerX.Background.IBackgroundFunctionT" LastSymbolSource="VL.LayerX.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="SampleBackgroundT" />
-                  <CategoryReference Kind="Category" Name="IBackgroundFunctionT" NeedsToBeDirectParent="true" />
+                  <CategoryReference Kind="Category" Name="IBackgroundProviderT" NeedsToBeDirectParent="true" />
                 </p:NodeReference>
                 <Pin Id="E9SZwwT7KVvMNmlgd9kJ63" Name="Input" Kind="StateInputPin" />
                 <Pin Id="VQat8llfymRNuBYYkdwOHz" Name="Output" Kind="OutputPin" />
@@ -5136,7 +5109,7 @@
             <Patch Id="MHwFaxnYOOjP1v1ZpN3n3Z" Name="SampleT" ParticipatingElements="BzCxGIFinJ8MegRcjVpEjW">
               <Pin Id="MyFW0iIpfkjNACICZgDOer" MergeId="318461" Name="Background Function" Kind="InputPin">
                 <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                  <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                  <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                   <p:TypeArguments>
                     <TypeReference>
                       <Choice Kind="TypeFlag" Name="T" />
@@ -5236,7 +5209,7 @@
             <Patch Id="VOG62ThOnk7MChWVh4Z0aL" Name="SampleT" ParticipatingElements="LRAjeZyLrpJM0OVwhsDvQX">
               <Pin Id="KsL2IMFKiA7O9PUNGiGep2" MergeId="318461" Name="Background Function" Kind="InputPin">
                 <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                  <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                  <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                   <p:TypeArguments>
                     <TypeReference>
                       <Choice Kind="TypeFlag" Name="T" />
@@ -5326,12 +5299,12 @@
             <Patch Id="GYQrNoOOdTEM4QjIF6MYZK" Name="GetFunctionOrFallback">
               <Pin Id="HLQ9SHuWCYZMxI9j64kJFV" Name="Background Function" Kind="InputPin">
                 <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                  <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                  <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="DmNPo6lhIO6LhqLogfnwIe" Name="Background Function" Kind="OutputPin">
                 <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                  <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                  <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                 </p:TypeAnnotation>
               </Pin>
             </Patch>
@@ -5346,16 +5319,16 @@
         </Node>
         <!--
 
-    ************************ IBackgroundFunctionT ************************
+    ************************ IBackgroundProviderT ************************
 
 -->
-        <Node Name="IBackgroundFunctionT" Bounds="245,345" Id="AyB9Y7KkotlMtfICNSMlFo">
+        <Node Name="IBackgroundProviderT" Bounds="245,345" Id="AyB9Y7KkotlMtfICNSMlFo">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
             <Choice Kind="InterfaceDefinition" Name="Interface" />
           </p:NodeReference>
           <p:Interfaces>
             <TypeReference>
-              <Choice Kind="InterfaceTypeFlag" Name="IBackgroundFunction" />
+              <Choice Kind="InterfaceTypeFlag" Name="IBackgroundProvider" />
             </TypeReference>
           </p:Interfaces>
           <Patch Id="IcgH2KXk7usOO59881b8Q9" IsGeneric="true" ExplicitTypeParameters="T">
@@ -5395,10 +5368,10 @@
           </p:NodeReference>
           <p:Interfaces>
             <TypeReference LastCategoryFullName="Main" LastSymbolSource="blendingAlgorithmSketch.vl">
-              <Choice Kind="InterfaceTypeFlag" Name="IBackgroundFunctionT" />
+              <Choice Kind="InterfaceTypeFlag" Name="IBackgroundProviderT" />
             </TypeReference>
             <TypeReference>
-              <Choice Kind="InterfaceTypeFlag" Name="IBackgroundFunction" />
+              <Choice Kind="InterfaceTypeFlag" Name="IBackgroundProvider" />
             </TypeReference>
           </p:Interfaces>
           <Patch Id="RpG9KaEaqBvPDIYzOMcpGn" IsGeneric="true" ExplicitTypeParameters="T">
@@ -5455,10 +5428,10 @@
         </Node>
         <!--
 
-    ************************ IBackgroundFunction (Advanced) ************************
+    ************************ IBackgroundProvider (Advanced) ************************
 
 -->
-        <Node Name="IBackgroundFunction (Advanced)" Bounds="245,295" Id="G4INFx1NWvGN3QMggkD7Eo">
+        <Node Name="IBackgroundProvider (Advanced)" Bounds="245,295" Id="G4INFx1NWvGN3QMggkD7Eo">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
             <Choice Kind="InterfaceDefinition" Name="Interface" />
           </p:NodeReference>
@@ -5521,7 +5494,7 @@
                 <p:NodeReference LastCategoryFullName="LayerX.Background.IBackgroundFunctionT" LastSymbolSource="VL.LayerX.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="SampleBackgroundT" />
-                  <CategoryReference Kind="Category" Name="IBackgroundFunctionT" NeedsToBeDirectParent="true" />
+                  <CategoryReference Kind="Category" Name="IBackgroundProviderT" NeedsToBeDirectParent="true" />
                 </p:NodeReference>
                 <Pin Id="B5PKRFkvZGHO2s9hgSljMm" Name="Input" Kind="StateInputPin" />
                 <Pin Id="EjvBhq6Tk2fQV4BtqLjoGH" Name="Output" Kind="OutputPin" />
@@ -5553,7 +5526,7 @@
             <Patch Id="Vd6jAj9UpJqO1ZxRxBlw9z" Name="SampleT">
               <Pin Id="KlYjetviRTwPJ8FtLdQpHu" MergeId="495572" Name="Background Function" Kind="InputPin">
                 <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                  <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                  <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="KBB6FgFv1R7PrQ1LnxjmG9" MergeId="321329" Name="Sampling Position" Kind="InputPin">
@@ -5622,7 +5595,7 @@
             <Patch Id="O8rR7dJFAubM9FeMiQT6an" Name="Sample">
               <Pin Id="MunyQeIMDPzNzBz87SyyuV" MergeId="335677" Name="Background Function" Kind="InputPin">
                 <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                  <Choice Kind="TypeFlag" Name="IBackgroundFunction" />
+                  <Choice Kind="TypeFlag" Name="IBackgroundProvider" />
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="O1Std2M7VxrMICUDj2v99U" MergeId="335676" Name="Sampling Position" Kind="InputPin">
@@ -5679,7 +5652,7 @@
                 <p:NodeReference LastCategoryFullName="LayerX.Background.IBackgroundFunctionT" LastSymbolSource="VL.LayerX.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="SampleBackgroundT" />
-                  <CategoryReference Kind="Category" Name="IBackgroundFunctionT" NeedsToBeDirectParent="true" />
+                  <CategoryReference Kind="Category" Name="IBackgroundProviderT" NeedsToBeDirectParent="true" />
                 </p:NodeReference>
                 <Pin Id="ByjlAt5WhIWOus04rZvg24" Name="Input" Kind="StateInputPin" />
                 <Pin Id="KkO8hro5cqWOTzW8ACuZ1R" Name="Output" Kind="OutputPin" />
@@ -5759,7 +5732,7 @@
             <Patch Id="BsBImLqy4d0QY8OoufWQOg" Name="SampleT">
               <Pin Id="HFd0gSpShQkNGnxKGnj71i" MergeId="314272" Name="Background Function" Kind="InputPin">
                 <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                  <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                  <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                   <p:TypeArguments>
                     <TypeReference>
                       <Choice Kind="TypeFlag" Name="T" />
@@ -6248,7 +6221,7 @@
                   <ControlPoint Id="QcAnodhziF5LEpiV0UPEIl" Bounds="374,448" Alignment="Top" />
                   <ControlPoint Id="A1cIDWfve7SLAAbY6I7ZmR" Bounds="212,511" Alignment="Bottom">
                     <p:TypeAnnotation>
-                      <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                      <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                     </p:TypeAnnotation>
                   </ControlPoint>
                   <Patch Id="JW9kxHBsERNO9yz096lsiU" ManuallySortedPins="true">
@@ -6275,7 +6248,7 @@
                   <p:NodeReference LastCategoryFullName="LayerX.Background.IBackgroundFunctionT" LastSymbolSource="VL.LayerX.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="SampleBackgroundT" />
-                    <CategoryReference Kind="Category" Name="IBackgroundFunctionT" NeedsToBeDirectParent="true" />
+                    <CategoryReference Kind="Category" Name="IBackgroundProviderT" NeedsToBeDirectParent="true" />
                   </p:NodeReference>
                   <Pin Id="MDcOUzFGyHMLj2iM3dzwJA" Name="Input" Kind="StateInputPin" />
                   <Pin Id="SEYkyMKSTceM8R6G9zghCn" Name="Output" Kind="OutputPin" />
@@ -6751,7 +6724,7 @@
               <Patch Id="T3ELfsn1TOTO5iDdDAGDeT" Name="SampleLayerT">
                 <Pin Id="FsR4GbW3DF7MJSK97WMSSr" MergeId="472976" Name="Background Function" Kind="InputPin">
                   <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                    <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                   </p:TypeAnnotation>
                 </Pin>
                 <Pin Id="LuhE4GGTyvXM8nwhZUyUj8" MergeId="472974" Name="Sampling Position" Kind="InputPin">
@@ -7164,7 +7137,7 @@
               <Patch Id="PTRoxPUX6KNMWFJ4yYxWXr" Name="SampleLayerT">
                 <Pin Id="EmweHLe8AQAQPSWczVHKrF" MergeId="473758" Name="Background Function" Kind="InputPin">
                   <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                    <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                   </p:TypeAnnotation>
                 </Pin>
                 <Pin Id="Jrpyo9WOUG4QdQcVw0Rual" MergeId="473759" Name="Sampling Position" Kind="InputPin">
@@ -7553,7 +7526,7 @@
               <Patch Id="MI7gwNAouq8MP67vjgm1Eb" Name="SampleLayerT">
                 <Pin Id="U9fzm1ZIadvQKtTlH1NWw5" MergeId="494093" Name="Background Function" Kind="InputPin">
                   <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                    <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                   </p:TypeAnnotation>
                 </Pin>
                 <Pin Id="JQLKUDu4dtvQWB6FzOV11L" MergeId="494094" Name="Sampling Position" Kind="InputPin">
@@ -7661,7 +7634,7 @@
             </p:NodeReference>
             <p:Interfaces>
               <TypeReference LastCategoryFullName="Main" LastSymbolSource="blendingAlgorithmSketch.vl">
-                <Choice Kind="InterfaceTypeFlag" Name="IBackgroundFunctionT" />
+                <Choice Kind="InterfaceTypeFlag" Name="IBackgroundProviderT" />
               </TypeReference>
             </p:Interfaces>
             <Patch Id="OaVy9Bxp8vSNV6yU5PSEwo" IsGeneric="true" ExplicitTypeParameters="T">
@@ -7878,7 +7851,7 @@
                 </Pin>
                 <Pin Id="AQuDeUrxXZ9Ou4PtaHbqj9" Name="Background Function" Kind="InputPin">
                   <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                    <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                   </p:TypeAnnotation>
                 </Pin>
                 <Pin Id="E43jMLcuxtwPkUPcePcvdf" Name="Sampling Position" Kind="InputPin" />
@@ -8167,7 +8140,7 @@
                   <Node Bounds="693,292,109,26" Id="VEVifD07KFfPGj5rX27bbP">
                     <p:NodeReference LastCategoryFullName="LayerX.Background.IBackgroundFunctionT" LastSymbolSource="VL.LayerX.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <CategoryReference Kind="InterfaceTypeFlag" Name="IBackgroundFunctionT" />
+                      <CategoryReference Kind="InterfaceTypeFlag" Name="IBackgroundProviderT" />
                       <Choice Kind="OperationCallFlag" Name="SampleBackgroundT" />
                     </p:NodeReference>
                     <Pin Id="GdoGRtAJCDpQQDPILiTA3o" Name="Input" Kind="StateInputPin" />
@@ -8322,7 +8295,7 @@
                   <ControlPoint Id="LwVvRUUI6VFPkRfqxNiACi" Bounds="305,327" Alignment="Top" />
                   <ControlPoint Id="JC9ITH9LHgON3B1Yu5SVpy" Bounds="222,403,-21,0" Alignment="Bottom">
                     <p:TypeAnnotation>
-                      <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                      <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                     </p:TypeAnnotation>
                   </ControlPoint>
                   <ControlPoint Id="O19NI39U8GYQJpPOAL8334" Bounds="222,327" Alignment="Top" />
@@ -8350,7 +8323,7 @@
                   <p:NodeReference LastCategoryFullName="LayerX.Background.IBackgroundFunctionT" LastSymbolSource="VL.LayerX.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="SampleBackgroundT" />
-                    <CategoryReference Kind="Category" Name="IBackgroundFunctionT" NeedsToBeDirectParent="true" />
+                    <CategoryReference Kind="Category" Name="IBackgroundProviderT" NeedsToBeDirectParent="true" />
                   </p:NodeReference>
                   <Pin Id="J6ofcyw2U7WOQNuQ1wR9hr" Name="Input" Kind="StateInputPin" />
                   <Pin Id="QbQFMN50voKQLp352Hb9n9" Name="Output" Kind="OutputPin" />
@@ -8678,7 +8651,7 @@
               <Patch Id="BcgmqQHzITyOFA46gEZQKA" Name="SampleLayerT">
                 <Pin Id="S7nXjCwF9jDML1psmjPvIK" MergeId="473465" Name="Background Function" Kind="InputPin">
                   <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                    <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                   </p:TypeAnnotation>
                 </Pin>
                 <Pin Id="GTiWfTvlOcnPVfjYEyiWtg" MergeId="473466" Name="Sampling Position" Kind="InputPin">
@@ -8719,7 +8692,7 @@
           </p:NodeReference>
           <p:Interfaces>
             <TypeReference LastCategoryFullName="Main" LastSymbolSource="blendingAlgorithmSketch.vl">
-              <Choice Kind="InterfaceTypeFlag" Name="IBackgroundFunctionT" />
+              <Choice Kind="InterfaceTypeFlag" Name="IBackgroundProviderT" />
             </TypeReference>
           </p:Interfaces>
           <Patch Id="NXsT0Eq6GSAPEIi1RuCDhP" IsGeneric="true" ExplicitTypeParameters="T">
@@ -8940,7 +8913,7 @@
               </Pin>
               <Pin Id="MIucJuss6auP3rjcnMXMH2" Name="Background Function" Kind="InputPin">
                 <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                  <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                  <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="GJIYp8MyfxEOU9UWnyD60b" Name="Sampling Position" Kind="InputPin" />
@@ -9086,7 +9059,7 @@
             <Patch Id="KIYFs8hz9w7NiH2aV8DF7O" Name="SampleT">
               <Pin Id="JzHgHELcta8OQBOL1EgFKw" MergeId="473152" Name="Background Function" Kind="InputPin">
                 <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                  <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                  <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="BfTele99tRRPvVq35wFJyN" MergeId="473150" Name="Sampling Position" Kind="InputPin">
@@ -9352,7 +9325,7 @@
               <Patch Id="LJ4vNRp7PbwL3rCFsl8QjS" Name="SampleT">
                 <Pin Id="AfugSeyMcFkLRYlMLu1ACa" MergeId="473152" Name="Background Function" Kind="InputPin">
                   <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                    <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                   </p:TypeAnnotation>
                 </Pin>
                 <Pin Id="CJIcGuoj82UM3FIARh82fj" MergeId="473150" Name="Sampling Position" Kind="InputPin">
@@ -9542,7 +9515,7 @@
               <Patch Id="VbDPImBy56UL2lgvwrFEyG" Name="SampleT">
                 <Pin Id="U1QVXjA5i4TLPyerCaRWzY" MergeId="473152" Name="Background Function" Kind="InputPin">
                   <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                    <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                    <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
                   </p:TypeAnnotation>
                 </Pin>
                 <Pin Id="UKwkIdQ1ZAyNRlJ01ZmI9s" MergeId="473150" Name="Sampling Position" Kind="InputPin">
@@ -9842,7 +9815,7 @@
               <p:NodeReference LastCategoryFullName="LayerX.Background.IBackgroundFunctionT" LastSymbolSource="VL.LayerX.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="SampleBackgroundT" />
-                <CategoryReference Kind="Category" Name="IBackgroundFunctionT" NeedsToBeDirectParent="true" />
+                <CategoryReference Kind="Category" Name="IBackgroundProviderT" NeedsToBeDirectParent="true" />
               </p:NodeReference>
               <Pin Id="G3iBRQWGm86OIw9WyxEEVh" Name="Input" Kind="StateInputPin" />
               <Pin Id="JbtyWhQKzakPNs8xsuAxYi" Name="Output" Kind="OutputPin" />
@@ -9874,7 +9847,7 @@
           <Patch Id="KXuwaIZDHZtPWuqifXacBM" Name="SampleT">
             <Pin Id="GG5fZM081T4MdcAvhD6fkd" MergeId="495572" Name="Background Function" Kind="InputPin">
               <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                <Choice Kind="TypeFlag" Name="IBackgroundFunctionT" />
+                <Choice Kind="TypeFlag" Name="IBackgroundProviderT" />
               </p:TypeAnnotation>
             </Pin>
             <Pin Id="Qmn1qKI7nBGL8BPn0qhLKB" MergeId="321329" Name="Sampling Position" Kind="InputPin">
@@ -9920,7 +9893,7 @@
             <Node Bounds="260,249,109,26" Id="Bz7YDP4ph0aNaWTstjDHQ6">
               <p:NodeReference LastCategoryFullName="LayerX.Background.IBackgroundFunction" LastSymbolSource="VL.LayerX.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                <CategoryReference Kind="InterfaceTypeFlag" Name="IBackgroundFunction" />
+                <CategoryReference Kind="InterfaceTypeFlag" Name="IBackgroundProvider" />
                 <Choice Kind="OperationCallFlag" Name="SampleBackground" />
               </p:NodeReference>
               <Pin Id="EQvxJDeF9h8OcYQULkroo1" Name="Input" Kind="StateInputPin" />
@@ -9953,7 +9926,7 @@
           <Patch Id="Rt3SCtDkigTMNKXZNdjZB2" Name="Sample">
             <Pin Id="NNkRB5Kq1CEMPNSv3WNfnG" MergeId="495572" Name="Background Function" Kind="InputPin">
               <p:TypeAnnotation LastCategoryFullName="LayerX.Background" LastSymbolSource="VL.LayerX.vl">
-                <Choice Kind="TypeFlag" Name="IBackgroundFunction" />
+                <Choice Kind="TypeFlag" Name="IBackgroundProvider" />
               </p:TypeAnnotation>
             </Pin>
             <Pin Id="BapJwVXhGYeObqAmHPpIoz" MergeId="321329" Name="Sampling Position" Kind="InputPin">
@@ -10295,7 +10268,7 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="QnDHxC4i33tP8umQ1pzflv" Location="VL.CoreLib" Version="2022.5.0-0376-gfb5b9f3634" />
-  <NugetDependency Id="DtYcIDZC8l8MDtNs7RDLUh" Location="VL.Skia" Version="2022.5.0-0376-gfb5b9f3634" />
+  <NugetDependency Id="QnDHxC4i33tP8umQ1pzflv" Location="VL.CoreLib" Version="2022.5.0-0390-g383f5b6cc5" />
+  <NugetDependency Id="DtYcIDZC8l8MDtNs7RDLUh" Location="VL.Skia" Version="2022.5.0-0390-g383f5b6cc5" />
   <NugetDependency Id="QtUKACGmbIDM3g7XI6Zxnn" Location="VL.AlchemX" IsForward="true" Version="0.0.0.0" />
 </Document>
