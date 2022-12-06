@@ -11,5 +11,9 @@ namespace GestureEngine.Utils
     {
         Start, Update, Finish, Abort
     }
+    public enum GestureEvaluation
+    {
+        On_Notify, On_Render, On_Mainloop, On_CustomEvent
+    }
 }
 
