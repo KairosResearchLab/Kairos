@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="QDpAKyi6XBaO5khE1ytTBY" LanguageVersion="2022.5.0-0392-42965bff2c" Version="0.128">
+<Document xmlns:p="property" Id="QDpAKyi6XBaO5khE1ytTBY" LanguageVersion="2022.5.0-0411-b6c74d09a3" Version="0.128">
   <NugetDependency Id="PT9j7dlhKRYLlUWaETQ7nj" Location="VL.CoreLib" Version="2022.5.0-0225-ge247e95b60" />
   <Patch Id="L35bvRWxcgfNU0SXAOKzJy">
     <Canvas Id="BK4QioSjWKANMZYUaLLD5l" DefaultCategory="Main" CanvasType="FullCategory">
@@ -208,6 +208,78 @@
             </Node>
             <Pin Id="H3jsoK3h4qWPYyipp3kBDR" Name="Input" Kind="InputPin" />
             <Pin Id="PA8W2nnrW6mQG7vRMmKzT7" Name="Result" Kind="OutputPin" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ LiveValueInteraction ************************
+
+-->
+        <Node Name="LiveValueInteraction" Bounds="410,495" Id="KEKBrNdnL5ZL7pg45HgNSf">
+          <p:NodeReference>
+            <Choice Kind="ForwardDefinition" Name="Forward" />
+            <CategoryReference Kind="Category" Name="Primitive" />
+          </p:NodeReference>
+          <p:TypeAnnotation LastCategoryFullName="VL.Lang.PublicAPI" LastSymbolSource="VL.Lang.dll">
+            <Choice Kind="TypeFlag" Name="LiveValueInteraction" />
+          </p:TypeAnnotation>
+          <Patch Id="PjMq159f7m3P6vnQemcmAU">
+            <Canvas Id="Hpv2Q7lgQMxO0WQTBHhBQA" CanvasType="Group" />
+            <ProcessDefinition Id="KtJZHgatPXJQHcJIav5I8J" IsHidden="true" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ LiveValueInteraction ************************
+
+-->
+        <Node Name="LiveValueInteraction" Bounds="410,548" Id="QNYbP2hvdHDMcDh5Yh6D6V">
+          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
+            <Choice Kind="ContainerDefinition" Name="Process" />
+          </p:NodeReference>
+          <Patch Id="B213MDUYTNvQEIYqF6UXNo">
+            <Canvas Id="NuUX211QyRuMS1dAXSkd3m" CanvasType="Group">
+              <Node Bounds="464,258" Id="GEm78I3yCxAPRvRdGBpQ6k">
+                <p:NodeReference LastCategoryFullName="VL.Lang.PublicAPI.ILiveDataHub" LastSymbolSource="VL.Lang.dll">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="AssemblyCategory" Name="ILiveDataHub" />
+                  <Choice Kind="OperationCallFlag" Name="StartInteraction" />
+                </p:NodeReference>
+                <Pin Id="AX4lg5xr1ihLXw06R32Umr" Name="Input" Kind="StateInputPin" />
+                <Pin Id="ApkmRqTIUhQNHgVxswU3PT" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="ERblImnQEOrQayAxizDM9n" Name="Result" Kind="OutputPin" />
+              </Node>
+              <ControlPoint Id="HKVZM1hZrSbOaVdfx4g49C" Bounds="465,225" />
+              <Pad Id="NJqqVSCQBr6ODNNvhmu40x" SlotId="AQs5TwxYTSPP7blnmRD6g1" Bounds="547,317" />
+              <ControlPoint Id="ERKkaEbIdFrNtMxMCVggfq" Bounds="548,417" />
+              <Node Bounds="457,352,88,26" Id="GJgFOxpLU1FMDfWotPBjJA">
+                <p:NodeReference LastCategoryFullName="VL.LiveValueInteraction" LastSymbolSource="Helpers.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="ClassType" Name="LiveValueInteraction" />
+                  <Choice Kind="OperationCallFlag" Name="Dispose" />
+                </p:NodeReference>
+                <Pin Id="Ul4Lki8JywpQcQAp3FlsNM" Name="Input" Kind="StateInputPin" />
+                <Pin Id="MZQCYSESrqAPjINK6JmRO3" Name="Output" Kind="StateOutputPin" />
+              </Node>
+            </Canvas>
+            <Patch Id="RPrdTLxkjtBMmkDfISt7HN" Name="Create" ParticipatingElements="GEm78I3yCxAPRvRdGBpQ6k">
+              <Pin Id="TZnxBHUzCsTPuRvkb08iuO" Name="Input" Kind="InputPin" Bounds="466,201" />
+            </Patch>
+            <Patch Id="GKZQIkc0O7oQD29EgI21qI" Name="Update">
+              <Pin Id="BJYdtArvHAzMJybOhhfDC0" Name="Output" Kind="OutputPin" />
+            </Patch>
+            <ProcessDefinition Id="TUcVqyTktkTQL6TfRJsJFr">
+              <Fragment Id="LplZylOpKAnQaoXdoS6I8s" Patch="RPrdTLxkjtBMmkDfISt7HN" Enabled="true" />
+              <Fragment Id="Gb4co8jb3CZMwv7aqdIFKf" Patch="GKZQIkc0O7oQD29EgI21qI" Enabled="true" />
+            </ProcessDefinition>
+            <Link Id="PkcNrXiENHCLPa5ZCdNMHm" Ids="HKVZM1hZrSbOaVdfx4g49C,AX4lg5xr1ihLXw06R32Umr" />
+            <Link Id="CFqRPrTHgD1NlgWPGocqyi" Ids="TZnxBHUzCsTPuRvkb08iuO,HKVZM1hZrSbOaVdfx4g49C" IsHidden="true" />
+            <Slot Id="AQs5TwxYTSPP7blnmRD6g1" Name="Interaction" />
+            <Link Id="BhXvhTtybqSOKGaFGL2oiP" Ids="ERblImnQEOrQayAxizDM9n,NJqqVSCQBr6ODNNvhmu40x" />
+            <Link Id="PnaV7e1zJpDQc1gz6kUss5" Ids="NJqqVSCQBr6ODNNvhmu40x,ERKkaEbIdFrNtMxMCVggfq" />
+            <Link Id="NTXGYA6WD24O3DCIcXdI0i" Ids="ERKkaEbIdFrNtMxMCVggfq,BJYdtArvHAzMJybOhhfDC0" IsHidden="true" />
+            <Patch Id="TKDg1kD2NgSNjuh8JMPMa3" Name="Dispose" ParticipatingElements="GJgFOxpLU1FMDfWotPBjJA" />
+            <Link Id="PGv2QAlXmU4OJKtClXuYqM" Ids="NJqqVSCQBr6ODNNvhmu40x,Ul4Lki8JywpQcQAp3FlsNM" />
           </Patch>
         </Node>
       </Canvas>
