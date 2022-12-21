@@ -15,23 +15,6 @@
       </p:NodeReference>
       <Patch Id="EXiKXIYAUkGP0J7eE9kOF2">
         <Canvas Id="KnnIlesmKY5PrhFNP7Jg96" CanvasType="Group">
-          <Pad Id="HYFoweue0qcPnYRBB8SpSG" Comment="Parameter" Bounds="108,130,35,15" ShowValueBox="true" isIOBox="true" Value="a">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="System.Runtime.dll">
-              <Choice Kind="TypeFlag" Name="String" />
-            </p:TypeAnnotation>
-          </Pad>
-          <Node Bounds="217,142,45,19" Id="Em6JFnDxZzCPCipWUNbLGk">
-            <p:NodeReference LastCategoryFullName="Animation" LastSymbolSource="VL.CoreLib.vl">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="LFO" />
-            </p:NodeReference>
-            <Pin Id="Pr1DYDB1K8MNQgB4xDkLAc" Name="Period" Kind="InputPin" />
-            <Pin Id="IBpwwn95R5RPU7yw5LBK9F" Name="Pause" Kind="InputPin" />
-            <Pin Id="HynVLU7oU9GPdFiKJ9YvKC" Name="Reset" Kind="ApplyPin" />
-            <Pin Id="EbBN37PdHBIMQdUVjM5AdG" Name="Phase" Kind="OutputPin" />
-            <Pin Id="Ss8fsyNFgkrLyTLZ3WtvJC" Name="On New Cycle" Kind="OutputPin" />
-            <Pin Id="ASD97kgJiFTQJFPY6Adwk2" Name="Cycles" Kind="OutputPin" />
-          </Node>
           <Node Bounds="394,634,69,19" Id="EHa70UtIS3gNtVUciJIzcx">
             <p:NodeReference LastCategoryFullName="ParameterX" LastSymbolSource="VL.BindX.vl">
               <Choice Kind="ProcessNode" Name="MidiModule" />
@@ -76,16 +59,6 @@
             </p:NodeReference>
             <Pin Id="GvASwNzz7aXQTJK2dLZWlU" Name="Simulate" Kind="InputPin" />
             <Pin Id="PaVWCrsrUF3LkEvfVF5f8p" Name="Output" Kind="OutputPin" />
-          </Node>
-          <Node Bounds="107,189,115,19" Id="HDZZNk3e20QPpk7jwGPoSj">
-            <p:NodeReference LastCategoryFullName="BindX.Registry" LastSymbolSource="VL.BindX.vl">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="OperationCallFlag" Name="WriteParameter" />
-            </p:NodeReference>
-            <Pin Id="MTjMF5urKSdNL6hvC1gl7H" Name="Parameter" Kind="InputPin" />
-            <Pin Id="BMQslYqCgQRLeVE5XdqmMJ" Name="Value" Kind="InputPin" />
-            <Pin Id="EBhNU0Rlv8cQBRdUJHaZtg" Name="Channel" Kind="OutputPin" />
-            <Pin Id="Uv5NjxfgE6jO0AvQK3KoKD" Name="Success" Kind="OutputPin" />
           </Node>
           <Node Bounds="598,328,66,19" Id="R2rRfKYvZHnNjIVonHgaXC">
             <p:NodeReference LastCategoryFullName="BindX.Registry" LastSymbolSource="VL.BindX.vl">
@@ -504,6 +477,55 @@
             <Pin Id="Nv1D5cnOED6MINCBzG9usR" Name="Cycles" Kind="OutputPin" />
           </Node>
           <Overlay Id="UIw5Zk8KRFfNi1jCPm6g3J" Name="Midi Module" Bounds="43,490,799,504" />
+          <Node Bounds="1302,1336,86,26" Id="HAnD9NCHPtjLzEhhmzLWP3">
+            <p:NodeReference LastCategoryFullName="BindX.IModule" LastSymbolSource="VL.BindX.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="InterfaceTypeFlag" Name="IModule" NeedsToBeDirectParent="true" />
+              <Choice Kind="OperationCallFlag" Name="RemoveBinding" />
+            </p:NodeReference>
+            <Pin Id="NidH5v3ya2FM0bWVToGAtN" Name="Input" Kind="StateInputPin" />
+            <Pin Id="ScWIcVMRAbsMRdlOA2EPo2" Name="Parameter Key" Kind="InputPin" DefaultValue="ddd" />
+            <Pin Id="B1W5DKrjjQ9Nhml0CYoHnu" Name="Output" Kind="StateOutputPin" />
+            <Pin Id="MRytzoitN2NL9uj5Eum3yW" Name="Apply" Kind="InputPin" />
+          </Node>
+          <Node Bounds="1301,1228,85,19" Id="DFjdWoZ7cEsPPsNkZuGmbz">
+            <p:NodeReference LastCategoryFullName="ParameterX" LastSymbolSource="VL.BindX.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="GetMidiModule" />
+            </p:NodeReference>
+            <Pin Id="NIuhxubaASOMmNHeXgSlmf" Name="Name" Kind="InputPin" />
+            <Pin Id="M2bX1C84Q8EQEH82d7uBh8" Name="Output" Kind="OutputPin" />
+            <Pin Id="QoRO2YAnZjdLRDcYM3skG2" Name="Success" Kind="OutputPin" />
+          </Node>
+          <Pad Id="UIs27r8xCPKOk2v2s9cph7" Comment="Name" Bounds="1303,1200,93,18" ShowValueBox="true" isIOBox="true" Value="My MIDI Server 1">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="System.Runtime.dll">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="IdHinKNTSJgQGiNDmzby8V" Comment="Apply" Bounds="1480,1248,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation>
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="IixNNqKGhwyOZ1shxmZfAd" Comment="" Bounds="1347,1294,35,15" ShowValueBox="true" isIOBox="true" Value="ddd">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Overlay Id="CnHQZWUcWEYLv07Puse8up" Name="Remove Binding" Bounds="1284,1152,295,231" />
+          <Pad Id="HBzT2u3BjhPPBOnD3TbUrS" Bounds="1445,1353,104,19" ShowValueBox="true" isIOBox="true" Value="Parameter stays">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
         </Canvas>
         <Patch Id="BBVKR40iBgaLWURmQWPdUM" Name="Create" />
         <Patch Id="CcFqBaEC6VeQEWIam9zFyM" Name="Update" />
@@ -514,7 +536,6 @@
         <Link Id="K2ejHoPwFjIMjrBAEDjDJZ" Ids="NTesPKOG6uEPsqJsclbS4D,HnE2Z5wTOznMycvLuvBNOH" />
         <Link Id="C7WMnDVsCMFNpH5vOsITzq" Ids="Fge30nqAd4DO1Pmu91mD6X,EFqDNiSDs16OlAmxDGsOyl" />
         <Link Id="FUMBaxVYgR7PYmJf1aBzuQ" Ids="PaVWCrsrUF3LkEvfVF5f8p,NTesPKOG6uEPsqJsclbS4D" />
-        <Link Id="Jm5Mk2ezXmwP3ivJ4m4qLz" Ids="HYFoweue0qcPnYRBB8SpSG,MTjMF5urKSdNL6hvC1gl7H" />
         <Link Id="JF2ghVpP8KzORwYhfeY7gA" Ids="GNY6lKo3SqRPuOGyOfS78R,FXwcJdyiltaMOlfYoOq8EL" />
         <Link Id="IIWsyQHXVwdLCi5QOwQf8H" Ids="J7TEWMzLDFoLOv7cDrRGaU,OOQ05wG46WlOqe0hdnL8zb" />
         <Link Id="AhEueXwmbF2MM83c8uQxEV" Ids="Uhwvmk8NTpzOlUkoNUn9l6,Q9SzoYVwAtOLQMdcujWD5s" />
@@ -532,7 +553,6 @@
         <Link Id="A9E0FRz1BKqPbkoVwQZI2D" Ids="OsGy7B5NetdNRTP1KHvBWP,HBAIPCTmz5zMmcy591zlgE" />
         <Link Id="QoswguIM6g6OwdaHRUdYui" Ids="CfdUT5THYFbL1tD2360pgM,GT3r6GkWkxCNOIvhMG6BYt" />
         <Link Id="PdfaUNOulcYLb21ti9WNBg" Ids="DUnbEUqP2qXPM7GUh5ZsQm,JBPYttMBRXdLrkEB1QZGVb" />
-        <Link Id="PK8oWRv2pEFPJqBaBq18p6" Ids="EbBN37PdHBIMQdUVjM5AdG,BMQslYqCgQRLeVE5XdqmMJ" />
         <Link Id="Me8C39qwjWgNczhvNCoPYL" Ids="O7ouNLPDklQOiF6ZbvoFLM,MTWGfx8OK2dNn3zIPn0keo" />
         <Link Id="H02wChN0LKhPMgGRgIwNOz" Ids="QTZtYpq2yVSLucFbyFjdrI,IQddYONgxxQP3h3NsCL6Q4" />
         <Link Id="V2QggcTdG3aOi8NsVfBt51" Ids="GsU1XsfEJ4KMFPxPBLlYO0,HCTlZL8uVZyPQwBca21Bl8" />
@@ -566,6 +586,10 @@
         <Link Id="PRcvH6oXMJfN7x3PTP7F7c" Ids="I0v4X1nSBmKNvhHMOvbfsY,IKAmxYYpI4jOr9gG1RPi2w" />
         <Link Id="O6ru7fmneLWNrHUsTFYFRp" Ids="BeYXgiVZ4GyLEWpQ9wzQhU,JN8DxLDaoclMjWqb4Un977" />
         <Link Id="NwFtPt0Xsi1OWQewZlLtkm" Ids="OLsI3oniRgeNxfmtLtSdK2,I0v4X1nSBmKNvhHMOvbfsY" />
+        <Link Id="MrVqnL00IVRONdtglCmx9G" Ids="UIs27r8xCPKOk2v2s9cph7,NIuhxubaASOMmNHeXgSlmf" />
+        <Link Id="MeU6UanYpZkMNijTM2eVDs" Ids="M2bX1C84Q8EQEH82d7uBh8,NidH5v3ya2FM0bWVToGAtN" />
+        <Link Id="OgHVkIz5GqiPjVwh3YfZGR" Ids="IdHinKNTSJgQGiNDmzby8V,MRytzoitN2NL9uj5Eum3yW" />
+        <Link Id="V8E7So0aYzjMfXUp3uuMW3" Ids="IixNNqKGhwyOZ1shxmZfAd,ScWIcVMRAbsMRdlOA2EPo2" />
       </Patch>
     </Node>
   </Patch>
