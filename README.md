@@ -8,12 +8,12 @@ A complete framework for data control and composition in [vvvv](http://visualpro
 
 | Package           | Current version                                                                                                                                              |
 |-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| VL.AlchemX        | [![VL.AlchemX](https://img.shields.io/nuget/vpre/VL.AlchemX?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/VL.AlchemX/)                     |
-| VL.LayerX         | [![VL.LayerX](https://img.shields.io/nuget/vpre/VL.LayerX?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/VL.LayerX/)                        |
+| VL.AlchemX        | [![VL.AlchemX](https://img.shields.io/nuget/vpre/VL.AlchemX?logo=nuget&style=flat-square)](https://www.nuget.org/packages/VL.AlchemX/)                     |
+| VL.LayerX         | [![VL.LayerX](https://img.shields.io/nuget/vpre/VL.LayerX?logo=nuget&style=flat-square)](https://www.nuget.org/packages/VL.LayerX/)                        |
 | VL.BindX          | To be released                                                                                                                                               |
-| VL.Touchy         | [![VL.Touchy](https://img.shields.io/nuget/vpre/VL.Touchy?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/VL.Touchy)                         |
-| VL.Kairos.Runtime | [![VL.Kairos.Runtime](https://img.shields.io/nuget/vpre/VL.Kairos.Runtime?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/VL.Kairos.Runtime) |
-| VL.Kairos         | [![VL.Kairos](https://img.shields.io/nuget/vpre/VL.Kairos?logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/VL.Kairos)                         |
+| VL.Touchy         | [![VL.Touchy](https://img.shields.io/nuget/vpre/VL.Touchy?logo=nuget&style=flat-square)](https://www.nuget.org/packages/VL.Touchy)                         |
+| VL.Kairos.Runtime | [![VL.Kairos.Runtime](https://img.shields.io/nuget/vpre/VL.Kairos.Runtime?logo=nuget&style=flat-square)](https://www.nuget.org/packages/VL.Kairos.Runtime) |
+| VL.Kairos         | [![VL.Kairos](https://img.shields.io/nuget/vpre/VL.Kairos?logo=nuget&style=flat-square)](https://www.nuget.org/packages/VL.Kairos)                         |
 
 ## Features
 
