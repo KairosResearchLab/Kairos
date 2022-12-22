@@ -10,4 +10,15 @@ namespace Touchy.Utils
     {
         Start, Update, Finish, Abort
     }
+
+    public enum MouseEventKind
+    {
+        Down, Up, Pressed, Move, DoubleClick, IsLost
+    }
+
+    public enum KeyboardEventKind
+    {
+        Down, Up, Pressed
+    }
+
 }
