@@ -1,4 +1,4 @@
-name: release-alchemx
+name: release-kairos
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ on:
         default: 'main'
       version:
         description: 'The version to push'
-        required: false
+        required: true
         default: 'X.X.X'
       is_pre:
         description: 'Is pre release'
@@ -36,14 +36,15 @@ jobs:
     - name: Publish VL Nuget
       uses: vvvv/PublishVLNuget@1.0.41
       with:
-        nuspec: deployment/VL.AlchemX.nuspec
+        csproj:
+        nuspec: VL.Kairos/deployment/VL.Kairos.nuspec
         version: ${{ github.event.inputs.version }}
-        nuget-key: ${{ secrets.NUGET_KEY }}
+        nuget-key: ${{ secrets.KAIROS_KEY }}
 
     - name: Create tag and release
       uses: avakar/tag-and-release@v1.0.0
       with:
-        tag_name: ${{ format('AlchemX {0}', github.event.inputs.version) }}
+        tag_name: ${{ format('Kairos_{0}', github.event.inputs.version) }}
         prerelease: ${{ github.event.inputs.is_pre }}
         body: ${{ github.event.inputs.notes }}
       env:

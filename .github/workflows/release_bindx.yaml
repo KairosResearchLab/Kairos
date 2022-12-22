@@ -1,4 +1,4 @@
-name: release-alchemx
+name: release-bindx
 
 on:
   workflow_dispatch:
@@ -37,14 +37,14 @@ jobs:
       uses: vvvv/PublishVLNuget@1.0.41
       with:
         csproj:
-        nuspec: VL.AlchemX/deployment/VL.AlchemX.nuspec
+        nuspec: VL.BindX/deployment/VL.BindX.nuspec
         version: ${{ github.event.inputs.version }}
-        nuget-key: ${{ secrets.ALCHEMX_KEY }}
+        nuget-key: ${{ secrets.BINDX_KEY }}
 
     - name: Create tag and release
       uses: avakar/tag-and-release@v1.0.0
       with:
-        tag_name: ${{ format('AlchemX_{0}', github.event.inputs.version) }}
+        tag_name: ${{ format('BindX_{0}', github.event.inputs.version) }}
         prerelease: ${{ github.event.inputs.is_pre }}
         body: ${{ github.event.inputs.notes }}
       env:
