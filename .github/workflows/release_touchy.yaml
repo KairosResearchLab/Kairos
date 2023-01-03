@@ -1,4 +1,4 @@
-name: release-kairos
+name: release-touchy
 
 on:
   workflow_dispatch:
@@ -36,15 +36,15 @@ jobs:
     - name: Publish VL Nuget
       uses: vvvv/PublishVLNuget@1.0.41
       with:
-        csproj: VL.Kairos/src/Kairos.sln
-        nuspec: VL.Kairos/deployment/VL.Kairos.nuspec
+        csproj: VL.Touchy/src/VL.Touchy.sln
+        nuspec: VL.Touchy/deployment/VL.Touchy.nuspec
         version: ${{ github.event.inputs.version }}
-        nuget-key: ${{ secrets.KAIROS_KEY }}
+        nuget-key: ${{ secrets.TOUCHY_KEY }}
 
     - name: Create tag and release
       uses: avakar/tag-and-release@v1.0.0
       with:
-        tag_name: ${{ format('Kairos_{0}', github.event.inputs.version) }}
+        tag_name: ${{ format('Touchy_{0}', github.event.inputs.version) }}
         prerelease: ${{ github.event.inputs.is_pre }}
         body: ${{ github.event.inputs.notes }}
       env:
