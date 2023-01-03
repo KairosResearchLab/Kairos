@@ -1,10 +1,24 @@
 # Kairos
 
-[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/VL.Kairos?logo=nuget&style=flat-square)](https://www.nuget.org/packages/VL.Kairos/) [![Matrix](https://img.shields.io/matrix/VL.Kairos:matrix.org?label=chat%20on%20element&logo=element&style=flat-square)](https://app.element.io/#/room/#VL.Kairos:matrix.org) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![vvvv](https://img.shields.io/static/v1?label=MADE%20WITH&message=VVVV&color=191919&style=flat-square)](https://visualprogramming.net/)
+A complete framework for data control and composition in [vvvv](http://visualprogramming.net)
+
+[![Matrix](https://img.shields.io/matrix/VL.Kairos:matrix.org?label=chat%20on%20element&logo=element&style=flat-square)](https://app.element.io/#/room/#VL.Kairos:matrix.org) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![vvvv](https://img.shields.io/static/v1?label=MADE%20WITH&message=VVVV&color=191919&style=flat-square)](https://visualprogramming.net/)
 
 ![VL.Kairos banner](/img/banner.png)
 
-A complete framework for data control and composition in [vvvv](http://visualprogramming.net)
+## Requirements
+
+As of today, Kairos only works with vvvv gamma 2022.5 previews. Get the latest [here](http://visualprogramming.net)
+
+## Installing
+
+- Go to Gamma's Quad menu > Manage Nugets > Commandline and type
+
+```
+nuget install VL.Kairos -pre
+```
+- Press Enter and wait the ending of the installation process
+- For more information on nugets and how to use them in vvvv, click [here](https://thegraybook.vvvv.org/reference/libraries/referencing.html#manage-nugets)
 
 | Package           | Current version                                                                                                                                              |
 |-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -30,17 +44,6 @@ A complete framework for data control and composition in [vvvv](http://visualpro
 * Data binding helpers for vvvv app control
 
 
-![VL.Kairos tools](/img/tools.png)
-
-## Installing
-
-To use the latest stable version in vvvv gamma (2021.3.3):
-1. Go to Gamma's Quad menu > Manage Nugets > Commandline and type:
-
-	```
-	nuget install VL.Kairos
-	```
-2. Press Enter and wait the ending of the installation process
 
 ## Contributing to the development
 
