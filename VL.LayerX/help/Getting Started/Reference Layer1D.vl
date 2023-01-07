@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="HgmqPI4nh4tLRv4Z5fiJZR" LanguageVersion="2022.5.0-0429-778c95037a" Version="0.128">
+<Document xmlns:p="property" Id="HgmqPI4nh4tLRv4Z5fiJZR" LanguageVersion="2022.5.0-0441-4f9bdb940b" Version="0.128">
   <Patch Id="HGUDXWO9Z7cNKkjkxtdjvd">
     <Canvas Id="C7TP0nEsgmMPljBzBOMo3C" DefaultCategory="Main" CanvasType="FullCategory" />
     <!--
@@ -1042,6 +1042,67 @@
             </p:NodeReference>
             <Pin Id="FzUCklticLMLY2kGaVrxA1" Name="Output" Kind="StateOutputPin" />
           </Node>
+          <Node Bounds="163,-438,179,152" Id="GqCLoRuHfwnLLKcRW1sZDG">
+            <p:NodeReference LastCategoryFullName="LayerX.1D" LastSymbolSource="VL.LayerX.vl">
+              <Choice Kind="ProcessAppFlag" Name="Layer1D" />
+              <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="QBKWAvHs1VzNeLaPg8V35f" Name="Output" Kind="StateOutputPin" />
+            <Patch Id="FniurOa2tsBOZWHqEhlKMm" ManuallySortedPins="true">
+              <Patch Id="TbuScPF3URgPeNgnhwfTUE" Name="Create" ManuallySortedPins="true" />
+              <Patch Id="C3j39ruHNMiOdIWqDr4kbm" Name="Update" ManuallySortedPins="true">
+                <Pin Id="Dz3Qsl0hSm7LRso6OmrycM" Name="Background Provider" Kind="InputPin" />
+                <Pin Id="QiDeROd9LXnNs5s2ZGCKkf" Name="Sampling Position" Kind="InputPin" />
+                <Pin Id="F4bjIkoxOZPObSMaTy0eWL" Name="Alpha Function" Kind="InputPin" />
+                <Pin Id="DKUPmz06V1IP7RJGc5T05G" Name="Value" Kind="OutputPin" />
+              </Patch>
+              <ControlPoint Id="KhsAfYeLjBzMYnUnEUtaRJ" Bounds="185,-430" />
+              <ControlPoint Id="KLVapjMYk5MLPB9XVAV67B" Bounds="212,-406" />
+              <ControlPoint Id="M7pjEVnMnHJN3OZozGJWF4" Bounds="251,-378" />
+              <ControlPoint Id="S3OojQYWlEkOQxoZVXyGBq" Bounds="179,-293" />
+              <Pad Id="TwjRvDu06FRQIAwnIB0NRk" Comment="" Bounds="179,-327,35,15" ShowValueBox="true" isIOBox="true" Value="0.5">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="System.Runtime.dll">
+                  <Choice Kind="TypeFlag" Name="Float32" />
+                </p:TypeAnnotation>
+              </Pad>
+            </Patch>
+          </Node>
+          <Node Bounds="163,-233,86,19" Id="Q0bVT3UiBTcP7AeBl6yqSu">
+            <p:NodeReference LastCategoryFullName="LayerX.1D.Utils" LastSymbolSource="VL.LayerX.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="SampleLayer1D" />
+            </p:NodeReference>
+            <Pin Id="OeBkAm1DFoQMtWBiaM6GbY" Name="Input" Kind="InputPin" />
+            <Pin Id="RY317OQtKMZObd0t6ajsHt" Name="Background Value" Kind="InputPin" />
+            <Pin Id="RcQS6WGweNEMxOYNWAfaev" Name="Sampling Position" Kind="InputPin" />
+            <Pin Id="FD4haIdgu85QVYMG0kY67X" Name="Output" Kind="OutputPin" />
+            <Pin Id="J2BzimDbPByQD90nmMb4NW" Name="Layer Assigned" Kind="OutputPin" />
+          </Node>
+          <Pad Id="V2eqikOwv6hQT8Xsd04AnR" Comment="Output" Bounds="165,-191,42,73" ShowValueBox="true" isIOBox="true" Value="0">
+            <p:TypeAnnotation>
+              <Choice Kind="ImmutableTypeFlag" Name="Float32" />
+              <FullNameCategoryReference ID="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:maximum p:Type="Single">1</p:maximum>
+              <p:minimum p:Type="Single">0</p:minimum>
+              <p:showslider p:Type="Boolean">true</p:showslider>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="SuaemyK6UUVL5iYXyIyANE" Comment="Sampling Position" Bounds="246,-255,35,15" ShowValueBox="true" isIOBox="true" Value="0.3">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="System.Runtime.dll">
+              <Choice Kind="TypeFlag" Name="Float64" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="Dtl49S6Xo0pPI4W3g9GlfX" Bounds="447,-434,163,120" ShowValueBox="true" isIOBox="true" Value="A Layer is something that you can sample by providing a sampling position and it returns the value in that position">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
         </Canvas>
         <Patch Id="FSVHgsUJMVHN69WuqjNh39" Name="Create" />
         <Patch Id="IZujogNUJB3NANeh5TC7vE" Name="Update" />
@@ -1180,10 +1241,18 @@
         <Link Id="SQsVlTD3t0lOFaVM3UNxnq" Ids="RPFvYdAKLviPyNiMais8cn,AEfvfgZB08hLI0NCvvAbkm" IsHidden="true" />
         <Link Id="E8upturisIPP4fyZvYDF6Z" Ids="AEfvfgZB08hLI0NCvvAbkm,OFUQCU8ZfslPjaUlLGNfWQ" />
         <Link Id="P5rPxLd6pRoMG0xALUPrqg" Ids="BLkZgYYfxSnM68uLNtCT8b,HzGEqm775HfPSQQyenIna7" />
+        <Link Id="BOd8N9VEAexMrWYjZtGKhu" Ids="Dz3Qsl0hSm7LRso6OmrycM,KhsAfYeLjBzMYnUnEUtaRJ" IsHidden="true" />
+        <Link Id="BHjihALcfHEQAjxoLGg7CF" Ids="QiDeROd9LXnNs5s2ZGCKkf,KLVapjMYk5MLPB9XVAV67B" IsHidden="true" />
+        <Link Id="AXdthtubWcELnr2eGXXVo6" Ids="F4bjIkoxOZPObSMaTy0eWL,M7pjEVnMnHJN3OZozGJWF4" IsHidden="true" />
+        <Link Id="VtKK0GU7YNfMSYflLpTmJz" Ids="S3OojQYWlEkOQxoZVXyGBq,DKUPmz06V1IP7RJGc5T05G" IsHidden="true" />
+        <Link Id="H9zVTf46RIBMlF0PZaIKBr" Ids="TwjRvDu06FRQIAwnIB0NRk,S3OojQYWlEkOQxoZVXyGBq" />
+        <Link Id="QmqGFbB64yuLMVbVdD7P5E" Ids="FD4haIdgu85QVYMG0kY67X,V2eqikOwv6hQT8Xsd04AnR" />
+        <Link Id="Lv8etqDoShUNRBlCLNhMoG" Ids="SuaemyK6UUVL5iYXyIyANE,RcQS6WGweNEMxOYNWAfaev" />
+        <Link Id="Bn42RFNJhfXQV95lutDRlq" Ids="QBKWAvHs1VzNeLaPg8V35f,OeBkAm1DFoQMtWBiaM6GbY" />
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="OVD4drgo9bxOoEs96ioH1k" Location="VL.CoreLib" Version="2022.5.0-0429-g778c95037a" />
+  <NugetDependency Id="OVD4drgo9bxOoEs96ioH1k" Location="VL.CoreLib" Version="2022.5.0-0441-g4f9bdb940b" />
   <NugetDependency Id="TDK85uwhWnGLaosskwJMQF" Location="VL.LayerX" Version="0.0.0.0" />
   <NugetDependency Id="TwxhErWbpMMP6PXKBqCrZU" Location="VL.IO.OSC" Version="1.0.16" />
   <NugetDependency Id="Demf5Ybh9QFMDezQ9OGkcg" Location="VL.IO.Midi" Version="1.0.3" />
