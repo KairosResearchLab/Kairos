@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="C8RxXFBYdkkLeVL0IONPXd" LanguageVersion="2022.5.0-0433-7f9c0d1091" Version="0.128">
+<Document xmlns:p="property" Id="C8RxXFBYdkkLeVL0IONPXd" LanguageVersion="2022.5.0-0441-4f9bdb940b" Version="0.128">
   <Patch Id="OdwjHxvmpTwQVNFJ9pLKQP">
     <Canvas Id="TFkrzzMqabMLaJgnlwzp1b" DefaultCategory="Kairos.Runtime.Clock" CanvasType="FullCategory">
       <Pad Id="M2kgzgmoZ5xMmFh7XVnn5C" Bounds="100,122,275,50" ShowValueBox="true" isIOBox="true" Value="Kairos.Clock">
@@ -182,7 +182,7 @@
                   <p:NodeReference LastCategoryFullName="Kairos.Runtime.Clock.KairosClock" LastSymbolSource="VL.Kairos.Runtime.Clock.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <CategoryReference Kind="ClassType" Name="KairosClock" />
-                    <Choice Kind="OperationCallFlag" Name="Update" />
+                    <Choice Kind="OperationCallFlag" Name="Integrate" />
                   </p:NodeReference>
                   <Pin Id="OZbPLJ7dxCiQWne4p7iz9S" Name="Input" Kind="InputPin" />
                   <Pin Id="PngqMpNdW6aL3ShlK2Uq6a" Name="TimeStep" Kind="InputPin" />
@@ -295,7 +295,7 @@
             </Node>
             <ControlPoint Id="QwmKrbBcVqzOx0qc5On7cr" Bounds="1260,1137" />
             <Pad Id="MJkR49FmcP2M2aWf9bmPRs" SlotId="FUI6iz83JMXPVbjnH1t6zG" Bounds="838,1712" />
-            <Overlay Id="FS5U9QSlwJcLSC7yt2vqDf" Name="IntegrateClockOnNewThread" Bounds="725,1215,476,618">
+            <Overlay Id="FS5U9QSlwJcLSC7yt2vqDf" Name="Update" Bounds="725,1215,476,618">
               <p:ColorIndex p:Type="Int32">10</p:ColorIndex>
             </Overlay>
             <Pad Id="Qnp69YEhZWaNqgMgLHWZvY" SlotId="BMPuIu8E6zqL6Y82mD62cA" Bounds="998,1481" />
@@ -495,7 +495,7 @@
               <p:NodeReference LastCategoryFullName="Kairos.Runtime.Clock.KairosClock" LastSymbolSource="VL.Kairos.Runtime.Clock.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="ClassType" Name="KairosClock" />
-                <Choice Kind="OperationCallFlag" Name="Update" />
+                <Choice Kind="OperationCallFlag" Name="Integrate" />
               </p:NodeReference>
               <Pin Id="R1JZM1kCUckMJlyOHCzoSx" Name="Input" Kind="InputPin" />
               <Pin Id="DNmY8hFfoKIN2B7Ro83XCD" Name="TimeStep" Kind="InputPin" />
@@ -515,6 +515,34 @@
             <Overlay Id="E5Y8xFlVSj9QWi4VjwZv6u" Name="IntegrateClock" Bounds="338,1215,339,360">
               <p:ColorIndex p:Type="Int32">10</p:ColorIndex>
             </Overlay>
+            <!--
+
+    ************************ CreateDefault ************************
+
+-->
+            <Node Name="CreateDefault" Bounds="120,184,69,93" Id="HdAfEWIDoe1NSdVwraF7e5">
+              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
+                <CategoryReference Kind="Category" Name="Primitive" NeedsToBeDirectParent="true" />
+                <Choice Kind="OperationDefinition" Name="Operation" />
+              </p:NodeReference>
+              <Patch Id="ODaPEFjLLvGLbSMPlzd9oz">
+                <ControlPoint Id="AwmsJpyejBoLas4NstpdQZ" Bounds="134,260" />
+                <Link Id="NN0PYO9OK54N20ehlhd6bJ" Ids="AwmsJpyejBoLas4NstpdQZ,DIV8tHUKL9HNXHKWVWeTyL" IsHidden="true" />
+                <Node Bounds="132,207,40,19" Id="IjAoBkpCC1jQRBFlQFxXjx">
+                  <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="VL.CoreLib.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="NULL" />
+                  </p:NodeReference>
+                  <Pin Id="TpP9akOOSMiQZOtapyZpBR" Name="Result" Kind="OutputPin" />
+                </Node>
+                <Link Id="CvNNdMcTbatPC3GbgdIzCj" Ids="TpP9akOOSMiQZOtapyZpBR,AwmsJpyejBoLas4NstpdQZ" />
+                <Pin Id="DIV8tHUKL9HNXHKWVWeTyL" Name="Output" Kind="OutputPin">
+                  <p:TypeAnnotation LastCategoryFullName="Kairos.Runtime.Clock" LastSymbolSource="VL.Kairos.Runtime.Clock.vl">
+                    <Choice Kind="TypeFlag" Name="KairosClock" />
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+            </Node>
           </Canvas>
           <Slot Id="GGrXHl1QJbqOlYctkkgPk6" Name="Seconds">
             <p:TypeAnnotation p:Type="TypeReference">
@@ -649,7 +677,7 @@
           <Link Id="MX4tLyp75fxNKOWGSPHn89" Ids="HrdLJQRs5IDNTHjdVda4Dx,DylendziWXYMtSuVYcqbnF" />
           <ProcessDefinition Id="IIfzDZVhFDPNa4rRfc9uUb" HasStateOut="true">
             <Fragment Id="TsZhhSlByf1MvBWAvkTaVT" Patch="RCPg8gt0VwiMrM6DcHWGWq" Enabled="true" />
-            <Fragment Id="PY4dEhAQaEALcEeiYEvetG" Patch="Hks1ZleuwIHOsWoBl9Xu9x" Enabled="true" />
+            <Fragment Id="CZarp6VjtkjPpNu3i3hzsY" Patch="HdAfEWIDoe1NSdVwraF7e5" />
             <Fragment Id="KHQi6hp0jzULHWPuc1aplI" Patch="TGglf4nNGgvOGci0B9IIjK" Enabled="true" />
             <Fragment Id="PvK9myW1DoWPpKrNNAQ1FX" Patch="REMrjztfw9DMg4Dw9dr5NW" Enabled="true" />
             <Fragment Id="F3jr5wJfuuUOKn21Fi4Zb7" Patch="PDc7ei7iLoKOatdpYrasii" Enabled="true" />
@@ -672,6 +700,7 @@
             <Fragment Id="HAc7racRzV1LuFirt2ThOe" Patch="NBecdrNAXJJMJRv7Ob1to3" />
             <Fragment Id="PiMekbrhRTfLUPoow1grZb" Patch="RphNzarcdQjMyOFqyzZ144" />
             <Fragment Id="J1QklAKIC8ZOL255qcWECt" Patch="UbSnKKXGdHlMa4bkNcpHcW" />
+            <Fragment Id="PY4dEhAQaEALcEeiYEvetG" Patch="Hks1ZleuwIHOsWoBl9Xu9x" Enabled="true" />
           </ProcessDefinition>
           <Link Id="Jkuid4xMrwFQdfrOKm4ctC" Ids="O59NphDwTPRPlnsY01APz2,SPWVWfzMRQwNF6DnrxHHUx" />
           <Link Id="D5ZwHNoHG42MThFYVLJ6eR" Ids="H3wSY4dBitSOsa39LZCbiV,L20eMc91aJJNP99gDJDkvV" />
@@ -698,7 +727,7 @@
           <Patch Id="S8NFcMvt1cqOVq3GopbCHn" Name="GetPhase">
             <Pin Id="IwSWn9ZFP77OFGZGgcofd4" Name="Phase" Kind="OutputPin" />
           </Patch>
-          <Patch Id="NGV2QfKd24FPquyxcvgiFM" Name="Update" ParticipatingElements="K7aQG0G7Te0OOuNDxCmq8e">
+          <Patch Id="NGV2QfKd24FPquyxcvgiFM" Name="Integrate" ParticipatingElements="K7aQG0G7Te0OOuNDxCmq8e,Gcogyavm0rLMJrIs7sK6FZ">
             <Pin Id="OabTE8vgIuWM5P4dnCEIXF" Name="TimeStep" Kind="InputPin" Bounds="657,589" />
           </Patch>
           <Patch Id="Hks1ZleuwIHOsWoBl9Xu9x" Name="SetPeriod">
@@ -733,7 +762,7 @@
           <Patch Id="BDUcHJLFQkjLB0xBqT6hZy" Name="GetCycles">
             <Pin Id="GutrQqaqqAOPFB6db1PtoR" Name="Cycles" Kind="OutputPin" />
           </Patch>
-          <Patch Id="DEw2PEmzWoyOhWDStqwGpX" Name="IntegrateClockOnNewThread" ParticipatingElements="EzOoI90WUhEMrtGPblUavY">
+          <Patch Id="DEw2PEmzWoyOhWDStqwGpX" Name="Update" ParticipatingElements="EzOoI90WUhEMrtGPblUavY">
             <Pin Id="BesRkcjB9dlOoskUoHObul" Name="Integration FPS" Kind="InputPin" DefaultValue="60" />
           </Patch>
           <Patch Id="HknTpDg67soLIuYcLaiavJ" Name="GetUpdateStream">
@@ -784,9 +813,9 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="I9r7OOr28ZKQU0kOe9kITs" Location="VL.CoreLib" Version="2022.5.0-0433-g7f9c0d1091" />
+  <NugetDependency Id="I9r7OOr28ZKQU0kOe9kITs" Location="VL.CoreLib" Version="2022.5.0-0441-g4f9bdb940b" />
   <NugetDependency Id="U0cZBvVDT5OLSVXQLJWZBo" Location="VL.LayerX" Version="0.0.0.0" />
-  <NugetDependency Id="DN44yrEUddUMtIJPg9Jixk" Location="VL.Lang" Version="2022.5.0-0433-g7f9c0d1091" />
+  <NugetDependency Id="DN44yrEUddUMtIJPg9Jixk" Location="VL.Lang" Version="2022.5.0-0441-g4f9bdb940b" />
   <DocumentDependency Id="Q8lsl2aQ2woPUyzp18N2aP" Location="./VL.Kairos.Runtime.Core.vl" />
-  <NugetDependency Id="N060MY3I3NaQIFfIU14wMb" Location="VL.Core" Version="2022.5.0-0433-g7f9c0d1091" />
+  <NugetDependency Id="N060MY3I3NaQIFfIU14wMb" Location="VL.Core" Version="2022.5.0-0441-g4f9bdb940b" />
 </Document>
