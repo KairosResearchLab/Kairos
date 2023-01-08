@@ -11649,16 +11649,21 @@
           <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
         </p:ValueBoxSettings>
       </Pad>
-      <Canvas Id="A1WdNrSaihNPdit48tVd2a" Name="Clock" Position="134,580">
+      <Canvas Id="A1WdNrSaihNPdit48tVd2a" Name="SamplingPositionProvider" Position="134,580">
         <!--
 
     ************************ KairosClock ************************
 
 -->
-        <Node Name="KairosClock" Bounds="124,196" Id="JysVL4CuBmhOu0jDTSv2cO">
+        <Node Name="KairosClock" Bounds="141,306" Id="JysVL4CuBmhOu0jDTSv2cO">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
             <Choice Kind="ClassDefinition" Name="Class" />
           </p:NodeReference>
+          <p:Interfaces>
+            <TypeReference LastCategoryFullName="Kairos.Runtime.Core.SamplingPositionProvider" LastSymbolSource="VL.Kairos.Runtime.Core.vl">
+              <Choice Kind="InterfaceTypeFlag" Name="ISamplingPosition1DProvider" />
+            </TypeReference>
+          </p:Interfaces>
           <Patch Id="SLykq3RvUgFOKLECowt4t3">
             <Canvas Id="CGtqweoo9DSO4rTeEFXLjo" CanvasType="Group">
               <Pad Id="Ax3gZrTqtsoMWRb8G2vSmM" SlotId="JhIJ5zlKjefORCxY3sOWtK" Bounds="208,276" />
@@ -12023,8 +12028,8 @@
                 </p:NodeReference>
                 <Pin Id="J0N86tZUVNAOBB0L4mE24k" Name="Input" Kind="StateInputPin" />
                 <Pin Id="ARbVZ1fAbDNMQQS5ZcYvh6" Name="Seconds" Kind="InputPin" />
-                <Pin Id="MOzKBgMoOy0Nq6ZoDJDK1A" Name="Output" Kind="StateOutputPin" />
                 <Pin Id="SF3o0meTRrSNoLHVmsPGSH" Name="Apply" Kind="InputPin" />
+                <Pin Id="MOzKBgMoOy0Nq6ZoDJDK1A" Name="Output" Kind="StateOutputPin" />
               </Node>
               <Node Bounds="875,714,25,19" Id="Tmf7OBgf2OkLhLEuOIHeBz">
                 <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="VL.CoreLib.vl">
@@ -12057,7 +12062,7 @@
                 </p:NodeReference>
                 <Pin Id="UEhWhuAVswfPomDE9nSqez" Name="Instance" Kind="OutputPin" />
               </Node>
-              <Pad Id="SyJ4NYlOIY6Nai3Vm9iEfc" SlotId="IZw0lGccoV3PPcN893kGKr" Bounds="175,242" />
+              <Pad Id="SyJ4NYlOIY6Nai3Vm9iEfc" SlotId="IZw0lGccoV3PPcN893kGKr" Bounds="180,222" />
               <Pad Id="PQgTkZnleyNLq5cVwFGeTE" SlotId="IZw0lGccoV3PPcN893kGKr" Bounds="446,723" />
               <Node Bounds="392,745,25,19" Id="P1FAamA7fkmQPdzmbc0Vfh">
                 <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="VL.CoreLib.vl">
@@ -12086,7 +12091,7 @@
                   <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
                 </p:ValueBoxSettings>
               </Pad>
-              <Pad Id="TYQTCjqFOQYNLI6tO9G235" Comment="" Bounds="246,208,35,15" ShowValueBox="true" isIOBox="true" Value="0">
+              <Pad Id="TYQTCjqFOQYNLI6tO9G235" Comment="" Bounds="234,193,35,15" ShowValueBox="true" isIOBox="true" Value="0">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="Float64" />
                 </p:TypeAnnotation>
@@ -12182,6 +12187,12 @@
                   <Link Id="DGalmokaBcOPuJKHNIPSqT" Ids="Lm8sS5dQdyHMoLuO4vxxP0,CFSvRWLNGcjMtRf13VMais" />
                 </Patch>
               </Node>
+              <ControlPoint Id="Tbp9KjeCulqPiMaUAokY3Z" Bounds="-144,350" />
+              <ControlPoint Id="QWvCP6uqtWvO4zKQ2Jjr4n" Bounds="-144,224" />
+              <Overlay Id="PluTh3CqqYZQMHAhKy4yw2" Name="ISamplingPosition1DProvider" Bounds="-217,146,289,265">
+                <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
+              </Overlay>
+              <Pad Id="EJNtQCCEEk4OeNbSXc5a7g" SlotId="JhIJ5zlKjefORCxY3sOWtK" Bounds="-144,288" />
             </Canvas>
             <Slot Id="JhIJ5zlKjefORCxY3sOWtK" Name="Seconds">
               <p:TypeAnnotation p:Type="TypeReference">
@@ -12323,6 +12334,37 @@
             <Link Id="L53HJ41OBbVOrMlIDfUrEa" Ids="JImHqtBVu9DNaBSYUyOYGh,LjzXnDsruFXPlmBgfcTCdl" />
             <Link Id="QzAqzSCL4hlNoc748la9Wp" Ids="ULJj1x1PyESOQtrnTDEXEK,JdWEnMWICxEOL0BgWGb20Q" />
             <Link Id="GhUDMlWBK1NPNlnQ8DEyg2" Ids="T4JosOddbG8MwSQUxVtzgu,ULJj1x1PyESOQtrnTDEXEK" IsHidden="true" />
+            <ProcessDefinition Id="MNySCpWib6fLjNvqkwVF6i" HasStateOut="true">
+              <Fragment Id="G69YMIaLG1ZLn7bH8UAi9P" Patch="PhbCR9sCnWDMdaCRrdaDX2" Enabled="true" />
+              <Fragment Id="BWUu786YWoeLCiFBR83YKn" Patch="RaoTIoc10L4QUkKwwAH7pL" />
+              <Fragment Id="DwROj7altPWL3KynKl7lF6" Patch="Dt1jxDgYcZiQMJRkdBsXeV" Enabled="true" />
+              <Fragment Id="K8rMS2fXHNNPs5ya0ovsiz" Patch="LbpvCGlCxhKOS60BtVBmUI" Enabled="true" />
+              <Fragment Id="AGKhsp5vVe5PbORYUgr6gJ" Patch="FwQlOdErp7XO8cgQak6kl6" Enabled="true" />
+              <Fragment Id="VAut3eUgo1YO3BkDlWBHk0" Patch="LqVBGkaF4KKP37ijgVGZJt" Enabled="true" />
+              <Fragment Id="TzgDG7IzOKfNhfVXAFITNR" Patch="T18BpUTiyllMpp0aFWeqjr" Enabled="true" />
+              <Fragment Id="MbuTIaE688fOT2v2HKi5JZ" Patch="QXsNgXhsgzaQCrb0uOgrMn" Enabled="true" />
+              <Fragment Id="T1kxygTFoGvQU1DNjL7xPP" Patch="TSZfBYKL1esNju0BA81xCx" Enabled="true" />
+              <Fragment Id="D27pbfBYzLeM1bAb5ury65" Patch="IrqYZywcIMcLNJJdOwgNfp" Enabled="true" />
+              <Fragment Id="NbBWQnwhW5LQZZ3NqWLlY0" Patch="Viou8Lh43apLJeQKgXBrWk" Enabled="true" />
+              <Fragment Id="M9QKeTGeMnSQSbNyEGLLIH" Patch="Mx6jwbndrpKOmf7CiWVrgd" Enabled="true" />
+              <Fragment Id="Lie4dE6CWjhOCtvT8tppqd" Patch="HeUV6AHjH9TNHhlOorJycc" Enabled="true" />
+              <Fragment Id="I4VJidXrHPZNkwHqCdRKY2" Patch="TuLd8qvxmUwPoUoGEUjfbx" Enabled="true" />
+              <Fragment Id="TpyIqwjNmq4OAXmNYXsYRV" Patch="LbZKEMFb8aZLZjWK8J4FJN" Enabled="true" />
+              <Fragment Id="JBI7rydNB9dLgoOqVzQ26t" Patch="Q2hxyIdqMjWOMNBgUr8yjJ" Enabled="true" />
+              <Fragment Id="JaYqCO0lnHpORvBeIGFuVR" Patch="AhoYklwrFZcN8ydeHROCYe" Enabled="true" />
+              <Fragment Id="CvUfXdFRmyzPyPHbhuK0GN" Patch="DFDt4ZwIY9HLRAxNO3AUvp" />
+              <Fragment Id="C1RxFwivLLEQON7JllyPN9" Patch="SgTgyJaV26KOoBBO1C6AmI" />
+              <Fragment Id="Cu3c0CrRxS5O3s8O9hNmXR" Patch="EOkKVOB2J66PY6JGjKGrbF" />
+              <Fragment Id="HgRc7TxkTsAMMITMjRTnFw" Patch="Uaw3y3z3UN5MVuI3Or4jvI" />
+              <Fragment Id="BKMxTYLWszFPYUVhVyjxCF" Patch="Unz7fyv60utOKR8PnX0m1p" />
+              <Fragment Id="NBmFzAIM61oLja0JGX18Ne" Patch="LyOos4ihUosNGKpkU0CTDK" />
+              <Fragment Id="GHjpW28lmP3PRNIUCsIubU" Patch="AwLJGeaVlvdNR2KuhsAMHD" />
+              <Fragment Id="RYNECMjvustNCMMReXEmqo" Patch="ROj6vYVxkNJNoDh9wSKVTf" />
+              <Fragment Id="NOr36yANoiYM1VwzD8JlOI" Patch="TTn6DKxTo8nLIYtQ5EbEpg" />
+              <Fragment Id="SrfkgvDBBUeO0jLkyKkqXJ" Patch="G1xNH33PExEQEdxNdxa3BB" />
+            </ProcessDefinition>
+            <Link Id="Qu1v2aMLhntLkiYwBr0AU5" Ids="Tbp9KjeCulqPiMaUAokY3Z,IBDHHMPnXWiPGN9LyJKZ1C" IsHidden="true" />
+            <Link Id="RmiFHkZe1pnONil89GEqwI" Ids="MZqdeReiktmNa1oiaEJvsJ,QWvCP6uqtWvO4zKQ2Jjr4n" IsHidden="true" />
             <Patch Id="PhbCR9sCnWDMdaCRrdaDX2" Name="Create" ParticipatingElements="QCjcdzP7RdENjPw53gUmuj,Hw3BdXmH9qmP2kdoU1A9YN,JN8BbRtazzFQJsltWU8BEJ" />
             <Patch Id="TSZfBYKL1esNju0BA81xCx" Name="Seek">
               <Pin Id="BvyyLMkIMcPPOEQtTFB7Dv" Name="Seconds" Kind="InputPin" />
@@ -12400,33 +12442,58 @@
             <Patch Id="ROj6vYVxkNJNoDh9wSKVTf" Name="IntegrateClock">
               <Pin Id="T4JosOddbG8MwSQUxVtzgu" Name="Time Step" Kind="InputPin" DefaultValue="0.016666668" />
             </Patch>
-            <ProcessDefinition Id="MNySCpWib6fLjNvqkwVF6i" HasStateOut="true">
-              <Fragment Id="G69YMIaLG1ZLn7bH8UAi9P" Patch="PhbCR9sCnWDMdaCRrdaDX2" Enabled="true" />
-              <Fragment Id="BWUu786YWoeLCiFBR83YKn" Patch="RaoTIoc10L4QUkKwwAH7pL" />
-              <Fragment Id="DwROj7altPWL3KynKl7lF6" Patch="Dt1jxDgYcZiQMJRkdBsXeV" Enabled="true" />
-              <Fragment Id="K8rMS2fXHNNPs5ya0ovsiz" Patch="LbpvCGlCxhKOS60BtVBmUI" Enabled="true" />
-              <Fragment Id="AGKhsp5vVe5PbORYUgr6gJ" Patch="FwQlOdErp7XO8cgQak6kl6" Enabled="true" />
-              <Fragment Id="VAut3eUgo1YO3BkDlWBHk0" Patch="LqVBGkaF4KKP37ijgVGZJt" Enabled="true" />
-              <Fragment Id="TzgDG7IzOKfNhfVXAFITNR" Patch="T18BpUTiyllMpp0aFWeqjr" Enabled="true" />
-              <Fragment Id="MbuTIaE688fOT2v2HKi5JZ" Patch="QXsNgXhsgzaQCrb0uOgrMn" Enabled="true" />
-              <Fragment Id="T1kxygTFoGvQU1DNjL7xPP" Patch="TSZfBYKL1esNju0BA81xCx" Enabled="true" />
-              <Fragment Id="D27pbfBYzLeM1bAb5ury65" Patch="IrqYZywcIMcLNJJdOwgNfp" Enabled="true" />
-              <Fragment Id="NbBWQnwhW5LQZZ3NqWLlY0" Patch="Viou8Lh43apLJeQKgXBrWk" Enabled="true" />
-              <Fragment Id="M9QKeTGeMnSQSbNyEGLLIH" Patch="Mx6jwbndrpKOmf7CiWVrgd" Enabled="true" />
-              <Fragment Id="Lie4dE6CWjhOCtvT8tppqd" Patch="HeUV6AHjH9TNHhlOorJycc" Enabled="true" />
-              <Fragment Id="I4VJidXrHPZNkwHqCdRKY2" Patch="TuLd8qvxmUwPoUoGEUjfbx" Enabled="true" />
-              <Fragment Id="TpyIqwjNmq4OAXmNYXsYRV" Patch="LbZKEMFb8aZLZjWK8J4FJN" Enabled="true" />
-              <Fragment Id="JBI7rydNB9dLgoOqVzQ26t" Patch="Q2hxyIdqMjWOMNBgUr8yjJ" Enabled="true" />
-              <Fragment Id="JaYqCO0lnHpORvBeIGFuVR" Patch="AhoYklwrFZcN8ydeHROCYe" Enabled="true" />
-              <Fragment Id="CvUfXdFRmyzPyPHbhuK0GN" Patch="DFDt4ZwIY9HLRAxNO3AUvp" />
-              <Fragment Id="C1RxFwivLLEQON7JllyPN9" Patch="SgTgyJaV26KOoBBO1C6AmI" />
-              <Fragment Id="Cu3c0CrRxS5O3s8O9hNmXR" Patch="EOkKVOB2J66PY6JGjKGrbF" />
-              <Fragment Id="HgRc7TxkTsAMMITMjRTnFw" Patch="Uaw3y3z3UN5MVuI3Or4jvI" />
-              <Fragment Id="BKMxTYLWszFPYUVhVyjxCF" Patch="Unz7fyv60utOKR8PnX0m1p" />
-              <Fragment Id="NBmFzAIM61oLja0JGX18Ne" Patch="LyOos4ihUosNGKpkU0CTDK" />
-              <Fragment Id="GHjpW28lmP3PRNIUCsIubU" Patch="AwLJGeaVlvdNR2KuhsAMHD" />
-              <Fragment Id="RYNECMjvustNCMMReXEmqo" Patch="ROj6vYVxkNJNoDh9wSKVTf" />
+            <Patch Id="TTn6DKxTo8nLIYtQ5EbEpg" Name="GetSamplingPosition">
+              <Pin Id="IBDHHMPnXWiPGN9LyJKZ1C" Name="Sampling Position" Kind="OutputPin" />
+            </Patch>
+            <Patch Id="G1xNH33PExEQEdxNdxa3BB" Name="SetSamplingPosition">
+              <Pin Id="MZqdeReiktmNa1oiaEJvsJ" Name="Sampling Position" Kind="InputPin" />
+            </Patch>
+            <Link Id="GEbcN1rNi07OD7eIOMhqlC" Ids="QWvCP6uqtWvO4zKQ2Jjr4n,EJNtQCCEEk4OeNbSXc5a7g" />
+            <Link Id="G8O71cdyW3hLhsEZemQ7uE" Ids="EJNtQCCEEk4OeNbSXc5a7g,Tbp9KjeCulqPiMaUAokY3Z" />
+          </Patch>
+        </Node>
+        <!--
+
+    ************************ ISamplingPosition1DProvider ************************
+
+-->
+        <Node Name="ISamplingPosition1DProvider" Bounds="142,202" Id="Afk907hhMk4Ps2NDAi4tMd">
+          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
+            <Choice Kind="InterfaceDefinition" Name="Interface" />
+          </p:NodeReference>
+          <Patch Id="CkRHp10l3ZeNmjBWHMoLM2">
+            <Canvas Id="Vl7tBBsD6ppP5qzHoBx9pg" CanvasType="Group">
+              <ControlPoint Id="CPl3DF0diLeNqv515C0WXm" Bounds="97,260" />
+              <ControlPoint Id="JEAmq7uFt4vNvInrcBGKkK" Bounds="97,134" />
+              <Pad Id="HB5oUwgBPhdN62rEvvjan6" Bounds="97,198" />
+            </Canvas>
+            <!--
+
+    ************************  ************************
+
+-->
+            <ProcessDefinition Id="S22RGZ9wc4fMRrTB8LydRx" IsHidden="true">
+              <Fragment Id="G6Xf0H5gzBMPZ4JFjGPgYZ" Patch="HSDADqdKtnoQXEfEkWy1zZ" />
+              <Fragment Id="B8CftVQqbdMLsBYTOlwCZx" Patch="GTHubV19oAaOcvy8uBeJv3" />
             </ProcessDefinition>
+            <Patch Id="HSDADqdKtnoQXEfEkWy1zZ" Name="GetSamplingPosition">
+              <Pin Id="K9ZPYwEOLkPMxPEN2VbBKQ" MergeId="364295" Name="Sampling Position" Kind="OutputPin">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="Float64" />
+                </p:TypeAnnotation>
+              </Pin>
+            </Patch>
+            <Patch Id="GTHubV19oAaOcvy8uBeJv3" Name="SetSamplingPosition">
+              <Pin Id="N6l2qoS51rxOPZhEyx555S" MergeId="367508" Name="Sampling Position" Kind="InputPin">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="Float64" />
+                </p:TypeAnnotation>
+              </Pin>
+            </Patch>
+            <Link Id="IxQfztQofOENoDeq6Nvucb" Ids="CPl3DF0diLeNqv515C0WXm,K9ZPYwEOLkPMxPEN2VbBKQ" IsHidden="true" />
+            <Link Id="AwjFFUJ2TP1OJtWav48BLw" Ids="N6l2qoS51rxOPZhEyx555S,JEAmq7uFt4vNvInrcBGKkK" IsHidden="true" />
+            <Link Id="HcAvPe6lQtqPl7AYL2Bsg3" Ids="JEAmq7uFt4vNvInrcBGKkK,HB5oUwgBPhdN62rEvvjan6" />
+            <Link Id="A3ZXOjTH59JNjXEWAT4kIA" Ids="HB5oUwgBPhdN62rEvvjan6,CPl3DF0diLeNqv515C0WXm" />
           </Patch>
         </Node>
       </Canvas>
