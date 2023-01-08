@@ -177,7 +177,7 @@
             <ControlPoint Id="KNo5haipmqvONd54W4EO1w" Bounds="1138,263" />
             <ControlPoint Id="V8hd1qstzKyPXFWyhOJUD3" Bounds="1203,288" />
             <ControlPoint Id="QlOrItcdb6VOzwwexnNM4w" Bounds="971,519" />
-            <Node Bounds="791,589,259,161" Id="NXUukX4P7drLq9N8iXaxeu">
+            <Node Bounds="791,589,309,161" Id="NXUukX4P7drLq9N8iXaxeu">
               <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                 <CategoryReference Kind="Category" Name="Primitive" />
@@ -221,14 +221,13 @@
                   </Patch>
                 </Node>
                 <Node Bounds="969,612,69,26" Id="TOWmkdOJzrWQEg3DftDxGu">
-                  <p:NodeReference LastCategoryFullName="Kairos.Runtime.Core.Clock.KairosClock" LastSymbolSource="VL.Kairos.Runtime.Core.vl">
+                  <p:NodeReference LastCategoryFullName="Kairos.Runtime.Core.SamplingPositionProvider.ISamplingPosition1DProvider" LastSymbolSource="VL.Kairos.Runtime.Core.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <CategoryReference Kind="ClassType" Name="KairosClock" />
-                    <Choice Kind="OperationCallFlag" Name="GetSeconds" />
+                    <CategoryReference Kind="InterfaceTypeFlag" Name="ISamplingPosition1DProvider" NeedsToBeDirectParent="true" />
+                    <Choice Kind="OperationCallFlag" Name="GetSamplingPosition" />
                   </p:NodeReference>
                   <Pin Id="HTrD6B2YEC6NB43S0coQ12" Name="Input" Kind="StateInputPin" />
-                  <Pin Id="UIf8uCgRHSWMTbx4dcGYs2" Name="Output" Kind="StateOutputPin" />
-                  <Pin Id="Krtk9U4fI1HN7tkNZ1F2qO" Name="Seconds" Kind="OutputPin" />
+                  <Pin Id="RWFMY0sFA2dPH20DGHGb4d" Name="Sampling Position" Kind="OutputPin" />
                 </Node>
               </Patch>
             </Node>
@@ -309,6 +308,12 @@
           <Link Id="PmX68YcyymXLSXc2pM78k9" Ids="OWJlw2zrROEN8RXmXtIo61,KNo5haipmqvONd54W4EO1w" IsHidden="true" />
           <Link Id="Rol2ZCt38qYLBTjoTCY3Ny" Ids="V8hd1qstzKyPXFWyhOJUD3,AqWwKxWbPdjPc7YXBXDl5i" />
           <Link Id="Qbu90Z7HHNqNKNRUA0afYG" Ids="CWCwfi6ljb4NraP1ow6znT,V8hd1qstzKyPXFWyhOJUD3" IsHidden="true" />
+          <Link Id="DAMUIo4yWUiMSBEKp7JspZ" Ids="B66XVipGBN8L7xJAYCIq5E,QlOrItcdb6VOzwwexnNM4w" IsHidden="true" />
+          <Link Id="IU7yWf5YBDTLWAq2r3zTNG" Ids="QlOrItcdb6VOzwwexnNM4w,HTrD6B2YEC6NB43S0coQ12" />
+          <Link Id="IcSMLJM2wknMBywrD2iuDX" Ids="CvWezr8VUrcLcCIySKksHq,AkE9ZLpSkaQNBxxPKtxX2B" />
+          <Link Id="FGY37kcExElO6U4kc6814Q" Ids="DosblIWPvHwQYVDSrXf6bT,H1xetxgAEhZN3gSJw0sUXn" />
+          <Link Id="MZOrk7Txyj6LPdm8nQh5Ir" Ids="QlOrItcdb6VOzwwexnNM4w,Tr8WBwdLcyDPxCBBke6K6I" />
+          <Link Id="P7AivIWjDZkPmO0yjXBy1k" Ids="IoiRxwjuRW0LbSqaPGKjp4,NGikxePjLwiNBGB88gWtkL" />
           <Patch Id="LTYpCDpQYuPMWxnpZre6tN" Name="Create" ParticipatingElements="PbZiajHHaSvLDoWBJt5Pd3,DS15tzrgBNKM65hEy9QfVl,V4fMSljHj5cO1bX5TCPEjm,TziWttRSYPlPnSG9RAG8ei,BRWM9kht3pPMzJ7MHxJ0I3" ManuallySortedPins="true">
             <Pin Id="Sghd4TMGTV0LnI4iN1Fujw" Name="Composition" Kind="InputPin">
               <p:TypeAnnotation LastCategoryFullName="Kairos.Runtime.Core" LastSymbolSource="VL.Kairos.Runtime.Core.vl">
@@ -323,11 +328,7 @@
             <Pin Id="DGsLbrthzw5L7mjCRIQr78" Name="Node Context" Kind="InputPin" Visibility="Optional" />
           </Patch>
           <Patch Id="VowebJj7XtVQLkpoIfh07y" Name="Update">
-            <Pin Id="B66XVipGBN8L7xJAYCIq5E" Name="Clock" Kind="InputPin" Bounds="874,178">
-              <p:TypeAnnotation LastCategoryFullName="Kairos.Runtime.Core.Clock" LastSymbolSource="VL.Kairos.Runtime.Core.vl">
-                <Choice Kind="TypeFlag" Name="KairosClock" />
-              </p:TypeAnnotation>
-            </Pin>
+            <Pin Id="B66XVipGBN8L7xJAYCIq5E" Name="Sampling Position Provider" Kind="InputPin" Bounds="874,178" />
             <Pin Id="OWJlw2zrROEN8RXmXtIo61" Name="Sampling Position Min Bound" Kind="InputPin" Visibility="Optional" />
             <Pin Id="CWCwfi6ljb4NraP1ow6znT" Name="Sampling Position Max Bound" Kind="InputPin" Bounds="1203,288" Visibility="Optional" />
           </Patch>
@@ -345,13 +346,7 @@
           <Patch Id="EFSjuuEhey4MXllrddoUfp" Name="GetID">
             <Pin Id="VS4KoRATLgTMORJrvYBBmc" MergeId="223" Name="ID" Kind="OutputPin" />
           </Patch>
-          <Link Id="DAMUIo4yWUiMSBEKp7JspZ" Ids="B66XVipGBN8L7xJAYCIq5E,QlOrItcdb6VOzwwexnNM4w" IsHidden="true" />
-          <Link Id="IU7yWf5YBDTLWAq2r3zTNG" Ids="QlOrItcdb6VOzwwexnNM4w,HTrD6B2YEC6NB43S0coQ12" />
-          <Link Id="IcSMLJM2wknMBywrD2iuDX" Ids="CvWezr8VUrcLcCIySKksHq,AkE9ZLpSkaQNBxxPKtxX2B" />
-          <Link Id="FGY37kcExElO6U4kc6814Q" Ids="DosblIWPvHwQYVDSrXf6bT,H1xetxgAEhZN3gSJw0sUXn" />
-          <Link Id="FePTDJtLUWOQDVel3WY3Bu" Ids="Krtk9U4fI1HN7tkNZ1F2qO,UPB2XnX3lZQO1rr9I9iqqX" />
-          <Link Id="MZOrk7Txyj6LPdm8nQh5Ir" Ids="QlOrItcdb6VOzwwexnNM4w,Tr8WBwdLcyDPxCBBke6K6I" />
-          <Link Id="P7AivIWjDZkPmO0yjXBy1k" Ids="IoiRxwjuRW0LbSqaPGKjp4,NGikxePjLwiNBGB88gWtkL" />
+          <Link Id="Cso2tVkPpubNKpUg0SPV4a" Ids="RWFMY0sFA2dPH20DGHGb4d,UPB2XnX3lZQO1rr9I9iqqX" />
         </Patch>
       </Node>
       <!--
