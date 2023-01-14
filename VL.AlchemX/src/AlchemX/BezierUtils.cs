@@ -95,7 +95,7 @@
 
 			double[] myResult = SolveCubic(a, b, c, d);
 			int i = 0;
-			while (i < myResult.Length - 1 && (myResult[i] < 0 || myResult[i] > 1))
+			while (i < myResult.Length - 1 && (myResult[i] < -.0000001 || myResult[i] > 1.0000001))
 			{
 				i++;
 			}
