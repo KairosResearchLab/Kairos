@@ -1254,7 +1254,7 @@
                     <Choice Kind="ProcessAppFlag" Name="MainMenu" />
                   </p:NodeReference>
                   <Pin Id="JnZCr6o6Z8tLbgRGH3IK5y" Name="UndoRedoProvider" Kind="InputPin" />
-                  <Pin Id="M3SEhgfId5dMl8lWGnO0Bu" Name="Time Snapping Enabled" Kind="InputPin" />
+                  <Pin Id="M3SEhgfId5dMl8lWGnO0Bu" Name="Time Grid Snapping Enabled" Kind="InputPin" />
                   <Pin Id="Nmie9R90VXQNY4HzzDPi0m" Name="Context" Kind="InputPin" />
                   <Pin Id="V5d3tTgLYP2OFJwUxyRtaQ" Name="Track Create Func" Kind="InputPin" />
                   <Pin Id="OBuZbv06iD1NWSFyTiDhas" Name="Inspector" Kind="InputPin" />
@@ -1411,18 +1411,6 @@
             </Node>
             <ControlPoint Id="U6O99gRZtvuL2qGWizQS9w" Bounds="523,297" />
             <ControlPoint Id="V14C9mK4fixMmpyyPmB2q6" Bounds="251,861" />
-            <Node Bounds="577,992,65,19" Id="DUHBU1RYN1GOppHZn0A7VK">
-              <p:NodeReference LastCategoryFullName="Graphics.Skia" LastSymbolSource="VL.Skia.vl">
-                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                <CategoryReference Kind="Category" Name="Skia" NeedsToBeDirectParent="true" />
-                <Choice Kind="ProcessAppFlag" Name="Group" />
-              </p:NodeReference>
-              <Pin Id="QUdkYfwix7xLBzOcyETD5p" Name="Input" Kind="InputPin" />
-              <Pin Id="TutCbXEXizEP19ZcWVSVJN" Name="Input 2" Kind="InputPin" />
-              <Pin Id="A6gX8lxEoT3Po7P282xn72" Name="Debug" Kind="InputPin" />
-              <Pin Id="QyNL55gkSrPNOsPQGYsyi3" Name="Enabled" Kind="InputPin" />
-              <Pin Id="AKFUnR0si2pOWhAJ70OBr2" Name="Output" Kind="OutputPin" />
-            </Node>
             <ControlPoint Id="VG78myJg2bTPTdTtmmgrd3" Bounds="579,1044" />
             <ControlPoint Id="Ms90aABXgQQNK5WldyGsTv" Bounds="1792,192" />
             <Node Bounds="1803,858,122,19" Id="LB6QypWf0HFOxpcEftokZh">
@@ -1872,7 +1860,7 @@
                 <Choice Kind="ProcessAppFlag" Name="Select (ByPath)" />
               </p:NodeReference>
               <Pin Id="PrPP28vnvV7QCZpjxrsxyL" Name="Input" Kind="InputPin" />
-              <Pin Id="GA1Alc0bA6MPxgDGqKVdBq" Name="Path" Kind="InputPin" DefaultValue="Time Snapping Enabled" />
+              <Pin Id="GA1Alc0bA6MPxgDGqKVdBq" Name="Path" Kind="InputPin" DefaultValue="Time Grid Snapping Enabled" />
               <Pin Id="MPWK2N44cBBOdVQ1FkeiN8" Name="Output" Kind="OutputPin" />
             </Node>
             <Pad Id="J2pTd6ifCruMVuTrXPhp3X" Bounds="465,761" />
@@ -1924,8 +1912,6 @@
           <Link Id="DiNtyh40kYgQWNzE2UEDxU" Ids="RaxiUVNUnlePK8kRms7vRJ,U6O99gRZtvuL2qGWizQS9w" IsHidden="true" />
           <Link Id="JCdtjh1P1nEQTd2alPv5X5" Ids="U6O99gRZtvuL2qGWizQS9w,FChWTXVheLAN6uJo4H8Zy9" />
           <Link Id="McU9HJUew2JNUMH0v3yKRk" Ids="V14C9mK4fixMmpyyPmB2q6,LcZXBy51i3EMpVFgHaKv3J" IsHidden="true" />
-          <Link Id="MaBMgc8LKqOLB41Q2zPoIC" Ids="Gz6Fo5JQ2INQPOyfNRyLAf,QUdkYfwix7xLBzOcyETD5p" />
-          <Link Id="P13BhdGQ43YMAXwse1ywB2" Ids="AKFUnR0si2pOWhAJ70OBr2,VG78myJg2bTPTdTtmmgrd3" />
           <Link Id="GDQdNCHAGJNNtVeFiGlPSK" Ids="VG78myJg2bTPTdTtmmgrd3,IffrRkLQzMjMMVCZaaljD6" IsHidden="true" />
           <Link Id="L6DptF0IYb3Ok6s3rdq1Zv" Ids="IRJKymQjt5WLXCMyV7vL6L,Ms90aABXgQQNK5WldyGsTv" IsHidden="true" />
           <Link Id="IjITTUnX2MILnuH97zcwGm" Ids="HylL4hGS7RVNYBcwmYcoVB,EGXhVCV4yWfMeJE1GXTMN1" />
@@ -2059,6 +2045,7 @@
             <Pin Id="CiEiYLVrTWVPN0z4sqk2z6" Name="Overlay Channel" Kind="OutputPin" Bounds="1458,776" />
           </Patch>
           <Link Id="VNcGGYMhLs8L52tWtgBpDR" Ids="Uu598EIstSSM6aUTD1jWfL,JnZCr6o6Z8tLbgRGH3IK5y" />
+          <Link Id="KaAb89R4tBiPzLYjmMGy87" Ids="Gz6Fo5JQ2INQPOyfNRyLAf,VG78myJg2bTPTdTtmmgrd3" />
         </Patch>
       </Node>
       <!--
@@ -2553,59 +2540,10 @@
                   </p:NodeReference>
                   <Pin Id="SDqyemf37eYNMfxZcaeQXt" Name="Timeline" Kind="InputPin" />
                   <Pin Id="THEX2rQVOMuQINix8X03I7" Name="Model" Kind="InputPin">
-                    <p:DefaultValue Composition_Track_Height="1" Editing_Section_Max="4.3" Editing_Section_Min="3.8" ID="b455757b-8dc8-4f4d-bfa2-98cb5f13de88" Output_Monitor_Folding="True" Track_Header_Folding="True" xmlns:r="reflection" r:Version="2">
-                      <Camera1D_Model Center="0.72, 0" Width="1" />
+                    <p:DefaultValue Composition_Track_Height="1" Editing_Section_Max="1.4" Editing_Section_Min="1.4" Time_Grid_Snapping_Enabled="True" xmlns:r="reflection" r:Version="2">
+                      <Camera1D_Model Center="1.22, 0" Width="1" />
                       <Source_Model Name="Timeline example">
                         <Tracks>
-                          <Item Key="Param2">
-                            <Value Enabled="True" ID="NDbcUmBpfHZNJn4QKTbduU QA4pOAM7PyHMOZBdg6oCry" r:Type="TimelineTrackModel [Kairos.Runtime.Timeline.Track]">
-                              <Author_IDs>
-                                <Item>Model Process Node</Item>
-                              </Author_IDs>
-                              <Keyframes_Model>
-                                <Item Key="NDbcUmBpfHZNJn4QKTbduU ELlDN4SWiKcMq5Ldd4rNLZ">
-                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU ELlDN4SWiKcMq5Ldd4rNLZ" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="0.9889082908630371" Position="6">
-                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                      <Interpolation_Model Mode="InOut" Transition="Sine" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
-                                    </Keyframe_Settings>
-                                    <Value r:Type="RGBA [Color]">1, 0.98, 0.98, 0</Value>
-                                  </Value>
-                                </Item>
-                                <Item Key="NDbcUmBpfHZNJn4QKTbduU S1SZAbDPKupQVgXsZbh8X9">
-                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU S1SZAbDPKupQVgXsZbh8X9" Layer_Input_Pin_Name="BarColor" r:Type="LayerKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="1.8625164031982422" Position="10.800000190734863">
-                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                    </Keyframe_Settings>
-                                    <Sampling_Settings Bound_Out_Mapping_Type="Clamp" Speed="1" />
-                                  </Value>
-                                </Item>
-                                <Item Key="NDbcUmBpfHZNJn4QKTbduU PgsVeZubR2HPMRLjjkXKzi">
-                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU PgsVeZubR2HPMRLjjkXKzi" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="0.5" Position="0.5">
-                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                      <Interpolation_Model Transition="Bounce" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
-                                    </Keyframe_Settings>
-                                    <Value r:Type="RGBA [Color]">0, 0, 0, 0</Value>
-                                  </Value>
-                                </Item>
-                                <Item Key="07a7777d-e96a-4cc6-a957-298af9ebd3ce">
-                                  <Value ID="07a7777d-e96a-4cc6-a957-298af9ebd3ce" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Position="8.600000381469727" />
-                                    <Value r:Type="RGBA [Color]">1, 0.41749978, 0.16933799, 0.82720613</Value>
-                                  </Value>
-                                </Item>
-                                <Item Key="NDbcUmBpfHZNJn4QKTbduU Vl580l2oNz0OUkOS2ciAcb">
-                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU Vl580l2oNz0OUkOS2ciAcb" Value_Input_Pin_Name="bar" r:Type="LiveValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="1" Position="2.2">
-                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                    </Keyframe_Settings>
-                                  </Value>
-                                </Item>
-                              </Keyframes_Model>
-                              <Parameter Key="fd22663d-ffcc-45cb-81d3-4494a340cf5c" Path="Param2" Type_Full_Name="RGBA [Color]" />
-                            </Value>
-                          </Item>
                           <Item Key="Param3_Dif">
                             <Value Enabled="True" ID="NDbcUmBpfHZNJn4QKTbduU DZJvRBYaXCZLc2GbyKMTJv" r:Type="TimelineTrackModel [Kairos.Runtime.Timeline.Track]">
                               <Author_IDs>
@@ -2626,13 +2564,12 @@
                                     <Sampling_Settings Bound_Out_Mapping_Type="Clamp" Speed="1" />
                                   </Value>
                                 </Item>
-                                <Item Key="NDbcUmBpfHZNJn4QKTbduU QFhecPNMbuiNQpgkX3ZoWc">
-                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU QFhecPNMbuiNQpgkX3ZoWc" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="0.19999999999999996" Position="1">
+                                <Item Key="NDbcUmBpfHZNJn4QKTbduU DqGhzQBrjgBNAuDfPpST7z">
+                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU DqGhzQBrjgBNAuDfPpST7z" Value_Input_Pin_Name="fooVec2" r:Type="LiveValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Duration="1" Position="2.6">
                                       <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                      <Interpolation_Model Transition="Bounce" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
+                                      <Interpolation_Model Mode="InOut" Transition="Quad" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
                                     </Keyframe_Settings>
-                                    <Value r:Type="Vector2 [2D]">0.77133036, 0.15789504</Value>
                                   </Value>
                                 </Item>
                                 <Item Key="NDbcUmBpfHZNJn4QKTbduU PwlQCwTmpdYPGT8YdNZx8C">
@@ -2644,16 +2581,66 @@
                                     <Value r:Type="Vector2 [2D]">0.14129853, 0.6736641</Value>
                                   </Value>
                                 </Item>
-                                <Item Key="NDbcUmBpfHZNJn4QKTbduU DqGhzQBrjgBNAuDfPpST7z">
-                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU DqGhzQBrjgBNAuDfPpST7z" Value_Input_Pin_Name="fooVec2" r:Type="LiveValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="1" Position="2.4">
+                                <Item Key="NDbcUmBpfHZNJn4QKTbduU QFhecPNMbuiNQpgkX3ZoWc">
+                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU QFhecPNMbuiNQpgkX3ZoWc" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Duration="0.19999999999999996" Position="1">
                                       <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                      <Interpolation_Model Mode="InOut" Transition="Quad" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
+                                      <Interpolation_Model Transition="Bounce" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
                                     </Keyframe_Settings>
+                                    <Value r:Type="Vector2 [2D]">0.77133036, 0.18386906</Value>
                                   </Value>
                                 </Item>
                               </Keyframes_Model>
                               <Parameter Key="c2535f57-0690-48b1-8a9b-02912cf286da" Path="Param3_Dif" Type_Full_Name="Vector2 [2D]" />
+                            </Value>
+                          </Item>
+                          <Item Key="Param2">
+                            <Value Enabled="True" ID="NDbcUmBpfHZNJn4QKTbduU QA4pOAM7PyHMOZBdg6oCry" r:Type="TimelineTrackModel [Kairos.Runtime.Timeline.Track]">
+                              <Author_IDs>
+                                <Item>Model Process Node</Item>
+                              </Author_IDs>
+                              <Keyframes_Model>
+                                <Item Key="NDbcUmBpfHZNJn4QKTbduU Vl580l2oNz0OUkOS2ciAcb">
+                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU Vl580l2oNz0OUkOS2ciAcb" Value_Input_Pin_Name="bar" r:Type="LiveValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Duration="1" Position="2.2">
+                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
+                                    </Keyframe_Settings>
+                                  </Value>
+                                </Item>
+                                <Item Key="07a7777d-e96a-4cc6-a957-298af9ebd3ce">
+                                  <Value ID="07a7777d-e96a-4cc6-a957-298af9ebd3ce" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Position="8.600000381469727" />
+                                    <Value r:Type="RGBA [Color]">1, 0.41749978, 0.16933799, 0.82720613</Value>
+                                  </Value>
+                                </Item>
+                                <Item Key="NDbcUmBpfHZNJn4QKTbduU S1SZAbDPKupQVgXsZbh8X9">
+                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU S1SZAbDPKupQVgXsZbh8X9" Layer_Input_Pin_Name="BarColor" r:Type="LayerKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Duration="1.8625164031982422" Position="10.800000190734863">
+                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
+                                    </Keyframe_Settings>
+                                    <Sampling_Settings Bound_Out_Mapping_Type="Clamp" Speed="1" />
+                                  </Value>
+                                </Item>
+                                <Item Key="NDbcUmBpfHZNJn4QKTbduU ELlDN4SWiKcMq5Ldd4rNLZ">
+                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU ELlDN4SWiKcMq5Ldd4rNLZ" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Duration="0.9889082908630371" Position="6">
+                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
+                                      <Interpolation_Model Mode="InOut" Transition="Sine" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
+                                    </Keyframe_Settings>
+                                    <Value r:Type="RGBA [Color]">1, 0.98, 0.98, 0</Value>
+                                  </Value>
+                                </Item>
+                                <Item Key="NDbcUmBpfHZNJn4QKTbduU PgsVeZubR2HPMRLjjkXKzi">
+                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU PgsVeZubR2HPMRLjjkXKzi" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Duration="0.5" Position="0.5">
+                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
+                                      <Interpolation_Model Transition="Bounce" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
+                                    </Keyframe_Settings>
+                                    <Value r:Type="RGBA [Color]">0, 0, 0, 0</Value>
+                                  </Value>
+                                </Item>
+                              </Keyframes_Model>
+                              <Parameter Key="fd22663d-ffcc-45cb-81d3-4494a340cf5c" Path="Param2" Type_Full_Name="RGBA [Color]" />
                             </Value>
                           </Item>
                           <Item Key="Param1">
@@ -2662,13 +2649,6 @@
                                 <Item>Model Process Node</Item>
                               </Author_IDs>
                               <Keyframes_Model>
-                                <Item Key="NDbcUmBpfHZNJn4QKTbduU TVF7WRDOqMWQSs7dfWjjM2">
-                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU TVF7WRDOqMWQSs7dfWjjM2" Value_Input_Pin_Name="foo" r:Type="LiveValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="0.599999976158142" Position="0.6">
-                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                    </Keyframe_Settings>
-                                  </Value>
-                                </Item>
                                 <Item Key="NDbcUmBpfHZNJn4QKTbduU P8SqXpFFyTeOlhg7gcQW7S">
                                   <Value ID="NDbcUmBpfHZNJn4QKTbduU P8SqXpFFyTeOlhg7gcQW7S" Layer_Input_Pin_Name="yooo" r:Type="LayerKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
                                     <Keyframe_Settings Alpha="1" Duration="1.6999998092651367" Position="10.800000190734863">
@@ -2684,10 +2664,18 @@
                                     <Value r:Type="Float32 [Primitive]">0.4099776</Value>
                                   </Value>
                                 </Item>
+                                <Item Key="JoNrxeEff3sMvD8L6qrDA8 EBLGWH2z85jQGvgaIHAbkx">
+                                  <Value ID="JoNrxeEff3sMvD8L6qrDA8 EBLGWH2z85jQGvgaIHAbkx" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Duration="0.5" Position="4.6">
+                                      <Interpolation_Model Mode="InOut" Transition="Cubic" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
+                                    </Keyframe_Settings>
+                                    <Value r:Type="Float32 [Primitive]">0.7834939</Value>
+                                  </Value>
+                                </Item>
                                 <Item Key="e13740cd-ca8b-440d-a927-f1beca4c7cb4">
                                   <Value ID="e13740cd-ca8b-440d-a927-f1beca4c7cb4" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="0.4000001907348629" Position="2.6" />
-                                    <Value r:Type="Float32 [Primitive]">0.20724195</Value>
+                                    <Keyframe_Settings Alpha="1" Duration="0.4000001907348629" Position="2.3500001430511475" />
+                                    <Value r:Type="Float32 [Primitive]">0.6426162</Value>
                                   </Value>
                                 </Item>
                                 <Item Key="ffc7e5c2-6fdd-4847-a0a0-34a630dca659">
@@ -2696,12 +2684,11 @@
                                     <Value r:Type="Float32 [Primitive]">0.40939683</Value>
                                   </Value>
                                 </Item>
-                                <Item Key="JoNrxeEff3sMvD8L6qrDA8 EBLGWH2z85jQGvgaIHAbkx">
-                                  <Value ID="JoNrxeEff3sMvD8L6qrDA8 EBLGWH2z85jQGvgaIHAbkx" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="0.5" Position="4.6">
-                                      <Interpolation_Model Mode="InOut" Transition="Cubic" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
+                                <Item Key="NDbcUmBpfHZNJn4QKTbduU TVF7WRDOqMWQSs7dfWjjM2">
+                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU TVF7WRDOqMWQSs7dfWjjM2" Value_Input_Pin_Name="foo" r:Type="LiveValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Duration="0.799999976158142" Position="0.6">
+                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
                                     </Keyframe_Settings>
-                                    <Value r:Type="Float32 [Primitive]">0.7834939</Value>
                                   </Value>
                                 </Item>
                               </Keyframes_Model>
@@ -2711,110 +2698,8 @@
                         </Tracks>
                       </Source_Model>
                       <Tracks>
-                        <Item Key="Param2">
-                          <Value Folding="True" Height="1" ID="NDbcUmBpfHZNJn4QKTbduU QA4pOAM7PyHMOZBdg6oCry">
-                            <Source_Model Enabled="True" ID="NDbcUmBpfHZNJn4QKTbduU QA4pOAM7PyHMOZBdg6oCry">
-                              <Author_IDs>
-                                <Item>Model Process Node</Item>
-                              </Author_IDs>
-                              <Keyframes_Model>
-                                <Item Key="NDbcUmBpfHZNJn4QKTbduU ELlDN4SWiKcMq5Ldd4rNLZ">
-                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU ELlDN4SWiKcMq5Ldd4rNLZ" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="0.9889082908630371" Position="6">
-                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                      <Interpolation_Model Mode="InOut" Transition="Sine" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
-                                    </Keyframe_Settings>
-                                    <Value r:Type="RGBA [Color]">1, 0.98, 0.98, 0</Value>
-                                  </Value>
-                                </Item>
-                                <Item Key="NDbcUmBpfHZNJn4QKTbduU S1SZAbDPKupQVgXsZbh8X9">
-                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU S1SZAbDPKupQVgXsZbh8X9" Layer_Input_Pin_Name="BarColor" r:Type="LayerKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="1.8625164031982422" Position="10.800000190734863">
-                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                    </Keyframe_Settings>
-                                    <Sampling_Settings Bound_Out_Mapping_Type="Clamp" Speed="1" />
-                                  </Value>
-                                </Item>
-                                <Item Key="NDbcUmBpfHZNJn4QKTbduU PgsVeZubR2HPMRLjjkXKzi">
-                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU PgsVeZubR2HPMRLjjkXKzi" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="0.5" Position="0.5">
-                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                      <Interpolation_Model Transition="Bounce" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
-                                    </Keyframe_Settings>
-                                    <Value r:Type="RGBA [Color]">0, 0, 0, 0</Value>
-                                  </Value>
-                                </Item>
-                                <Item Key="07a7777d-e96a-4cc6-a957-298af9ebd3ce">
-                                  <Value ID="07a7777d-e96a-4cc6-a957-298af9ebd3ce" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Position="8.600000381469727" />
-                                    <Value r:Type="RGBA [Color]">1, 0.41749978, 0.16933799, 0.82720613</Value>
-                                  </Value>
-                                </Item>
-                                <Item Key="NDbcUmBpfHZNJn4QKTbduU Vl580l2oNz0OUkOS2ciAcb">
-                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU Vl580l2oNz0OUkOS2ciAcb" Value_Input_Pin_Name="bar" r:Type="LiveValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="1" Position="2.2">
-                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                    </Keyframe_Settings>
-                                  </Value>
-                                </Item>
-                              </Keyframes_Model>
-                              <Parameter Key="fd22663d-ffcc-45cb-81d3-4494a340cf5c" Path="Param2" Type_Full_Name="RGBA [Color]" />
-                            </Source_Model>
-                            <UI_Keyframes>
-                              <Item Key="NDbcUmBpfHZNJn4QKTbduU ELlDN4SWiKcMq5Ldd4rNLZ">
-                                <Value ID="NDbcUmBpfHZNJn4QKTbduU ELlDN4SWiKcMq5Ldd4rNLZ" r:Type="ConstantValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
-                                  <Source_Model ID="NDbcUmBpfHZNJn4QKTbduU ELlDN4SWiKcMq5Ldd4rNLZ">
-                                    <Keyframe_Settings Alpha="1" Duration="0.9889082908630371" Position="6">
-                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                      <Interpolation_Model Mode="InOut" Transition="Sine" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
-                                    </Keyframe_Settings>
-                                    <Value r:Type="RGBA [Color]">1, 0.98, 0.98, 0</Value>
-                                  </Source_Model>
-                                </Value>
-                              </Item>
-                              <Item Key="NDbcUmBpfHZNJn4QKTbduU S1SZAbDPKupQVgXsZbh8X9">
-                                <Value ID="NDbcUmBpfHZNJn4QKTbduU S1SZAbDPKupQVgXsZbh8X9" r:Type="LayerKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
-                                  <Source_Model ID="NDbcUmBpfHZNJn4QKTbduU S1SZAbDPKupQVgXsZbh8X9" Layer_Input_Pin_Name="BarColor">
-                                    <Keyframe_Settings Alpha="1" Duration="1.8625164031982422" Position="10.800000190734863">
-                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                    </Keyframe_Settings>
-                                    <Sampling_Settings Bound_Out_Mapping_Type="Clamp" Speed="1" />
-                                  </Source_Model>
-                                </Value>
-                              </Item>
-                              <Item Key="NDbcUmBpfHZNJn4QKTbduU PgsVeZubR2HPMRLjjkXKzi">
-                                <Value ID="NDbcUmBpfHZNJn4QKTbduU PgsVeZubR2HPMRLjjkXKzi" r:Type="ConstantValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
-                                  <Source_Model ID="NDbcUmBpfHZNJn4QKTbduU PgsVeZubR2HPMRLjjkXKzi">
-                                    <Keyframe_Settings Alpha="1" Duration="0.5" Position="0.5">
-                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                      <Interpolation_Model Transition="Bounce" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
-                                    </Keyframe_Settings>
-                                    <Value r:Type="RGBA [Color]">0, 0, 0, 0</Value>
-                                  </Source_Model>
-                                </Value>
-                              </Item>
-                              <Item Key="07a7777d-e96a-4cc6-a957-298af9ebd3ce">
-                                <Value ID="07a7777d-e96a-4cc6-a957-298af9ebd3ce" r:Type="ConstantValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
-                                  <Source_Model ID="07a7777d-e96a-4cc6-a957-298af9ebd3ce">
-                                    <Keyframe_Settings Alpha="1" Position="8.600000381469727" />
-                                    <Value r:Type="RGBA [Color]">1, 0.41749978, 0.16933799, 0.82720613</Value>
-                                  </Source_Model>
-                                </Value>
-                              </Item>
-                              <Item Key="NDbcUmBpfHZNJn4QKTbduU Vl580l2oNz0OUkOS2ciAcb">
-                                <Value ID="NDbcUmBpfHZNJn4QKTbduU Vl580l2oNz0OUkOS2ciAcb" r:Type="LiveValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
-                                  <Source_Model ID="NDbcUmBpfHZNJn4QKTbduU Vl580l2oNz0OUkOS2ciAcb" Value_Input_Pin_Name="bar">
-                                    <Keyframe_Settings Alpha="1" Duration="1" Position="2.2">
-                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                    </Keyframe_Settings>
-                                  </Source_Model>
-                                </Value>
-                              </Item>
-                            </UI_Keyframes>
-                          </Value>
-                        </Item>
                         <Item Key="Param3_Dif">
-                          <Value Folding="True" Height="1" ID="NDbcUmBpfHZNJn4QKTbduU DZJvRBYaXCZLc2GbyKMTJv">
+                          <Value Folding="True" Height="0.76999986" ID="NDbcUmBpfHZNJn4QKTbduU DZJvRBYaXCZLc2GbyKMTJv">
                             <Source_Model Enabled="True" ID="NDbcUmBpfHZNJn4QKTbduU DZJvRBYaXCZLc2GbyKMTJv">
                               <Author_IDs>
                                 <Item>Model Process Node</Item>
@@ -2834,13 +2719,12 @@
                                     <Sampling_Settings Bound_Out_Mapping_Type="Clamp" Speed="1" />
                                   </Value>
                                 </Item>
-                                <Item Key="NDbcUmBpfHZNJn4QKTbduU QFhecPNMbuiNQpgkX3ZoWc">
-                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU QFhecPNMbuiNQpgkX3ZoWc" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="0.19999999999999996" Position="1">
+                                <Item Key="NDbcUmBpfHZNJn4QKTbduU DqGhzQBrjgBNAuDfPpST7z">
+                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU DqGhzQBrjgBNAuDfPpST7z" Value_Input_Pin_Name="fooVec2" r:Type="LiveValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Duration="1" Position="2.6">
                                       <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                      <Interpolation_Model Transition="Bounce" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
+                                      <Interpolation_Model Mode="InOut" Transition="Quad" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
                                     </Keyframe_Settings>
-                                    <Value r:Type="Vector2 [2D]">0.77133036, 0.15789504</Value>
                                   </Value>
                                 </Item>
                                 <Item Key="NDbcUmBpfHZNJn4QKTbduU PwlQCwTmpdYPGT8YdNZx8C">
@@ -2852,12 +2736,13 @@
                                     <Value r:Type="Vector2 [2D]">0.14129853, 0.6736641</Value>
                                   </Value>
                                 </Item>
-                                <Item Key="NDbcUmBpfHZNJn4QKTbduU DqGhzQBrjgBNAuDfPpST7z">
-                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU DqGhzQBrjgBNAuDfPpST7z" Value_Input_Pin_Name="fooVec2" r:Type="LiveValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="1" Position="2.4">
+                                <Item Key="NDbcUmBpfHZNJn4QKTbduU QFhecPNMbuiNQpgkX3ZoWc">
+                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU QFhecPNMbuiNQpgkX3ZoWc" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Duration="0.19999999999999996" Position="1">
                                       <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                      <Interpolation_Model Mode="InOut" Transition="Quad" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
+                                      <Interpolation_Model Transition="Bounce" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
                                     </Keyframe_Settings>
+                                    <Value r:Type="Vector2 [2D]">0.77133036, 0.18386906</Value>
                                   </Value>
                                 </Item>
                               </Keyframes_Model>
@@ -2882,14 +2767,13 @@
                                   </Source_Model>
                                 </Value>
                               </Item>
-                              <Item Key="NDbcUmBpfHZNJn4QKTbduU QFhecPNMbuiNQpgkX3ZoWc">
-                                <Value ID="NDbcUmBpfHZNJn4QKTbduU QFhecPNMbuiNQpgkX3ZoWc" r:Type="ConstantValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
-                                  <Source_Model ID="NDbcUmBpfHZNJn4QKTbduU QFhecPNMbuiNQpgkX3ZoWc">
-                                    <Keyframe_Settings Alpha="1" Duration="0.19999999999999996" Position="1">
+                              <Item Key="NDbcUmBpfHZNJn4QKTbduU DqGhzQBrjgBNAuDfPpST7z">
+                                <Value ID="NDbcUmBpfHZNJn4QKTbduU DqGhzQBrjgBNAuDfPpST7z" r:Type="LiveValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
+                                  <Source_Model ID="NDbcUmBpfHZNJn4QKTbduU DqGhzQBrjgBNAuDfPpST7z" Value_Input_Pin_Name="fooVec2">
+                                    <Keyframe_Settings Alpha="1" Duration="1" Position="2.6">
                                       <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                      <Interpolation_Model Transition="Bounce" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
+                                      <Interpolation_Model Mode="InOut" Transition="Quad" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
                                     </Keyframe_Settings>
-                                    <Value r:Type="Vector2 [2D]">0.77133036, 0.15789504</Value>
                                   </Source_Model>
                                 </Value>
                               </Item>
@@ -2904,13 +2788,116 @@
                                   </Source_Model>
                                 </Value>
                               </Item>
-                              <Item Key="NDbcUmBpfHZNJn4QKTbduU DqGhzQBrjgBNAuDfPpST7z">
-                                <Value ID="NDbcUmBpfHZNJn4QKTbduU DqGhzQBrjgBNAuDfPpST7z" r:Type="LiveValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
-                                  <Source_Model ID="NDbcUmBpfHZNJn4QKTbduU DqGhzQBrjgBNAuDfPpST7z" Value_Input_Pin_Name="fooVec2">
-                                    <Keyframe_Settings Alpha="1" Duration="1" Position="2.4">
+                              <Item Key="NDbcUmBpfHZNJn4QKTbduU QFhecPNMbuiNQpgkX3ZoWc">
+                                <Value ID="NDbcUmBpfHZNJn4QKTbduU QFhecPNMbuiNQpgkX3ZoWc" r:Type="ConstantValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
+                                  <Source_Model ID="NDbcUmBpfHZNJn4QKTbduU QFhecPNMbuiNQpgkX3ZoWc">
+                                    <Keyframe_Settings Alpha="1" Duration="0.19999999999999996" Position="1">
                                       <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                      <Interpolation_Model Mode="InOut" Transition="Quad" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
+                                      <Interpolation_Model Transition="Bounce" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
                                     </Keyframe_Settings>
+                                    <Value r:Type="Vector2 [2D]">0.77133036, 0.18386906</Value>
+                                  </Source_Model>
+                                </Value>
+                              </Item>
+                            </UI_Keyframes>
+                          </Value>
+                        </Item>
+                        <Item Key="Param2">
+                          <Value Folding="True" Height="1.1" ID="NDbcUmBpfHZNJn4QKTbduU QA4pOAM7PyHMOZBdg6oCry">
+                            <Source_Model Enabled="True" ID="NDbcUmBpfHZNJn4QKTbduU QA4pOAM7PyHMOZBdg6oCry">
+                              <Author_IDs>
+                                <Item>Model Process Node</Item>
+                              </Author_IDs>
+                              <Keyframes_Model>
+                                <Item Key="NDbcUmBpfHZNJn4QKTbduU Vl580l2oNz0OUkOS2ciAcb">
+                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU Vl580l2oNz0OUkOS2ciAcb" Value_Input_Pin_Name="bar" r:Type="LiveValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Duration="1" Position="2.2">
+                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
+                                    </Keyframe_Settings>
+                                  </Value>
+                                </Item>
+                                <Item Key="07a7777d-e96a-4cc6-a957-298af9ebd3ce">
+                                  <Value ID="07a7777d-e96a-4cc6-a957-298af9ebd3ce" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Position="8.600000381469727" />
+                                    <Value r:Type="RGBA [Color]">1, 0.41749978, 0.16933799, 0.82720613</Value>
+                                  </Value>
+                                </Item>
+                                <Item Key="NDbcUmBpfHZNJn4QKTbduU S1SZAbDPKupQVgXsZbh8X9">
+                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU S1SZAbDPKupQVgXsZbh8X9" Layer_Input_Pin_Name="BarColor" r:Type="LayerKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Duration="1.8625164031982422" Position="10.800000190734863">
+                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
+                                    </Keyframe_Settings>
+                                    <Sampling_Settings Bound_Out_Mapping_Type="Clamp" Speed="1" />
+                                  </Value>
+                                </Item>
+                                <Item Key="NDbcUmBpfHZNJn4QKTbduU ELlDN4SWiKcMq5Ldd4rNLZ">
+                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU ELlDN4SWiKcMq5Ldd4rNLZ" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Duration="0.9889082908630371" Position="6">
+                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
+                                      <Interpolation_Model Mode="InOut" Transition="Sine" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
+                                    </Keyframe_Settings>
+                                    <Value r:Type="RGBA [Color]">1, 0.98, 0.98, 0</Value>
+                                  </Value>
+                                </Item>
+                                <Item Key="NDbcUmBpfHZNJn4QKTbduU PgsVeZubR2HPMRLjjkXKzi">
+                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU PgsVeZubR2HPMRLjjkXKzi" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Duration="0.5" Position="0.5">
+                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
+                                      <Interpolation_Model Transition="Bounce" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
+                                    </Keyframe_Settings>
+                                    <Value r:Type="RGBA [Color]">0, 0, 0, 0</Value>
+                                  </Value>
+                                </Item>
+                              </Keyframes_Model>
+                              <Parameter Key="fd22663d-ffcc-45cb-81d3-4494a340cf5c" Path="Param2" Type_Full_Name="RGBA [Color]" />
+                            </Source_Model>
+                            <UI_Keyframes>
+                              <Item Key="NDbcUmBpfHZNJn4QKTbduU Vl580l2oNz0OUkOS2ciAcb">
+                                <Value ID="NDbcUmBpfHZNJn4QKTbduU Vl580l2oNz0OUkOS2ciAcb" r:Type="LiveValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
+                                  <Source_Model ID="NDbcUmBpfHZNJn4QKTbduU Vl580l2oNz0OUkOS2ciAcb" Value_Input_Pin_Name="bar">
+                                    <Keyframe_Settings Alpha="1" Duration="1" Position="2.2">
+                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
+                                    </Keyframe_Settings>
+                                  </Source_Model>
+                                </Value>
+                              </Item>
+                              <Item Key="07a7777d-e96a-4cc6-a957-298af9ebd3ce">
+                                <Value ID="07a7777d-e96a-4cc6-a957-298af9ebd3ce" r:Type="ConstantValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
+                                  <Source_Model ID="07a7777d-e96a-4cc6-a957-298af9ebd3ce">
+                                    <Keyframe_Settings Alpha="1" Position="8.600000381469727" />
+                                    <Value r:Type="RGBA [Color]">1, 0.41749978, 0.16933799, 0.82720613</Value>
+                                  </Source_Model>
+                                </Value>
+                              </Item>
+                              <Item Key="NDbcUmBpfHZNJn4QKTbduU S1SZAbDPKupQVgXsZbh8X9">
+                                <Value ID="NDbcUmBpfHZNJn4QKTbduU S1SZAbDPKupQVgXsZbh8X9" r:Type="LayerKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
+                                  <Source_Model ID="NDbcUmBpfHZNJn4QKTbduU S1SZAbDPKupQVgXsZbh8X9" Layer_Input_Pin_Name="BarColor">
+                                    <Keyframe_Settings Alpha="1" Duration="1.8625164031982422" Position="10.800000190734863">
+                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
+                                    </Keyframe_Settings>
+                                    <Sampling_Settings Bound_Out_Mapping_Type="Clamp" Speed="1" />
+                                  </Source_Model>
+                                </Value>
+                              </Item>
+                              <Item Key="NDbcUmBpfHZNJn4QKTbduU ELlDN4SWiKcMq5Ldd4rNLZ">
+                                <Value ID="NDbcUmBpfHZNJn4QKTbduU ELlDN4SWiKcMq5Ldd4rNLZ" r:Type="ConstantValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
+                                  <Source_Model ID="NDbcUmBpfHZNJn4QKTbduU ELlDN4SWiKcMq5Ldd4rNLZ">
+                                    <Keyframe_Settings Alpha="1" Duration="0.9889082908630371" Position="6">
+                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
+                                      <Interpolation_Model Mode="InOut" Transition="Sine" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
+                                    </Keyframe_Settings>
+                                    <Value r:Type="RGBA [Color]">1, 0.98, 0.98, 0</Value>
+                                  </Source_Model>
+                                </Value>
+                              </Item>
+                              <Item Key="NDbcUmBpfHZNJn4QKTbduU PgsVeZubR2HPMRLjjkXKzi">
+                                <Value ID="NDbcUmBpfHZNJn4QKTbduU PgsVeZubR2HPMRLjjkXKzi" r:Type="ConstantValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
+                                  <Source_Model ID="NDbcUmBpfHZNJn4QKTbduU PgsVeZubR2HPMRLjjkXKzi">
+                                    <Keyframe_Settings Alpha="1" Duration="0.5" Position="0.5">
+                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
+                                      <Interpolation_Model Transition="Bounce" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
+                                    </Keyframe_Settings>
+                                    <Value r:Type="RGBA [Color]">0, 0, 0, 0</Value>
                                   </Source_Model>
                                 </Value>
                               </Item>
@@ -2918,19 +2905,12 @@
                           </Value>
                         </Item>
                         <Item Key="Param1">
-                          <Value Folding="True" Height="1.47" ID="NDbcUmBpfHZNJn4QKTbduU DUvGBplZXJSNsV3uWNH5sF" Order_Index="-0.11">
+                          <Value Folding="True" Height="1.2599999" ID="NDbcUmBpfHZNJn4QKTbduU DUvGBplZXJSNsV3uWNH5sF">
                             <Source_Model Enabled="True" ID="NDbcUmBpfHZNJn4QKTbduU DUvGBplZXJSNsV3uWNH5sF">
                               <Author_IDs>
                                 <Item>Model Process Node</Item>
                               </Author_IDs>
                               <Keyframes_Model>
-                                <Item Key="NDbcUmBpfHZNJn4QKTbduU TVF7WRDOqMWQSs7dfWjjM2">
-                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU TVF7WRDOqMWQSs7dfWjjM2" Value_Input_Pin_Name="foo" r:Type="LiveValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="0.599999976158142" Position="0.6">
-                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                    </Keyframe_Settings>
-                                  </Value>
-                                </Item>
                                 <Item Key="NDbcUmBpfHZNJn4QKTbduU P8SqXpFFyTeOlhg7gcQW7S">
                                   <Value ID="NDbcUmBpfHZNJn4QKTbduU P8SqXpFFyTeOlhg7gcQW7S" Layer_Input_Pin_Name="yooo" r:Type="LayerKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
                                     <Keyframe_Settings Alpha="1" Duration="1.6999998092651367" Position="10.800000190734863">
@@ -2946,18 +2926,6 @@
                                     <Value r:Type="Float32 [Primitive]">0.4099776</Value>
                                   </Value>
                                 </Item>
-                                <Item Key="e13740cd-ca8b-440d-a927-f1beca4c7cb4">
-                                  <Value ID="e13740cd-ca8b-440d-a927-f1beca4c7cb4" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Duration="0.4000001907348629" Position="2.6" />
-                                    <Value r:Type="Float32 [Primitive]">0.20724195</Value>
-                                  </Value>
-                                </Item>
-                                <Item Key="ffc7e5c2-6fdd-4847-a0a0-34a630dca659">
-                                  <Value ID="ffc7e5c2-6fdd-4847-a0a0-34a630dca659" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
-                                    <Keyframe_Settings Alpha="1" Position="7.2" />
-                                    <Value r:Type="Float32 [Primitive]">0.40939683</Value>
-                                  </Value>
-                                </Item>
                                 <Item Key="JoNrxeEff3sMvD8L6qrDA8 EBLGWH2z85jQGvgaIHAbkx">
                                   <Value ID="JoNrxeEff3sMvD8L6qrDA8 EBLGWH2z85jQGvgaIHAbkx" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
                                     <Keyframe_Settings Alpha="1" Duration="0.5" Position="4.6">
@@ -2966,19 +2934,29 @@
                                     <Value r:Type="Float32 [Primitive]">0.7834939</Value>
                                   </Value>
                                 </Item>
+                                <Item Key="e13740cd-ca8b-440d-a927-f1beca4c7cb4">
+                                  <Value ID="e13740cd-ca8b-440d-a927-f1beca4c7cb4" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Duration="0.4000001907348629" Position="2.3500001430511475" />
+                                    <Value r:Type="Float32 [Primitive]">0.6426162</Value>
+                                  </Value>
+                                </Item>
+                                <Item Key="ffc7e5c2-6fdd-4847-a0a0-34a630dca659">
+                                  <Value ID="ffc7e5c2-6fdd-4847-a0a0-34a630dca659" r:Type="ConstantValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Position="7.2" />
+                                    <Value r:Type="Float32 [Primitive]">0.40939683</Value>
+                                  </Value>
+                                </Item>
+                                <Item Key="NDbcUmBpfHZNJn4QKTbduU TVF7WRDOqMWQSs7dfWjjM2">
+                                  <Value ID="NDbcUmBpfHZNJn4QKTbduU TVF7WRDOqMWQSs7dfWjjM2" Value_Input_Pin_Name="foo" r:Type="LiveValueKeyframeModel [Kairos.Runtime.Timeline.Keyframe]">
+                                    <Keyframe_Settings Alpha="1" Duration="0.799999976158142" Position="0.6">
+                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
+                                    </Keyframe_Settings>
+                                  </Value>
+                                </Item>
                               </Keyframes_Model>
                               <Parameter Key="e0602e4e-367f-46ef-bc13-d135043a4987" Path="Param1" Type_Full_Name="Float32 [Primitive]" />
                             </Source_Model>
                             <UI_Keyframes>
-                              <Item Key="NDbcUmBpfHZNJn4QKTbduU TVF7WRDOqMWQSs7dfWjjM2">
-                                <Value ID="NDbcUmBpfHZNJn4QKTbduU TVF7WRDOqMWQSs7dfWjjM2" r:Type="LiveValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
-                                  <Source_Model ID="NDbcUmBpfHZNJn4QKTbduU TVF7WRDOqMWQSs7dfWjjM2" Value_Input_Pin_Name="foo">
-                                    <Keyframe_Settings Alpha="1" Duration="0.599999976158142" Position="0.6">
-                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                    </Keyframe_Settings>
-                                  </Source_Model>
-                                </Value>
-                              </Item>
                               <Item Key="NDbcUmBpfHZNJn4QKTbduU P8SqXpFFyTeOlhg7gcQW7S">
                                 <Value ID="NDbcUmBpfHZNJn4QKTbduU P8SqXpFFyTeOlhg7gcQW7S" r:Type="LayerKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
                                   <Source_Model ID="NDbcUmBpfHZNJn4QKTbduU P8SqXpFFyTeOlhg7gcQW7S" Layer_Input_Pin_Name="yooo">
@@ -2998,11 +2976,21 @@
                                   </Source_Model>
                                 </Value>
                               </Item>
+                              <Item Key="JoNrxeEff3sMvD8L6qrDA8 EBLGWH2z85jQGvgaIHAbkx">
+                                <Value ID="JoNrxeEff3sMvD8L6qrDA8 EBLGWH2z85jQGvgaIHAbkx" r:Type="ConstantValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
+                                  <Source_Model ID="JoNrxeEff3sMvD8L6qrDA8 EBLGWH2z85jQGvgaIHAbkx">
+                                    <Keyframe_Settings Alpha="1" Duration="0.5" Position="4.6">
+                                      <Interpolation_Model Mode="InOut" Transition="Cubic" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
+                                    </Keyframe_Settings>
+                                    <Value r:Type="Float32 [Primitive]">0.7834939</Value>
+                                  </Source_Model>
+                                </Value>
+                              </Item>
                               <Item Key="e13740cd-ca8b-440d-a927-f1beca4c7cb4">
                                 <Value ID="e13740cd-ca8b-440d-a927-f1beca4c7cb4" r:Type="ConstantValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
                                   <Source_Model ID="e13740cd-ca8b-440d-a927-f1beca4c7cb4">
-                                    <Keyframe_Settings Alpha="1" Duration="0.4000001907348629" Position="2.6" />
-                                    <Value r:Type="Float32 [Primitive]">0.20724195</Value>
+                                    <Keyframe_Settings Alpha="1" Duration="0.4000001907348629" Position="2.3500001430511475" />
+                                    <Value r:Type="Float32 [Primitive]">0.6426162</Value>
                                   </Source_Model>
                                 </Value>
                               </Item>
@@ -3014,13 +3002,12 @@
                                   </Source_Model>
                                 </Value>
                               </Item>
-                              <Item Key="JoNrxeEff3sMvD8L6qrDA8 EBLGWH2z85jQGvgaIHAbkx">
-                                <Value ID="JoNrxeEff3sMvD8L6qrDA8 EBLGWH2z85jQGvgaIHAbkx" r:Type="ConstantValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
-                                  <Source_Model ID="JoNrxeEff3sMvD8L6qrDA8 EBLGWH2z85jQGvgaIHAbkx">
-                                    <Keyframe_Settings Alpha="1" Duration="0.5" Position="4.6">
-                                      <Interpolation_Model Mode="InOut" Transition="Cubic" r:Type="TweenInterpolationModel [AlchemX.Interpolation.Model]" />
+                              <Item Key="NDbcUmBpfHZNJn4QKTbduU TVF7WRDOqMWQSs7dfWjjM2">
+                                <Value ID="NDbcUmBpfHZNJn4QKTbduU TVF7WRDOqMWQSs7dfWjjM2" r:Type="LiveValueKeyframeUIModel [Kairos.TimelineUI.KeyframeUI]">
+                                  <Source_Model ID="NDbcUmBpfHZNJn4QKTbduU TVF7WRDOqMWQSs7dfWjjM2" Value_Input_Pin_Name="foo">
+                                    <Keyframe_Settings Alpha="1" Duration="0.799999976158142" Position="0.6">
+                                      <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
                                     </Keyframe_Settings>
-                                    <Value r:Type="Float32 [Primitive]">0.7834939</Value>
                                   </Source_Model>
                                 </Value>
                               </Item>
