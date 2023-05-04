@@ -60,7 +60,7 @@
               <Pin Id="UZxylQPjvF7LPqrKiRb0fV" Name="Track ID" Kind="OutputPin" />
             </Node>
             <ControlPoint Id="VwruKhZclGsOD7J5veJDbk" Bounds="467,138" />
-            <Node Bounds="465,160,87,26" Id="JTSJWLPLAQrN7hXLAAeSJ2">
+            <Node Bounds="465,160,65,26" Id="JTSJWLPLAQrN7hXLAAeSJ2">
               <p:NodeReference LastCategoryFullName="Kairos.Runtime.CompositionSampler.TrackSampler" LastDependency="VL.Kairos.Runtime.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="ClassType" Name="TrackSampler" />
@@ -234,7 +234,7 @@
               <Pin Id="LUr3LyY1iQCL8wDZLGxlwo" Name="Output" Kind="OutputPin" />
               <Pin Id="VBfOjjiznoTLpf3HRPO3Xb" Name="Value" Kind="OutputPin" />
             </Node>
-            <ControlPoint Id="G8o5PRlLTchOaYEcPYYVj5" Bounds="15,188" />
+            <ControlPoint Id="G8o5PRlLTchOaYEcPYYVj5" Bounds="12,195" />
             <ControlPoint Id="SHb3Wl0j605MIl5yygTqAx" Bounds="719,302" />
             <Node Bounds="743,444,98,19" Id="L35aR8PG2xTOimPvp04jKr">
               <p:NodeReference LastCategoryFullName="ImGui.Commands" LastDependency="VL.ImGui.vl">
@@ -624,17 +624,46 @@
                 </Pad>
               </Patch>
             </Node>
-            <Node Bounds="118,140,101,26" Id="Cbkw93F2d00OFQZYR3lBLJ">
-              <p:NodeReference LastCategoryFullName="Kairos.Runtime.CompositionSampler.Composition1DSampler" LastDependency="VL.Kairos.Runtime.vl">
+            <Node Bounds="131,865,101,26" Id="Cbkw93F2d00OFQZYR3lBLJ">
+              <p:NodeReference LastCategoryFullName="Kairos.Runtime.CompositionSampler.ICompositionSampler" LastDependency="VL.Kairos.Runtime.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                <CategoryReference Kind="ClassType" Name="Composition1DSampler" />
+                <CategoryReference Kind="InterfaceTypeFlag" Name="ICompositionSampler" NeedsToBeDirectParent="true" />
                 <Choice Kind="OperationCallFlag" Name="GetTrackSamplers" />
               </p:NodeReference>
               <Pin Id="NdBAR9BnHwXLa95VdEmtMY" Name="Input" Kind="StateInputPin" />
               <Pin Id="EV5ssU3PmJNMXDRe7gSRUK" Name="Output" Kind="StateOutputPin" />
               <Pin Id="LHWG89E9FrUQcxi2tkAIbG" Name="Track Samplers" Kind="OutputPin" />
             </Node>
-            <ControlPoint Id="VMvusomIUxBLGu9qi2TbXw" Bounds="120,104" />
+            <ControlPoint Id="VMvusomIUxBLGu9qi2TbXw" Bounds="133,829" />
+            <Pad Id="AEAs4hrjzEQP0wNah8Ir03" Comment="Sow ControlBox" Bounds="288,1472,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="Boolean" />
+              </p:TypeAnnotation>
+            </Pad>
+            <Pad Id="TLPey1TGEJoLfi8DRTZv7n" Comment="" Bounds="268,1426,116,15" ShowValueBox="true" isIOBox="true" Value="Sizable">
+              <p:TypeAnnotation LastCategoryFullName="System.Windows.Forms" LastDependency="System.Windows.Forms.dll">
+                <Choice Kind="TypeFlag" Name="FormBorderStyle" />
+              </p:TypeAnnotation>
+            </Pad>
+            <Node Bounds="226,1519,105,19" Id="VNPicNTcAbPMdZ9RvgmWDE">
+              <p:NodeReference LastCategoryFullName="System.Windows" LastDependency="VL.CoreLib.Windows.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="SetWindowState" />
+                <CategoryReference Kind="Category" Name="Windows" NeedsToBeDirectParent="true" />
+              </p:NodeReference>
+              <Pin Id="HWIqYKi9CmXMn2MdF5F5Q0" Name="Input" Kind="InputPin" />
+              <Pin Id="UBMmWYnEX6MOsELl32QUTE" Name="Caption" Kind="InputPin" />
+              <Pin Id="Ml3soVWTrSaOH3RNTc6XpW" Name="Border Style" Kind="InputPin" />
+              <Pin Id="FN93XAvfOwwM4R5CXQnRpu" Name="Control Box" Kind="InputPin" />
+              <Pin Id="GWxnnVaHyrNQZZyTCMSL9D" Name="State" Kind="InputPin" />
+              <Pin Id="EiPLyTQLZ8TPZFcxFDc5o9" Name="Visible" Kind="InputPin" />
+              <Pin Id="PKyZ2FCQjgDOtrC6xye2vp" Name="Output" Kind="OutputPin" />
+            </Node>
+            <Pad Id="R3GS9uOQk9UMX4Ln6NC1e3" Comment="Caption" Bounds="249,1397,116,16" ShowValueBox="true" isIOBox="true" Value="Composition Sampler">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+            </Pad>
           </Canvas>
           <Patch Id="KjQvIS0UEaNOjdZpqw2uGL" Name="Create" />
           <Patch Id="SHnZ2TCMLC6Nw3qNUDG5gO" Name="Update">
@@ -685,6 +714,10 @@
           <Link Id="RbQoskc4judL5bRWfq3QhX" Ids="LHWG89E9FrUQcxi2tkAIbG,QPBFQIYwOnaMmwIf9XYozr" />
           <Link Id="SKWTqwiBwKFOYtlWjJpnuw" Ids="VMvusomIUxBLGu9qi2TbXw,NdBAR9BnHwXLa95VdEmtMY" />
           <Link Id="ECoIkeeY4EWL042JPdZe7l" Ids="NaCupcTXcTALxB6Imt9QDF,VMvusomIUxBLGu9qi2TbXw" IsHidden="true" />
+          <Link Id="NHW4y9BIxkiNhxDkCLxcga" Ids="AEAs4hrjzEQP0wNah8Ir03,FN93XAvfOwwM4R5CXQnRpu" />
+          <Link Id="QZeGixHAx8pPMQeiLx1GrP" Ids="TLPey1TGEJoLfi8DRTZv7n,Ml3soVWTrSaOH3RNTc6XpW" />
+          <Link Id="Dd8bYiHw0eJLNfphhGeS03" Ids="MWahonGIZ6dOxTlmXsODxZ,HWIqYKi9CmXMn2MdF5F5Q0" />
+          <Link Id="DxIrUvpd6VDN5PIOGd97zT" Ids="R3GS9uOQk9UMX4Ln6NC1e3,UBMmWYnEX6MOsELl32QUTE" />
         </Patch>
       </Node>
     </Canvas>
@@ -718,4 +751,5 @@
   <NugetDependency Id="LRiNwd70TlXL8WOcZD7W2A" Location="VL.Touchy" Version="0.0.0" />
   <NugetDependency Id="DDiOgNpgloZNyfvL26eESf" Location="VL.ImGui.Skia" Version="2023.5.1-0009-gff72e46415" />
   <DocumentDependency Id="BQ6Ig3h86ASMKsd3Bs1w1P" Location="./VL.Kairos.Common.vl" />
+  <NugetDependency Id="GaPSO8UUc2hPmHJ5ozVCQ5" Location="VL.CoreLib.Windows" Version="2023.5.1-0009-gff72e46415" />
 </Document>
