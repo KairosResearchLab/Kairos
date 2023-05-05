@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="UaF07rFVakaO1PRgf471XZ" LanguageVersion="2023.5.1-0009-gff72e46415" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="UaF07rFVakaO1PRgf471XZ" LanguageVersion="2023.5.1-0017-g93f6402519" Version="0.128">
   <Patch Id="OdwjHxvmpTwQVNFJ9pLKQP">
     <Canvas Id="TFkrzzMqabMLaJgnlwzp1b" DefaultCategory="Kairos.Runtime.Timeline" CanvasType="FullCategory">
       <!--
@@ -14,6 +14,12 @@
         <p:Interfaces>
           <TypeReference LastCategoryFullName="Kairos.Runtime.Core" LastDependency="VL.Kairos.Runtime.Core.vl">
             <Choice Kind="InterfaceTypeFlag" Name="IComposition1D" />
+          </TypeReference>
+          <TypeReference LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+            <Choice Kind="MutableInterfaceType" Name="IDisposable" />
+          </TypeReference>
+          <TypeReference LastCategoryFullName="Kairos.Runtime.Core.Commons" LastDependency="VL.Kairos.Runtime.Core.vl">
+            <Choice Kind="InterfaceTypeFlag" Name="IKairosEditableNode" />
           </TypeReference>
         </p:Interfaces>
         <Patch Id="MAQqzMXPNT6PYjjV0wm614">
@@ -285,6 +291,7 @@
           <Link Id="Fq5jOHRx0T2OVpas3zR1Az" Ids="Q4drwxGJUavP97KGul8ecV,B8dSD11a7sXNZFUttwtFwB" />
           <Link Id="RcuC8Zwybz1OUot8sG9VNx" Ids="QHopDdT6ZxFPrBgW39okb0,Jtf7NnARpmYPZu3j3DGR8w" />
           <Link Id="L0mn0yee9ZPQGM2mHBPZ3D" Ids="BCwKf7F8sXuLIvD7kHVg2y,B4A2s5HGEpqQNVXH0dpMf2" />
+          <Patch Id="UKevfH57xJ7QCe4sJZwbmu" Name="Dispose" />
         </Patch>
       </Node>
       <!--
@@ -581,6 +588,27 @@
               <ControlPoint Id="OI8HV2tEQaGLDOS7oYMfWk" Bounds="297,1197" Alignment="Bottom" />
               <ControlPoint Id="OTySpPAs0WqPmsciPVd1C4" Bounds="396,1197" Alignment="Bottom" />
             </Node>
+            <Pad Id="S0BtiMa81A7Lf2Pnix3ZL6" SlotId="Vkw9zYMaP9UNdR3QUhbbNL" Bounds="795,306" />
+            <ControlPoint Id="PCXuvenO1rOPLzUCSRk1ae" Bounds="795,344" />
+            <Overlay Id="U2s3F0sg07nP6IvSwCLBDZ" Name="IIDProvider" Bounds="741,184,151,187">
+              <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
+            </Overlay>
+            <Node Bounds="793,232,46,26" Id="TuRvPo2WwvvPyYMoPItdc0">
+              <p:NodeReference LastCategoryFullName="System.GUID" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="ClassType" Name="GUID" />
+                <Choice Kind="OperationCallFlag" Name="Create" />
+              </p:NodeReference>
+              <Pin Id="HPfebOAXdW5MtyUqMw6tNx" Name="Result" Kind="StateOutputPin" />
+            </Node>
+            <Node Bounds="793,268,55,19" Id="CtCS3o2SK35Omuy2req6GG">
+              <p:NodeReference LastCategoryFullName="System.Conversion" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="ToString" />
+              </p:NodeReference>
+              <Pin Id="NdQ8diHbM78O8YZRTQazDX" Name="Input" Kind="InputPin" />
+              <Pin Id="OxCsaMzZfN8L8orEppzzoz" Name="Result" Kind="OutputPin" />
+            </Node>
           </Canvas>
           <Slot Id="UgNWEBxQpVjNKr54jNtu3s" Name="Tracks">
             <p:TypeAnnotation p:Type="TypeReference">
@@ -625,8 +653,9 @@
             <Fragment Id="C7M9d3KcAflQBDgPefmTDR" Patch="JY2BNA2pkYNODJ3QoR4Bto" />
             <Fragment Id="V73u1GNAsd6MEuGcRvJtbt" Patch="N0KYwxI1fAMOAcZEYQg4O2" />
             <Fragment Id="DwhSWALc91yMK3rtOWuLu7" Patch="RXygfub3pPHO2idwr7lpMA" />
+            <Fragment Id="TqnkWKWbqsyPSusHXYGlfU" Patch="OdcGmrWchAoOL1WICE5yGY" />
           </ProcessDefinition>
-          <Patch Id="UL1dHXwXWqhM8d4PTeHx65" Name="Create" />
+          <Patch Id="UL1dHXwXWqhM8d4PTeHx65" Name="Create" ParticipatingElements="TuRvPo2WwvvPyYMoPItdc0,CtCS3o2SK35Omuy2req6GG" />
           <Patch Id="AFpyvTmHEsFQHUO1TPaEOB" Name="GetTracks">
             <Pin Id="JmPyb4YvXRKNhEsMTAAofp" MergeId="4054" Name="Tracks" Kind="OutputPin" />
           </Patch>
@@ -711,6 +740,31 @@
           <Link Id="K4hY8gp5GWTORJGaKAVqyR" Ids="OI8HV2tEQaGLDOS7oYMfWk,CqCxq9T6FGFOo1WksiX0tg" />
           <Link Id="Ep77bxkiAtQL3BrufmzptI" Ids="EEPHkDqrTvxOesdEvx6T8t,OTySpPAs0WqPmsciPVd1C4" />
           <Link Id="McVZ7dRnTSmOA3cgi7mXIz" Ids="OTySpPAs0WqPmsciPVd1C4,PFP6yIeVrcYMIUrnlsRtUw" />
+          <Slot Id="Vkw9zYMaP9UNdR3QUhbbNL" Name="ID">
+            <p:Attributes>
+              <AttributeData>
+                <p:TypeReference LastCategoryFullName="System.EditorAttributes" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="BrowsableAttribute" />
+                </p:TypeReference>
+                <p:Arguments>
+                  <AttributeArgument Name="Browsable">
+                    <p:Value SerializedValue="False">
+                      <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                        <Choice Kind="TypeFlag" Name="Boolean" />
+                      </p:TypeAnnotation>
+                    </p:Value>
+                  </AttributeArgument>
+                </p:Arguments>
+              </AttributeData>
+            </p:Attributes>
+          </Slot>
+          <Patch Id="OdcGmrWchAoOL1WICE5yGY" Name="GetID">
+            <Pin Id="JCGF9wrinaAMlaPJ8UAQwY" MergeId="559956" Name="ID" Kind="OutputPin" />
+          </Patch>
+          <Link Id="SEbeGfW4TwUMbuKns5RjKs" Ids="PCXuvenO1rOPLzUCSRk1ae,JCGF9wrinaAMlaPJ8UAQwY" IsHidden="true" />
+          <Link Id="J5NJyZGBIH2MDZp2iKcbtO" Ids="S0BtiMa81A7Lf2Pnix3ZL6,PCXuvenO1rOPLzUCSRk1ae" />
+          <Link Id="GJOmRW0HWOCMVDZ7hjey5p" Ids="HPfebOAXdW5MtyUqMw6tNx,NdQ8diHbM78O8YZRTQazDX" />
+          <Link Id="G4jIvIlakamPl93wQkp7UN" Ids="OxCsaMzZfN8L8orEppzzoz,S0BtiMa81A7Lf2Pnix3ZL6" />
         </Patch>
       </Node>
       <Canvas Id="INgVsLfB03aMxN4dbIq2Fi" Name="Keyframe" Position="106,242">
@@ -889,6 +943,22 @@
             <Link Id="GTTrOn1GHYfL8ftoOCgZ0s" Ids="J0Xp6nUyu0iOToK6ezjmBl,Vc5tJMBtaD9LmnmI00Mska" />
             <Link Id="QmCehk7R73pM5v58laMr9N" Ids="VgY6xGQp4VTLfQ8qlIYYwt,FXwLrrrgeA4OtYS8pqYuQT" />
             <Slot Id="SSbVBuZMGUjNWxMQDB4pwG" Name="Author IDs">
+              <p:Attributes>
+                <AttributeData>
+                  <p:TypeReference LastCategoryFullName="System.EditorAttributes" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="TypeFlag" Name="BrowsableAttribute" />
+                  </p:TypeReference>
+                  <p:Arguments>
+                    <AttributeArgument Name="Browsable">
+                      <p:Value SerializedValue="False">
+                        <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                          <Choice Kind="TypeFlag" Name="Boolean" />
+                        </p:TypeAnnotation>
+                      </p:Value>
+                    </AttributeArgument>
+                  </p:Arguments>
+                </AttributeData>
+              </p:Attributes>
               <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="HashSet" />
                 <p:TypeArguments>
@@ -1677,6 +1747,22 @@
             <Link Id="BAYRbCT7k3ROaRRbqzenX3" Ids="KFCN51ajvLzO99zdea1Dhc,Tvccs8YO4DXNKBg05yqLZS" />
             <Link Id="AtQuB8WnRlpLldXx2ZB3F7" Ids="Tvccs8YO4DXNKBg05yqLZS,J54LtUX9ssrQDOMgrqdFol" IsHidden="true" />
             <Slot Id="IHGx99dI5XmNr5gCWzHZyC" Name="Author IDs">
+              <p:Attributes>
+                <AttributeData>
+                  <p:TypeReference LastCategoryFullName="System.EditorAttributes" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="TypeFlag" Name="BrowsableAttribute" />
+                  </p:TypeReference>
+                  <p:Arguments>
+                    <AttributeArgument Name="Browsable">
+                      <p:Value SerializedValue="False">
+                        <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                          <Choice Kind="TypeFlag" Name="Boolean" />
+                        </p:TypeAnnotation>
+                      </p:Value>
+                    </AttributeArgument>
+                  </p:Arguments>
+                </AttributeData>
+              </p:Attributes>
               <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="HashSet" />
                 <p:TypeArguments>
@@ -1957,6 +2043,22 @@
             <Link Id="C6Cdx3lwS7DNfXcW3C3DFu" Ids="P8dwMyeMkSbPpzeQkchUnJ,J5H4ga3UiuNLGgHM0jw0hr" />
             <Link Id="B3vvwps8VPSMQPeUemyx2Z" Ids="J5H4ga3UiuNLGgHM0jw0hr,KU94eQa59YqPh0Fz31KvzR" IsHidden="true" />
             <Slot Id="Te7dy2g1ZJlLWuwbCcftuZ" Name="Author IDs">
+              <p:Attributes>
+                <AttributeData>
+                  <p:TypeReference LastCategoryFullName="System.EditorAttributes" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="TypeFlag" Name="BrowsableAttribute" />
+                  </p:TypeReference>
+                  <p:Arguments>
+                    <AttributeArgument Name="Browsable">
+                      <p:Value SerializedValue="False">
+                        <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                          <Choice Kind="TypeFlag" Name="Boolean" />
+                        </p:TypeAnnotation>
+                      </p:Value>
+                    </AttributeArgument>
+                  </p:Arguments>
+                </AttributeData>
+              </p:Attributes>
               <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="HashSet" />
                 <p:TypeArguments>
@@ -5899,7 +6001,24 @@
             </ProcessDefinition>
             <Link Id="ENIQogBxHGoL1wR2IbR672" Ids="ICofa8Je2yyN8tPnhTTbka,COZn35yqVdDOWVwnGyX2mE" IsHidden="true" />
             <Link Id="EI0BNkbCbD8OYYUZON6CTJ" Ids="I3F0W3R5apOQB0NBEg1ocN,ICofa8Je2yyN8tPnhTTbka" />
-            <Slot Id="Al6zqBtaxCoMf551UXAmqR" Name="ID" />
+            <Slot Id="Al6zqBtaxCoMf551UXAmqR" Name="ID">
+              <p:Attributes>
+                <AttributeData>
+                  <p:TypeReference LastCategoryFullName="System.EditorAttributes" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="TypeFlag" Name="BrowsableAttribute" />
+                  </p:TypeReference>
+                  <p:Arguments>
+                    <AttributeArgument Name="Browsable">
+                      <p:Value SerializedValue="False">
+                        <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                          <Choice Kind="TypeFlag" Name="Boolean" />
+                        </p:TypeAnnotation>
+                      </p:Value>
+                    </AttributeArgument>
+                  </p:Arguments>
+                </AttributeData>
+              </p:Attributes>
+            </Slot>
             <Link Id="BmcTw8RNz05NVqw4r3YqyN" Ids="IIaH1LDrkGRMxBX4lw4uTz,N5P5J3U1wpgPuVQPTm1TOO" IsHidden="true" />
             <Link Id="RMSLuk6f5h2P44c6pACrS0" Ids="BqA9Vripc8cMG2XoUVXrcC,IIaH1LDrkGRMxBX4lw4uTz" />
             <Link Id="OuglzMgVtKXLYoKw7u9yJ8" Ids="MiiFX2O1epuNRM44VLZoT5,CPtFb1QfqMKNpONNwDWUl0" />
@@ -5920,6 +6039,22 @@
             <Link Id="F8fpP549NWEQG3gQUNqB3b" Ids="PFgeH99963BO6aOx0FsxGV,JgCwEbRQprHQbQKRcSkxq1" />
             <Link Id="RkTRfLaTRpuL9ha28vtq5V" Ids="JgCwEbRQprHQbQKRcSkxq1,Qb471nwIKScPh0arKW62BI" IsHidden="true" />
             <Slot Id="U6p4KuYLdMHPRUXqDG9wsc" Name="Author IDs">
+              <p:Attributes>
+                <AttributeData>
+                  <p:TypeReference LastCategoryFullName="System.EditorAttributes" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="TypeFlag" Name="BrowsableAttribute" />
+                  </p:TypeReference>
+                  <p:Arguments>
+                    <AttributeArgument Name="Browsable">
+                      <p:Value SerializedValue="False">
+                        <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                          <Choice Kind="TypeFlag" Name="Boolean" />
+                        </p:TypeAnnotation>
+                      </p:Value>
+                    </AttributeArgument>
+                  </p:Arguments>
+                </AttributeData>
+              </p:Attributes>
               <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="HashSet" />
                 <p:TypeArguments>
@@ -6025,8 +6160,8 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="I9r7OOr28ZKQU0kOe9kITs" Location="VL.CoreLib" Version="2023.5.1-0009-gff72e46415" />
+  <NugetDependency Id="I9r7OOr28ZKQU0kOe9kITs" Location="VL.CoreLib" Version="2023.5.1-0017-g93f6402519" />
   <NugetDependency Id="U0cZBvVDT5OLSVXQLJWZBo" Location="VL.LayerX" Version="0.0.0.0" />
   <DocumentDependency Id="Q8lsl2aQ2woPUyzp18N2aP" Location="./VL.Kairos.Runtime.Core.vl" />
-  <NugetDependency Id="N060MY3I3NaQIFfIU14wMb" Location="VL.Core" Version="2023.5.1-0009-gff72e46415" />
+  <NugetDependency Id="N060MY3I3NaQIFfIU14wMb" Location="VL.Core" Version="2023.5.1-0017-g93f6402519" />
 </Document>
