@@ -59,8 +59,9 @@
               <Pin Id="QSdm7RyLdaiNQY1rXoPgP6" Name="Output" Kind="StateOutputPin" />
             </Node>
             <Node Bounds="167,569,896,19" Id="UlzjTfNfq3bQEWLIEbC8QR">
-              <p:NodeReference LastCategoryFullName="Kairos.Runtime.Core" LastDependency="VL.Kairos.Runtime.Core.vl">
+              <p:NodeReference LastCategoryFullName="Kairos.Composition" LastDependency="VL.Kairos.Runtime.Core.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="Category" Name="Composition" NeedsToBeDirectParent="true" />
                 <Choice Kind="ProcessAppFlag" Name="Processor" />
               </p:NodeReference>
               <Pin Id="IGCgVfMWb7gLYcm1BSGSwp" Name="Composition" Kind="InputPin" />
@@ -353,6 +354,9 @@
         <p:Interfaces>
           <TypeReference LastCategoryFullName="StructureX" LastDependency="VL.StructureX.vl">
             <Choice Kind="InterfaceTypeFlag" Name="ICompositionModel" />
+          </TypeReference>
+          <TypeReference LastCategoryFullName="Kairos.Runtime.Core.Commons" LastDependency="VL.Kairos.Runtime.Core.vl">
+            <Choice Kind="InterfaceTypeFlag" Name="IBounds1DProvider" />
           </TypeReference>
         </p:Interfaces>
         <Patch Id="C3llhK62SrnNb71q2UBYjj">
@@ -784,7 +788,6 @@
           <Link Id="RyZLCUpT81FLoEaESqGLgs" Ids="HftAfpkdrCtO15mbIIAdoI,KPLHncOe50XN2XWXdJ2A6X" />
           <Link Id="M8LJQtNcIR8MT22mib8IGg" Ids="KPLHncOe50XN2XWXdJ2A6X,ERZzlYk8nSxO6tUoZIhmkV" />
           <Link Id="Mpr69YiNsO2MZIc3qDp9wF" Ids="UxJhIdT4hKDM9pqIHNTk5M,OI8HV2tEQaGLDOS7oYMfWk" />
-          <Link Id="K4hY8gp5GWTORJGaKAVqyR" Ids="OI8HV2tEQaGLDOS7oYMfWk,CqCxq9T6FGFOo1WksiX0tg" />
           <Link Id="Ep77bxkiAtQL3BrufmzptI" Ids="EEPHkDqrTvxOesdEvx6T8t,OTySpPAs0WqPmsciPVd1C4" />
           <Link Id="McVZ7dRnTSmOA3cgi7mXIz" Ids="OTySpPAs0WqPmsciPVd1C4,PFP6yIeVrcYMIUrnlsRtUw" />
           <Slot Id="Vkw9zYMaP9UNdR3QUhbbNL" Name="ID">
@@ -812,6 +815,7 @@
           <Link Id="J5NJyZGBIH2MDZp2iKcbtO" Ids="S0BtiMa81A7Lf2Pnix3ZL6,PCXuvenO1rOPLzUCSRk1ae" />
           <Link Id="GJOmRW0HWOCMVDZ7hjey5p" Ids="HPfebOAXdW5MtyUqMw6tNx,NdQ8diHbM78O8YZRTQazDX" />
           <Link Id="G4jIvIlakamPl93wQkp7UN" Ids="OxCsaMzZfN8L8orEppzzoz,S0BtiMa81A7Lf2Pnix3ZL6" />
+          <Link Id="Gb3bLSO4z7UQRdpbNIODMb" Ids="OI8HV2tEQaGLDOS7oYMfWk,CqCxq9T6FGFOo1WksiX0tg" />
         </Patch>
       </Node>
       <Canvas Id="INgVsLfB03aMxN4dbIq2Fi" Name="Keyframe" Position="106,242">
@@ -2049,7 +2053,7 @@
             <Link Id="RUQrB95jb23LCPypAqDtrI" Ids="C1kYunedqlLOaR49TnsIyl,PCHKlUUUzpsM0YVIArHyhr" />
             <Slot Id="QdoT20OJNQiM8O1ncsEYMm" Name="Sampling Settings">
               <p:TypeAnnotation p:Type="TypeReference">
-                <Choice Kind="TypeFlag" Name="Sampling1DSettings" />
+                <Choice Kind="TypeFlag" Name="Sampling1DSettings (InsideOutsideDomain)" />
               </p:TypeAnnotation>
             </Slot>
             <Link Id="M8Xscx2Qct5NIpmMHfrVrC" Ids="BbGjnbbXv8tQSs6u8zJKQy,SfQpFefeZcaNHVq7E0B0SZ" />
@@ -2208,7 +2212,7 @@
               <Node Bounds="267,585,187,19" Id="O90qHMprKbkO0iuCMaEoP1">
                 <p:NodeReference LastCategoryFullName="LayerX.1D" LastDependency="VL.LayerX.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <Choice Kind="ProcessAppFlag" Name="ValueLayer1D" />
+                  <Choice Kind="ProcessAppFlag" Name="ValueLayer" />
                 </p:NodeReference>
                 <Pin Id="B6XEEaRneJFL6op4WlQ6SS" Name="Value" Kind="InputPin" />
                 <Pin Id="StFLJghBzbpO4JjB4IEfaf" Name="Compositing Model" Kind="InputPin" />
@@ -2971,7 +2975,7 @@
                   <Node Bounds="959,655,173,19" Id="A4rCsu6VSLZOPc1du0ja6s">
                     <p:NodeReference LastCategoryFullName="Kairos.Runtime.Core.Utils.Domain" LastDependency="VL.Kairos.Runtime.Core.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="ProcessAppFlag" Name="Domain1DTransportFunction" />
+                      <Choice Kind="ProcessAppFlag" Name="Domain1DTransportFunction (InsideOutsideDomain)" />
                     </p:NodeReference>
                     <Pin Id="Eep3ZALbA8sNyriRsO6v89" Name="Settings" Kind="InputPin" />
                     <Pin Id="CyzgLusmWmtONYJ6xyDJOx" Name="Bound In" Kind="InputPin" />
@@ -3348,7 +3352,7 @@
             <Link Id="OyNXvJwLY2JQTr7JXMkfgp" Ids="FgtxAqoLmBPPyZJOnuIYGr,RKTjc1KBgRzPSnFjld9wub" IsHidden="true" />
             <Slot Id="NCNDjUmC7RqNM9hlBMUxVC" Name="Sampling Settings">
               <p:TypeAnnotation p:Type="TypeReference">
-                <Choice Kind="TypeFlag" Name="Sampling1DSettings" />
+                <Choice Kind="TypeFlag" Name="Sampling1DSettings (InsideOutsideDomain)" />
               </p:TypeAnnotation>
             </Slot>
             <Link Id="HxL7cvDkWNdNx0PHiyi86n" Ids="Qs6FP2SszBDPi0USCZ8bSZ,EKKd6EOYk6HMsbjPKKCs96" />
@@ -3600,7 +3604,7 @@
                   <Node Bounds="780,629,173,19" Id="RC6P1Ibk5poOs0UZaW5EO0">
                     <p:NodeReference LastCategoryFullName="Kairos.Runtime.Core.Utils.Domain" LastDependency="VL.Kairos.Runtime.Core.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="ProcessAppFlag" Name="Domain1DTransportFunction" />
+                      <Choice Kind="ProcessAppFlag" Name="Domain1DTransportFunction (InsideOutsideDomain)" />
                     </p:NodeReference>
                     <Pin Id="OKJSuXGF2fdMb29lcs5kMn" Name="Settings" Kind="InputPin" />
                     <Pin Id="FBWoWNbPPMOOID8l6lSqO6" Name="Bound In" Kind="InputPin" />
@@ -6078,7 +6082,7 @@
             <Link Id="Sjpoyktjw5FMVdp70IN11d" Ids="CLD0MQY7aVePveIFGJO0c8,DnJZNGyMjxdLWBteGxSFJs" />
             <Slot Id="F5Pad0HtbhULJFMqC5iokG" Name="Sampling Settings">
               <p:TypeAnnotation p:Type="TypeReference">
-                <Choice Kind="TypeFlag" Name="Sampling1DSettings" />
+                <Choice Kind="TypeFlag" Name="Sampling1DSettings (InsideOutsideDomain)" />
               </p:TypeAnnotation>
             </Slot>
             <Link Id="CwI5CJJeCLVOf3Rt9xcNWD" Ids="Ttth5kGgCGrMA4l4zuhAlK,PFgeH99963BO6aOx0FsxGV" />
