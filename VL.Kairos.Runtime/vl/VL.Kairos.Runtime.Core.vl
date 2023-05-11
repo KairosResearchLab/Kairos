@@ -16940,7 +16940,9 @@
                   <CategoryReference Kind="ClassType" Name="KairosClock" />
                   <Choice Kind="OperationCallFlag" Name="Create" />
                 </p:NodeReference>
-                <Pin Id="VdM4YXhBrewN8YEJMTWZfa" Name="Model" Kind="InputPin" />
+                <Pin Id="VdM4YXhBrewN8YEJMTWZfa" Name="Model" Kind="InputPin">
+                  <p:DefaultValue Loop_Out="10" Period="1" Speed="1" />
+                </Pin>
                 <Pin Id="Md70dzk6jeiPIRnBRsSrVM" Name="Node Context" Kind="InputPin" />
                 <Pin Id="DCQ2QxxHBGTOiPOKCVsSsD" Name="Output" Kind="StateOutputPin" />
               </Node>
@@ -17256,6 +17258,16 @@
               </Node>
               <ControlPoint Id="RRdrq8G5gXlPF97c08GBLs" Bounds="757,247" />
               <ControlPoint Id="SgRY4fPDu4POXOK8XC5sEI" Bounds="757,1182" />
+              <Pad Id="NjxIcew7sZfPfnOyNc4cAS" Bounds="860,171" />
+              <Node Bounds="858,192,58,26" Id="SsVKEGD138fOuTcvnNKQYf">
+                <p:NodeReference LastCategoryFullName="Primitive.IDisposable" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="MutableInterfaceType" Name="IDisposable" NeedsToBeDirectParent="true" />
+                  <Choice Kind="OperationCallFlag" Name="Dispose" />
+                </p:NodeReference>
+                <Pin Id="AHZjzHD8tUEOWgG2bJGY8H" Name="Input" Kind="StateInputPin" />
+                <Pin Id="LWLbPTY72UNPMJHlVn5eNe" Name="Output" Kind="StateOutputPin" />
+              </Node>
             </Canvas>
             <Patch Id="Dvxv4BuPsX7L1iJG8DEr4k" Name="Create" ParticipatingElements="QoWruApLnm8PQI2sH2UxqR,AmFRahD49QdNKnqVv9HKwL,Q5YvVMZelTyNGMV2tS2liM">
               <Pin Id="E3nkfvfhvsVP1m3Bo8cG6D" Name="Composition" Kind="InputPin" />
@@ -17329,6 +17341,9 @@
             <Link Id="MsqgNUUMUmiNoJPILVPGYZ" Ids="KyvVvhkR2jaNCESqc5tIeO,QkaL7GyY1CaP8gkKiQkCEj" />
             <Link Id="TzoCsDTBhczPM0AJ4N83Vw" Ids="KyvVvhkR2jaNCESqc5tIeO,RPtHWVxp2VyPK0F0KJ9mIy" />
             <Link Id="EN6br0AukzGOIuWNR3hs9D" Ids="G0WpJhL05wTQYp17Ll3uO6,BASsweOuyHgQIl7rLdX3jV" />
+            <Link Id="IHmA74FynAmPa9msKbwYr1" Ids="DCQ2QxxHBGTOiPOKCVsSsD,NjxIcew7sZfPfnOyNc4cAS" />
+            <Link Id="E7PVE2h27ZoOxYI1Mn4UCx" Ids="NjxIcew7sZfPfnOyNc4cAS,AHZjzHD8tUEOWgG2bJGY8H" />
+            <Patch Id="VZgsJDD5jzhNEE7HOXlUae" Name="Dispose" ParticipatingElements="SsVKEGD138fOuTcvnNKQYf" />
           </Patch>
         </Node>
       </Canvas>
@@ -21358,6 +21373,9 @@
               <TypeReference LastCategoryFullName="Kairos.Runtime.Core.SamplingPositionProvider" LastDependency="VL.Kairos.Runtime.Core.vl">
                 <Choice Kind="InterfaceTypeFlag" Name="ISamplingPosition1DProvider" />
               </TypeReference>
+              <TypeReference LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="MutableInterfaceType" Name="IDisposable" />
+              </TypeReference>
             </p:Interfaces>
             <Patch Id="UHBtHTXCGlAMuVKhaUhed0">
               <Canvas Id="FjFrtLIM5HsLedlkfmdK37" CanvasType="Group">
@@ -21509,7 +21527,7 @@
                     <Choice Kind="ProcessStatefulRegion" Name="Cache" />
                   </p:NodeReference>
                   <Pin Id="UBaTGBysllhLZMZ4KwMQvx" Name="Force" Kind="InputPin" />
-                  <Pin Id="CFaxg6CGIc0MNy9TiARoWF" Name="Dispose Cached Outputs" Kind="InputPin" />
+                  <Pin Id="CFaxg6CGIc0MNy9TiARoWF" Name="Dispose Cached Outputs" Kind="InputPin" DefaultValue="False" />
                   <Pin Id="IhfCkQMjJSnO5D8vcVzJOj" Name="Has Changed" Kind="OutputPin" />
                   <Patch Id="OtYVUbXHg7kQNqhsEe77KX" ManuallySortedPins="true">
                     <Patch Id="UurKqwX27U9OE4Z54DlMI0" Name="Create" ManuallySortedPins="true" />
