@@ -116,7 +116,9 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Clock (Kairos)" />
             </p:NodeReference>
-            <Pin Id="TZjZl4T4PYGOlxGmbxtHj1" Name="Model" Kind="InputPin" />
+            <Pin Id="TZjZl4T4PYGOlxGmbxtHj1" Name="Model" Kind="InputPin">
+              <p:DefaultValue Loop_Enabled="True" Loop_Out="5" Period="1" Speed="1" />
+            </Pin>
             <Pin Id="TjXZGN5i2CUN03Q2PfXdgn" Name="BPM" Kind="InputPin" />
             <Pin Id="PEuyULta60iOoEZdjeQNyB" Name="Period" Kind="InputPin" />
             <Pin Id="KZMp6Oj9vxiNZ7CdHj54l6" Name="Speed" Kind="InputPin" />
@@ -454,53 +456,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Composition1DSampler" />
             </p:NodeReference>
-            <Pin Id="Rv5aLynSUKuOlJqXAutDfZ" Name="Model" Kind="InputPin">
-              <p:DefaultValue xmlns:r="reflection" r:Version="2">
-                <Track_Samplers>
-                  <Item Key="Foo">
-                    <Value Enabled="True" Track_ID="Foo" Type_Full_Name="Float32 [Primitive]">
-                      <Background_Value r:Type="Float32 [Primitive]">0</Background_Value>
-                      <Source_Track_Model Enabled="True" ID="aa903cfe-c797-4c12-a5c7-fa9f2e1075cf" r:Type="Compositor1DTrackModel [Kairos.Compositor1D.Track]">
-                        <Author_IDs>
-                          <Item>Model Process Node</Item>
-                        </Author_IDs>
-                        <Items_Model>
-                          <Item Key="f2bfc1a0-4899-4464-b20b-43f6e6bda8cf">
-                            <Value ID="f2bfc1a0-4899-4464-b20b-43f6e6bda8cf" r:Type="ConstantValueClipModel [Kairos.Compositor1D.Clip]">
-                              <Author_IDs>
-                                <Item>ye</Item>
-                              </Author_IDs>
-                              <Settings Alpha="1" Duration="2" Position="2">
-                                <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                <Compositing_Model>
-                                  <Blending_Model r:Type="AdditiveBlendingModel [AlchemX.Blending.Model]" />
-                                </Compositing_Model>
-                              </Settings>
-                              <Value r:Type="Float32 [Primitive]">0.5</Value>
-                            </Value>
-                          </Item>
-                          <Item Key="b6e1f910-8627-403a-954e-e2e7315c2fdd">
-                            <Value ID="b6e1f910-8627-403a-954e-e2e7315c2fdd" r:Type="ConstantValueClipModel [Kairos.Compositor1D.Clip]">
-                              <Author_IDs>
-                                <Item>yo</Item>
-                              </Author_IDs>
-                              <Settings Alpha="1" Duration="2" Position="0.9999999776482582">
-                                <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
-                                <Compositing_Model>
-                                  <Blending_Model r:Type="AdditiveBlendingModel [AlchemX.Blending.Model]" />
-                                </Compositing_Model>
-                              </Settings>
-                              <Value r:Type="Float32 [Primitive]">0.3</Value>
-                            </Value>
-                          </Item>
-                        </Items_Model>
-                        <Parameter Key="3d1f5656-1752-4bb9-8895-bc4e9110b400" Path="Foo" Type_Full_Name="Float32 [Primitive]" />
-                      </Source_Track_Model>
-                    </Value>
-                  </Item>
-                </Track_Samplers>
-              </p:DefaultValue>
-            </Pin>
+            <Pin Id="Rv5aLynSUKuOlJqXAutDfZ" Name="Model" Kind="InputPin" />
             <Pin Id="STURAVxlo9UPIlsVLi2kKs" Name="Composition" Kind="InputPin" />
             <Pin Id="QhEFTdfx2J9MLLzIdKALUr" Name="Sampling Position Provider" Kind="InputPin" />
             <Pin Id="R3B9I4YbJxaONDSDMja4yI" Name="Enabled" Kind="InputPin" />
@@ -512,8 +468,63 @@
               <CategoryReference Kind="Category" Name="Kairos" NeedsToBeDirectParent="true" />
               <Choice Kind="ProcessAppFlag" Name="Compositor1D" />
             </p:NodeReference>
-            <Pin Id="NwHbds99DEUNIocV8f1maK" Name="Model" Kind="InputPin" />
-            <Pin Id="D2L68JIYIjGPj7UA08xQRE" Name="bar" Kind="InputPin" PinGroupName="Input">
+            <Pin Id="NwHbds99DEUNIocV8f1maK" Name="Model" Kind="InputPin">
+              <p:DefaultValue ID="473c2922-4892-44e2-8169-5154ab7fc1e1" xmlns:r="reflection" r:Version="2">
+                <Controllers>
+                  <Item Key="a1f990fb-c2a5-40d7-b91a-2349096e8ccc">
+                    <Value Composition_Input_Pin_Name="bar" ID="a1f990fb-c2a5-40d7-b91a-2349096e8ccc" r:Type="CompositionClipModel (Compositor1D) [Kairos.Compositor1D.Controller]">
+                      <Author_IDs>
+                        <Item></Item>
+                      </Author_IDs>
+                      <Settings Alpha="1" Duration="4.999999888241291">
+                        <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
+                      </Settings>
+                    </Value>
+                  </Item>
+                </Controllers>
+                <Tracks>
+                  <Item Key="Foo">
+                    <Value Enabled="True" ID="b4b8f5e4-2c38-48a8-a205-0cdf285198ee" r:Type="TrackModel (Compositor1D) [Kairos.Compositor1D.Track]">
+                      <Author_IDs>
+                        <Item>Model Process Node</Item>
+                      </Author_IDs>
+                      <Items_Model>
+                        <Item Key="9a40ec67-232a-4983-acd9-cf5ba8ea1b5f">
+                          <Value ID="9a40ec67-232a-4983-acd9-cf5ba8ea1b5f" r:Type="ConstantValueClipModel (Compositor1D) [Kairos.Compositor1D.Clip]">
+                            <Author_IDs>
+                              <Item>yo</Item>
+                            </Author_IDs>
+                            <Settings Alpha="1" Duration="2" Position="0.9999999776482582">
+                              <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
+                              <Compositing_Model>
+                                <Blending_Model r:Type="AdditiveBlendingModel [AlchemX.Blending.Model]" />
+                              </Compositing_Model>
+                            </Settings>
+                            <Value r:Type="Float32 [Primitive]">0.3</Value>
+                          </Value>
+                        </Item>
+                        <Item Key="4c06ef6d-b887-4018-a968-c2c21d3cc531">
+                          <Value ID="4c06ef6d-b887-4018-a968-c2c21d3cc531" r:Type="ConstantValueClipModel (Compositor1D) [Kairos.Compositor1D.Clip]">
+                            <Author_IDs>
+                              <Item>ye</Item>
+                            </Author_IDs>
+                            <Settings Alpha="1" Duration="2" Position="2">
+                              <Alpha_Blending_Model r:Type="MultiplyBlendingModel [AlchemX.Blending.Model]" />
+                              <Compositing_Model>
+                                <Blending_Model r:Type="AdditiveBlendingModel [AlchemX.Blending.Model]" />
+                              </Compositing_Model>
+                            </Settings>
+                            <Value r:Type="Float32 [Primitive]">0.5</Value>
+                          </Value>
+                        </Item>
+                      </Items_Model>
+                      <Parameter Key="ca90de62-baa0-4ed2-941a-c425a4289454" Path="Foo" Type_Full_Name="Float32 [Primitive]" />
+                    </Value>
+                  </Item>
+                </Tracks>
+              </p:DefaultValue>
+            </Pin>
+            <Pin Id="JvxEk5NSqfEMVREjAZ9kJU" Name="bar" Kind="InputPin" PinGroupName="Input">
               <p:TypeAnnotation LastCategoryFullName="Kairos.Composition" LastDependency="VL.Kairos.vl">
                 <Choice Kind="TypeFlag" Name="IComposition" />
               </p:TypeAnnotation>
