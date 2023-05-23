@@ -13,3 +13,11 @@ namespace Kairos.Utils
     }
 }
 
+namespace Kairos.Runtime
+{
+    public enum FallbackOption
+    {
+        Background, Latest
+    }
+}
+
