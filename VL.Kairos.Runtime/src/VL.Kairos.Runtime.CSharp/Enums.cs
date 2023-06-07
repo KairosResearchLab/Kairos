@@ -19,5 +19,11 @@ namespace Kairos.Runtime
     {
         Background, Latest
     }
+
+    public enum TrackItemType
+    {
+        ConstantValue, LiveValue, Layer
+    }
+
 }
 
