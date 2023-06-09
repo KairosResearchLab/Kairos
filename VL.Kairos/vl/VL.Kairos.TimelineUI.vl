@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="JoNrxeEff3sMvD8L6qrDA8" LanguageVersion="2023.5.2-0020-gc041842068" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="JoNrxeEff3sMvD8L6qrDA8" LanguageVersion="2023.5.2" Version="0.128">
   <Patch Id="OdwjHxvmpTwQVNFJ9pLKQP">
     <Canvas Id="TFkrzzMqabMLaJgnlwzp1b" DefaultCategory="Kairos.TimelineUI" CanvasType="FullCategory">
       <Canvas Id="ScyP9H9pkunNyBIFZJi1LL" Name="KeyframeUI.Internal" Position="103,202">
@@ -17602,10 +17602,10 @@
                 <ControlPoint Id="QV9gvnOKHwUMHaLNKbLbll" Bounds="1402,1769" Alignment="Bottom" />
                 <ControlPoint Id="OBT9dL0cLNwM5o9PJSkln5" Bounds="1402,1676" Alignment="Top" />
               </Node>
-              <Node Bounds="229,885,159,26" Id="OvDIlpBP60SM9wtStIlKKU">
-                <p:NodeReference LastCategoryFullName="Kairos.Common.ICompositionEditor" LastDependency="VL.Kairos.Common.vl">
+              <Node Bounds="229,885,159,19" Id="OvDIlpBP60SM9wtStIlKKU">
+                <p:NodeReference LastCategoryFullName="Kairos.Common.ICompositionUI" LastDependency="VL.Kairos.Common.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <CategoryReference Kind="InterfaceTypeFlag" Name="ICompositionEditor" NeedsToBeDirectParent="true" />
+                  <CategoryReference Kind="InterfaceTypeFlag" Name="ICompositionUI" NeedsToBeDirectParent="true" />
                   <Choice Kind="OperationCallFlag" Name="GetCompositionLayoutManager" />
                 </p:NodeReference>
                 <Pin Id="EYeqqXxZx4TNAzlaEZ9MbB" Name="Input" Kind="StateInputPin" />
@@ -23626,10 +23626,13 @@
           </p:NodeReference>
           <p:Interfaces>
             <TypeReference LastCategoryFullName="Kairos.Common" LastDependency="VL.Kairos.Common.vl">
-              <Choice Kind="InterfaceTypeFlag" Name="IKairosNodeEditorModel" />
-            </TypeReference>
-            <TypeReference LastCategoryFullName="Kairos.Common" LastDependency="VL.Kairos.Common.vl">
               <Choice Kind="InterfaceTypeFlag" Name="ICompositionUIModel" />
+            </TypeReference>
+            <TypeReference LastCategoryFullName="Kairos.Common.KairosNodeUI" LastDependency="VL.Kairos.Common.vl">
+              <Choice Kind="InterfaceTypeFlag" Name="IKairosNodeUIModel" />
+            </TypeReference>
+            <TypeReference LastCategoryFullName="Kairos.Common" LastDependency="VL.Kairos.Runtime.vl">
+              <Choice Kind="InterfaceTypeFlag" Name="IIDProvider" />
             </TypeReference>
           </p:Interfaces>
           <Patch Id="DzJmDc6HSuuQZe7auPjVBy">
@@ -23961,11 +23964,7 @@
                       <Choice Kind="TypeFlag" Name="Timeline" />
                     </p:TypeAnnotation>
                   </Pin>
-                  <Pin Id="QxnZI1uCCnkMPfCSLKMR6i" Name="Output" Kind="OutputPin">
-                    <p:TypeAnnotation LastCategoryFullName="Kairos.Common.KairosNodeEditor" LastDependency="VL.Kairos.Common.vl">
-                      <Choice Kind="TypeFlag" Name="IKairosNodeEditorModel" />
-                    </p:TypeAnnotation>
-                  </Pin>
+                  <Pin Id="QxnZI1uCCnkMPfCSLKMR6i" Name="Output" Kind="OutputPin" />
                   <Node Bounds="349,219,76,26" Id="LOWTFvpwERvLRxf1baLhKv">
                     <p:NodeReference LastCategoryFullName="Kairos.TimelineUI.CompositionUI.TimelineUIModel" LastDependency="VL.Kairos.TimelineUI.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -24240,6 +24239,19 @@
             <Link Id="BrlsThsvPItLXUurxtgXpz" Ids="JSJoDzO3d64PQqtBhfw3oq,TbbvQwqj5igNOqJf6B3ycx" />
             <Link Id="EFzmKj5Tz7cMsDPZWROVRu" Ids="KIF7T04Axd9PRLbQkcnX2t,CNYAsCuhQ3bPstshQKJ5U1" />
             <Link Id="JaYN5tTSiQeP4grHohVaHL" Ids="TbbvQwqj5igNOqJf6B3ycx,UDprYK4X7ifLx6GopsuQA8" />
+            <Link Id="OHXPW5vhAWlNgZihi95MMy" Ids="Gj8ZZdvXVjoL4lH4hNZfsp,TkjmzblsRsOQDJQRPPme0e" IsHidden="true" />
+            <Link Id="EbkHaFooYV0PuNS8HIp1bT" Ids="Sb990on99Z8QArYL3YXilP,MU4ana8JRdDNlmXUe1HD8P" IsHidden="true" />
+            <Slot Id="Nvaoi7Ti7AiNHwhjRpdaxO" Name="Recording Enabled">
+              <p:TypeAnnotation p:Type="TypeReference">
+                <Choice Kind="TypeFlag" Name="Boolean" />
+              </p:TypeAnnotation>
+            </Slot>
+            <Link Id="IA1se0XYLzZP4xDUQEIvBe" Ids="HtCatqaHNwRMbF8oBl2oXV,C3B5uWgb65mOgpAtdaS6a3" />
+            <Link Id="IOAaX1NU3Q4QcTkmtIcvz5" Ids="PYQf2oqV53YMaCu912RAL1,A4m6CC7ASEXNxfCXsbaYUK" />
+            <Link Id="PmR4wMBgD4fMJ974jaNT0T" Ids="A4m6CC7ASEXNxfCXsbaYUK,KIw2hfXEkxpN7blC1tw6Vf" />
+            <Link Id="QCJpsUm8BgHOh4Q1KSRBZK" Ids="KIw2hfXEkxpN7blC1tw6Vf,QuZ67asGy3aLuP495e2N9z" IsHidden="true" />
+            <Link Id="TQADkuRs85ZM8cGP47OB4T" Ids="DqE1MOMuTtJPbM62NosYQM,HtCatqaHNwRMbF8oBl2oXV" />
+            <Link Id="PsYavvQ9YpBQb6M796tMK8" Ids="NcySHAcYfhUPd0U9XV1YS9,DqE1MOMuTtJPbM62NosYQM" IsHidden="true" />
             <Patch Id="Nw35llW6BW5QIRh6lPk3GQ" Name="Create" ParticipatingElements="BWVG9AwruffMgBcBDN1mBW,Lk15XNZjx7mLz6CGFxVBix,G6WZ8kTtm1VMBtdVBLp5UR,KyvJCXIeOSAMhZi33AnvHF,Hy3eE1eSOzCLPRC0krkpR9" />
             <Patch Id="CZ1C3zRSaUsPbXGAyAy7g9" Name="SetTracks">
               <Pin Id="R07HlausKAmNcYvYDOqNnj" Name="Tracks" Kind="InputPin" />
@@ -24307,21 +24319,8 @@
                   <Choice Kind="TypeFlag" Name="IKairosEditableNode" />
                 </p:TypeAnnotation>
               </Pin>
-              <Pin Id="TZph49nzHzaM7t82vKd3DP" MergeId="105835" Name="Model Stream" Kind="InputPin" Bounds="864,61">
-                <p:TypeAnnotation LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
-                  <Choice Kind="TypeFlag" Name="Channel" />
-                  <p:TypeArguments>
-                    <TypeReference LastCategoryFullName="Kairos.Common.KairosNodeEditor" LastDependency="VL.Kairos.Common.vl">
-                      <Choice Kind="TypeFlag" Name="IKairosNodeEditorModel" />
-                    </TypeReference>
-                  </p:TypeArguments>
-                </p:TypeAnnotation>
-              </Pin>
-              <Pin Id="Irdqxf8xvpFQDUTO6gW2RD" Name="Runtime" Kind="OutputPin">
-                <p:TypeAnnotation LastCategoryFullName="Kairos.Common" LastDependency="VL.Kairos.Common.vl">
-                  <Choice Kind="TypeFlag" Name="IKairosNodeEditor" />
-                </p:TypeAnnotation>
-              </Pin>
+              <Pin Id="TZph49nzHzaM7t82vKd3DP" MergeId="105835" Name="Model Stream" Kind="InputPin" Bounds="864,61" />
+              <Pin Id="Irdqxf8xvpFQDUTO6gW2RD" Name="Runtime" Kind="OutputPin" />
             </Patch>
             <Patch Id="VlrDmDCxCY2M2NsXk9AZe5" Name="SetRecordingSectionFolding">
               <Pin Id="Sb990on99Z8QArYL3YXilP" Name="Recording Section Folding" Kind="InputPin" />
@@ -24332,13 +24331,6 @@
             <Patch Id="Q1PVZHpA5xVO40la9IwYnu" Name="ToggleOutputMonitorFolding" ParticipatingElements="DUcaazZyOtEM8TtuChxAm0" />
             <Patch Id="HlBurtKWjG7M96Q22BZrNq" Name="ToggleRecordingSectionFolding" ParticipatingElements="MZmoYCSdB7FLmXTg0cQYLA" />
             <Patch Id="N1KvDFj9jPvMm3YCK0Andx" Name="ToggleCompositionTrackFolding" ParticipatingElements="FdUAFmQPVUXPfo4YLvSrWf" />
-            <Link Id="OHXPW5vhAWlNgZihi95MMy" Ids="Gj8ZZdvXVjoL4lH4hNZfsp,TkjmzblsRsOQDJQRPPme0e" IsHidden="true" />
-            <Link Id="EbkHaFooYV0PuNS8HIp1bT" Ids="Sb990on99Z8QArYL3YXilP,MU4ana8JRdDNlmXUe1HD8P" IsHidden="true" />
-            <Slot Id="Nvaoi7Ti7AiNHwhjRpdaxO" Name="Recording Enabled">
-              <p:TypeAnnotation p:Type="TypeReference">
-                <Choice Kind="TypeFlag" Name="Boolean" />
-              </p:TypeAnnotation>
-            </Slot>
             <Patch Id="KFEOHEy0XZhLRyDikpeLrT" Name="ToggleRecordingEnabled" ParticipatingElements="LM0mJz9CVNvL3EGeUvKL8D" />
             <Patch Id="VnSBCdfJ6FfMECb8U5AveJ" Name="GetRecordingEnabled">
               <Pin Id="QuZ67asGy3aLuP495e2N9z" MergeId="887427" Name="Recording Enabled" Kind="OutputPin" />
@@ -24346,12 +24338,6 @@
             <Patch Id="Pi6jVSL8lekP4J3Xuv4e3n" Name="SetRecordingEnabled">
               <Pin Id="NcySHAcYfhUPd0U9XV1YS9" MergeId="887425" Name="Recording Enabled" Kind="InputPin" />
             </Patch>
-            <Link Id="IA1se0XYLzZP4xDUQEIvBe" Ids="HtCatqaHNwRMbF8oBl2oXV,C3B5uWgb65mOgpAtdaS6a3" />
-            <Link Id="IOAaX1NU3Q4QcTkmtIcvz5" Ids="PYQf2oqV53YMaCu912RAL1,A4m6CC7ASEXNxfCXsbaYUK" />
-            <Link Id="PmR4wMBgD4fMJ974jaNT0T" Ids="A4m6CC7ASEXNxfCXsbaYUK,KIw2hfXEkxpN7blC1tw6Vf" />
-            <Link Id="QCJpsUm8BgHOh4Q1KSRBZK" Ids="KIw2hfXEkxpN7blC1tw6Vf,QuZ67asGy3aLuP495e2N9z" IsHidden="true" />
-            <Link Id="TQADkuRs85ZM8cGP47OB4T" Ids="DqE1MOMuTtJPbM62NosYQM,HtCatqaHNwRMbF8oBl2oXV" />
-            <Link Id="PsYavvQ9YpBQb6M796tMK8" Ids="NcySHAcYfhUPd0U9XV1YS9,DqE1MOMuTtJPbM62NosYQM" IsHidden="true" />
           </Patch>
         </Node>
         <!--
@@ -24364,14 +24350,14 @@
             <Choice Kind="ClassDefinition" Name="Class" />
           </p:NodeReference>
           <p:Interfaces>
-            <TypeReference LastCategoryFullName="Kairos.Common" LastDependency="VL.Kairos.Common.vl">
-              <Choice Kind="InterfaceTypeFlag" Name="IKairosNodeEditor" />
-            </TypeReference>
             <TypeReference LastCategoryFullName="Kairos.Runtime.Core.Commons" LastDependency="VL.Kairos.Runtime.vl">
               <Choice Kind="InterfaceTypeFlag" Name="IIDProvider" />
             </TypeReference>
+            <TypeReference LastCategoryFullName="Kairos.Common.KairosNodeUI" LastDependency="VL.Kairos.Common.vl">
+              <Choice Kind="InterfaceTypeFlag" Name="IKairosNodeUI" />
+            </TypeReference>
             <TypeReference LastCategoryFullName="Kairos.Common" LastDependency="VL.Kairos.Common.vl">
-              <Choice Kind="InterfaceTypeFlag" Name="ICompositionEditor" />
+              <Choice Kind="InterfaceTypeFlag" Name="ICompositionUI" />
             </TypeReference>
           </p:Interfaces>
           <Patch Id="Hlk1gsrIslrPidESe9ygJl">
@@ -24700,7 +24686,7 @@
                       <Choice Kind="TypeFlag" Name="Vector2" />
                     </p:TypeAnnotation>
                   </Pad>
-                  <Node Bounds="730,1205,185,19" Id="KuIwaZA9yMbPDzvBtXqctC">
+                  <Node Bounds="730,1205,245,19" Id="KuIwaZA9yMbPDzvBtXqctC">
                     <p:NodeReference LastCategoryFullName="Kairos.Common" LastDependency="VL.Kairos.Common.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="ProcessAppFlag" Name="Toggle (ImGui)" />
@@ -24719,7 +24705,7 @@
                     <Pin Id="O89zDhGkUXHOR0hBqRe8Jp" Name="OffTextColor" Kind="InputPin" />
                     <Pin Id="RoHiFFL2OiwN56JtRqHrTG" Name="OnTextColor" Kind="InputPin" />
                     <Pin Id="DNoJ1JVBeccP0HM9QYDYWF" Name="Context" Kind="OutputPin" />
-                    <Pin Id="CcmVnAfIi03LAI6jXQj8Bg" Name="Channel" Kind="OutputPin" />
+                    <Pin Id="DJTu3DUhkyLPV7oqKmBH2t" Name="Channel" Kind="OutputPin" />
                     <Pin Id="OK8SFeQqP9YOfgmAGwtttr" Name="Value" Kind="OutputPin" />
                     <Pin Id="KQVdWjDe1fOLL2AdhuAraN" Name="Bang" Kind="OutputPin" />
                   </Node>
@@ -40019,7 +40005,7 @@
               <Pin Id="VcZ3n7z0nNdLDmfCRJLidi" Name="Draw Context" Kind="InputPin" />
               <Pin Id="KhHF6CcX6z5PZfnQXKtjJi" Name="Camera" Kind="InputPin" />
               <Pin Id="NsWQS00NqkVLqJYps0PmV8" Name="Client Bounds" Kind="InputPin" />
-              <Pin Id="EWDePFg9d0FMXzFU30E3NH" Name="Interactive Object" Kind="OutputPin" />
+              <Pin Id="RLd6eHPN7qKPeGumOWEgpH" Name="Interactive Object" Kind="OutputPin" />
             </Patch>
           </Patch>
         </Node>
@@ -47673,7 +47659,7 @@
                       <Node Bounds="243,497,128,26" Id="KKsgh6DPHaoO8epXSS7uU6">
                         <p:NodeReference LastCategoryFullName="Kairos.Common.KairosNodeEditor.KairosNodeEditorWindowModel" LastDependency="VL.Kairos.Common.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                          <CategoryReference Kind="RecordType" Name="KairosNodeEditorWindowModel" NeedsToBeDirectParent="true" />
+                          <CategoryReference Kind="RecordType" Name="KairosNodeUIWindowModel" NeedsToBeDirectParent="true" />
                           <Choice Kind="OperationCallFlag" Name="Create" />
                         </p:NodeReference>
                         <Pin Id="OD2JYgZmsC9LjpBCDXvOIY" Name="Output" Kind="StateOutputPin" />
@@ -48965,7 +48951,7 @@
                     <Pin Id="D2ewIs6xemKM9faWRVwpZT" Name="Seconds" Kind="OutputPin" />
                   </Node>
                   <Pad Id="Gpylb0wDVNfMdW0FrtEuuY" Comment="Seconds" Bounds="473,768,35,15" ShowValueBox="true" isIOBox="true" />
-                  <Node Bounds="402,869,64,26" Id="VFJkAs6TluJNPNxFp5PmoB">
+                  <Node Bounds="402,869,66,26" Id="VFJkAs6TluJNPNxFp5PmoB">
                     <p:NodeReference LastCategoryFullName="Kairos.Runtime.Core.SamplingPositionProvider.KairosClock" LastDependency="VL.Kairos.Runtime.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="ClassType" Name="Clock (Kairos)" />
@@ -49241,7 +49227,7 @@
                 <Choice Kind="TypeFlag" Name="Channel" />
                 <p:TypeArguments>
                   <TypeReference>
-                    <Choice Kind="TypeFlag" Name="IKairosNodeEditor" />
+                    <Choice Kind="TypeFlag" Name="IKairosNodeUI" />
                   </TypeReference>
                 </p:TypeArguments>
               </p:TypeAnnotation>
@@ -50541,7 +50527,7 @@
                     <Pin Id="Eb4AVnXu0ZONz38QCAiDlq" Name="Docking Enabled" Kind="InputPin" />
                     <Pin Id="FfeCjZyR5ZbPw7iVuCLJ7G" Name="Fonts" Kind="InputPin" />
                     <Pin Id="NugB0kyIJ69L2UDHbF67k9" Name="Add Fullscreen Window" Kind="InputPin" />
-                    <Pin Id="VvZ86do01G6NxVFygbrLPD" Name="Fullscreen Window Style" Kind="InputPin" />
+                    <Pin Id="VvZ86do01G6NxVFygbrLPD" Name="Style" Kind="InputPin" />
                     <Pin Id="MPfTVOo5GawNyF2xHi3t0j" Name="Use Skia Space" Kind="InputPin" />
                     <Pin Id="Fmu4sMB5oUFN6knkFQ9jgS" Name="Output" Kind="OutputPin" />
                     <ControlPoint Id="GB0ptPELq9VLzTF8NteapK" Bounds="643,1465" Alignment="Bottom" />
@@ -50731,7 +50717,7 @@
                         <Pin Id="IMBe1iHKsWqMZEgSzK3NMy" Name="OffTextColor" Kind="InputPin" />
                         <Pin Id="C5sV4WacWizOf0GjUi321H" Name="OnTextColor" Kind="InputPin" />
                         <Pin Id="AasuLc37TyJNUjwVT1J2Jf" Name="Context" Kind="OutputPin" />
-                        <Pin Id="AT3cOLssO4HLjJbNlcp0tr" Name="Channel" Kind="OutputPin" />
+                        <Pin Id="VNj9umPewFLLxxEySPyV8w" Name="Channel" Kind="OutputPin" />
                         <Pin Id="KU1Ytc5JePqPYUmt4GsHS9" Name="Value" Kind="OutputPin" />
                         <Pin Id="AGE2ZLzqrkrLmewhopbqrw" Name="Bang" Kind="OutputPin" />
                       </Node>
@@ -50976,7 +50962,7 @@
                   </CategoryReference>
                   <Choice Kind="ProcessAppFlag" Name="Renderer" />
                 </p:NodeReference>
-                <Pin Id="LfV9PrbrdGjMmmORkFNC54" Name="Bounds" Kind="InputPin" DefaultValue="1316, 732, 620, 304" />
+                <Pin Id="LfV9PrbrdGjMmmORkFNC54" Name="Bounds" Kind="InputPin" DefaultValue="1392, 642, 704, 540" />
                 <Pin Id="HfH4i6Fa3TXMEc4JzvXkjC" Name="Input" Kind="InputPin" />
                 <Pin Id="SCBnqgK750CL1cQOFHLxJS" Name="Color" Kind="InputPin" />
                 <Pin Id="VRFamkHXglTME9AQM9RG9f" Name="Clear" Kind="InputPin" />
@@ -51141,13 +51127,13 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="I9r7OOr28ZKQU0kOe9kITs" Location="VL.CoreLib" Version="2023.5.2-0020-gc041842068" />
-  <NugetDependency Id="Cz2uTM9C9FjNMYyGXqNcOp" Location="VL.Skia" Version="2023.5.2-0020-gc041842068" />
-  <NugetDependency Id="GouC1pSnVpCMLaxu0tLHad" Location="VL.ImGui" Version="2023.5.2-0020-gc041842068" />
+  <NugetDependency Id="I9r7OOr28ZKQU0kOe9kITs" Location="VL.CoreLib" Version="2023.5.2" />
+  <NugetDependency Id="Cz2uTM9C9FjNMYyGXqNcOp" Location="VL.Skia" Version="2023.5.2" />
+  <NugetDependency Id="GouC1pSnVpCMLaxu0tLHad" Location="VL.ImGui" Version="2023.5.2" />
   <NugetDependency Id="DltplyaztU0PXWyHBfVLTk" Location="VL.Kairos.Runtime" IsFriend="true" Version="0.0.0" />
   <NugetDependency Id="LRiNwd70TlXL8WOcZD7W2A" Location="VL.Touchy" IsFriend="true" Version="0.0.0" />
-  <NugetDependency Id="DDiOgNpgloZNyfvL26eESf" Location="VL.ImGui.Skia" Version="2023.5.2-0020-gc041842068" />
+  <NugetDependency Id="DDiOgNpgloZNyfvL26eESf" Location="VL.ImGui.Skia" Version="2023.5.2" />
   <DocumentDependency Id="BQ6Ig3h86ASMKsd3Bs1w1P" Location="./VL.Kairos.Common.vl" IsFriend="true" />
-  <NugetDependency Id="HAYk49cFtXJLQLPIuVP2az" Location="VL.CoreLib.Windows" Version="2023.5.2-0020-gc041842068" />
+  <NugetDependency Id="HAYk49cFtXJLQLPIuVP2az" Location="VL.CoreLib.Windows" Version="2023.5.2" />
   <DocumentDependency Id="JgqcpiIeTSXME74FGsP7EK" Location="./VL.FancyRect.vl" />
 </Document>
