@@ -10102,7 +10102,7 @@
             </Patch>
             <Patch Id="Lr29muzTCSROL4Gdt13FJc" Name="IsActive" />
             <Patch Id="TpWtgYU3OhOOqUKTZMxttG" Name="GetSourceSettings">
-              <Pin Id="U1liAiBtsyVPPjM2cOPIRP" Name="Source Settings" Kind="OutputPin" />
+              <Pin Id="FjGkX0VglAeNLEmtxGS5gn" Name="Source Settings" Kind="OutputPin" />
             </Patch>
             <Patch Id="EPZdX0LqIlNQLjgaMSR4Fy" Name="Update" />
           </Patch>
@@ -21251,21 +21251,16 @@
               <Node Bounds="1073,406,186,19" Id="QcyMXuOfi1AOauKwiVmfNf">
                 <p:NodeReference LastCategoryFullName="Kairos.Launcher1DUI.CompositionUI" LastDependency="VL.Kairos.Launcher1DUI.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <Choice Kind="ProcessAppFlag" Name="Launcher1DMasterRecordingManager" />
+                  <Choice Kind="ProcessAppFlag" Name="Launcher1DRecordingMasterManager" />
                 </p:NodeReference>
-                <Pin Id="TPZwqEzGxrbNsMzZQqupu9" Name="Launcher UI" Kind="InputPin" />
+                <Pin Id="VJ2j1n5gBcPLSNydteCB90" Name="Launcher" Kind="InputPin" />
+                <Pin Id="NghhywrPgzxL3tcwBsRdqP" Name="UI Model Stream" Kind="InputPin" />
+                <Pin Id="MIoJcy5JjRRQQE7RqWzO7s" Name="Selection Manager" Kind="InputPin" />
+                <Pin Id="Qrx3h8BAFo3Oay6r86Onj1" Name="Update" Kind="InputPin" />
                 <Pin Id="GiCkBvBQWpZPO1UIThVIpC" Name="Master Recording Manager" Kind="OutputPin" />
               </Node>
               <Pad Id="IxYIsOe43Y9PWYFCHsOQN1" SlotId="DP4Oi3PiTzhOBqdYOLDSnh" Bounds="1075,444" />
               <ControlPoint Id="M5OnpARo2DsLdgPTkelUEQ" Bounds="1075,483" />
-              <Node Bounds="1073,364,36,19" Id="FKP1jcA8JNaLpuTsQghqX6">
-                <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <CategoryReference Kind="Category" Name="Primitive" />
-                  <Choice Kind="ProcessNode" Name="This" />
-                </p:NodeReference>
-                <Pin Id="BZ16NN79WvgNHYRJKRiKWE" Name="Instance" Kind="OutputPin" />
-              </Node>
               <Pad Id="PbY4a5XdLZoPXRGvvNSeZK" SlotId="DP4Oi3PiTzhOBqdYOLDSnh" Bounds="1876,1801" />
               <Pad Id="SkblQuJ4cBMOhjxobCuz2W" Comment="Size" Bounds="937,958,35,28" ShowValueBox="true" isIOBox="true" Value="-1, 0.16">
                 <p:TypeAnnotation LastCategoryFullName="2D" LastDependency="VL.CoreLib.vl">
@@ -21308,6 +21303,16 @@
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="String" />
                 </p:TypeAnnotation>
+              </Pad>
+              <ControlPoint Id="VAKXGmvRuH1PyGwujSFE6g" Bounds="1074,357" />
+              <Pad Id="S61IrV4qnSBNdWT2zB0eDj" Comment="Update" Bounds="1226,348,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+                  <CategoryReference Kind="Category" Name="Primitive" />
+                </p:TypeAnnotation>
+                <p:ValueBoxSettings>
+                  <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
+                </p:ValueBoxSettings>
               </Pad>
             </Canvas>
             <Slot Id="Vf4yUA9wkvNQPqtXSR2B4w" Name="UI Tracks">
@@ -21578,7 +21583,6 @@
             <Link Id="BDQE1vLz5chPomFTatFz1a" Ids="GiCkBvBQWpZPO1UIThVIpC,IxYIsOe43Y9PWYFCHsOQN1" />
             <Link Id="QO2ZxIqBpV7NCwZQXiSLzt" Ids="IxYIsOe43Y9PWYFCHsOQN1,M5OnpARo2DsLdgPTkelUEQ" />
             <Link Id="OzDUQhJ0x4hO6xnmZeb1r9" Ids="M5OnpARo2DsLdgPTkelUEQ,IpUIplQhyktO0u8Htniir3" IsHidden="true" />
-            <Link Id="HGYedjTPgZbPK99yTyV2x5" Ids="BZ16NN79WvgNHYRJKRiKWE,TPZwqEzGxrbNsMzZQqupu9" />
             <Link Id="Mc0UUM83Vq4P3uth4eiwlG" Ids="PbY4a5XdLZoPXRGvvNSeZK,C2geNRJN7AUOGDDo5XKMBK" />
             <Link Id="PTmzMaw5RzvMhehOTE4WV3" Ids="IxYIsOe43Y9PWYFCHsOQN1,Kex11x1p9XSPchGMH0JCqr" />
             <Link Id="NLlAdhTk2RfLtmFqeTnidT" Ids="Oy05fkofmBuO1KJERRkssq,IlHb2qIrxGtOrnNQxL4YZg" />
@@ -21708,6 +21712,11 @@
               </Pin>
             </Patch>
             <Link Id="CaLKpDmLfccQYSGQ3ukCg3" Ids="GPizGoosBNFNDCuFyR9hs7,CfsVwaumZQQPJhkjWaz89s" />
+            <Link Id="MZnquGLIOgcLS7hEVUsYBI" Ids="JpxaJXr2bnFMC7w56lF5nX,VAKXGmvRuH1PyGwujSFE6g" IsHidden="true" />
+            <Link Id="KYvq2xbAfTcL6MyVm5Jeab" Ids="VAKXGmvRuH1PyGwujSFE6g,VJ2j1n5gBcPLSNydteCB90" />
+            <Link Id="SevMqVbwyBuNL5AifMgukd" Ids="GPizGoosBNFNDCuFyR9hs7,NghhywrPgzxL3tcwBsRdqP" />
+            <Link Id="Ik0L5hfyRhNPG55VOmREGg" Ids="Oy05fkofmBuO1KJERRkssq,MIoJcy5JjRRQQE7RqWzO7s" />
+            <Link Id="SEehKuxKr8SNr3WD68oI0B" Ids="S61IrV4qnSBNdWT2zB0eDj,Qrx3h8BAFo3Oay6r86Onj1" />
           </Patch>
         </Node>
         <Pad Id="FHYV4lHUBrlOSwOCv10Axi" Bounds="116,143,441,54" ShowValueBox="true" isIOBox="true" Value=" Composition UI">
@@ -28798,10 +28807,10 @@
         </Node>
         <!--
 
-    ************************ Launcher1DMasterRecordingManager ************************
+    ************************ Launcher1DRecordingMasterManager ************************
 
 -->
-        <Node Name="Launcher1DMasterRecordingManager" Bounds="683,800" Id="OE0F94qO4KMLFkacGTjVZt">
+        <Node Name="Launcher1DRecordingMasterManager" Bounds="683,800" Id="OE0F94qO4KMLFkacGTjVZt">
           <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
             <Choice Kind="ContainerDefinition" Name="Process" />
           </p:NodeReference>
@@ -28907,40 +28916,11 @@
                   </Node>
                 </Patch>
               </Node>
-              <Node Bounds="172,578,154,26" Id="QNcR2p1oGRmLKVBY48OEvo">
-                <p:NodeReference LastCategoryFullName="Kairos.Launcher1DUI.CompositionUI.Launcher1DUI" LastDependency="VL.Kairos.Launcher1DUI.vl">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <Choice Kind="OperationCallFlag" Name="GetLauncher1DUIModelStream" />
-                </p:NodeReference>
-                <Pin Id="Newccxlj7BHQdzhZQk2IDP" Name="Input" Kind="StateInputPin" />
-                <Pin Id="C1OYcD4AFhUQPfj9IKlCCb" Name="Output" Kind="StateOutputPin" />
-                <Pin Id="P7EEC3C2nrzOz7yC2yoQ0Y" Name="Model Stream" Kind="OutputPin" />
-              </Node>
-              <Pad Id="RefyMwkehKLOz33OPR7EK5" Comment="Author" Bounds="773,684,79,15" ShowValueBox="true" isIOBox="true" Value="Launcher1DUI">
+              <Pad Id="RefyMwkehKLOz33OPR7EK5" Comment="Author" Bounds="763,675,79,15" ShowValueBox="true" isIOBox="true" Value="Launcher1DUI">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="String" />
                 </p:TypeAnnotation>
               </Pad>
-              <Node Bounds="460,578,73,26" Id="PJBZez3rGazLFgn2t5o8DR">
-                <p:NodeReference LastCategoryFullName="Kairos.Launcher1DUI.CompositionUI.Launcher1DUI" LastDependency="VL.Kairos.Launcher1DUI.vl">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <CategoryReference Kind="ClassType" Name="Launcher1DUI" />
-                  <Choice Kind="OperationCallFlag" Name="GetLauncher" />
-                </p:NodeReference>
-                <Pin Id="RKZGHQMHRTbNcr2o29V7wQ" Name="Input" Kind="StateInputPin" />
-                <Pin Id="EDeqi9kUQSkMfite0r9Zfc" Name="Output" Kind="StateOutputPin" />
-                <Pin Id="KYZxUSBrAFUL8kcFTjJFy2" Name="Launcher" Kind="OutputPin" />
-              </Node>
-              <Node Bounds="460,640,91,26" Id="TkbGR9zX1mnQXwNZYViSGa">
-                <p:NodeReference LastCategoryFullName="Kairos.Composition.IComposition" LastDependency="VL.Kairos.Runtime.vl">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <CategoryReference Kind="InterfaceTypeFlag" Name="IComposition" NeedsToBeDirectParent="true" />
-                  <Choice Kind="OperationCallFlag" Name="GetModelStream" />
-                </p:NodeReference>
-                <Pin Id="S91mYlUbYdgM459IWV1p3D" Name="Input" Kind="StateInputPin" />
-                <Pin Id="KNAAs6Nq7EdN3rDxwSPRqI" Name="Output" Kind="StateOutputPin" />
-                <Pin Id="A3Wd4lAlHBuLmnnTAtI90h" Name="Model Stream" Kind="OutputPin" />
-              </Node>
               <Node Bounds="1460,334,213,155" Id="APT4wuNPjNEM9HllgtNmB7">
                 <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                   <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
@@ -29016,15 +28996,6 @@
                   </Node>
                 </Patch>
               </Node>
-              <Node Bounds="1457,217,112,26" Id="VcLxsOEuPe0MuAeUXZcspA">
-                <p:NodeReference LastCategoryFullName="Kairos.Launcher1DUI.CompositionUI.Launcher1DUI" LastDependency="VL.Kairos.Launcher1DUI.vl">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <Choice Kind="OperationCallFlag" Name="GetSelectionManager" />
-                </p:NodeReference>
-                <Pin Id="Spls2bxk525QIYdPwtNKde" Name="Input" Kind="StateInputPin" />
-                <Pin Id="HLBajyrsLBLLNstDvnNoI8" Name="Output" Kind="StateOutputPin" />
-                <Pin Id="EAaNMlRQFb7LmGtwKPUiku" Name="Selection Manager" Kind="OutputPin" />
-              </Node>
               <Node Bounds="1770,331,217,158" Id="Bmmxbxz8n2hObtqscsJU76">
                 <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                   <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
@@ -29067,38 +29038,32 @@
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="RecordingMasterManager" />
                 </p:NodeReference>
+                <Pin Id="Pp1Uvi913X1OGLJijvdSFX" Name="Composition" Kind="InputPin" />
                 <Pin Id="S1RQi4HeT1lLsCDgwIV9zL" Name="UI Model Stream" Kind="InputPin" />
-                <Pin Id="ACvKkVBWPFdOT9pI11pHwG" Name="Source Model Stream" Kind="InputPin" />
                 <Pin Id="ThxGFfNUNfDOIFHY6maLKC" Name="Author" Kind="InputPin" />
                 <Pin Id="SGlHrdXpMiZOmN7OHHxbkm" Name="Set To Track Source Func" Kind="InputPin" />
                 <Pin Id="SIaXknOwo0SNIGvy8ZD4ep" Name="Set New Item Type Func" Kind="InputPin" />
                 <Pin Id="STKsls0A6R7MdQBiSxebcY" Name="Constant Value Item Model Create Func" Kind="InputPin" />
                 <Pin Id="KjGK0KT7HQ4PC6SVuzVfuc" Name="Live Value Item Model Create Func" Kind="InputPin" />
                 <Pin Id="NUOvGuolVFoNYpfeDIHjM2" Name="Track Model Create Func" Kind="InputPin" />
-                <Pin Id="Pp1Uvi913X1OGLJijvdSFX" Name="Composition" Kind="InputPin" />
+                <Pin Id="VqNN98CvhovOXb6AUKGrNz" Name="Update" Kind="InputPin" />
                 <Pin Id="NwlKwlqE8GLPqcni16y8wT" Name="Output" Kind="OutputPin" />
               </Node>
-              <Node Bounds="2236,626,73,26" Id="Jd3h2i2HvfcOnGvt7fnMsU">
-                <p:NodeReference LastCategoryFullName="Kairos.Launcher1DUI.CompositionUI.Launcher1DUI" LastDependency="VL.Kairos.Launcher1DUI.vl">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <Choice Kind="OperationCallFlag" Name="GetLauncher" />
-                </p:NodeReference>
-                <Pin Id="Mqd1VtKIICvO7UkWecnxRO" Name="Input" Kind="StateInputPin" />
-                <Pin Id="JlzFyvUDlOBQOlPGePavIB" Name="Output" Kind="StateOutputPin" />
-                <Pin Id="IrVU7qL2UezNTWLGEqSg7W" Name="Launcher" Kind="OutputPin" />
-              </Node>
-              <ControlPoint Id="Ei0illcvB3NLSKNM36bRug" Bounds="174,544" />
-              <ControlPoint Id="NqUMawNgPTpLR5NKxFqiDn" Bounds="462,538" />
-              <ControlPoint Id="ORaXHFhYNhsMoEyGC0fAht" Bounds="1458,184" />
-              <ControlPoint Id="Pxut3sPBDfPL0AfxaUJwU7" Bounds="2238,596" />
+              <ControlPoint Id="Pxut3sPBDfPL0AfxaUJwU7" Bounds="321,637" />
               <ControlPoint Id="RedejWMYMZCOvGPQgUkxP1" Bounds="323,772" />
+              <ControlPoint Id="E1P4dDm0bh9PaJX40qEcRm" Bounds="1566,271" />
+              <ControlPoint Id="BzCEblJEU7iM46Jkaav7Zg" Bounds="562,643" />
+              <ControlPoint Id="IEknUJoBPycLUBzUL3m2hR" Bounds="1884,260" />
+              <Pad Id="N951oX10Rn6LOuDkaTpPC0" Comment="Update" Bounds="2288,654,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+                  <CategoryReference Kind="Category" Name="Primitive" />
+                </p:TypeAnnotation>
+                <p:ValueBoxSettings>
+                  <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
+                </p:ValueBoxSettings>
+              </Pad>
             </Canvas>
-            <Patch Id="Uc3nphGq1b3NnElAUNM8sT" Name="Create">
-              <Pin Id="CUvbCJtEECuLtLxDIBn8Hj" Name="Master Recording Manager" Kind="OutputPin" />
-            </Patch>
-            <Patch Id="RFbeAqt4vPZMUJ1MvGhsyI" Name="Update">
-              <Pin Id="SHOK7kI9zCrLi21jcQFlav" Name="Launcher UI" Kind="InputPin" Bounds="174,485" />
-            </Patch>
             <ProcessDefinition Id="HtD0oIqRMQhNahXCFuCRNu">
               <Fragment Id="NF5InAEpJ3gNhItSWznoS7" Patch="Uc3nphGq1b3NnElAUNM8sT" Enabled="true" />
               <Fragment Id="P8Eh7ywAw8ALrf1ANk2Gcw" Patch="RFbeAqt4vPZMUJ1MvGhsyI" Enabled="true" />
@@ -29128,10 +29093,7 @@
             <Link Id="P32fuCO3t0VOCV5f8j2600" Ids="PZYgHsF9scsQHGXU3gskOd,HwPuoBVU7X2OhPNF5nxBls" />
             <Link Id="JuUE6diZN9VOjTZhM1TzwA" Ids="CDwDVtstfeSNdhT3xSI2fw,KkpQau9yU9tLrGKW0mLjZ7" />
             <Link Id="FeLfUkcmgqGLvYD6D8eBvB" Ids="DvcwbkC8CsRMqA73G0pZaH,IraEbB9E8MdMdN7JBP6Av7" />
-            <Link Id="TfmE3Q7855KMAEzcrxfseE" Ids="P7EEC3C2nrzOz7yC2yoQ0Y,S1RQi4HeT1lLsCDgwIV9zL" />
             <Link Id="FcbpGcLnHVgL2lRrqJ6Og3" Ids="RefyMwkehKLOz33OPR7EK5,ThxGFfNUNfDOIFHY6maLKC" />
-            <Link Id="OS1zgh32666QQ2HpgIznBE" Ids="KYZxUSBrAFUL8kcFTjJFy2,S91mYlUbYdgM459IWV1p3D" />
-            <Link Id="K9AzXGxvpfNQDOkvrK8vnz" Ids="A3Wd4lAlHBuLmnnTAtI90h,ACvKkVBWPFdOT9pI11pHwG" />
             <Link Id="Nwnmz1nB45ZMDwNuscYZoq" Ids="PVNyhoQkNk7NYUUFiajRLx,CQPwNOdxC7yOcl0Hjj1Bgq" IsHidden="true" />
             <Link Id="Sk3lgi3afH2Mg3eVSSpTIw" Ids="Uvh48G6Cwj5Pdp5UGTM4Wc,IslZfnf0tYRMI2qnd601Ug" IsHidden="true" />
             <Link Id="EQB6vPMIjFtQGmSVsYpYpD" Ids="DgfgPDIArLZOeTJcLTB7Hd,S2M6176Rs8TLEotiT03TQK" IsHidden="true" />
@@ -29149,7 +29111,6 @@
             <Link Id="N7DjCYKPGUwNdDwkfB7OOk" Ids="CQPwNOdxC7yOcl0Hjj1Bgq,PKtIg68oJ1UMKbFgAamxyJ" />
             <Link Id="UeaTiMIdrGTQIXQgCzX3rI" Ids="IslZfnf0tYRMI2qnd601Ug,LZH5sZKIbItMsFpnqvvOmk" />
             <Link Id="GpnEbbm3uSyLVU2P1Pyfm4" Ids="JUqir6eDAYyOeu8XlLxZ39,DgfgPDIArLZOeTJcLTB7Hd" />
-            <Link Id="Ndq7ht5IGDGNb6PhDC3CeG" Ids="EAaNMlRQFb7LmGtwKPUiku,R6BNVst1NfkQAAJIkgjp5Z" />
             <Link Id="VSWnUUpcfQ8LJ4ngfTR1D0" Ids="CPU8Gid9o7yOvXg6MmDmUZ,JqdfEt3HtSfPyYmQqe2oBN" />
             <Link Id="N3gITJFShu5N1DXB4j06Rq" Ids="K7ynFFBkg8yP8Bl7iflRgJ,DySDl4s1F7PLrscCn7W8lc" IsHidden="true" />
             <Link Id="R0qp7B2yfYFQZrAPU0ci0n" Ids="RC71N2wllcRMYGoMfR7eLg,FCPpDVp3iytNYaAiQTQ8kT" IsHidden="true" />
@@ -29158,19 +29119,25 @@
             <Link Id="CmFEPOtsn60OVfotDyS9sP" Ids="DySDl4s1F7PLrscCn7W8lc,CiDJsHztliQPEKRdcxXaYu" />
             <Link Id="PIb1uyo3IjhOp7XMlqCjqu" Ids="FCPpDVp3iytNYaAiQTQ8kT,BHaxCY8VEhbMqgLNxdt6R8" />
             <Link Id="DCNgN2elqilLZkthF36MDs" Ids="JFX7WKeHMPRMK4qLRM9NUn,MFB0qzm1j1PL5iPyv7gpyO" />
-            <Link Id="IN9KV724jNWM2vbrkk7yry" Ids="EAaNMlRQFb7LmGtwKPUiku,DmQmKQMn67OMpsoogsa3na" />
             <Link Id="EhprxX78gVDOHCU1XP4NAD" Ids="HlbKFNItN7RMvQALp3UDP7,GzeVFaZTlVmP7Kti6U0nVA" />
-            <Link Id="TwR4TfhGFOLNmRUief5HKP" Ids="IrVU7qL2UezNTWLGEqSg7W,Pp1Uvi913X1OGLJijvdSFX" />
-            <Link Id="LnOGYla8mXALcpPlfuOa1w" Ids="SHOK7kI9zCrLi21jcQFlav,Ei0illcvB3NLSKNM36bRug" IsHidden="true" />
-            <Link Id="AzQvLK4sTUBMeqtVkmASf3" Ids="Ei0illcvB3NLSKNM36bRug,Newccxlj7BHQdzhZQk2IDP" />
-            <Link Id="EBeAlOHGkxXQJIpuJZX2pb" Ids="SHOK7kI9zCrLi21jcQFlav,NqUMawNgPTpLR5NKxFqiDn" IsHidden="true" />
-            <Link Id="Kj7DjI7zGT7NU0fHmNyOSL" Ids="NqUMawNgPTpLR5NKxFqiDn,RKZGHQMHRTbNcr2o29V7wQ" />
-            <Link Id="IMK0PWnAup3OzOY1ULTHJR" Ids="SHOK7kI9zCrLi21jcQFlav,ORaXHFhYNhsMoEyGC0fAht" IsHidden="true" />
-            <Link Id="Mzqd2gq8dAQQSghaTWBMi3" Ids="ORaXHFhYNhsMoEyGC0fAht,Spls2bxk525QIYdPwtNKde" />
-            <Link Id="NKQ5q6RqKjlOZ4yBWfevWC" Ids="SHOK7kI9zCrLi21jcQFlav,Pxut3sPBDfPL0AfxaUJwU7" IsHidden="true" />
-            <Link Id="LVSInuoLMpILfPAYBtQBwZ" Ids="Pxut3sPBDfPL0AfxaUJwU7,Mqd1VtKIICvO7UkWecnxRO" />
             <Link Id="IQDMJuPQeUPPPBDMpi7c29" Ids="NwlKwlqE8GLPqcni16y8wT,RedejWMYMZCOvGPQgUkxP1" />
             <Link Id="RXMHecDReTTP2jht1DN5Yz" Ids="RedejWMYMZCOvGPQgUkxP1,CUvbCJtEECuLtLxDIBn8Hj" IsHidden="true" />
+            <Link Id="J8OPQBfUbdsNiqimRe4Qq0" Ids="E1P4dDm0bh9PaJX40qEcRm,R6BNVst1NfkQAAJIkgjp5Z" />
+            <Link Id="Qnd1g61DVnINgjRVTBJgYI" Ids="APzIL0uR7TtPtO3VJ4P7GA,E1P4dDm0bh9PaJX40qEcRm" IsHidden="true" />
+            <Link Id="Nfn0XmSmk0tLgTq5EUiqPU" Ids="PeFXTMrGBABLpeyLc9lIvi,Pxut3sPBDfPL0AfxaUJwU7" IsHidden="true" />
+            <Link Id="QT9UO9J7yH8ONKpiu1MDWx" Ids="Pxut3sPBDfPL0AfxaUJwU7,Pp1Uvi913X1OGLJijvdSFX" />
+            <Link Id="L96JTQhNMZiMNBXDAbYHNz" Ids="BzCEblJEU7iM46Jkaav7Zg,S1RQi4HeT1lLsCDgwIV9zL" />
+            <Link Id="I1HDWw0WS3XMR0H5Rz8mZC" Ids="UUSwJ19IzyqMhnbbAWLEjx,BzCEblJEU7iM46Jkaav7Zg" IsHidden="true" />
+            <Patch Id="Uc3nphGq1b3NnElAUNM8sT" Name="Create">
+              <Pin Id="CUvbCJtEECuLtLxDIBn8Hj" Name="Master Recording Manager" Kind="OutputPin" />
+              <Pin Id="PeFXTMrGBABLpeyLc9lIvi" Name="Launcher" Kind="InputPin" />
+              <Pin Id="UUSwJ19IzyqMhnbbAWLEjx" Name="UI Model Stream" Kind="InputPin" />
+              <Pin Id="APzIL0uR7TtPtO3VJ4P7GA" Name="Selection Manager" Kind="InputPin" />
+            </Patch>
+            <Patch Id="RFbeAqt4vPZMUJ1MvGhsyI" Name="Update" />
+            <Link Id="TyY9E3gznnxOZqq9fD2j7Z" Ids="APzIL0uR7TtPtO3VJ4P7GA,IEknUJoBPycLUBzUL3m2hR" IsHidden="true" />
+            <Link Id="U2rtHTQk9GhQCPnjR4bkDm" Ids="IEknUJoBPycLUBzUL3m2hR,DmQmKQMn67OMpsoogsa3na" />
+            <Link Id="H3QAyZbiPtrLW4JMngz1L6" Ids="N951oX10Rn6LOuDkaTpPC0,VqNN98CvhovOXb6AUKGrNz" />
           </Patch>
         </Node>
       </Canvas>
