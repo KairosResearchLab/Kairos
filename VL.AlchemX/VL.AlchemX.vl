@@ -5409,15 +5409,72 @@
           </Node>
         </Canvas>
         <Canvas Id="QBXxbrNKSTHPLN4RSum20J" Name="TypeSpecific.String.Advanced" Position="132,687">
-          <Pad Id="FgplxUCZP3iLsTrB0C1qZu" Bounds="119,192,413,68" ShowValueBox="true" isIOBox="true" Value="String blending doesn't really make sense.&#xD;&#xA;There could be custom techniques to interpolate between strings, but that must be defined in the interpolation library">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="CoreLibBasics.vl">
-              <Choice Kind="TypeFlag" Name="String" />
-            </p:TypeAnnotation>
-            <p:ValueBoxSettings>
-              <p:fontsize p:Type="Int32">9</p:fontsize>
-              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
-            </p:ValueBoxSettings>
-          </Pad>
+          <!--
+
+    ************************ AddBlend ************************
+
+-->
+          <Node Name="AddBlend" Bounds="122,158,102,143" Id="MiXmVbTdgrzNSxwY6EX6jz">
+            <p:NodeReference LastCategoryFullName="Primitive" LastDependency="builtin">
+              <Choice Kind="OperationDefinition" Name="Operation" />
+            </p:NodeReference>
+            <Patch Id="Ii0n5dQbCQcOv1AullUqjN">
+              <ControlPoint Id="C7bihhOSWfCMdfgnRJ9ltw" Bounds="137,176" />
+              <Link Id="KC7XIBMZHkdQVQsQosHK5K" Ids="SCaAaak8APJOFnP8NMOdLq,C7bihhOSWfCMdfgnRJ9ltw" IsHidden="true" />
+              <ControlPoint Id="EMA5lvRO6YROHMAfqwH5gR" Bounds="176,201" />
+              <Link Id="FckCBWiNMLuNzA6814DilU" Ids="VwyZK5PL4USOhUVErzJkjt,EMA5lvRO6YROHMAfqwH5gR" IsHidden="true" />
+              <ControlPoint Id="H5qTqcwAW7mPTjSWUNy729" Bounds="136,284" />
+              <Link Id="KtYMuv8uG2oQZJlUTwawVv" Ids="H5qTqcwAW7mPTjSWUNy729,AI8Wv2EMMJFNZYmdj2ZhLC" IsHidden="true" />
+              <Node Bounds="145,233,25,19" Id="Jb53fzxvmVhLLNrg71pSQ9">
+                <p:NodeReference LastCategoryFullName="Math" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="+" />
+                </p:NodeReference>
+                <Pin Id="GPh7fmqq5KmNKTwY3Siujn" Name="Input" Kind="InputPin" />
+                <Pin Id="MELVIOKlzqcQdmztah9HZM" Name="Input 2" Kind="InputPin" />
+                <Pin Id="Ng2j0bO2H9PN5fRFKPLDCD" Name="Output" Kind="OutputPin" />
+              </Node>
+              <Link Id="Ryd6e6mBGbSPHBR0UUHb4a" Ids="C7bihhOSWfCMdfgnRJ9ltw,GPh7fmqq5KmNKTwY3Siujn" />
+              <Link Id="TXKWsTLYdqXP65oJyLltn8" Ids="EMA5lvRO6YROHMAfqwH5gR,MELVIOKlzqcQdmztah9HZM" />
+              <Link Id="Rr8iCnr0G3oMtXWABSCWBh" Ids="Ng2j0bO2H9PN5fRFKPLDCD,H5qTqcwAW7mPTjSWUNy729" />
+              <Pin Id="SCaAaak8APJOFnP8NMOdLq" Name="Background" Kind="InputPin" Bounds="931,595">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="VwyZK5PL4USOhUVErzJkjt" Name="Value" Kind="InputPin" Bounds="982,597">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="AI8Wv2EMMJFNZYmdj2ZhLC" Name="Output" Kind="OutputPin" Bounds="944,729" />
+            </Patch>
+          </Node>
+          <!--
+
+    ************************ Zero ************************
+
+-->
+          <Node Name="Zero" Bounds="289,161,106,143" Id="SmdaepAnqSVPUdpqpwfOEq">
+            <p:NodeReference LastCategoryFullName="Primitive" LastDependency="builtin">
+              <Choice Kind="OperationDefinition" Name="Operation" />
+            </p:NodeReference>
+            <Patch Id="QMj3Vg5Uhx5PvIoDLRHDca">
+              <ControlPoint Id="LaeQ51hbkUKPjZHnlQqAzl" Bounds="304,287" />
+              <Link Id="Tz5N8dhzFLvLlw94Zf83Ne" Ids="LaeQ51hbkUKPjZHnlQqAzl,OlBnnUuO1mLM8Jh5dTcj9w" IsHidden="true" />
+              <Pin Id="OlBnnUuO1mLM8Jh5dTcj9w" Name="Zero" Kind="OutputPin" Bounds="944,729">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pad Id="UdgvyE8s7WvP7Ny1OjAVLz" Comment="Zero" Bounds="305,246,35,15" ShowValueBox="true" isIOBox="true" Value="">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+              </Pad>
+              <Link Id="EFfz8U9eWtrL3t97fc8xQc" Ids="UdgvyE8s7WvP7Ny1OjAVLz,LaeQ51hbkUKPjZHnlQqAzl" />
+            </Patch>
+          </Node>
         </Canvas>
         <Canvas Id="HJ2iDmdITWfOsTxHIkbrqq" Name="TypeSpecific.Integer64.Advanced" Position="132,303">
           <!--
@@ -7493,7 +7550,7 @@
               <Link Id="QRwOUZn66L2OkhHeY6Rs4p" Ids="TH8OMjGHjUWQUiWTLl0QAW,DbyWkCTDdQXNLg2O48jVbP" IsHidden="true" />
               <ControlPoint Id="UA0BodYo3JbPY9AhTEQnpa" Bounds="369,606" />
               <Link Id="FwM6swSIVZKOMXNbJd7Tha" Ids="UA0BodYo3JbPY9AhTEQnpa,BHBvaG5qst5OfIbgFMhDdZ" IsHidden="true" />
-              <Node Bounds="367,551,16,19" Id="HCVQZcmacnULgZAXd4BSxV">
+              <Node Bounds="367,551,25,19" Id="HCVQZcmacnULgZAXd4BSxV">
                 <p:NodeReference LastCategoryFullName="Math" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="Min" />

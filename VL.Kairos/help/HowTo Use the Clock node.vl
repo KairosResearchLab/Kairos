@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="JzYIgzGOKfILuZDayb9LJp" LanguageVersion="2023.5.1" Version="0.128">
-  <NugetDependency Id="IsFZSK5rg9HL5cTkaTyCRD" Location="VL.CoreLib" Version="2023.5.1" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="JzYIgzGOKfILuZDayb9LJp" LanguageVersion="2023.5.2" Version="0.128">
+  <NugetDependency Id="IsFZSK5rg9HL5cTkaTyCRD" Location="VL.CoreLib" Version="2023.5.2" />
   <Patch Id="Dua3bBUhL9FPYFLRoYc1qX">
     <Canvas Id="GGhhBVJidhuNzBaztIWZRg" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
     <!--
@@ -21,8 +21,10 @@
               <Choice Kind="ProcessAppFlag" Name="Clock (Kairos)" />
             </p:NodeReference>
             <Pin Id="SIdoZZ5uZPCLHrEs4MIJA3" Name="Model" Kind="InputPin">
-              <p:DefaultValue Loop_Enabled="True" Loop_In="1" Loop_Out="5" Period="1" Speed="1" />
+              <p:DefaultValue Initial_Time="1" Loop_Enabled="True" Loop_Out="5" Period="1" Speed="1" />
             </Pin>
+            <Pin Id="LEzSEEj9zHEQdF6T8kTzwC" Name="Initial Playing" Kind="InputPin" />
+            <Pin Id="ODUCSHOyaUcMzuEP6qic6H" Name="Initial Time" Kind="InputPin" />
             <Pin Id="OZEU7hgoxhtO2YVPJ4h9nJ" Name="BPM" Kind="InputPin" />
             <Pin Id="DAPyMr0A3nfMfs3DJ3Z7gF" Name="Period" Kind="InputPin" />
             <Pin Id="AFSPXAXPgOqPWSDzwsUDkk" Name="Speed" Kind="InputPin" />
@@ -91,7 +93,7 @@
             </p:ValueBoxSettings>
           </Pad>
           <Pad Id="AMH9It4kjrWLff8Dsu1iqw" Comment="Cycles" Bounds="764,700,35,15" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="T7f6nBe2CBvLego5f6OUEl" Comment="BPM" Bounds="366,533,42,15" ShowValueBox="true" isIOBox="true" Value="60">
+          <Pad Id="T7f6nBe2CBvLego5f6OUEl" Comment="BPM" Bounds="499,528,42,15" ShowValueBox="true" isIOBox="true" Value="60">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -110,7 +112,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="KhFOtaAMip3M6CB5JTiYbL" Comment="Loop In" Bounds="1102,427,35,15" ShowValueBox="true" isIOBox="true" Value="1">
+          <Pad Id="KhFOtaAMip3M6CB5JTiYbL" Comment="Loop In" Bounds="1102,427,35,15" ShowValueBox="true" isIOBox="true" Value="0">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Float64" />
             </p:TypeAnnotation>
@@ -174,15 +176,15 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="NlhNsfHBHpwLfUIzanZSuA" Comment="Period" Bounds="261,533,35,15" ShowValueBox="true" isIOBox="true" Value="1">
+          <Pad Id="NlhNsfHBHpwLfUIzanZSuA" Comment="Period" Bounds="567,567,35,15" ShowValueBox="true" isIOBox="true" Value="1">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
           </Pad>
-          <Overlay Id="DyryQvEjumaNwzf5Uci0nA" Name="tempo control via Period or BPM" Bounds="166,467,327,198">
+          <Overlay Id="DyryQvEjumaNwzf5Uci0nA" Name="tempo control via Period or BPM" Bounds="459,461,324,130">
             <p:ColorIndex p:Type="Int32">10</p:ColorIndex>
           </Overlay>
-          <Pad Id="CdCV9Vtk4GjNaImN7oNAsl" Bounds="254,560,169,40" ShowValueBox="true" isIOBox="true" Value="(one or the other, they exclude each other)">
+          <Pad Id="CdCV9Vtk4GjNaImN7oNAsl" Bounds="600,516,169,40" ShowValueBox="true" isIOBox="true" Value="(one or the other, they exclude each other)">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -205,6 +207,20 @@
           </Overlay>
           <Overlay Id="J5WdoUN7Q6FLgNmvATCgbk" Name="Event-based Clock state" Bounds="461,995,253,168" />
           <Pad Id="T6HLyVrQ803L55S4LGh7hj" Comment="Enabled" Bounds="1289,568,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="KU54WFum2s5OWYYOJDcpVc" Comment="Initial Time" Bounds="326,306,35,15" ShowValueBox="true" isIOBox="true" Value="1">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Float64" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="MQmgvB16jO2OF5EzFkSegT" Comment="Initial Playing" Bounds="259,261,35,35" ShowValueBox="true" isIOBox="true" Value="True">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
               <CategoryReference Kind="Category" Name="Primitive" />
@@ -239,11 +255,13 @@
         <Link Id="QsPEXjDRdwnNpbpCs2NIlk" Ids="PayqjroSnqxLiHGA9mgk16,GwCtaMv0LyxOIgjH2JKgP4" />
         <Link Id="J8Fk0NfqnbaPPfJ2wJ2ElH" Ids="PRUrvTxDKNnPejhETPG5rz,A0hU1WGUz6xLqRbtN7jM8x" />
         <Link Id="KgVuSCk7qxYNA2EVFS388p" Ids="T6HLyVrQ803L55S4LGh7hj,M1GmLOWSNubMY7RhidmiTU" />
+        <Link Id="B2U1U87Iz6DNJ80ZHUF8Rq" Ids="KU54WFum2s5OWYYOJDcpVc,ODUCSHOyaUcMzuEP6qic6H" />
+        <Link Id="Bs8t7QW8q1PMHxEPiyAmBs" Ids="MQmgvB16jO2OF5EzFkSegT,LEzSEEj9zHEQdF6T8kTzwC" />
       </Patch>
     </Node>
   </Patch>
   <NugetDependency Id="PfLSHJjl7f3O6T8JoSaYhp" Location="VL.Kairos.Runtime" Version="0.0.0" />
-  <NugetDependency Id="Avo55MN1GkWMNH1ViqC4C6" Location="VL.ImGui" Version="2023.5.1" />
-  <NugetDependency Id="K9DpYjWYJFnLtdAczlpwpi" Location="VL.Skia" Version="2023.5.1" />
-  <NugetDependency Id="VXJxY3Wynh3MTqXMaL2lC6" Location="VL.ImGui.Skia" Version="2023.5.1" />
+  <NugetDependency Id="Avo55MN1GkWMNH1ViqC4C6" Location="VL.ImGui" Version="2023.5.2" />
+  <NugetDependency Id="K9DpYjWYJFnLtdAczlpwpi" Location="VL.Skia" Version="2023.5.2" />
+  <NugetDependency Id="VXJxY3Wynh3MTqXMaL2lC6" Location="VL.ImGui.Skia" Version="2023.5.2" />
 </Document>
