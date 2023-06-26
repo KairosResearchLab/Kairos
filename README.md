@@ -2,13 +2,13 @@
 
 A complete framework for data control and composition in [vvvv](http://visualprogramming.net)
 
-[![Matrix](https://img.shields.io/matrix/VL.Kairos:matrix.org?label=chat%20on%20element&logo=element&style=flat-square)](https://app.element.io/#/room/#VL.Kairos:matrix.org) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![vvvv](https://img.shields.io/static/v1?label=MADE%20WITH&message=VVVV&color=191919&style=flat-square)](https://visualprogramming.net/)
+[![Matrix](https://img.shields.io/matrix/VL.Kairos:matrix.org?label=chat%20on%20element&logo=element&style=flat-square)](https://app.element.io/#/room/#VL.Kairos:matrix.org) [![vvvv](https://img.shields.io/static/v1?label=MADE%20WITH&message=VVVV&color=191919&style=flat-square)](https://visualprogramming.net/)
 
 ![VL.Kairos banner](/img/banner.png)
 
 ## Requirements
 
-As of today, Kairos only works with vvvv gamma 2022.5 previews. Get the latest [here](http://visualprogramming.net)
+Kairos works with the latest vvvv gamma 5.2. Get it [here](http://visualprogramming.net)
 
 ## Installing
 
@@ -24,7 +24,6 @@ nuget install VL.Kairos -pre
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 | VL.AlchemX        | [![VL.AlchemX](https://img.shields.io/nuget/vpre/VL.AlchemX?logo=nuget&style=flat-square)](https://www.nuget.org/packages/VL.AlchemX/)                     | A library dedicated to value synthesis. It includes functionalities for value interpolation, blending and compositing  |
 | VL.LayerX         | [![VL.LayerX](https://img.shields.io/nuget/vpre/VL.LayerX?logo=nuget&style=flat-square)](https://www.nuget.org/packages/VL.LayerX/)                        | A library to handle values by embedding them into Layers, allowing sampling and advanced multi-layer compositing       |
-| VL.BindX          | To be released                                                                                                                                             |                                                                                                                        |
 | VL.Touchy         | [![VL.Touchy](https://img.shields.io/nuget/vpre/VL.Touchy?logo=nuget&style=flat-square)](https://www.nuget.org/packages/VL.Touchy)                         | A multi-touch gesture based interactive engine                                                                         |
 | VL.Kairos.Runtime | [![VL.Kairos.Runtime](https://img.shields.io/nuget/vpre/VL.Kairos.Runtime?logo=nuget&style=flat-square)](https://www.nuget.org/packages/VL.Kairos.Runtime) | Contains all the Kairos functionalities to run without all the UI editors provided by VL.Kairos                        |
 | VL.Kairos         | [![VL.Kairos](https://img.shields.io/nuget/vpre/VL.Kairos?logo=nuget&style=flat-square)](https://www.nuget.org/packages/VL.Kairos)                         |                                                                                                                        |
@@ -37,8 +36,7 @@ nuget install VL.Kairos -pre
 * Tools are nestable inside each other
 * Advanced layer system
 * Advanced interpolation, blending and compositing techniques
-* Direct support for most of standard types (Boolean, Intereger32, Float32, Float64, Vector2, Vector3, Vector4, Matrix, RGBA, String, Skia layer, Stride Entity)
-* Support for collections (for any implemented type)
+* Direct support for many of standard types (Intereger32, Float32, Vector2, Vector3, Vector4, RGBA, String)
 * Custom type easy registration
 * Custom Interpolation/Blending/Compositing technique registration
 * Data binding helpers for vvvv app control
