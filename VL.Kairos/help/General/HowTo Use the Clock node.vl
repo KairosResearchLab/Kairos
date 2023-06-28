@@ -15,7 +15,7 @@
       </p:NodeReference>
       <Patch Id="VGo5frxUJT1PgI65alz2Gk">
         <Canvas Id="GMUAsF82KsKN1D9Ya0lvTJ" CanvasType="Group">
-          <Node Bounds="200,620,1145,19" Id="J9tbJg7gTnfL4RB0nVilN3">
+          <Node Bounds="200,620,1019,19" Id="J9tbJg7gTnfL4RB0nVilN3">
             <p:NodeReference LastCategoryFullName="Kairos.Sampling" LastDependency="VL.Kairos.Runtime.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Clock (Kairos)" />
@@ -36,7 +36,6 @@
             <Pin Id="FTjN5z7OkZROZkRCSqU8Uc" Name="Loop In" Kind="InputPin" />
             <Pin Id="BU0aI1KpkhFOHuWmGeod4v" Name="Loop Out" Kind="InputPin" />
             <Pin Id="A0hU1WGUz6xLqRbtN7jM8x" Name="Loop Enabled" Kind="InputPin" />
-            <Pin Id="RhoOHaLOLJqPr5SpQnSAmQ" Name="Integration FPS" Kind="InputPin" />
             <Pin Id="M1GmLOWSNubMY7RhidmiTU" Name="Enabled" Kind="InputPin" />
             <Pin Id="PPo3RTpmXAoLlLQ6P05iZO" Name="Output" Kind="StateOutputPin" />
             <Pin Id="FlCMdEvNQ0pQUN2fPbh1c2" Name="Update Stream" Kind="OutputPin" />
@@ -47,11 +46,6 @@
             <Pin Id="Ux28nGZJDg1N5s45w96QWJ" Name="Seconds" Kind="OutputPin" />
             <Pin Id="N6N0B2DXhobPzuJoCaZ370" Name="Seconds Float32" Kind="OutputPin" />
           </Node>
-          <Pad Id="S4vu0b7Z7LmLb7CONPBRRS" Comment="Integration FPS" Bounds="1301,382,45,15" ShowValueBox="true" isIOBox="true" Value="60">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-              <Choice Kind="TypeFlag" Name="Float32" />
-            </p:TypeAnnotation>
-          </Pad>
           <Pad Id="CLfhWvUVWqIOlkuACpJJ2r" Comment="Seconds" Bounds="624,815,600,47" ShowValueBox="true" isIOBox="true">
             <p:ValueBoxSettings>
               <p:fontsize p:Type="Int32">14</p:fontsize>
@@ -137,18 +131,6 @@
           <Overlay Id="F2zPvOzPcwFLLhfASKpKAh" Name="Seek" Bounds="875,332,148,122">
             <p:ColorIndex p:Type="Int32">10</p:ColorIndex>
           </Overlay>
-          <Overlay Id="SuRIN9ZDpCPPMJh0dVMjmT" Name="Integration Clock FPS" Bounds="1278,331,278,134">
-            <p:ColorIndex p:Type="Int32">10</p:ColorIndex>
-          </Overlay>
-          <Pad Id="NEou5KcfuDQLswPX8yKf90" Bounds="1296,416,224,40" ShowValueBox="true" isIOBox="true" Value="(Always needed since it generates the events for the clock integration)">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-              <Choice Kind="TypeFlag" Name="String" />
-            </p:TypeAnnotation>
-            <p:ValueBoxSettings>
-              <p:fontsize p:Type="Int32">9</p:fontsize>
-              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
-            </p:ValueBoxSettings>
-          </Pad>
           <Pad Id="MCtRyKCSoqpQPtEGnYCYpR" Comment="Play" Bounds="581,245,59,60" ShowValueBox="true" isIOBox="true" Value="False">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
@@ -206,7 +188,7 @@
             <p:ColorIndex p:Type="Int32">5</p:ColorIndex>
           </Overlay>
           <Overlay Id="J5WdoUN7Q6FLgNmvATCgbk" Name="Event-based Clock state" Bounds="293,996,253,168" />
-          <Pad Id="T6HLyVrQ803L55S4LGh7hj" Comment="Enabled" Bounds="1337,551,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+          <Pad Id="T6HLyVrQ803L55S4LGh7hj" Comment="Enabled" Bounds="1265,546,35,35" ShowValueBox="true" isIOBox="true" Value="True">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
               <CategoryReference Kind="Category" Name="Primitive" />
@@ -229,6 +211,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
+          <ControlPoint Id="FY0pJH1O1wSNEurimZ6pgh" Bounds="1072,714" />
         </Canvas>
         <Patch Id="ABVQ4GdTTGSQJkhTlkUKOD" Name="Create" />
         <Patch Id="JMTBsmXquwXM6Zmw1VBWum" Name="Update" />
@@ -236,14 +219,13 @@
           <Fragment Id="CEKu0RP9NyTM0sSSdXSG5q" Patch="ABVQ4GdTTGSQJkhTlkUKOD" Enabled="true" />
           <Fragment Id="UJuV4EpYu0hLMXPnVFobn0" Patch="JMTBsmXquwXM6Zmw1VBWum" Enabled="true" />
         </ProcessDefinition>
-        <Link Id="T7j7VsmCBwUL2zoJhud162" Ids="Ux28nGZJDg1N5s45w96QWJ,CLfhWvUVWqIOlkuACpJJ2r" />
+        <Link Id="T7j7VsmCBwUL2zoJhud162" Ids="Ux28nGZJDg1N5s45w96QWJ,FY0pJH1O1wSNEurimZ6pgh,CLfhWvUVWqIOlkuACpJJ2r" />
         <Link Id="CJg4INYYzR5NA5VOIsZygT" Ids="FlCMdEvNQ0pQUN2fPbh1c2,GGrFBoMFN4pOSxuo3JddAT" />
         <Link Id="RfnTgr4rzRZOepsJBxTHac" Ids="Lj4VWdfoeDNO50AO2RFhrs,IXDCrhZBGIeNI5rEfaq1qx" />
         <Link Id="KsyoyTmt1zGMSQXTZLnyMI" Ids="VZayMdEUNMuNwGYnBQJSBv,B4vMq4C1DukPC5NdfuMdwP" />
         <Link Id="PmTXDROMIKgQY57u255RtI" Ids="AMfPFr1Ey9xO9MB3ftdvlr,EGjHv0EfOAPMnXvUjdELss" />
         <Link Id="GnZeE0sC3d1PusveVMr7pZ" Ids="QbY8bfjYUjwPK9nFFEApaI,I0NjrQeOV6yOBvCy1ZAgZR" />
         <Link Id="ScT26qnjBXVN91YAMpijq3" Ids="FC1YUqI6GPYM04SkLHfcgb,AMH9It4kjrWLff8Dsu1iqw" />
-        <Link Id="QTM4ESNoqNuNi1aoTG2B2g" Ids="S4vu0b7Z7LmLb7CONPBRRS,RhoOHaLOLJqPr5SpQnSAmQ" />
         <Link Id="Fsw4FI75aPRMbc7F72gX67" Ids="QTRqwZg3OQFPS3FRI1nB60,BU0aI1KpkhFOHuWmGeod4v" />
         <Link Id="QXiprphBCM2MRH838qmaH9" Ids="KhFOtaAMip3M6CB5JTiYbL,FTjN5z7OkZROZkRCSqU8Uc" />
         <Link Id="EaAJBL6IK3UN336OLIoyAF" Ids="UpBqqTQWytmLdOBDEarAg4,AFSPXAXPgOqPWSDzwsUDkk" />
