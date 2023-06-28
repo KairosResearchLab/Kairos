@@ -19994,6 +19994,7 @@
                                 </p:NodeReference>
                                 <Pin Id="QuzZ8Jad8ZrOp1xlLpit5b" Name="Input" Kind="StateInputPin" />
                                 <Pin Id="Dobe1OFj2XiLYFVH5xYI87" Name="Sampling Position" Kind="InputPin" />
+                                <Pin Id="A5jzD5WIlKGPe8X5YGlJQR" Name="Force Write to Global Channel" Kind="InputPin" />
                                 <Pin Id="A3lL4v8EzRkNSAVwzZMx4p" Name="Output" Kind="StateOutputPin" />
                               </Node>
                               <Node Bounds="1165,976,58,19" Id="BNChEyK2er1Mep71GNRBlW">
@@ -20176,6 +20177,7 @@
                 <Pin Id="UT5stcTmc6IOvq2oBPCK7R" Name="Subscription" Kind="OutputPin" />
               </Node>
               <Pad Id="SpX2YnsWEYzOTiB91EbI9m" Bounds="138,638" />
+              <ControlPoint Id="Pe1fCWZ0WsaLJuod3x7PoG" Bounds="1489,934" />
             </Canvas>
             <ProcessDefinition Id="KOrNsp9GqbPPNHajco1r8n" HasStateOut="true">
               <Fragment Id="Ipg4Ni4DeixLlrUZrRceqt" Patch="C78bsMVsuTINY1DJg6oYbO" Enabled="true" />
@@ -20292,6 +20294,7 @@
               <Pin Id="BG0UplIrKqrM58DKdTGwtm" Name="Sampling Position Provider" Kind="InputPin" Bounds="874,178" />
               <Pin Id="U3mVW9B5Om5P45tB6AyHqI" Name="Sampling Position Min Bound" Kind="InputPin" Visibility="Optional" />
               <Pin Id="AxpKAca5RwJOOTnhHyO5ez" Name="Sampling Position Max Bound" Kind="InputPin" Bounds="1203,288" Visibility="Optional" />
+              <Pin Id="NL5o3pZgBInPAHTTlOi0FK" Name="Force Write to Global Channel" Kind="InputPin" Bounds="1509,853" Visibility="Optional" />
               <Pin Id="ApCHeMmxa77NSPZHAbuJPL" Name="Enabled" Kind="InputPin" Bounds="839,261" />
               <Pin Id="SQRzAfzg7W4MPRSUcknuV3" Name="Output Values" Kind="OutputPin" Bounds="654,778" IsPinGroup="true">
                 <p:TypeAnnotation LastCategoryFullName="Collections" LastDependency="VL.CoreLib.vl">
@@ -20349,6 +20352,8 @@
             <Link Id="T6M8QzoNr1SNNyxma6HbE3" Ids="A5gF6Dl532wMcbXwUsuRSI,VpN0Zl45RGxNbgqZh7kE69" />
             <Link Id="OaMAhCeJZ23QIDDyQZwXrd" Ids="R52ignfGHiRP5KWhdiE5oa,H44IyfE5ekCQC8H8QIhD8F" />
             <Link Id="LZBzyMGUIYcLtYTD5b94FH" Ids="H44IyfE5ekCQC8H8QIhD8F,AmMadouJ0fXMvDA1ui6vKM" />
+            <Link Id="NwOBzLntgcXMp4F19lQTy6" Ids="Pe1fCWZ0WsaLJuod3x7PoG,A5jzD5WIlKGPe8X5YGlJQR" />
+            <Link Id="RwQu4mbh7nAN6Td40jZl2U" Ids="NL5o3pZgBInPAHTTlOi0FK,Pe1fCWZ0WsaLJuod3x7PoG" IsHidden="true" />
           </Patch>
         </Node>
         <Canvas Id="TOPbDYCtlDEMJ5yseWq0s2" Name="Utils" Position="191,516" />
@@ -23152,7 +23157,7 @@
                 </Node>
                 <ControlPoint Id="F37BE7oTnPBP0ui1oluzWZ" Bounds="921,369" />
                 <Pad Id="NsbaGemfRsvMrTF8MBAHcM" SlotId="B2UJqJZvo0UM0Ph1oYqvYk" Bounds="381,1053" />
-                <Node Bounds="367,1078,139,26" Id="KWY3Xrz1iFnOWKZ1rgOC3S">
+                <Node Bounds="323,1079,139,26" Id="KWY3Xrz1iFnOWKZ1rgOC3S">
                   <p:NodeReference LastCategoryFullName="Kairos.Sampling.CompositionSampler.TrackSamplerModel" LastDependency="VL.Kairos.Runtime.Core.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <CategoryReference Kind="RecordType" Name="TrackSamplerModel" />
@@ -23161,7 +23166,7 @@
                   <Pin Id="NgLLKG5ncyrNAYM7Iyge5v" Name="Input" Kind="StateInputPin" />
                   <Pin Id="Eirv1L3gVRNOmz6rrstdvd" Name="Channel Binding Enabled" Kind="OutputPin" />
                 </Node>
-                <Node Bounds="367,1120,418,164" Id="EX2SDflyr91LH25502XU9D">
+                <Node Bounds="323,1120,474,184" Id="EX2SDflyr91LH25502XU9D">
                   <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                     <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                     <CategoryReference Kind="Category" Name="Primitive" />
@@ -23169,41 +23174,56 @@
                   </p:NodeReference>
                   <Pin Id="BTRWs8P4vgbMWmyMFrCW8W" Name="Condition" Kind="InputPin" />
                   <Patch Id="NZoBd4QRKH2P7aLLzaMElT" ManuallySortedPins="true">
-                    <Node Bounds="379,1245,319,19" Id="Dzua43BGfX2QQT7h1byZwO">
-                      <p:NodeReference LastCategoryFullName="Kairos.GlobalChannels" LastDependency="VL.Kairos.Runtime.Core.vl">
-                        <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                        <Choice Kind="ProcessAppFlag" Name="GlobalChannelSend (Ungeneric)" />
-                      </p:NodeReference>
-                      <Pin Id="Vs7Z8xh8uc4OiXLwnc0NrI" Name="Key" Kind="InputPin" />
-                      <Pin Id="DsO4cTb6TWmNyO8Vcco1pM" Name="Type Full Name" Kind="InputPin" />
-                      <Pin Id="VMtEraBJSbwLezBn6IaB0q" Name="Value" Kind="InputPin" />
-                      <Pin Id="Qc1D2nwJjgkMl3vCEVzL4p" Name="Author" Kind="InputPin" />
-                    </Node>
-                    <Node Bounds="379,1195,87,26" Id="CYZ7DwgBEUsOuykB0poSrW">
-                      <p:NodeReference LastCategoryFullName="Kairos.Sampling.CompositionSampler.TrackSamplerModel" LastDependency="VL.Kairos.Runtime.Core.vl">
-                        <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                        <CategoryReference Kind="RecordType" Name="TrackSamplerModel" />
-                        <Choice Kind="OperationCallFlag" Name="GetTrackID" />
-                      </p:NodeReference>
-                      <Pin Id="IPm4JRdaAhiLCMaNGBmMc8" Name="Input" Kind="StateInputPin" />
-                      <Pin Id="Af4kw0LcJUAOYG5Igglkfk" Name="Track ID" Kind="OutputPin" />
-                    </Node>
-                    <Node Bounds="484,1195,96,26" Id="Ktij2R48qlmLIEuz8ydbre">
-                      <p:NodeReference LastCategoryFullName="Kairos.Sampling.CompositionSampler.TrackSamplerModel" LastDependency="VL.Kairos.Runtime.Core.vl">
-                        <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                        <CategoryReference Kind="RecordType" Name="TrackSamplerModel" />
-                        <Choice Kind="OperationCallFlag" Name="GetTypeFullName" />
-                      </p:NodeReference>
-                      <Pin Id="NUBZkoTgM3UP6MlVUiZVmk" Name="Input" Kind="StateInputPin" />
-                      <Pin Id="ObgWwsZuxUSOywoLWu5yUw" Name="Type Full Name" Kind="OutputPin" />
-                    </Node>
-                    <Pad Id="LNM1iLk2QLsONGdfNadf5W" Comment="Author" Bounds="616,1206,103,17" ShowValueBox="true" isIOBox="true" Value="CompositionSampler">
-                      <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-                        <Choice Kind="TypeFlag" Name="String" />
-                      </p:TypeAnnotation>
-                    </Pad>
                     <Patch Id="EsFv3AHu7lrO4NG6qNWYJw" Name="Create" ManuallySortedPins="true" />
                     <Patch Id="R5cr7bVtThxNCxrIWjtCb5" Name="Then" ManuallySortedPins="true" />
+                    <Node Bounds="367,1172,418,112" Id="DfP6Fo335vKMJIIxrj4mBW">
+                      <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+                        <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                        <CategoryReference Kind="Category" Name="Primitive" />
+                        <Choice Kind="ProcessStatefulRegion" Name="Cache" />
+                      </p:NodeReference>
+                      <Pin Id="SWY9WYPHXNJMYJ6ilx1Uth" Name="Force" Kind="InputPin" />
+                      <Pin Id="QmrGzeQeGdXOY27W42T0UM" Name="Dispose Cached Outputs" Kind="InputPin" />
+                      <Pin Id="TbEDq2Yj7XpMnhl5jdbIDF" Name="Has Changed" Kind="OutputPin" />
+                      <Patch Id="JOSHPUjsay1NSzbNcXsOpV" ManuallySortedPins="true">
+                        <Patch Id="V7CucYm7WvIQKepRkQm5Nw" Name="Create" ManuallySortedPins="true" />
+                        <Patch Id="I1Rb2OK7oO6Lw9hM0Qjko0" Name="Then" ManuallySortedPins="true" />
+                        <Node Bounds="379,1245,319,19" Id="Dzua43BGfX2QQT7h1byZwO">
+                          <p:NodeReference LastCategoryFullName="Kairos.GlobalChannels" LastDependency="VL.Kairos.Runtime.Core.vl">
+                            <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                            <Choice Kind="ProcessAppFlag" Name="GlobalChannelSend (Ungeneric)" />
+                          </p:NodeReference>
+                          <Pin Id="Vs7Z8xh8uc4OiXLwnc0NrI" Name="Key" Kind="InputPin" />
+                          <Pin Id="DsO4cTb6TWmNyO8Vcco1pM" Name="Type Full Name" Kind="InputPin" />
+                          <Pin Id="VMtEraBJSbwLezBn6IaB0q" Name="Value" Kind="InputPin" />
+                          <Pin Id="Qc1D2nwJjgkMl3vCEVzL4p" Name="Author" Kind="InputPin" />
+                        </Node>
+                        <Node Bounds="379,1195,87,26" Id="CYZ7DwgBEUsOuykB0poSrW">
+                          <p:NodeReference LastCategoryFullName="Kairos.Sampling.CompositionSampler.TrackSamplerModel" LastDependency="VL.Kairos.Runtime.Core.vl">
+                            <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                            <CategoryReference Kind="RecordType" Name="TrackSamplerModel" />
+                            <Choice Kind="OperationCallFlag" Name="GetTrackID" />
+                          </p:NodeReference>
+                          <Pin Id="IPm4JRdaAhiLCMaNGBmMc8" Name="Input" Kind="StateInputPin" />
+                          <Pin Id="Af4kw0LcJUAOYG5Igglkfk" Name="Track ID" Kind="OutputPin" />
+                        </Node>
+                        <Node Bounds="484,1195,96,26" Id="Ktij2R48qlmLIEuz8ydbre">
+                          <p:NodeReference LastCategoryFullName="Kairos.Sampling.CompositionSampler.TrackSamplerModel" LastDependency="VL.Kairos.Runtime.Core.vl">
+                            <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                            <CategoryReference Kind="RecordType" Name="TrackSamplerModel" />
+                            <Choice Kind="OperationCallFlag" Name="GetTypeFullName" />
+                          </p:NodeReference>
+                          <Pin Id="NUBZkoTgM3UP6MlVUiZVmk" Name="Input" Kind="StateInputPin" />
+                          <Pin Id="ObgWwsZuxUSOywoLWu5yUw" Name="Type Full Name" Kind="OutputPin" />
+                        </Node>
+                        <Pad Id="LNM1iLk2QLsONGdfNadf5W" Comment="Author" Bounds="616,1206,103,15" ShowValueBox="true" isIOBox="true" Value="CompositionSampler">
+                          <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                            <Choice Kind="TypeFlag" Name="String" />
+                          </p:TypeAnnotation>
+                        </Pad>
+                      </Patch>
+                      <ControlPoint Id="HI5Mz126hQwM8VkSljnHWk" Bounds="591,1178" Alignment="Top" />
+                    </Node>
                   </Patch>
                 </Node>
                 <ControlPoint Id="VjHf6mgCsJzNYGw67muBka" Bounds="949,295" />
@@ -23333,7 +23353,7 @@
                 <Overlay Id="Ddx9fNMMkwdQA4WZsCfERm" Name="Sample" Bounds="233,743,924,591">
                   <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
                 </Overlay>
-                <Overlay Id="Aomzyt5N6DaPjOWkQIsLpN" Name="Global Channels" Bounds="317,985,481,319">
+                <Overlay Id="Aomzyt5N6DaPjOWkQIsLpN" Name="Global Channels" Bounds="295,985,503,319">
                   <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
                 </Overlay>
                 <ControlPoint Id="TrWvw7ZhG30L4DSsbTnHS7" Bounds="101,64" />
@@ -23460,6 +23480,7 @@
                   <Pin Id="Diad8VIAwp6N6lrHO1vYTt" Name="Input" Kind="StateInputPin" />
                   <Pin Id="VhGPkSKbD2YQdaRvjfdWeS" Name="Result" Kind="OutputPin" />
                 </Node>
+                <ControlPoint Id="JoAN0Qfr1inPGyxcS0iif1" Bounds="499,1093" />
               </Canvas>
               <ProcessDefinition Id="OgDk42jvfT6QcRlVwGBncz" IsHidden="true">
                 <Fragment Id="GDmVb0EmdhMPE2xb5tiejT" Patch="A1Db6b5JZMMNUguQ8Lq04O" Enabled="true" />
@@ -23521,7 +23542,6 @@
               <Link Id="RPJdj57ZXDlMU7MzzTRmqh" Ids="NsbaGemfRsvMrTF8MBAHcM,NgLLKG5ncyrNAYM7Iyge5v" />
               <Link Id="TUvKvYISIalOTpzEhbDyMy" Ids="Eirv1L3gVRNOmz6rrstdvd,BTRWs8P4vgbMWmyMFrCW8W" />
               <Link Id="TD9CX8U3XEqLx8Mw1LlLC3" Ids="NsbaGemfRsvMrTF8MBAHcM,IPm4JRdaAhiLCMaNGBmMc8" />
-              <Link Id="UHcyxN9En3MM53V9apM9ZF" Ids="Af4kw0LcJUAOYG5Igglkfk,Vs7Z8xh8uc4OiXLwnc0NrI" />
               <Link Id="LKXNJAHlxayP9ZaCvwX1uk" Ids="NsbaGemfRsvMrTF8MBAHcM,NUBZkoTgM3UP6MlVUiZVmk" />
               <Link Id="Ij9tIiKmnYlN3qNdkGqSmM" Ids="TySmzSDCa2yMPde1s6nz3q,VjHf6mgCsJzNYGw67muBka" />
               <Link Id="EDR18s5JkF2NaMXKI6WcZL" Ids="VjHf6mgCsJzNYGw67muBka,VQB072uAUtqMBvN9Qk14QP" IsHidden="true" />
@@ -23554,11 +23574,9 @@
               <Link Id="O1NMbwilD3yLC3URX1lVy8" Ids="CziTc5ODDMwL9VO4dbxj9W,Mj153YzmIgvOP3f4R1YFrk" />
               <Link Id="Q28U4oDDZwlPy0HfoLWOxu" Ids="C3tRUSkUArFQWAYQ5NDzAl,E2TMbnJiCUDO6kvPxxVzz8" />
               <Link Id="QCJVkd1Sa2sLCUyrZdhbqL" Ids="E2TMbnJiCUDO6kvPxxVzz8,AhzvBGM4uW9LDJW0IIyg5d" IsHidden="true" />
-              <Link Id="GV3NlnWlVHoLbJkgDdLB3j" Ids="ObgWwsZuxUSOywoLWu5yUw,DsO4cTb6TWmNyO8Vcco1pM" />
               <Link Id="CKbvSPn2p0yOPcwDZ0OnIn" Ids="FBBbCO3r7QjMVHg2VztV94,PMjDZ04hqQAQRZ6qpZ13sy" />
               <Link Id="QHLKvK6G2KZMxsT4RVxMyO" Ids="M7os6zDM8aXNqqcp296KhB,P8MxklHTqkqMVdeHlfT05c" />
               <Link Id="LLB8N2YeJQ4O4RkebjtPdT" Ids="GaQG1aJDD9ALYBnHp4g8uE,EDnmJrsfxsyNxTYS6jErIr" />
-              <Link Id="EUPLh0olvxPQDb3D1AstHf" Ids="F0pHJL51nikP5RaEf9ZrXk,VMtEraBJSbwLezBn6IaB0q" />
               <Link Id="UAJUiq5kXiHMD9IWbema4L" Ids="DtCBOVfardWMaKBkoXG2vC,FJ5WiXHqex2MLaZT2gWOkH" />
               <Link Id="OQLASw675ZJN5QaGBRe5kc" Ids="V5CZBVjQ9zpLkYlwHoqyRa,Bc1vyD1NWFwOKxi2bjof8Y" />
               <Link Id="LrrJLpL8zKmMCY4DJSIaFn" Ids="V5CZBVjQ9zpLkYlwHoqyRa,IS16WOl6jSfMB0GcrsopOA" />
@@ -23583,13 +23601,29 @@
               <Link Id="C9LXuXfvZiOPwmhfZm55Zd" Ids="UUteNxTyRymLDV01Rfmu7O,J0uX3ZaOApCO9yqzmzTWnP" IsHidden="true" />
               <Link Id="VE05l2HqKYpLPsyIy8jlKs" Ids="J0uX3ZaOApCO9yqzmzTWnP,VbvfM42woymPHaWPyppn6d" />
               <Link Id="MpDtDerubAVMp6UDRyUgFi" Ids="M7os6zDM8aXNqqcp296KhB,G2BcYn70H5yLBWBwPIQviX" />
-              <Link Id="JojKNmVhgMQOPbK7h7Y8gM" Ids="LNM1iLk2QLsONGdfNadf5W,Qc1D2nwJjgkMl3vCEVzL4p" />
               <Link Id="F1ajxFlsRILQW7wcZnv00W" Ids="ViMaSZ7hwKYNOqeJLAABPY,D4LlEKQgvmRMZsczqjbV9A" IsHidden="true" />
               <Link Id="K1PpUXEhJV9OCemojH5IOG" Ids="Na5habytB9qP975lxBwJvW,FoPNlYSkaEqMSfk1qUnqzW" />
               <Link Id="Jflckg445TNNfRdLf90WzH" Ids="Na5habytB9qP975lxBwJvW,Jo7JFeeMHG6Pw6JvNOLRkn" />
               <Link Id="F4MbtJtg7xOOlnrGGD7pcn" Ids="EKRrwj8SfGOMeP8S9tjyjW,TFwuDyWxjWIQTTikVw6Jw0" />
               <Link Id="FZe0daPSt2hLX0oGpZov6K" Ids="F0pHJL51nikP5RaEf9ZrXk,NUkwmpIEGrBOTyxMuqx6FG" />
               <Link Id="T0QksPda5uYLcPzt4P3ykQ" Ids="UOtExgVYvkIPJPv5ve59Yb,Ibl0TCJDkXyMjLazOnLYUA" />
+              <Slot Id="Ibu3pBQ5dg4Nsbgz1MngYt" Name="Output Pin Dictionary Builder" />
+              <Link Id="MvDAvp04t7oPHjqVWMACnv" Ids="D4LlEKQgvmRMZsczqjbV9A,CAsseQk14yzQYmMItaUP4E" />
+              <Link Id="AtJi4HtLQF8Pgy7KXPxmeD" Ids="NYddBaneOEbO3jiRnsAeVF,APAfHTAyfKXOG30EhUpY5U" />
+              <Link Id="LoeP4iP4SXELu41cOsyhzr" Ids="VaczAfjZeHWMmKJzl6indX,D1cxHwHWLIwL2M43GeFojS" />
+              <Link Id="CwrAoZUHAu7LFITlJ3jeCC" Ids="KDVdqFAhuuaOhHY06EahB2,KyBP0WSM9ojLXIv0jz8gKz" />
+              <Link Id="LSeYAquIZWvNIPrjBtXohk" Ids="Hhr0CXLb2tKNzRcLGhwNkv,VAx0CTI3s0VMPK8Q4JBgvK" />
+              <Link Id="JyGK2mTZ0BPN65Eozje3gb" Ids="RaIWiA6zFjtMYqxSdeALfb,NZzQG9v2FttOZfSbz3BnsD" />
+              <Link Id="MUdHZBFDW6OQVQvPf9R7Ee" Ids="JzxRomVUVnTNyLJVzpxG1J,Diad8VIAwp6N6lrHO1vYTt" />
+              <Link Id="UZx8Hx96Qq0MuO9FV83ksZ" Ids="VhGPkSKbD2YQdaRvjfdWeS,NGEafBVYq7sQUhQ47narRE" />
+              <Link Id="DVo22DWnn7WMXTgEK2rc1x" Ids="RaIWiA6zFjtMYqxSdeALfb,MWmwL3H4JW7NHNhppxGLbO" />
+              <Link Id="UHcyxN9En3MM53V9apM9ZF" Ids="Af4kw0LcJUAOYG5Igglkfk,Vs7Z8xh8uc4OiXLwnc0NrI" />
+              <Link Id="GV3NlnWlVHoLbJkgDdLB3j" Ids="ObgWwsZuxUSOywoLWu5yUw,DsO4cTb6TWmNyO8Vcco1pM" />
+              <Link Id="JojKNmVhgMQOPbK7h7Y8gM" Ids="LNM1iLk2QLsONGdfNadf5W,Qc1D2nwJjgkMl3vCEVzL4p" />
+              <Link Id="UUYSrhvWJBNMiWWK7qbVYz" Ids="F0pHJL51nikP5RaEf9ZrXk,HI5Mz126hQwM8VkSljnHWk" />
+              <Link Id="UoiDNVJnF0cNE3ypfdjhuA" Ids="HI5Mz126hQwM8VkSljnHWk,VMtEraBJSbwLezBn6IaB0q" />
+              <Link Id="F3los8sSFWrMcCWXgews5v" Ids="VV4HyvjISxWNf4f6LoiAH5,JoAN0Qfr1inPGyxcS0iif1" IsHidden="true" />
+              <Link Id="KjMhYM8XpjcLNdw3AUP1ND" Ids="JoAN0Qfr1inPGyxcS0iif1,SWY9WYPHXNJMYJ6ilx1Uth" />
               <Patch Id="A1Db6b5JZMMNUguQ8Lq04O" Name="Create" ParticipatingElements="VUj8OYZ33ZLOXCOc9ftxgn" />
               <Patch Id="VFSfgfVHfEVPms77dSBuSX" Name="Sample" ParticipatingElements="Q30Z38fFMCMNctEm1WaHwS,KWY3Xrz1iFnOWKZ1rgOC3S,PUmsLtz92xjPe1ZN9FQ1aq">
                 <Pin Id="TjE9a50S4YDQUdl7hOA4Bt" Name="Sampling Position" Kind="InputPin" Bounds="497,571">
@@ -23597,6 +23631,7 @@
                     <Choice Kind="TypeFlag" Name="TDomain" />
                   </p:TypeAnnotation>
                 </Pin>
+                <Pin Id="CEaWfocCZi3PlYw89WPWa1" Name="Force Write to Global Channel" Kind="InputPin" />
               </Patch>
               <Patch Id="KwiCOw0otEcPyXJLMOXJPN" Name="GetValue">
                 <Pin Id="EUDXoyNecwVL4B56edVQPc" Name="Value" Kind="OutputPin" />
@@ -23634,16 +23669,6 @@
                 </Pin>
                 <Pin Id="ViMaSZ7hwKYNOqeJLAABPY" Name="Output Pin Dictionary Builder" Kind="InputPin" />
               </Patch>
-              <Slot Id="Ibu3pBQ5dg4Nsbgz1MngYt" Name="Output Pin Dictionary Builder" />
-              <Link Id="MvDAvp04t7oPHjqVWMACnv" Ids="D4LlEKQgvmRMZsczqjbV9A,CAsseQk14yzQYmMItaUP4E" />
-              <Link Id="AtJi4HtLQF8Pgy7KXPxmeD" Ids="NYddBaneOEbO3jiRnsAeVF,APAfHTAyfKXOG30EhUpY5U" />
-              <Link Id="LoeP4iP4SXELu41cOsyhzr" Ids="VaczAfjZeHWMmKJzl6indX,D1cxHwHWLIwL2M43GeFojS" />
-              <Link Id="CwrAoZUHAu7LFITlJ3jeCC" Ids="KDVdqFAhuuaOhHY06EahB2,KyBP0WSM9ojLXIv0jz8gKz" />
-              <Link Id="LSeYAquIZWvNIPrjBtXohk" Ids="Hhr0CXLb2tKNzRcLGhwNkv,VAx0CTI3s0VMPK8Q4JBgvK" />
-              <Link Id="JyGK2mTZ0BPN65Eozje3gb" Ids="RaIWiA6zFjtMYqxSdeALfb,NZzQG9v2FttOZfSbz3BnsD" />
-              <Link Id="MUdHZBFDW6OQVQvPf9R7Ee" Ids="JzxRomVUVnTNyLJVzpxG1J,Diad8VIAwp6N6lrHO1vYTt" />
-              <Link Id="UZx8Hx96Qq0MuO9FV83ksZ" Ids="VhGPkSKbD2YQdaRvjfdWeS,NGEafBVYq7sQUhQ47narRE" />
-              <Link Id="DVo22DWnn7WMXTgEK2rc1x" Ids="RaIWiA6zFjtMYqxSdeALfb,MWmwL3H4JW7NHNhppxGLbO" />
             </Patch>
           </Node>
           <!--
@@ -24401,6 +24426,7 @@
                 <Overlay Id="PkFbMEZpNkTOalC81ssL1w" Name="Sample" Bounds="163,175,513,195">
                   <p:ColorIndex p:Type="Int32">11</p:ColorIndex>
                 </Overlay>
+                <ControlPoint Id="LOtnj75Zx1GNqVfUQ2wBrj" Bounds="481,238" />
               </Canvas>
               <ProcessDefinition Id="V0pYD3I3LvTL5K9Uk0RgbN" IsHidden="true">
                 <Fragment Id="OoRoyqV9PFoNJ9EHXptrM6" Patch="Ry7IUj5zyxNMMuhUScPQCM" />
@@ -24408,10 +24434,16 @@
               <Link Id="R9CVom8Pw79MOHLAHASrZV" Ids="Rj8vNfx2GxONXBM8pOVx9g,Rgh3k6T5g2LNkuZtWXkekV" IsHidden="true" />
               <Slot Id="Pqy0kpxMJGkNwdmnq5Ct1r" Name="Sampling Position" />
               <Link Id="OFrRq6YZjRjOrZsPshg7WP" Ids="Rgh3k6T5g2LNkuZtWXkekV,CrFLQvijxUANvygK2jPkmW" />
+              <Link Id="HSRSwAVpTQTPfZboC0jOo9" Ids="Erjg5USNyMjOZW7aVRPKzL,LOtnj75Zx1GNqVfUQ2wBrj" IsHidden="true" />
               <Patch Id="Ry7IUj5zyxNMMuhUScPQCM" Name="Sample">
                 <Pin Id="Rj8vNfx2GxONXBM8pOVx9g" MergeId="10038" Name="Sampling Position" Kind="InputPin" Bounds="497,571">
                   <p:TypeAnnotation>
                     <Choice Kind="TypeFlag" Name="TDomain" />
+                  </p:TypeAnnotation>
+                </Pin>
+                <Pin Id="Erjg5USNyMjOZW7aVRPKzL" Name="Force Write to Global Channel" Kind="InputPin">
+                  <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="TypeFlag" Name="Boolean" />
                   </p:TypeAnnotation>
                 </Pin>
               </Patch>
