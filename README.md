@@ -15,7 +15,7 @@ Kairos works with the latest vvvv gamma 5.2. Get it [here](http://visualprogramm
 - Go to Gamma's Quad menu > Manage Nugets > Commandline and type
 
 ```
-nuget install VL.Kairos -pre
+nuget install VL.Kairos
 ```
 - Press Enter and wait the ending of the installation process
 - For more information on nugets and how to use them in vvvv, click [here](https://thegraybook.vvvv.org/reference/libraries/referencing.html#manage-nugets)
