@@ -496,7 +496,7 @@
               <Choice Kind="InterfaceTypeFlag" Name="IInterpolationModel" />
             </TypeReference>
           </p:Interfaces>
-          <Patch Id="B6ZYc41v7SpMIaCIJTZIoh">
+          <Patch Id="B6ZYc41v7SpMIaCIJTZIoh" IsGeneric="true" ExplicitTypeParameters="T">
             <Canvas Id="UoUEQAgP604NemTpWPLwtw" CanvasType="Group">
               <Pad Id="J39nxEeJLd8MZTd4gcJAe8" SlotId="S0S66Jy9xH9QFOHrZligW5" Bounds="378,278" />
               <Pad Id="DPR26NBmj94NSmsBSiIO94" SlotId="SXT3fErx7WaLp758mOf9bE" Bounds="806,277" />
@@ -513,7 +513,7 @@
                 <p:NodeReference LastCategoryFullName="Primitive" LastDependency="builtin">
                   <Choice Kind="OperationDefinition" Name="Operation" />
                 </p:NodeReference>
-                <Patch Id="Ts9qb4aGcr3LPMCSIkzaXO">
+                <Patch Id="Ts9qb4aGcr3LPMCSIkzaXO" IsGeneric="true">
                   <Pin Id="H7SVyxkfibKP2Yv45312XH" Name="Output" Kind="OutputPin" />
                   <ControlPoint Id="Qkv5QIZbfrqMqyYubTROen" Bounds="782,562" />
                   <Link Id="FksdeQwgBNbOGPbPmbyqF4" Ids="Qkv5QIZbfrqMqyYubTROen,H7SVyxkfibKP2Yv45312XH" IsHidden="true" />
@@ -588,26 +588,6 @@
                   <Link Id="EIgJ1AEtdNWQUTqKBn4eei" Ids="VUbjb7fXuB0OxCim5Oh2Lw,TjvQZ9i5fPyMaBT6cse9sf" />
                   <Link Id="DSICet7xM2AMgfiE8HB7oB" Ids="KVMz43B6L60LBSSdgGDbfq,LrhrBrgDyNPLFXN6ESSLne" />
                   <Link Id="BTlLb9kbmnxMVJbw8ObMf8" Ids="S5VORyiKEWbPyEMKFeUZzY,TNtVvkZLakyMNKllMoJ2Ia" />
-                  <Pin Id="LmkGkKMujCuMFIRTWsU7Ck" Name="Input" Kind="InputPin">
-                    <p:TypeAnnotation>
-                      <Choice Kind="TypeFlag" Name="T" />
-                    </p:TypeAnnotation>
-                  </Pin>
-                  <Pin Id="VPQc1r1t6GjNhsYUx9dsar" Name="Model" Kind="InputPin">
-                    <p:TypeAnnotation LastCategoryFullName="AlchemX.Interpolation.Model" LastDependency="VL.AlchemX.vl">
-                      <Choice Kind="TypeFlag" Name="BezierInterpolationModel" />
-                    </p:TypeAnnotation>
-                  </Pin>
-                  <Pin Id="TH9648EjhInPkpgpV2dwNZ" Name="Output" Kind="OutputPin" Bounds="910,687">
-                    <p:TypeAnnotation LastCategoryFullName="AlchemX.Interpolation.Interpolator" LastDependency="VL.AlchemX.vl">
-                      <Choice Kind="TypeFlag" Name="IInterpolator" />
-                      <p:TypeArguments>
-                        <TypeReference>
-                          <Choice Kind="TypeFlag" Name="T" />
-                        </TypeReference>
-                      </p:TypeArguments>
-                    </p:TypeAnnotation>
-                  </Pin>
                   <Node Bounds="514,553,48,19" Id="UlKG2Het7d8L0KVxDii70k">
                     <p:NodeReference LastCategoryFullName="Primitive.Object" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -633,12 +613,37 @@
                   <Link Id="EZubkULFQ7wOx0M9wfsDtf" Ids="SHl4H0ld5DIOWVuEw6XQJT,LeXRjQd64t8MsPdvm5iruO" />
                   <Link Id="I0RvofGYItALFfNk3Fh49z" Ids="Jrq71N60RxILa7p21Mj9mf,TcD5OzAfm50PYLqJRyqpj1" />
                   <ControlPoint Id="CiZ3TmhqE9sP983ROb1gPx" Bounds="609,453" />
+                  <Link Id="KAHcYLR4JNSMxbvAHY0sad" Ids="K1SaQxVNWVMQV22JfCxiXs,CiZ3TmhqE9sP983ROb1gPx" IsHidden="true" />
+                  <Pin Id="LmkGkKMujCuMFIRTWsU7Ck" Name="Input" Kind="InputPin">
+                    <p:TypeAnnotation>
+                      <Choice Kind="TypeFlag" Name="T" />
+                    </p:TypeAnnotation>
+                  </Pin>
+                  <Pin Id="VPQc1r1t6GjNhsYUx9dsar" Name="Model" Kind="InputPin">
+                    <p:TypeAnnotation LastCategoryFullName="AlchemX.Interpolation.Model" LastDependency="VL.AlchemX.vl">
+                      <Choice Kind="TypeFlag" Name="BezierInterpolationModel" />
+                      <p:TypeArguments>
+                        <TypeReference>
+                          <Choice Kind="TypeFlag" Name="T" />
+                        </TypeReference>
+                      </p:TypeArguments>
+                    </p:TypeAnnotation>
+                  </Pin>
                   <Pin Id="K1SaQxVNWVMQV22JfCxiXs" Name="Node Context" Kind="InputPin">
                     <p:TypeAnnotation LastCategoryFullName="System.Reflection" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="TypeFlag" Name="NodeContext" />
                     </p:TypeAnnotation>
                   </Pin>
-                  <Link Id="KAHcYLR4JNSMxbvAHY0sad" Ids="K1SaQxVNWVMQV22JfCxiXs,CiZ3TmhqE9sP983ROb1gPx" IsHidden="true" />
+                  <Pin Id="TH9648EjhInPkpgpV2dwNZ" Name="Output" Kind="OutputPin" Bounds="910,687">
+                    <p:TypeAnnotation LastCategoryFullName="AlchemX.Interpolation.Interpolator" LastDependency="VL.AlchemX.vl">
+                      <Choice Kind="TypeFlag" Name="IInterpolator" />
+                      <p:TypeArguments>
+                        <TypeReference>
+                          <Choice Kind="TypeFlag" Name="T" />
+                        </TypeReference>
+                      </p:TypeArguments>
+                    </p:TypeAnnotation>
+                  </Pin>
                 </Patch>
               </Node>
               <Pad Id="MMiDnOOctAOPtOXMzPN0rN" SlotId="OHg0wiT8xB4Lg2R22s3OKu" Bounds="497,277" />
@@ -652,12 +657,12 @@
             </Canvas>
             <Slot Id="OHg0wiT8xB4Lg2R22s3OKu" Name="Handle A">
               <p:TypeAnnotation p:Type="TypeReference">
-                <Choice Kind="TypeFlag" Name="Float32" />
+                <Choice Kind="TypeFlag" Name="T" />
               </p:TypeAnnotation>
             </Slot>
             <Slot Id="SXT3fErx7WaLp758mOf9bE" Name="Handle B">
               <p:TypeAnnotation p:Type="TypeReference">
-                <Choice Kind="TypeFlag" Name="Float32" />
+                <Choice Kind="TypeFlag" Name="T" />
               </p:TypeAnnotation>
             </Slot>
             <Link Id="Ln5Sm860YQMPKeOafNxW2D" Ids="Hw87iUBlLbkOR3GXM0OX3N,Aa3RKGg4IGzNdViKiJyMib" IsHidden="true" />
