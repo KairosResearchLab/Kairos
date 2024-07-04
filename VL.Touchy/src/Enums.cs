@@ -20,5 +20,8 @@ namespace Touchy.Utils
     {
         Down, Up, Pressed
     }
-
+    public enum Orientation
+    {
+        Vertical, Horizontal
+    }
 }
