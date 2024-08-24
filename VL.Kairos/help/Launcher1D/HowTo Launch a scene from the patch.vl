@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="IV2q8mbmmcgOchVPRcnRLt" LanguageVersion="2023.5.2" Version="0.128">
-  <NugetDependency Id="MAxAMHRVlRGPOZRH97wzdT" Location="VL.CoreLib" Version="2023.5.2" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="IV2q8mbmmcgOchVPRcnRLt" LanguageVersion="2024.6.7-0113-ga9b832a275" Version="0.128">
+  <NugetDependency Id="MAxAMHRVlRGPOZRH97wzdT" Location="VL.CoreLib" Version="2024.6.7-0113-ga9b832a275" />
   <Patch Id="UjKDt3egcZJQD2Fvyq1WfF">
     <Canvas Id="NCtZrzKMdPKOqAVGXlyDcG" DefaultCategory="Main" CanvasType="FullCategory" />
     <!--
@@ -41,6 +41,7 @@
               <CategoryReference Kind="Category" Name="Kairos" NeedsToBeDirectParent="true" />
               <Choice Kind="ProcessAppFlag" Name="Launcher1D" />
             </p:NodeReference>
+            <Pin Id="N2bKvfAJNrTN9Clqk0T9GO" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="Dw5zor2Mz3ELgmhZLV3riS" Name="Model" Kind="InputPin">
               <p:DefaultValue Global_Transition_Duration="2" ID="e2179f85-bc6c-48e4-a0e7-511a293c9f16" xmlns:r="reflection" r:Version="2">
                 <Scenes>
@@ -103,6 +104,7 @@
                 </Tracks>
               </p:DefaultValue>
             </Pin>
+            <Pin Id="VUW2OtS6fjoPc6yArhPFVt" Name="Composition Name" Kind="InputPin" IsHidden="true" />
             <Pin Id="SGTPfrpFMT4PUtsAE4v4fw" Name="My LFO" Kind="InputPin" PinGroupName="Input">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Float32" />
@@ -170,8 +172,12 @@
                 </Track_Samplers>
               </p:DefaultValue>
             </Pin>
+            <Pin Id="GNITdICBuwbLMICJkxu8lN" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="EZeF3erRpUfMxkTl3dQNAl" Name="Composition" Kind="InputPin" />
             <Pin Id="JCPQKSodRhwLGEiGEZl79J" Name="Sampling Position Provider" Kind="InputPin" />
+            <Pin Id="GZgiWIpfnz8MFdn3JBTEcK" Name="Sampling Position Min Bound" Kind="InputPin" IsHidden="true" />
+            <Pin Id="TYOIy7UdiV3NwcD1I2K7px" Name="Sampling Position Max Bound" Kind="InputPin" IsHidden="true" />
+            <Pin Id="PhumkiJYXaQMNno57FqCwZ" Name="Force Write to Global Channel" Kind="InputPin" IsHidden="true" />
             <Pin Id="NYEOKPn0leDNhuxOs0nF9E" Name="Enabled" Kind="InputPin" />
             <Pin Id="HREhVcn2LliQCYCAJYpcph" Name="Output" Kind="StateOutputPin" />
             <Pin Id="V8ne9lFP0hJMQJnjesyoMr" Name="A" Kind="OutputPin" PinGroupName="Output Values">
@@ -189,7 +195,13 @@
             <Pin Id="MfWB5hZ9RsbP76EFAc5eqv" Name="Model" Kind="InputPin">
               <p:DefaultValue Loop_Out="10" Period="1" Speed="1" />
             </Pin>
+            <Pin Id="LEIPuOFK9IqO3e3SBRXsFY" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="T2S7rt2vGXRMMH6cWTkxTl" Name="Save Model on Exit Enabled" Kind="InputPin" IsHidden="true" />
+            <Pin Id="SDY9W8uA0hfPCmjarOVadh" Name="Initial Playing" Kind="InputPin" IsHidden="true" />
+            <Pin Id="LAQq6Oic3q8LYGJiCtczsU" Name="Initial Time" Kind="InputPin" IsHidden="true" />
             <Pin Id="FfbuFZZrzI3LGvIQ78xdRL" Name="BPM" Kind="InputPin" />
+            <Pin Id="Noerqa9aj5oO83tSronaJj" Name="Period" Kind="InputPin" IsHidden="true" />
+            <Pin Id="G4FIqHMaQ7wLlKMXmSqPPc" Name="Speed" Kind="InputPin" IsHidden="true" />
             <Pin Id="TnTEI2UJf4JMPHU1ViNLSp" Name="Play" Kind="ApplyPin" />
             <Pin Id="UHWiejtQcisNdb2cT9D13Q" Name="Stop" Kind="ApplyPin" />
             <Pin Id="LP8zmfoSnjcQXDxQti51vO" Name="Reset" Kind="ApplyPin" />
@@ -216,219 +228,12 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="167,205,71,19" Id="DAT0vXTrsgdMA5HcXNQHkH">
-            <p:NodeReference LastCategoryFullName="Kairos" LastDependency="VL.Kairos.vl">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="KairosEditor" />
-            </p:NodeReference>
-            <Pin Id="R3XmKCEdmhdOO3QtlwQhC1" Name="Model Stream" Kind="InputPin">
-              <p:DefaultValue ID="d827fa14-8366-419f-aa40-625e36bca065" Imgui_Layout="[Window][DockSpaceViewport_11111111]&#xA;Pos=0,22&#xA;Size=791,455&#xA;Collapsed=0&#xA;&#xA;[Window][Debug##Default]&#xA;Pos=60,60&#xA;Size=400,400&#xA;Collapsed=0&#xA;&#xA;[Window][###50e2b6c3-5c00-444c-9cbe-fa3afc8dccb2]&#xA;Pos=0,22&#xA;Size=791,455&#xA;Collapsed=0&#xA;DockId=0x00000001,0&#xA;&#xA;[Window][New Track from Global Channels##__&lt;2316&gt;]&#xA;Pos=100,100&#xA;Size=280,174&#xA;Collapsed=0&#xA;&#xA;[Window][New Live Value Clip##__&lt;2304&gt;]&#xA;Pos=100,100&#xA;Size=343,94&#xA;Collapsed=0&#xA;&#xA;[Window][###e0bd4469-feb0-49ec-b955-094d17b7cdb6]&#xA;Pos=0,637&#xA;Size=791,145&#xA;Collapsed=0&#xA;DockId=0x00000002,0&#xA;&#xA;[Docking][Data]&#xA;DockSpace   ID=0x8B93E3BD Window=0xA787BDB4 Pos=0,22 Size=791,455 Split=Y Selected=0x19451EB2&#xA;  DockNode  ID=0x00000001 Parent=0x8B93E3BD SizeRef=791,613 CentralNode=1 Selected=0x19451EB2&#xA;  DockNode  ID=0x00000002 Parent=0x8B93E3BD SizeRef=791,145 Selected=0xB3095962&#xA;&#xA;" r:Type="KairosEditorModel [Kairos]" xmlns:r="reflection" r:Version="2">
-                <Windows>
-                  <Item Key="50e2b6c3-5c00-444c-9cbe-fa3afc8dccb2">
-                    <Value Attached="True" ID="50e2b6c3-5c00-444c-9cbe-fa3afc8dccb2" r:Type="KairosNodeUIWindowModel [Kairos.Common.KairosNodeUI]">
-                      <Content_Model Composition_Track_Folding="True" ID="530280fe-7a2f-415c-9bec-22d8af79525d" Output_Monitor_Folding="True" Target_Node_Path="IV2q8mbmmcgOchVPRcnRLt EfJyHwhmXNsL5c1OPevDMx.IV2q8mbmmcgOchVPRcnRLt EiYDRun5PBgLeF339hwkoZ" r:Type="Launcher1DUIModel [Kairos.Launcher1DUI.CompositionUI]">
-                        <Camera_Model Maximum_Zoom="50" Minimum_Zoom="0.01" Scroll_Speed="1, 1" Zoom_Speed="1">
-                          <Minimum_Position_Bound_Enabled Item1="True" Item2="True" />
-                        </Camera_Model>
-                        <Scenes>
-                          <Item ID="42527c82-3d19-4aa2-80e9-ffbeb8fcdabb">
-                            <Source_Model Color="0.20000005, 0.20000005, 0.20000005, 1" ID="42527c82-3d19-4aa2-80e9-ffbeb8fcdabb" Name="Scene 01" />
-                          </Item>
-                          <Item ID="adabb428-ed86-4249-9121-5b53bb378f29">
-                            <Source_Model Color="0.20000005, 0.20000005, 0.20000005, 1" ID="adabb428-ed86-4249-9121-5b53bb378f29" Name="Scene 02" />
-                          </Item>
-                          <Item ID="5d92686e-57c0-4cad-b20c-e54b23bd7988">
-                            <Source_Model Color="0.20000005, 0.20000005, 0.20000005, 1" ID="5d92686e-57c0-4cad-b20c-e54b23bd7988" Name="Scene 03" />
-                          </Item>
-                          <Item ID="e88e31e5-4911-4af7-9b0d-ab4b69e17f98">
-                            <Source_Model Color="0.20000005, 0.20000005, 0.20000005, 1" ID="e88e31e5-4911-4af7-9b0d-ab4b69e17f98" Name="Scene 04" />
-                          </Item>
-                          <Item ID="0242ae97-0b4f-475b-875a-63ae8885dcdc">
-                            <Source_Model Color="0.20000005, 0.20000005, 0.20000005, 1" ID="0242ae97-0b4f-475b-875a-63ae8885dcdc" Name="Scene 05" />
-                          </Item>
-                          <Item ID="8ee8fdc2-b252-4cfd-bd96-6ea612c8e446">
-                            <Source_Model Color="0.20000005, 0.20000005, 0.20000005, 1" ID="8ee8fdc2-b252-4cfd-bd96-6ea612c8e446" Name="Scene 06" />
-                          </Item>
-                          <Item ID="81d0446a-40f5-4c5e-8f92-14cf0fa230c3">
-                            <Source_Model Color="0.20000005, 0.20000005, 0.20000005, 1" ID="81d0446a-40f5-4c5e-8f92-14cf0fa230c3" Name="Scene 07" />
-                          </Item>
-                          <Item ID="075cecf7-d21e-414e-8ecd-525a8bf4d1eb">
-                            <Source_Model Color="0.20000005, 0.20000005, 0.20000005, 1" ID="075cecf7-d21e-414e-8ecd-525a8bf4d1eb" Name="Scene 08" />
-                          </Item>
-                          <Item ID="77a99b22-aab5-4367-a46a-59b5e1a5664c">
-                            <Source_Model Color="0.20000005, 0.20000005, 0.20000005, 1" ID="77a99b22-aab5-4367-a46a-59b5e1a5664c" Name="Scene 09" />
-                          </Item>
-                          <Item ID="14d1aca2-b32f-4f94-8b54-f42fa87251ad">
-                            <Source_Model Color="0.20000005, 0.20000005, 0.20000005, 1" ID="14d1aca2-b32f-4f94-8b54-f42fa87251ad" Name="Scene 10" />
-                          </Item>
-                        </Scenes>
-                        <Source_Model Global_Transition_Duration="2" ID="e2179f85-bc6c-48e4-a0e7-511a293c9f16">
-                          <Scenes>
-                            <Item Color="0.20000005, 0.20000005, 0.20000005, 1" ID="42527c82-3d19-4aa2-80e9-ffbeb8fcdabb" Name="Scene 01" />
-                            <Item Color="0.20000005, 0.20000005, 0.20000005, 1" ID="adabb428-ed86-4249-9121-5b53bb378f29" Name="Scene 02" />
-                            <Item Color="0.20000005, 0.20000005, 0.20000005, 1" ID="5d92686e-57c0-4cad-b20c-e54b23bd7988" Name="Scene 03" />
-                            <Item Color="0.20000005, 0.20000005, 0.20000005, 1" ID="e88e31e5-4911-4af7-9b0d-ab4b69e17f98" Name="Scene 04" />
-                            <Item Color="0.20000005, 0.20000005, 0.20000005, 1" ID="0242ae97-0b4f-475b-875a-63ae8885dcdc" Name="Scene 05" />
-                            <Item Color="0.20000005, 0.20000005, 0.20000005, 1" ID="8ee8fdc2-b252-4cfd-bd96-6ea612c8e446" Name="Scene 06" />
-                            <Item Color="0.20000005, 0.20000005, 0.20000005, 1" ID="81d0446a-40f5-4c5e-8f92-14cf0fa230c3" Name="Scene 07" />
-                            <Item Color="0.20000005, 0.20000005, 0.20000005, 1" ID="075cecf7-d21e-414e-8ecd-525a8bf4d1eb" Name="Scene 08" />
-                            <Item Color="0.20000005, 0.20000005, 0.20000005, 1" ID="77a99b22-aab5-4367-a46a-59b5e1a5664c" Name="Scene 09" />
-                            <Item Color="0.20000005, 0.20000005, 0.20000005, 1" ID="14d1aca2-b32f-4f94-8b54-f42fa87251ad" Name="Scene 10" />
-                          </Scenes>
-                          <Tracks>
-                            <Item Key="A">
-                              <Value ID="8ec17835-d40f-4395-bbcb-bb78df495915" r:Type="TrackModel (Launcher1D) [Kairos.Launcher1D.Track]">
-                                <Author_IDs>
-                                  <Item>LauncherUI</Item>
-                                </Author_IDs>
-                                <Items_Model>
-                                  <Item Key="9621b603-e1a2-45f6-bb27-f742c60c8526">
-                                    <Value ID="9621b603-e1a2-45f6-bb27-f742c60c8526" r:Type="ConstantValueClipModel (Launcher1D) [Kairos.Launcher1D.Clip]">
-                                      <Author_IDs>
-                                        <Item>LauncherUI</Item>
-                                      </Author_IDs>
-                                      <Settings Alpha="1" Enabled="True" Scene_ID="42527c82-3d19-4aa2-80e9-ffbeb8fcdabb" />
-                                    </Value>
-                                  </Item>
-                                  <Item Key="c229450f-bb63-4b07-bbf3-c9de278f87be">
-                                    <Value ID="c229450f-bb63-4b07-bbf3-c9de278f87be" r:Type="ConstantValueClipModel (Launcher1D) [Kairos.Launcher1D.Clip]">
-                                      <Author_IDs>
-                                        <Item></Item>
-                                      </Author_IDs>
-                                      <Settings Alpha="1" Enabled="True" />
-                                      <Value r:Type="Float32 [Primitive]">0.8876404</Value>
-                                    </Value>
-                                  </Item>
-                                  <Item Key="4301b653-fc14-46ca-b637-1e2519140cfc">
-                                    <Value ID="4301b653-fc14-46ca-b637-1e2519140cfc" Value_Source_Name="My LFO" r:Type="LiveValueClipModel (Launcher1D) [Kairos.Launcher1D.Clip]">
-                                      <Author_IDs>
-                                        <Item>LauncherUI</Item>
-                                      </Author_IDs>
-                                      <Settings Alpha="1" Enabled="True" Scene_ID="5d92686e-57c0-4cad-b20c-e54b23bd7988" />
-                                    </Value>
-                                  </Item>
-                                  <Item Key="04c38558-3080-4d1f-81fc-77eb651bec3e">
-                                    <Value ID="04c38558-3080-4d1f-81fc-77eb651bec3e" r:Type="ConstantValueClipModel (Launcher1D) [Kairos.Launcher1D.Clip]">
-                                      <Author_IDs>
-                                        <Item>LauncherUI</Item>
-                                      </Author_IDs>
-                                      <Settings Alpha="1" Enabled="True" Scene_ID="adabb428-ed86-4249-9121-5b53bb378f29" />
-                                      <Value r:Type="Float32 [Primitive]">0.5</Value>
-                                    </Value>
-                                  </Item>
-                                </Items_Model>
-                                <Parameter Key="6218ca1f-2260-41b0-b771-8fe7800d2bd8" Path="A" Type_Full_Name="Float32 [Primitive]" />
-                              </Value>
-                            </Item>
-                          </Tracks>
-                        </Source_Model>
-                        <Tracks>
-                          <Item Key="A">
-                            <Value Folding="True" ID="8ec17835-d40f-4395-bbcb-bb78df495915" Value_View_Maximum="1">
-                              <Source_Model ID="8ec17835-d40f-4395-bbcb-bb78df495915">
-                                <Author_IDs>
-                                  <Item>LauncherUI</Item>
-                                </Author_IDs>
-                                <Items_Model>
-                                  <Item Key="9621b603-e1a2-45f6-bb27-f742c60c8526">
-                                    <Value ID="9621b603-e1a2-45f6-bb27-f742c60c8526" r:Type="ConstantValueClipModel (Launcher1D) [Kairos.Launcher1D.Clip]">
-                                      <Author_IDs>
-                                        <Item>LauncherUI</Item>
-                                      </Author_IDs>
-                                      <Settings Alpha="1" Enabled="True" Scene_ID="42527c82-3d19-4aa2-80e9-ffbeb8fcdabb" />
-                                    </Value>
-                                  </Item>
-                                  <Item Key="c229450f-bb63-4b07-bbf3-c9de278f87be">
-                                    <Value ID="c229450f-bb63-4b07-bbf3-c9de278f87be" r:Type="ConstantValueClipModel (Launcher1D) [Kairos.Launcher1D.Clip]">
-                                      <Author_IDs>
-                                        <Item></Item>
-                                      </Author_IDs>
-                                      <Settings Alpha="1" Enabled="True" />
-                                      <Value r:Type="Float32 [Primitive]">0.8876404</Value>
-                                    </Value>
-                                  </Item>
-                                  <Item Key="4301b653-fc14-46ca-b637-1e2519140cfc">
-                                    <Value ID="4301b653-fc14-46ca-b637-1e2519140cfc" Value_Source_Name="My LFO" r:Type="LiveValueClipModel (Launcher1D) [Kairos.Launcher1D.Clip]">
-                                      <Author_IDs>
-                                        <Item>LauncherUI</Item>
-                                      </Author_IDs>
-                                      <Settings Alpha="1" Enabled="True" Scene_ID="5d92686e-57c0-4cad-b20c-e54b23bd7988" />
-                                    </Value>
-                                  </Item>
-                                  <Item Key="04c38558-3080-4d1f-81fc-77eb651bec3e">
-                                    <Value ID="04c38558-3080-4d1f-81fc-77eb651bec3e" r:Type="ConstantValueClipModel (Launcher1D) [Kairos.Launcher1D.Clip]">
-                                      <Author_IDs>
-                                        <Item>LauncherUI</Item>
-                                      </Author_IDs>
-                                      <Settings Alpha="1" Enabled="True" Scene_ID="adabb428-ed86-4249-9121-5b53bb378f29" />
-                                      <Value r:Type="Float32 [Primitive]">0.5</Value>
-                                    </Value>
-                                  </Item>
-                                </Items_Model>
-                                <Parameter Key="6218ca1f-2260-41b0-b771-8fe7800d2bd8" Path="A" Type_Full_Name="Float32 [Primitive]" />
-                              </Source_Model>
-                              <UI_Clips>
-                                <Item Key="9621b603-e1a2-45f6-bb27-f742c60c8526">
-                                  <Value ID="9621b603-e1a2-45f6-bb27-f742c60c8526" r:Type="ConstantValueClipUIModel [Kairos.Launcher1DUI.ClipUI]">
-                                    <Source_Model ID="9621b603-e1a2-45f6-bb27-f742c60c8526">
-                                      <Author_IDs>
-                                        <Item>LauncherUI</Item>
-                                      </Author_IDs>
-                                      <Settings Alpha="1" Enabled="True" Scene_ID="42527c82-3d19-4aa2-80e9-ffbeb8fcdabb" />
-                                    </Source_Model>
-                                  </Value>
-                                </Item>
-                                <Item Key="c229450f-bb63-4b07-bbf3-c9de278f87be">
-                                  <Value ID="c229450f-bb63-4b07-bbf3-c9de278f87be" r:Type="ConstantValueClipUIModel [Kairos.Launcher1DUI.ClipUI]">
-                                    <Source_Model ID="c229450f-bb63-4b07-bbf3-c9de278f87be">
-                                      <Author_IDs>
-                                        <Item></Item>
-                                      </Author_IDs>
-                                      <Settings Alpha="1" Enabled="True" />
-                                      <Value r:Type="Float32 [Primitive]">0.8876404</Value>
-                                    </Source_Model>
-                                  </Value>
-                                </Item>
-                                <Item Key="4301b653-fc14-46ca-b637-1e2519140cfc">
-                                  <Value ID="4301b653-fc14-46ca-b637-1e2519140cfc" r:Type="LiveValueClipUIModel [Kairos.Launcher1DUI.ClipUI]">
-                                    <Source_Model ID="4301b653-fc14-46ca-b637-1e2519140cfc" Value_Source_Name="My LFO">
-                                      <Author_IDs>
-                                        <Item>LauncherUI</Item>
-                                      </Author_IDs>
-                                      <Settings Alpha="1" Enabled="True" Scene_ID="5d92686e-57c0-4cad-b20c-e54b23bd7988" />
-                                    </Source_Model>
-                                  </Value>
-                                </Item>
-                                <Item Key="04c38558-3080-4d1f-81fc-77eb651bec3e">
-                                  <Value ID="04c38558-3080-4d1f-81fc-77eb651bec3e" r:Type="ConstantValueClipUIModel [Kairos.Launcher1DUI.ClipUI]">
-                                    <Source_Model ID="04c38558-3080-4d1f-81fc-77eb651bec3e">
-                                      <Author_IDs>
-                                        <Item>LauncherUI</Item>
-                                      </Author_IDs>
-                                      <Settings Alpha="1" Enabled="True" Scene_ID="adabb428-ed86-4249-9121-5b53bb378f29" />
-                                      <Value r:Type="Float32 [Primitive]">0.5</Value>
-                                    </Source_Model>
-                                  </Value>
-                                </Item>
-                              </UI_Clips>
-                            </Value>
-                          </Item>
-                        </Tracks>
-                      </Content_Model>
-                    </Value>
-                  </Item>
-                </Windows>
-              </p:DefaultValue>
-            </Pin>
-            <Pin Id="NeeqLKqBeoBP1GIiap8FJj" Name="Bounds" Kind="InputPin" DefaultValue="987, 52, 807, 516" />
-            <Pin Id="BDJBKmE9f6mPwsxliTCm78" Name="State Output" Kind="OutputPin" />
-            <Pin Id="NiE0wK8llSGLuSSfgY7xkR" Name="Model Stream" Kind="OutputPin" />
-          </Node>
           <Node Bounds="387,437,75,19" Id="BhArAfZOZM4OXMelYSvuUi">
             <p:NodeReference LastCategoryFullName="Kairos.Launcher1D.Utils" LastDependency="VL.Kairos.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="LaunchScene" />
             </p:NodeReference>
+            <Pin Id="JHD2wzbiLszPbr2dioPrWB" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="Oy4OqJctNvALv2CMMbLHSI" Name="Input" Kind="InputPin" />
             <Pin Id="P4beQ3bvDYSMWaaMebdeQp" Name="Scene Index" Kind="InputPin" />
             <Pin Id="EHi4nkLEvXoLfYYeCF0sWo" Name="Launch" Kind="InputPin" />
@@ -457,6 +262,9 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="LFO" />
             </p:NodeReference>
+            <Pin Id="A8xdDPEQVYHMissawDJDku" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="RoyoJiZy2zcLzbqPU2veJU" Name="Clock" Kind="InputPin" IsHidden="true" />
+            <Pin Id="BEpoykKWmoQNOxdu6W3EVx" Name="New Clock" Kind="InputPin" IsHidden="true" />
             <Pin Id="PriZbdAAVeLNu4k2pViUuu" Name="Period" Kind="InputPin" DefaultValue="4" />
             <Pin Id="PbCXSc6PF31MYoGQ9jglom" Name="Pause" Kind="InputPin" />
             <Pin Id="EcuH0MeMXadPwOfnNWqe1p" Name="Reset" Kind="ApplyPin" />
@@ -493,7 +301,7 @@
     </Node>
   </Patch>
   <NugetDependency Id="Hn6jln1UutbOKllsdNtOy6" Location="VL.Kairos" Version="0.0.0" />
-  <NugetDependency Id="E5ssFx9cOc8PNn97uMW0SM" Location="VL.Skia" Version="2023.5.2" />
-  <NugetDependency Id="Tcb0Z3T3aAKMBsW63UXYj4" Location="VL.ImGui" Version="2023.5.2" />
-  <NugetDependency Id="IfHoFH6HadYN9KpomIcXHT" Location="VL.ImGui.Skia" Version="2023.5.2" />
+  <NugetDependency Id="E5ssFx9cOc8PNn97uMW0SM" Location="VL.Skia" Version="2024.6.7-0113-ga9b832a275" />
+  <NugetDependency Id="Tcb0Z3T3aAKMBsW63UXYj4" Location="VL.ImGui" Version="2024.6.7-0113-ga9b832a275" />
+  <NugetDependency Id="IfHoFH6HadYN9KpomIcXHT" Location="VL.ImGui.Skia" Version="2024.6.7-0113-ga9b832a275" />
 </Document>
