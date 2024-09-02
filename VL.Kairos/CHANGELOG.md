@@ -2,7 +2,7 @@
 
 ### 1.1.0
 #### New
-- New recording feature in Timeline and Launcher1D UI
+- New recording feature in KeyframeEditor and Launcher1D UI
 - New help patches
 
 #### Fixes
@@ -10,7 +10,7 @@
 
 ### 1.0.0
 #### New
-- Timeline with UI
+- KeyframeEditor with UI
 - Launcher1D with UI
 - CompositionSampler with UI
 - KairosEditor

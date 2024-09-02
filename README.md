@@ -31,7 +31,7 @@ nuget install VL.Kairos
 ## Features
 
 * High level functionalities
-    * Timeline tool
+    * KeyframeEditor tool
     * Compositor tool
 * Tools are nestable inside each other
 * Advanced layer system
