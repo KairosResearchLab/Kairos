@@ -1,11 +1,21 @@
 # Changelog
 
 ### 2.0.0
-- Kairos integration in vvvv as an extension 
-- No support for Kairos patches, where kairos composition nodes are used as nodes. This feature will come back later.
-- Timeline node now is called KeyframeEditor
-- Only KeyframeEditor is available as extension
-- Launcher1D not supported in this first version
+#### General
+- Kairos integrated in vvvv as an extension 
+- Timeline is now called KeyframeEditor
+- Launcher1D is now called PresetEditor
+- Launcher1D not supported in this first version of the extension
+- Temporarily no support for patched Kairos compositions UI (no KairosEditor node)
+- Temporarily no support for nested compositions
+- Temporarily no support for recording features
+
+#### Keyframe Editor
+- Keyframe multi-selection (marquee selection)
+- Multi-selection translation and snapping
+- Session management: Save, Save As..., Open... , Auto-Save, Auto-Backup
+- Track has two modes: curve view when unfolded, Dopesheet view when folded
+
 
 ### 1.1.0
 #### New
