@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="HFCS3eDAenrMyDj3nOn005" LanguageVersion="2024.6.7-0136-ga34ff89f71" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="HFCS3eDAenrMyDj3nOn005" LanguageVersion="2024.6.7-0171-g5da2a8cd29" Version="0.128">
   <Patch Id="OdwjHxvmpTwQVNFJ9pLKQP">
     <Canvas Id="TFkrzzMqabMLaJgnlwzp1b" DefaultCategory="Kairos.PresetEditor" CanvasType="FullCategory">
       <!--
@@ -1319,6 +1319,7 @@
           <Slot Id="ITI6FVMU2blOUqVChHKQxt" Name="Global Fallback Option">
             <p:TypeAnnotation p:Type="TypeReference">
               <Choice Kind="TypeFlag" Name="FallbackOption" />
+              <FullNameCategoryReference ID="LayerX.Launcher" />
             </p:TypeAnnotation>
           </Slot>
           <Patch Id="CYJjGU4AcsxK9uetWdFKyx" Name="SetGlobalFallbackOption">
@@ -1376,6 +1377,7 @@
                 <Pin Id="GxEbYASvU1ALafWGB96Q9U" Name="Generic Type Name" Kind="InputPin" />
                 <Pin Id="AjvkVn9PDOYL5abmp0nDvw" Name="Argument Type" Kind="InputPin" />
                 <Pin Id="OIVKN5B6ly6PMykijrslwM" Name="Output" Kind="OutputPin" />
+                <Pin Id="MnIbHf2fwoRLPzamXOAaHu" Name="Context" Kind="InputPin" />
               </Node>
               <Node Bounds="472,314,132,26" Id="PK5XqanZfigOb6pYoA48o3">
                 <p:NodeReference LastCategoryFullName="Kairos.PresetEditor.Clip.ConstantValueClip (PresetEditor)" LastDependency="VL.Kairos.Runtime.PresetEditor.vl">
@@ -2084,6 +2086,7 @@
                 <Pin Id="QYqD6eYfLRzOEeTAPBDa2q" Name="Generic Type Name" Kind="InputPin" />
                 <Pin Id="B8fHi8IpEScLDWVdz6mqxQ" Name="Argument Type" Kind="InputPin" />
                 <Pin Id="FIA4KGPRzuqOPXck9WY93O" Name="Output" Kind="OutputPin" />
+                <Pin Id="NDrokgMlJjYOwD8Rk9vufo" Name="Context" Kind="InputPin" />
               </Node>
               <Node Bounds="497,320,114,26" Id="T43c3HkndYUMABhIssw0iv">
                 <p:NodeReference LastCategoryFullName="Kairos.PresetEditor.Clip.LiveValueClip (PresetEditor)" LastDependency="VL.Kairos.Runtime.PresetEditor.vl">
@@ -2342,6 +2345,7 @@
                 <Pin Id="LDj4XRYQcqNLwNZuczHXPN" Name="Generic Type Name" Kind="InputPin" />
                 <Pin Id="PCHKlUUUzpsM0YVIArHyhr" Name="Argument Type" Kind="InputPin" />
                 <Pin Id="PfX2EnBvv5APIDzQri3hJo" Name="Output" Kind="OutputPin" />
+                <Pin Id="O8JBhHWebngOZEZfsKhI7r" Name="Context" Kind="InputPin" />
               </Node>
               <Node Bounds="411,294,101,26" Id="JwbS2vv7VA1Lx3Fx6IglSW">
                 <p:NodeReference LastCategoryFullName="Kairos.PresetEditor.Clip.LayerClip (PresetEditor)" LastDependency="VL.Kairos.Runtime.PresetEditor.vl">
@@ -2603,8 +2607,9 @@
                 <Pin Id="GggNec9NEBLPSsdXwH2edI" Name="Result" Kind="OutputPin" />
               </Node>
               <Node Bounds="267,585,187,19" Id="O90qHMprKbkO0iuCMaEoP1">
-                <p:NodeReference LastCategoryFullName="LayerX.1D" LastDependency="VL.LayerX.vl">
+                <p:NodeReference LastCategoryFullName="LayerX" LastDependency="VL.LayerX.Runtime.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="Category" Name="LayerX" NeedsToBeDirectParent="true" />
                   <Choice Kind="ProcessAppFlag" Name="ValueLayer" />
                 </p:NodeReference>
                 <Pin Id="JNHc5MiR3U3OL505yCpvzE" Name="Node Context" Kind="InputPin" IsHidden="true" />
@@ -3428,9 +3433,10 @@
                 <Pin Id="VqNJcZgtQpbMYxRDVHG24W" Name="Scene ID" Kind="OutputPin" />
               </Node>
               <Pad Id="F45KRb1IDRpP8yRUY7lIRH" SlotId="C6wzB2f9bHjPguAJoxJpZK" Bounds="1096,497" />
-              <Node Bounds="1025,661,176,26" Id="RXfNrFP3CN9PnGRCwsQtgo">
-                <p:NodeReference LastCategoryFullName="Kairos.Runtime.Core.Utils.Domain.Domain1DTransportFunction (InsideDomain)" LastDependency="VL.Kairos.Runtime.Core.vl">
+              <Node Bounds="1025,661,176,19" Id="RXfNrFP3CN9PnGRCwsQtgo">
+                <p:NodeReference LastCategoryFullName="LayerX.Domain.Domain1DTransportFunction (InsideDomain)" LastDependency="VL.LayerX.Runtime.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="ClassType" Name="Domain1DTransportFunction (InsideDomain)" NeedsToBeDirectParent="true" />
                   <Choice Kind="OperationCallFlag" Name="SetDomainOffset" />
                 </p:NodeReference>
                 <Pin Id="P1c9ztpceCDLHhRBaYw3rQ" Name="Input" Kind="StateInputPin" />
@@ -3705,6 +3711,7 @@
                 <Pin Id="CXeBm3Bxx5PNcFlET3dKIj" Name="Generic Type Name" Kind="InputPin" />
                 <Pin Id="KIFJIShehikNY2tWRgshnJ" Name="Argument Type" Kind="InputPin" />
                 <Pin Id="AnbUQQdVbf1Myv2ROUy3CW" Name="Output" Kind="OutputPin" />
+                <Pin Id="GKUsjnlSXBTNakeTpti6zx" Name="Context" Kind="InputPin" />
               </Node>
               <Node Bounds="480,289,101,26" Id="RCkIt6mZr1zP5ftuCxOC8E">
                 <p:NodeReference LastCategoryFullName="Kairos.PresetEditor.Clip.ProxyClip (PresetEditor)" LastDependency="VL.Kairos.Runtime.PresetEditor.vl">
@@ -4153,9 +4160,10 @@
                 <Pin Id="V0qe57UpzTHLahtxTWYVUK" Name="Enabled" Kind="OutputPin" />
                 <Pin Id="AHAcBLu3DdnPl79iI2ObgR" Name="Scene ID" Kind="OutputPin" />
               </Node>
-              <Node Bounds="845,682,176,26" Id="ErH6jbKAiLPNAUng1zDjmN">
-                <p:NodeReference LastCategoryFullName="Kairos.Runtime.Core.Utils.Domain.Domain1DTransportFunction (InsideDomain)" LastDependency="VL.Kairos.Runtime.Core.vl">
+              <Node Bounds="845,682,176,19" Id="ErH6jbKAiLPNAUng1zDjmN">
+                <p:NodeReference LastCategoryFullName="LayerX.Domain.Domain1DTransportFunction (InsideDomain)" LastDependency="VL.LayerX.Runtime.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="ClassType" Name="Domain1DTransportFunction (InsideDomain)" NeedsToBeDirectParent="true" />
                   <Choice Kind="OperationCallFlag" Name="SetDomainOffset" />
                 </p:NodeReference>
                 <Pin Id="K54ql06Yqc0LlWZAPa1W3N" Name="Input" Kind="StateInputPin" />
@@ -6693,6 +6701,7 @@
             <Slot Id="NhjgxJ1nZXSOwi9gYZlsEd" Name="Custom Fallback Option">
               <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="FallbackOption" />
+                <FullNameCategoryReference ID="LayerX.Launcher" />
               </p:TypeAnnotation>
             </Slot>
             <Link Id="Tr29RiFG11ALBlPcJbDVEe" Ids="JvEOUKGbt66NW7wzJIVyIc,GWOiJXvYbRzOxFZf7tufF4" />
@@ -8499,6 +8508,7 @@
           <Slot Id="NURqHrhW1f4MGaJCCvnuB7" Name="Custom Fallback Option">
             <p:TypeAnnotation p:Type="TypeReference">
               <Choice Kind="TypeFlag" Name="FallbackOption" />
+              <FullNameCategoryReference ID="LayerX.Launcher" />
             </p:TypeAnnotation>
           </Slot>
           <Patch Id="BSJOVcrpsapLtAuckOL57o" Name="SetCustomFallbackOption">
@@ -8957,11 +8967,11 @@
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="ProcessAppFlag" Name="SynchronizeNodePinGroup" />
                   </p:NodeReference>
-                  <Pin Id="LO8GTmhTgBNOfhVhdlQKsl" Name="Node Context" Kind="InputPin" IsHidden="true" />
-                  <Pin Id="VlGaDwALcSSN4v68IaKu9e" Name="Composition" Kind="InputPin" />
+                  <Pin Id="LO8GTmhTgBNOfhVhdlQKsl" Name="Node Context" Kind="InputPin" />
                   <Pin Id="SkSvxdcFzwjLl9NOGcD63y" Name="Pin Group Name" Kind="InputPin" />
                   <Pin Id="DI3xBWqCE4WMlDgS0q7dra" Name="Is Input" Kind="InputPin" />
                   <Pin Id="C5cAHDCIdrrNUttLwaNmx7" Name="Pins Model" Kind="InputPin" />
+                  <Pin Id="VlGaDwALcSSN4v68IaKu9e" Name="Composition" Kind="InputPin" />
                 </Node>
                 <Pad Id="GNUdYWewgTPQTr1YnJelRP" Comment="Pin Group Name" Bounds="1147,321,35,15" ShowValueBox="true" isIOBox="true" Value="Input">
                   <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
@@ -9640,8 +9650,8 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="I9r7OOr28ZKQU0kOe9kITs" Location="VL.CoreLib" Version="2024.6.7-0136-ga34ff89f71" />
-  <NugetDependency Id="U0cZBvVDT5OLSVXQLJWZBo" Location="VL.LayerX" IsFriend="true" Version="0.0.0.0" />
+  <NugetDependency Id="I9r7OOr28ZKQU0kOe9kITs" Location="VL.CoreLib" Version="2024.6.7-0171-g5da2a8cd29" />
   <DocumentDependency Id="Q8lsl2aQ2woPUyzp18N2aP" Location="./VL.Kairos.Runtime.Core.vl" IsFriend="true" />
-  <NugetDependency Id="N060MY3I3NaQIFfIU14wMb" Location="VL.Core" Version="2024.6.7-0136-ga34ff89f71" />
+  <NugetDependency Id="N060MY3I3NaQIFfIU14wMb" Location="VL.Core" Version="2024.6.7-0171-g5da2a8cd29" />
+  <NugetDependency Id="MJN8rITim1BPhYoKtrOmeC" Location="VL.LayerX.Runtime" IsFriend="true" Version="0.0.0" />
 </Document>
